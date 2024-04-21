@@ -83,14 +83,13 @@ export const handleRequest = async (request: Request, method: string) => {
     );
   }
 
-  const originalServerUrl = (openapi.info as any)?.["x-origin"]?.find(
-    (x: any) => x.format === "server",
-  )?.url as string | undefined;
+  const originalServerUrl = (openapi.info as any)?.["x-origin-servers"]?.[0]
+    ?.url as string | undefined;
 
   if (!originalServerUrl) {
     return Response.json(
       {
-        message: `Original server could not be found`,
+        message: `origin-server url could not be found`,
       },
       defaultResponseInit,
     );
