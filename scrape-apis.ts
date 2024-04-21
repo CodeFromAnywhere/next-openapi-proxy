@@ -163,7 +163,7 @@ const scrapeApis = async () => {
     .filter((x) => x.endsWith(".json"));
 
   console.log({ jsonFiles: jsonFilenames.length });
-  const filteredList = parsedList.filter((x) => downloadedKeys.includes(x.key));
+  const filteredList = fullList.filter((x) => downloadedKeys.includes(x.key));
   await writeJsonToFile(path.join(publicPath, "list.json"), filteredList);
   console.log({ filteredList: filteredList.length });
 
