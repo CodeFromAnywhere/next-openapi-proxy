@@ -83,8 +83,9 @@ export const handleRequest = async (request: Request, method: string) => {
     );
   }
 
-  const originalServerUrl = (openapi.info as any)?.["x-origin-servers"]?.[0]
-    ?.url as string | undefined;
+  const originalServerUrl = (openapi as any)?.["x-origin-servers"]?.[0]?.url as
+    | string
+    | undefined;
 
   if (!originalServerUrl) {
     return Response.json(
