@@ -30,12 +30,6 @@ const scrapeApis = async () => {
     return;
   }
 
-  //lists all current JSONs in `public`
-  const jsonFilenames = fs
-    .readdirSync(publicPath)
-    .filter((x) => x.endsWith(".json"));
-
-  console.log({ jsonFiles: jsonFilenames.length });
   const list = await fetch("https://api.apis.guru/v2/list.json").then(
     (res) => res.json() as Promise<ApiObject>,
   );
@@ -77,45 +71,59 @@ const scrapeApis = async () => {
     .filter(notEmpty);
 
   console.log("Writing list", parsedList.length);
-  await writeJsonToFile(path.join(publicPath, "list.json"), parsedList);
-  const downloaded = await mapMany(
-    parsedList,
-    async (item, index) => {
-      console.log(`${index + 1}/${parsedList.length}`);
-      const downloaded = await fetchOpenapi(item.originalUrl);
 
-      if (!downloaded || typeof downloaded === "string") {
-        return;
-      }
-      if (JSON.stringify(downloaded).length > 1024 * 1024 * 10) {
-        return;
-      }
-      if (JSON.stringify(downloaded).length < 400) {
-        return;
-      }
+  const downloadedKeys = (
+    await mapMany(
+      parsedList,
+      async (item, index) => {
+        console.log(`${index + 1}/${parsedList.length}`);
+        const downloaded = await fetchOpenapi(item.originalUrl);
 
-      if (!downloaded.servers || downloaded.servers.length === 0) {
-        return;
-      }
+        if (!downloaded || typeof downloaded === "string") {
+          return;
+        }
+        if (JSON.stringify(downloaded).length > 1024 * 1024 * 10) {
+          return;
+        }
+        if (JSON.stringify(downloaded).length < 400) {
+          return;
+        }
 
-      const switchedServers = {
-        ...downloaded,
-        //@ts-ignore
-        "x-origin-servers": downloaded.servers,
-        servers: [
-          {
-            description: "Proxy server",
-            url: `https://${item.key}.dataman.ai`,
-          },
-        ],
-      } satisfies OpenapiDocument;
+        if (!downloaded.servers || downloaded.servers.length === 0) {
+          return;
+        }
 
-      const keyPath = path.join(publicPath, item.key + ".json");
+        const switchedServers = {
+          ...downloaded,
+          //@ts-ignore
+          "x-origin-servers": downloaded.servers,
+          servers: [
+            {
+              description: "Proxy server",
+              url: `https://${item.key}.dataman.ai`,
+            },
+          ],
+        } satisfies OpenapiDocument;
 
-      await writeJsonToFile(keyPath, switchedServers);
-    },
-    20,
-  );
+        const keyPath = path.join(publicPath, item.key + ".json");
+
+        await writeJsonToFile(keyPath, switchedServers);
+
+        return item.key;
+      },
+      20,
+    )
+  ).filter(notEmpty);
+
+  //lists all current JSONs in `public`
+  const jsonFilenames = fs
+    .readdirSync(publicPath)
+    .filter((x) => x.endsWith(".json"));
+
+  console.log({ jsonFiles: jsonFilenames.length });
+  const filteredList = parsedList.filter((x) => downloadedKeys.includes(x.key));
+  await writeJsonToFile(path.join(publicPath, "list.json"), filteredList);
+  console.log({ filteredList: filteredList.length });
 
   //console.log(parsedList);
 };
