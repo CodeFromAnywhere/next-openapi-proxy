@@ -1,0 +1,1273 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "PAYONE Link API",
+    "contact": {
+      "url": "https://www.payone.com/kontakt/",
+      "email": "info@payone.com"
+    },
+    "version": "v1"
+  },
+  "externalDocs": {
+    "description": "Find more info here",
+    "url": "https://docs.payone.com/display/PLATFORM/Channel+PAYONE+Link"
+  },
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://pay1-de-link.dataman.ai"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Link Management",
+      "description": "Endpoints intended for server-to-server communication."
+    }
+  ],
+  "paths": {
+    "/v1/payment-links": {
+      "get": {
+        "tags": [
+          "Link Management"
+        ],
+        "summary": "List all payment links.",
+        "operationId": "getPaymentLinks",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 25
+            }
+          },
+          {
+            "name": "merchantId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "pattern": "[0-9]+",
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "pattern": "[0-9]+",
+              "type": "string"
+            }
+          },
+          {
+            "name": "portalId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "pattern": "[0-9]+",
+              "type": "string"
+            }
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "pattern": "live|test",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageLinkResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "getMultipleAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Link Management"
+        ],
+        "summary": "Create a payment link.",
+        "operationId": "createPaymentLink",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LinkCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "createAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/payment-links/{linkId}": {
+      "get": {
+        "tags": [
+          "Link Management"
+        ],
+        "summary": "Get payment link by id.",
+        "operationId": "getPaymentLink",
+        "parameters": [
+          {
+            "name": "linkId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "[0N1RWU4X6F8Z9ALBQC3EG5HJKM2PS7TVDY]{32}",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "getSingleAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Link Management"
+        ],
+        "summary": "Update a payment link.",
+        "operationId": "updatePaymentLink",
+        "parameters": [
+          {
+            "name": "linkId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "[0N1RWU4X6F8Z9ALBQC3EG5HJKM2PS7TVDY]{32}",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LinkCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "createAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddressDataDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "customer first name",
+            "example": "John"
+          },
+          "lastName": {
+            "maxLength": 50,
+            "minLength": 2,
+            "type": "string",
+            "description": "customer last name",
+            "example": "Doe"
+          },
+          "company": {
+            "maxLength": 50,
+            "minLength": 2,
+            "type": "string",
+            "description": "customer company name",
+            "example": "PAYONE GmbH"
+          },
+          "street": {
+            "maxLength": 50,
+            "minLength": 2,
+            "type": "string",
+            "description": "customer street name",
+            "example": "Fraunhoferstr. 2-4"
+          },
+          "addressAddition": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "customer additional address line",
+            "example": "7th floor"
+          },
+          "zip": {
+            "maxLength": 10,
+            "minLength": 2,
+            "pattern": "[0-9A-Za-z_.\\-/]{2,10}",
+            "type": "string",
+            "description": "customer postcode",
+            "example": "24118"
+          },
+          "city": {
+            "maxLength": 50,
+            "minLength": 1,
+            "pattern": "^[^\\u0000\\\\!=<>?+;\"*\\d]+$",
+            "type": "string",
+            "description": "customer city",
+            "example": "Kiel"
+          },
+          "state": {
+            "maxLength": 2,
+            "minLength": 2,
+            "pattern": "[A-Z]{2}",
+            "type": "string",
+            "description": "customer state code"
+          },
+          "country": {
+            "maxLength": 2,
+            "minLength": 2,
+            "pattern": "[A-Z]{2}",
+            "type": "string",
+            "description": "customer country code (2 letter ISO-3166 code)",
+            "example": "DE"
+          }
+        }
+      },
+      "CartItemDto": {
+        "required": [
+          "number",
+          "price",
+          "quantity",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "item type",
+            "example": "goods",
+            "enum": [
+              "goods",
+              "shipment",
+              "handling",
+              "voucher"
+            ]
+          },
+          "number": {
+            "maxLength": 32,
+            "minLength": 1,
+            "pattern": "[0-9A-Za-z(){} +\\-_#/:\\[\\]]{1,32}",
+            "type": "string",
+            "description": "item number",
+            "example": "73883HFJ"
+          },
+          "price": {
+            "maximum": 1999999999,
+            "minimum": -1999999999,
+            "type": "integer",
+            "description": "gross price of single item",
+            "format": "int64",
+            "example": 1999
+          },
+          "quantity": {
+            "maximum": 999999,
+            "minimum": 1,
+            "type": "integer",
+            "description": "total number of ordered items",
+            "format": "int64",
+            "example": 1
+          },
+          "description": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+            "description": "item description",
+            "example": "Potatoes"
+          },
+          "vatRate": {
+            "maximum": 9999,
+            "minimum": 0,
+            "type": "integer",
+            "description": "vat rate (<100 in %, >=100 in bp)",
+            "format": "int64",
+            "example": 20
+          },
+          "deliveryDateStart": {
+            "type": "string",
+            "description": "delivery date",
+            "format": "date",
+            "example": "2021-01-01"
+          },
+          "deliveryDateEnd": {
+            "type": "string",
+            "description": "delivery period end date",
+            "format": "date",
+            "example": "2021-01-01"
+          }
+        }
+      },
+      "InvoiceInformationDto": {
+        "type": "object",
+        "properties": {
+          "invoiceId": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "description": "id that should be put on the invoice"
+          },
+          "invoiceText": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "description": "short text that should be put after the invoice"
+          }
+        },
+        "description": "relevant information for the invoice module"
+      },
+      "LinkCreateRequest": {
+        "required": [
+          "accountId",
+          "currency",
+          "merchantId",
+          "mode",
+          "portalId",
+          "reference",
+          "shoppingCart"
+        ],
+        "type": "object",
+        "properties": {
+          "intent": {
+            "type": "string",
+            "description": "designates the type of transaction that will be created",
+            "default": "authorization",
+            "enum": [
+              "authorization",
+              "preauthorization"
+            ]
+          },
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "currency code",
+            "example": "EUR",
+            "enum": [
+              "ALL",
+              "DZD",
+              "ARS",
+              "AUD",
+              "BSD",
+              "BHD",
+              "BDT",
+              "AMD",
+              "BBD",
+              "BMD",
+              "BTN",
+              "BOB",
+              "BWP",
+              "BZD",
+              "SBD",
+              "BND",
+              "MMK",
+              "BIF",
+              "KHR",
+              "CAD",
+              "CVE",
+              "KYD",
+              "LKR",
+              "CLP",
+              "CNY",
+              "COP",
+              "KMF",
+              "CRC",
+              "HRK",
+              "CUP",
+              "CZK",
+              "DKK",
+              "DOP",
+              "SVC",
+              "ETB",
+              "ERN",
+              "FKP",
+              "FJD",
+              "DJF",
+              "GMD",
+              "GIP",
+              "GTQ",
+              "GNF",
+              "GYD",
+              "HTG",
+              "HNL",
+              "HKD",
+              "HUF",
+              "ISK",
+              "INR",
+              "IDR",
+              "IRR",
+              "IQD",
+              "ILS",
+              "JMD",
+              "JPY",
+              "KZT",
+              "JOD",
+              "KES",
+              "KPW",
+              "KRW",
+              "KWD",
+              "KGS",
+              "LAK",
+              "LBP",
+              "LSL",
+              "LRD",
+              "LYD",
+              "MOP",
+              "MWK",
+              "MYR",
+              "MVR",
+              "MUR",
+              "MXN",
+              "MNT",
+              "MDL",
+              "MAD",
+              "OMR",
+              "NAD",
+              "NPR",
+              "ANG",
+              "AWG",
+              "VUV",
+              "NZD",
+              "NIO",
+              "NGN",
+              "NOK",
+              "PKR",
+              "PAB",
+              "PGK",
+              "PYG",
+              "PEN",
+              "PHP",
+              "QAR",
+              "RUB",
+              "RWF",
+              "SHP",
+              "SAR",
+              "SCR",
+              "SLL",
+              "SGD",
+              "VND",
+              "SOS",
+              "ZAR",
+              "SSP",
+              "SZL",
+              "SEK",
+              "CHF",
+              "SYP",
+              "THB",
+              "TOP",
+              "TTD",
+              "AED",
+              "TND",
+              "UGX",
+              "MKD",
+              "EGP",
+              "GBP",
+              "TZS",
+              "USD",
+              "UYU",
+              "UZS",
+              "WST",
+              "YER",
+              "TWD",
+              "UYW",
+              "VES",
+              "MRU",
+              "STN",
+              "CUC",
+              "ZWL",
+              "BYN",
+              "TMT",
+              "GHS",
+              "SDG",
+              "UYI",
+              "RSD",
+              "MZN",
+              "AZN",
+              "RON",
+              "CHE",
+              "CHW",
+              "TRY",
+              "XAF",
+              "XCD",
+              "XOF",
+              "XPF",
+              "XBA",
+              "XBB",
+              "XBC",
+              "XBD",
+              "XAU",
+              "XDR",
+              "XAG",
+              "XPT",
+              "XTS",
+              "XPD",
+              "XUA",
+              "ZMW",
+              "SRD",
+              "MGA",
+              "COU",
+              "AFN",
+              "TJS",
+              "AOA",
+              "BGN",
+              "CDF",
+              "BAM",
+              "EUR",
+              "MXV",
+              "UAH",
+              "GEL",
+              "BOV",
+              "PLN",
+              "BRL",
+              "CLF",
+              "XSU",
+              "USN"
+            ]
+          },
+          "accountId": {
+            "pattern": "[0-9]+",
+            "type": "string",
+            "description": "identifier for the subaccount",
+            "example": "12345"
+          },
+          "merchantId": {
+            "pattern": "[0-9]+",
+            "type": "string",
+            "description": "identifier for the merchant",
+            "example": "12345"
+          },
+          "portalId": {
+            "pattern": "[0-9]+",
+            "type": "string",
+            "description": "identifier for the portal",
+            "example": "1234567"
+          },
+          "userId": {
+            "pattern": "[0-9]+",
+            "type": "string",
+            "description": "identifier for the user",
+            "example": "12345678"
+          },
+          "mode": {
+            "type": "string",
+            "description": "execution mode",
+            "example": "live",
+            "enum": [
+              "live",
+              "test"
+            ]
+          },
+          "paymentMethods": {
+            "type": "array",
+            "description": "list of available payment methods",
+            "example": [
+              "visa",
+              "mastercard"
+            ],
+            "items": {
+              "type": "string",
+              "description": "available payment methods",
+              "example": "visa",
+              "enum": [
+                "visa",
+                "mastercard",
+                "amex",
+                "paypal",
+                "sofort",
+                "paydirekt",
+                "postfinance-e",
+                "postfinance-card",
+                "bancontact",
+                "przelewy24",
+                "alipay",
+                "ideal",
+                "eps",
+                "giropay",
+                "sepa"
+              ]
+            }
+          },
+          "expiration": {
+            "type": "string",
+            "description": "link expiration date, the link will only be executable until end of that day",
+            "format": "date",
+            "example": "2020-02-20"
+          },
+          "description": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "description": "free format description of the payment",
+            "example": "This payment is awesome!!"
+          },
+          "reference": {
+            "pattern": "[0-9a-zA-Z.\\\\-_/]{1,20}",
+            "type": "string",
+            "description": "payment reference number, has to be unique per merchant and mode",
+            "example": "payment_1"
+          },
+          "shipping": {
+            "$ref": "#/components/schemas/AddressDataDto"
+          },
+          "billing": {
+            "$ref": "#/components/schemas/AddressDataDto"
+          },
+          "shoppingCart": {
+            "maxItems": 400,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CartItemDto"
+            }
+          },
+          "language": {
+            "type": "string",
+            "description": "link ISO language code",
+            "example": "en_US",
+            "enum": [
+              "de_DE",
+              "en_US"
+            ]
+          },
+          "logo": {
+            "type": "string",
+            "description": "logo url",
+            "format": "url",
+            "example": "https://www.payone.com/wp-content/uploads/2018/12/Payone-Logo-2020.jpg"
+          },
+          "backgroundImage": {
+            "type": "string",
+            "description": "backgroundImage css property",
+            "format": "css",
+            "example": "linear-gradient(to bottom right, #ffffff, #3295d6)"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "link activation status",
+            "example": true,
+            "default": true
+          },
+          "successUrl": {
+            "type": "string",
+            "description": "final redirect after a successful payment"
+          },
+          "errorUrl": {
+            "type": "string",
+            "description": "final redirect after a final payment"
+          },
+          "notifyUrl": {
+            "type": "string",
+            "description": "Url where the notification will be send after link was executed"
+          },
+          "email": {
+            "maxLength": 254,
+            "minLength": 4,
+            "type": "string",
+            "description": "email the invoice should be delivered to"
+          },
+          "invoiceInformation": {
+            "$ref": "#/components/schemas/InvoiceInformationDto"
+          }
+        },
+        "description": "a link create request"
+      },
+      "LinkResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "maxLength": 32,
+            "minLength": 32,
+            "type": "string",
+            "description": "link id",
+            "example": "HUENJ5FY124QHUENJ5FY124QHUENJ5FY"
+          },
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "currency code",
+            "example": "EUR",
+            "enum": [
+              "ALL",
+              "DZD",
+              "ARS",
+              "AUD",
+              "BSD",
+              "BHD",
+              "BDT",
+              "AMD",
+              "BBD",
+              "BMD",
+              "BTN",
+              "BOB",
+              "BWP",
+              "BZD",
+              "SBD",
+              "BND",
+              "MMK",
+              "BIF",
+              "KHR",
+              "CAD",
+              "CVE",
+              "KYD",
+              "LKR",
+              "CLP",
+              "CNY",
+              "COP",
+              "KMF",
+              "CRC",
+              "HRK",
+              "CUP",
+              "CZK",
+              "DKK",
+              "DOP",
+              "SVC",
+              "ETB",
+              "ERN",
+              "FKP",
+              "FJD",
+              "DJF",
+              "GMD",
+              "GIP",
+              "GTQ",
+              "GNF",
+              "GYD",
+              "HTG",
+              "HNL",
+              "HKD",
+              "HUF",
+              "ISK",
+              "INR",
+              "IDR",
+              "IRR",
+              "IQD",
+              "ILS",
+              "JMD",
+              "JPY",
+              "KZT",
+              "JOD",
+              "KES",
+              "KPW",
+              "KRW",
+              "KWD",
+              "KGS",
+              "LAK",
+              "LBP",
+              "LSL",
+              "LRD",
+              "LYD",
+              "MOP",
+              "MWK",
+              "MYR",
+              "MVR",
+              "MUR",
+              "MXN",
+              "MNT",
+              "MDL",
+              "MAD",
+              "OMR",
+              "NAD",
+              "NPR",
+              "ANG",
+              "AWG",
+              "VUV",
+              "NZD",
+              "NIO",
+              "NGN",
+              "NOK",
+              "PKR",
+              "PAB",
+              "PGK",
+              "PYG",
+              "PEN",
+              "PHP",
+              "QAR",
+              "RUB",
+              "RWF",
+              "SHP",
+              "SAR",
+              "SCR",
+              "SLL",
+              "SGD",
+              "VND",
+              "SOS",
+              "ZAR",
+              "SSP",
+              "SZL",
+              "SEK",
+              "CHF",
+              "SYP",
+              "THB",
+              "TOP",
+              "TTD",
+              "AED",
+              "TND",
+              "UGX",
+              "MKD",
+              "EGP",
+              "GBP",
+              "TZS",
+              "USD",
+              "UYU",
+              "UZS",
+              "WST",
+              "YER",
+              "TWD",
+              "UYW",
+              "VES",
+              "MRU",
+              "STN",
+              "CUC",
+              "ZWL",
+              "BYN",
+              "TMT",
+              "GHS",
+              "SDG",
+              "UYI",
+              "RSD",
+              "MZN",
+              "AZN",
+              "RON",
+              "CHE",
+              "CHW",
+              "TRY",
+              "XAF",
+              "XCD",
+              "XOF",
+              "XPF",
+              "XBA",
+              "XBB",
+              "XBC",
+              "XBD",
+              "XAU",
+              "XDR",
+              "XAG",
+              "XPT",
+              "XTS",
+              "XPD",
+              "XUA",
+              "ZMW",
+              "SRD",
+              "MGA",
+              "COU",
+              "AFN",
+              "TJS",
+              "AOA",
+              "BGN",
+              "CDF",
+              "BAM",
+              "EUR",
+              "MXV",
+              "UAH",
+              "GEL",
+              "BOV",
+              "PLN",
+              "BRL",
+              "CLF",
+              "XSU",
+              "USN"
+            ]
+          },
+          "amount": {
+            "maximum": 1999999999,
+            "minimum": 1,
+            "type": "integer",
+            "description": "total amount of all shopping cart items in lowest denomination",
+            "format": "int64",
+            "example": 799
+          },
+          "created": {
+            "type": "integer",
+            "description": "created time in ISO 8601 format",
+            "format": "int64"
+          },
+          "modified": {
+            "type": "integer",
+            "description": "last modified time in ISO 8601 format",
+            "format": "int64"
+          },
+          "intent": {
+            "type": "string",
+            "description": "designates the type of transaction that will be created",
+            "default": "authorization",
+            "enum": [
+              "authorization",
+              "preauthorization"
+            ]
+          },
+          "paymentMethods": {
+            "type": "array",
+            "description": "list of available payment methods",
+            "example": [
+              "visa",
+              "mastercard"
+            ],
+            "items": {
+              "type": "string",
+              "description": "available payment methods",
+              "example": "visa",
+              "enum": [
+                "visa",
+                "mastercard",
+                "amex",
+                "paypal",
+                "sofort",
+                "paydirekt",
+                "postfinance-e",
+                "postfinance-card",
+                "bancontact",
+                "przelewy24",
+                "alipay",
+                "ideal",
+                "eps",
+                "giropay",
+                "sepa"
+              ]
+            }
+          },
+          "status": {
+            "type": "string",
+            "description": "link status",
+            "example": "ready",
+            "enum": [
+              "ready",
+              "created",
+              "executed",
+              "expired",
+              "deactivated"
+            ]
+          },
+          "expiration": {
+            "type": "string",
+            "description": "link expiration date, the link will only be executable until end of that day",
+            "format": "date",
+            "example": "2020-02-20"
+          },
+          "description": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "free format description of the payment",
+            "example": "This payment is awesome!!"
+          },
+          "reference": {
+            "maxLength": 20,
+            "minLength": 1,
+            "type": "string",
+            "description": "payment reference number, has to be unique per merchant and mode",
+            "example": "payment_1"
+          },
+          "hash": {
+            "type": "string",
+            "description": "hash for the client API",
+            "example": "a42847abb8bfca62876ca64c0fa981f8"
+          },
+          "redirectUrl": {
+            "type": "string",
+            "description": "redirect url. empty if the payment process does not require a redirect."
+          },
+          "notifyUrl": {
+            "type": "string",
+            "description": "notify url. If unset no notification will be send"
+          },
+          "paymentProcess": {
+            "type": "string",
+            "description": "identifier of the created payment process.",
+            "example": "347867997"
+          },
+          "userId": {
+            "type": "string",
+            "description": "identifier of the created user.",
+            "example": "356845874"
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "available payment methods",
+            "example": "visa",
+            "enum": [
+              "visa",
+              "mastercard",
+              "amex",
+              "paypal",
+              "sofort",
+              "paydirekt",
+              "postfinance-e",
+              "postfinance-card",
+              "bancontact",
+              "przelewy24",
+              "alipay",
+              "ideal",
+              "eps",
+              "giropay",
+              "sepa"
+            ]
+          },
+          "shipping": {
+            "$ref": "#/components/schemas/AddressDataDto"
+          },
+          "billing": {
+            "$ref": "#/components/schemas/AddressDataDto"
+          },
+          "shoppingCart": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CartItemDto"
+            }
+          },
+          "language": {
+            "type": "string",
+            "description": "link ISO language code",
+            "example": "en_US",
+            "enum": [
+              "de_DE",
+              "en_US"
+            ]
+          },
+          "logo": {
+            "type": "string",
+            "description": "logo url",
+            "format": "url",
+            "example": "https://www.payone.com/wp-content/uploads/2018/12/Payone-Logo-2020.jpg"
+          },
+          "backgroundImage": {
+            "type": "string",
+            "description": "backgroundImage css property",
+            "format": "css",
+            "example": "linear-gradient(to bottom right, #ffffff, #3295d6)"
+          },
+          "accountId": {
+            "type": "string",
+            "description": "identifier for the subaccount",
+            "example": "12345"
+          },
+          "merchantId": {
+            "type": "string",
+            "description": "identifier for the merchant",
+            "example": "12345"
+          },
+          "portalId": {
+            "type": "string",
+            "description": "identifier for the portal",
+            "example": "1234567"
+          },
+          "mode": {
+            "type": "string",
+            "description": "execution mode",
+            "example": "live",
+            "enum": [
+              "live",
+              "test"
+            ]
+          },
+          "active": {
+            "type": "boolean",
+            "description": "link activation status",
+            "example": true,
+            "default": true
+          },
+          "successUrl": {
+            "type": "string",
+            "description": "final redirect after a successful payment"
+          },
+          "errorUrl": {
+            "type": "string",
+            "description": "final redirect after a failed payment"
+          },
+          "email": {
+            "maxLength": 254,
+            "minLength": 4,
+            "type": "string",
+            "description": "customer email for invoices or payment notification"
+          },
+          "invoiceInformation": {
+            "$ref": "#/components/schemas/InvoiceInformationDto"
+          },
+          "link": {
+            "type": "string",
+            "description": "customer payment link"
+          }
+        }
+      },
+      "PageLinkResponse": {
+        "type": "object",
+        "properties": {
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinkResponse"
+            }
+          },
+          "number": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "first": {
+            "type": "boolean"
+          },
+          "sort": {
+            "$ref": "#/components/schemas/Sort"
+          },
+          "numberOfElements": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageable": {
+            "$ref": "#/components/schemas/Pageable"
+          },
+          "last": {
+            "type": "boolean"
+          },
+          "empty": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Pageable": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sort": {
+            "$ref": "#/components/schemas/Sort"
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unpaged": {
+            "type": "boolean"
+          },
+          "paged": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Sort": {
+        "type": "object",
+        "properties": {
+          "sorted": {
+            "type": "boolean"
+          },
+          "unsorted": {
+            "type": "boolean"
+          },
+          "empty": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "createAuth": {
+        "type": "http",
+        "description": "Base64 encoded (merchantId + accountId + portalId + mode + reference + totalAmount + currency) signed with Portalkey in HmacSHA256",
+        "scheme": "payone-hmac-sha256"
+      },
+      "getMultipleAuth": {
+        "type": "http",
+        "description": "Base64 encoded (merchantId + accountId + portalId + mode) signed with Portalkey in HmacSHA256",
+        "scheme": "payone-hmac-sha256"
+      },
+      "getSingleAuth": {
+        "type": "http",
+        "description": "Base64 encoded linkId signed with Portalkey in HmacSHA256",
+        "scheme": "payone-hmac-sha256"
+      }
+    }
+  },
+  "x-origin-servers": [
+    {
+      "url": "https://onelink.pay1.de/api",
+      "description": "PAYONE Link API server url"
+    }
+  ]
+}

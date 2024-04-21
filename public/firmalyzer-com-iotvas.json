@@ -1,0 +1,925 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "IoTVAS API",
+    "description": "IOTVAS API enables you to discover IoT/Connected devices in the network and provides \n    detailed real-time risk analysis, including firmware vulnerability analysis without requiring the user to upload the firmware file.\n    Please visit the [signup page](https://iotvas-api.firmalyzer.com/portal/signup) to create an API key.\n    IoTVAS API can be easily integrated with vulnerability scanning and network port scanner tools. For example,\n    we have also released the [IOTVAS NSE script](https://github.com/firmalyzer/iotvas-nmap) that turns the nmap port scanner \n    to a IoT/connected device discovery and real-time risk assessment tool. For more infromation on IoTVAS and other \n    solutions please visit [Firmalyzer web site](https://www.firmalyzer.com).",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://firmalyzer-com-iotvas.dataman.ai"
+    }
+  ],
+  "paths": {
+    "/device/detect": {
+      "post": {
+        "tags": [
+          "device"
+        ],
+        "summary": "Detect iot device by service banners and mac address",
+        "description": "Use device service banners and mac address captured by your network port scanner, vulnerability assessment or asset discovery tools to detect device maker, model and firmware information",
+        "operationId": "detect_device",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeviceFeatures"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeviceInfo"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api-key-header": []
+          }
+        ]
+      }
+    },
+    "/firmware/{firmware_hash}/risk": {
+      "get": {
+        "tags": [
+          "firmware"
+        ],
+        "summary": "Get iot device firmware risk analysis",
+        "operationId": "get_risk",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "required": true,
+            "schema": {
+              "title": "Firmware Hash",
+              "type": "string",
+              "description": "SHA2 hash of device firmware",
+              "example": "af88b1aaac0b222df8539f3ae1479b5c8eaeae41f1776b5dd2fa805cb33a1175"
+            },
+            "name": "firmware_hash",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FirmwareRisk"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api-key-header": []
+          }
+        ]
+      }
+    },
+    "/firmware/{firmware_hash}/accounts": {
+      "get": {
+        "tags": [
+          "firmware"
+        ],
+        "summary": "Get default accounts and password hashes of a firmware",
+        "operationId": "get_accounts",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "required": true,
+            "schema": {
+              "title": "Firmware Hash",
+              "type": "string",
+              "description": "SHA2 hash of device firmware",
+              "example": "af88b1aaac0b222df8539f3ae1479b5c8eaeae41f1776b5dd2fa805cb33a1175"
+            },
+            "name": "firmware_hash",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Firmware Accounts Firmware  Firmware Hash  Accounts Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DefaultAccount"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api-key-header": []
+          }
+        ]
+      }
+    },
+    "/firmware/{firmware_hash}/private-keys": {
+      "get": {
+        "tags": [
+          "firmware"
+        ],
+        "summary": "Get private crypto keys embedded in a device firmware",
+        "operationId": "get_private_keys",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "required": true,
+            "schema": {
+              "title": "Firmware Hash",
+              "type": "string",
+              "description": "SHA2 hash of device firmware",
+              "example": "90e3e68e1c61850f20c50e551816d47d484d7feb46890f5bc0a0e0dab3e3ba0b"
+            },
+            "name": "firmware_hash",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Firmware Private Keys Firmware  Firmware Hash  Private Keys Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CryptoKey"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api-key-header": []
+          }
+        ]
+      }
+    },
+    "/firmware/{firmware_hash}/weak-keys": {
+      "get": {
+        "tags": [
+          "firmware"
+        ],
+        "summary": "Get weak crypto keys with short length",
+        "operationId": "get_weak_keys",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "required": true,
+            "schema": {
+              "title": "Firmware Hash",
+              "type": "string",
+              "description": "SHA2 hash of device firmware",
+              "example": "852031776c09f8152c90496f2c3fac85b46a938d20612d7fc03eea8aab46f23e"
+            },
+            "name": "firmware_hash",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Firmware Weak Keys Firmware  Firmware Hash  Weak Keys Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CryptoKey"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api-key-header": []
+          }
+        ]
+      }
+    },
+    "/firmware/{firmware_hash}/expired-certs": {
+      "get": {
+        "tags": [
+          "firmware"
+        ],
+        "summary": "Get expired digital certificates embedded in a device firmware",
+        "operationId": "get_expired_certs",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "required": true,
+            "schema": {
+              "title": "Firmware Hash",
+              "type": "string",
+              "description": "SHA2 hash of device firmware",
+              "example": "ac7c090c34338ea6a3b335004755e24578e7e4eee739c5c33736f0822b64907e"
+            },
+            "name": "firmware_hash",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Firmware Expired Certs Firmware  Firmware Hash  Expired Certs Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ExpiredCert"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api-key-header": []
+          }
+        ]
+      }
+    },
+    "/firmware/{firmware_hash}/weak-certs": {
+      "get": {
+        "tags": [
+          "firmware"
+        ],
+        "summary": "Get certificates with weak fingerprinting algorithms that are mebedded in a device firmware",
+        "operationId": "get_weak_certs",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "required": true,
+            "schema": {
+              "title": "Firmware Hash",
+              "type": "string",
+              "description": "SHA2 hash of device firmware",
+              "example": "52841661d61e00649451cc471e9b56d169df8041926b1252bb3fd0710c27b12c"
+            },
+            "name": "firmware_hash",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Firmware Weak Certs Firmware  Firmware Hash  Weak Certs Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeakCert"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api-key-header": []
+          }
+        ]
+      }
+    },
+    "/firmware/{firmware_hash}/config-issues": {
+      "get": {
+        "tags": [
+          "firmware"
+        ],
+        "summary": "Get default OS configuration issues of a device firmware",
+        "operationId": "get_config_issues",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "required": true,
+            "schema": {
+              "title": "Firmware Hash",
+              "type": "string",
+              "description": "SHA2 hash of device firmware",
+              "example": "aa96e4d41a4b0ceb3f1ae4d94f3cb445621b9501e3a9c69e6b9eb37c5888a03c"
+            },
+            "name": "firmware_hash",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Firmware Config Issues Firmware  Firmware Hash  Config Issues Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConfigIssue"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api-key-header": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ConfigIssue": {
+        "title": "ConfigIssue",
+        "type": "object",
+        "properties": {
+          "service_name": {
+            "title": "Affected network service name",
+            "type": "string",
+            "nullable": true
+          },
+          "config_file": {
+            "title": "Vulnerable configuration file name",
+            "type": "string"
+          },
+          "issues": {
+            "title": "List of detected issues",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "suggestions": {
+            "title": "List of suggestions to fix the issues",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        }
+      },
+      "CryptoKey": {
+        "title": "CryptoKey",
+        "type": "object",
+        "properties": {
+          "file_name": {
+            "title": "Crypto key file name",
+            "type": "string"
+          },
+          "file_hash": {
+            "title": "SHA2 hash of the crypto key file",
+            "type": "string"
+          },
+          "pem_type": {
+            "title": "Key type, e.g., RSAPrivateKey, ECPublicKey, etc",
+            "type": "string",
+            "nullable": true
+          },
+          "algorithm": {
+            "title": "Crypto algorithm name of the key",
+            "type": "string",
+            "nullable": true
+          },
+          "bits": {
+            "title": "Key length in bits",
+            "type": "integer",
+            "nullable": true
+          }
+        }
+      },
+      "DefaultAccount": {
+        "title": "DefaultAccount",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "OS account name",
+            "type": "string"
+          },
+          "pwd_hash": {
+            "title": "Password hash of the account",
+            "type": "string",
+            "nullable": true
+          },
+          "hash_algorithm": {
+            "title": "Hash algorithm, '0': DES, '1': '5': SHA2, '2a': Blowfish",
+            "type": "string",
+            "nullable": true
+          },
+          "shell": {
+            "title": "Path to the shell binary of the account",
+            "type": "string",
+            "nullable": true
+          },
+          "uid": {
+            "title": "*nix user id of the account",
+            "type": "integer",
+            "nullable": true
+          },
+          "gid": {
+            "title": "Group id of the account",
+            "type": "integer",
+            "nullable": true
+          },
+          "home_dir": {
+            "title": "Path to the home folder of the account",
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "DeviceFeatures": {
+        "title": "DeviceFeatures",
+        "type": "object",
+        "properties": {
+          "snmp_sysdescr": {
+            "title": "sysDescr OID string of the SNMP service",
+            "type": "string",
+            "default": ""
+          },
+          "snmp_sysoid": {
+            "title": "sysObjectID OID string of the SNMP service",
+            "type": "string",
+            "default": ""
+          },
+          "ftp_banner": {
+            "title": "FTP service banner(excluding status code, eg. 220)",
+            "type": "string",
+            "default": ""
+          },
+          "telnet_banner": {
+            "title": "Telnet service banner",
+            "type": "string",
+            "default": ""
+          },
+          "hostname": {
+            "title": "Device hostname",
+            "type": "string",
+            "default": ""
+          },
+          "http_response": {
+            "title": "Raw response of the http service",
+            "type": "string",
+            "default": ""
+          },
+          "https_response": {
+            "title": "Raw response of the https service",
+            "type": "string",
+            "default": ""
+          },
+          "upnp_response": {
+            "title": "UPnP service response",
+            "type": "string",
+            "default": ""
+          },
+          "nic_mac": {
+            "title": "MAC address of the device network interface in dash or dot separated format",
+            "type": "string",
+            "default": ""
+          }
+        },
+        "example": {
+          "snmp_sysdescr": "",
+          "snmp_sysoid": "",
+          "ftp_banner": "AXIS P3346 Fixed Dome Network Camera 5.20 (2017) ready.",
+          "telnet_banner": "",
+          "hostname": "",
+          "http_response": "",
+          "https_response": "",
+          "upnp_response": "",
+          "nic_mac": ""
+        }
+      },
+      "DeviceInfo": {
+        "title": "DeviceInfo",
+        "type": "object",
+        "properties": {
+          "manufacturer": {
+            "title": "Device manufacturer name",
+            "type": "string",
+            "nullable": true
+          },
+          "model_name": {
+            "title": "Device model name",
+            "type": "string",
+            "nullable": true
+          },
+          "firmware_version": {
+            "title": "Device firmware version",
+            "type": "string",
+            "nullable": true
+          },
+          "is_discontinued": {
+            "title": "Device discontinued/retired indicator",
+            "type": "boolean",
+            "nullable": true
+          },
+          "cve_list": {
+            "title": "List of CVEs for the specified firmware version",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Vulnerability"
+            },
+            "nullable": true
+          },
+          "device_type": {
+            "title": "Device type,e.g., IP camera, etc",
+            "type": "string",
+            "nullable": true
+          },
+          "firmware_info": {
+            "title": "Device firmware infromation, release date, download Url, etc",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FirmwareInfo"
+              }
+            ],
+            "nullable": true
+          },
+          "latest_firmware_info": {
+            "title": "Latest firmware infromation of the device",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FirmwareInfo"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "ExpiredCert": {
+        "title": "ExpiredCert",
+        "type": "object",
+        "properties": {
+          "file_name": {
+            "title": "Certificate file name",
+            "type": "string"
+          },
+          "file_hash": {
+            "title": "SHA2 hash of the certificate file",
+            "type": "string"
+          },
+          "thumb_print": {
+            "title": "Certificate fingerprint",
+            "type": "string",
+            "nullable": true
+          },
+          "public_key": {
+            "title": "Public key infromation of the certificate",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PublicKey"
+              }
+            ],
+            "nullable": true
+          },
+          "subject_name": {
+            "title": "Certificate subject name",
+            "type": "string",
+            "nullable": true
+          },
+          "valid_from": {
+            "title": "Certificate validity start date",
+            "type": "string",
+            "nullable": true
+          },
+          "valid_to": {
+            "title": "Certificate expiry date",
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "FirmwareInfo": {
+        "title": "FirmwareInfo",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Title of the firmware file published by the device vendor",
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "title": "Published firmware file version",
+            "type": "string",
+            "nullable": true
+          },
+          "sha2": {
+            "title": "Firmware file SHA2 hash",
+            "type": "string",
+            "nullable": true
+          },
+          "release_date": {
+            "title": "Release date of the firmware file",
+            "type": "string",
+            "nullable": true
+          },
+          "download_url": {
+            "title": "Download url of the firmware file on vendor's site",
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "FirmwareRisk": {
+        "title": "FirmwareRisk",
+        "type": "object",
+        "properties": {
+          "risk_summary": {
+            "title": "Qualitative risk levels of network services, crypto libraries, kernel and client tools in the analyzed firmware",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RiskSummary"
+              }
+            ]
+          },
+          "vulnerable_components": {
+            "title": "Details of vulnerable firmware components",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VulnerableComponent"
+            }
+          }
+        }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "PublicKey": {
+        "title": "PublicKey",
+        "type": "object",
+        "properties": {
+          "algorithm": {
+            "title": "Crypto algorithm name",
+            "type": "string"
+          },
+          "bits": {
+            "title": "key length in bits",
+            "type": "integer",
+            "nullable": true
+          }
+        }
+      },
+      "RiskSummary": {
+        "title": "RiskSummary",
+        "type": "object",
+        "properties": {
+          "net_services_risk": {
+            "title": "Qualitative risk level of device network services in the scale of 'Critical' to 'None'",
+            "type": "string"
+          },
+          "crypto_risk": {
+            "title": "Crypto libraries risk level",
+            "type": "string"
+          },
+          "kernel_risk": {
+            "title": "Kernel risk level",
+            "type": "string"
+          },
+          "client_tools_risk": {
+            "title": "Risk level of client tools such as busybox",
+            "type": "string"
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      },
+      "Vulnerability": {
+        "title": "Vulnerability",
+        "type": "object",
+        "properties": {
+          "cve_id": {
+            "title": "CVE ID of the vulnerability",
+            "type": "string"
+          },
+          "cvss": {
+            "title": "CVSS v3 score of the vulnerability",
+            "type": "number"
+          }
+        }
+      },
+      "VulnerableComponent": {
+        "title": "VulnerableComponent",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Vulnerable component name, e.g., upnp, busybox, etc",
+            "type": "string"
+          },
+          "version": {
+            "title": "Vulnerable component version",
+            "type": "string"
+          },
+          "category": {
+            "title": "Component category: 'UPnP Server', 'Web Server', etc",
+            "type": "string"
+          },
+          "vulnerabilities": {
+            "title": "List of component vulnerabilities",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Vulnerability"
+            }
+          },
+          "cvss_max": {
+            "title": "Maximum CVSS score of the detected vulnerabilities",
+            "type": "number"
+          }
+        }
+      },
+      "WeakCert": {
+        "title": "WeakCert",
+        "type": "object",
+        "properties": {
+          "file_name": {
+            "title": "Certificate file name",
+            "type": "string"
+          },
+          "file_hash": {
+            "title": "SHA2 hash of the certificate file",
+            "type": "string"
+          },
+          "thumb_print": {
+            "title": "Certificate fingerprint",
+            "type": "string",
+            "nullable": true
+          },
+          "sign_algorithm": {
+            "title": "Ceritifcate signing algorithm name, e.g., sha1",
+            "type": "string",
+            "nullable": true
+          },
+          "subject_name": {
+            "title": "Certificate subject name",
+            "type": "string",
+            "nullable": true
+          },
+          "valid_from": {
+            "title": "Certificate validity start date",
+            "type": "string",
+            "nullable": true
+          },
+          "valid_to": {
+            "title": "Certificate expiry date",
+            "type": "string",
+            "nullable": true
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "api-key-header": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      }
+    }
+  },
+  "x-origin-servers": [
+    {
+      "url": "/api/v1"
+    }
+  ]
+}

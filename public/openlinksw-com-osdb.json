@@ -1,0 +1,1242 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "OSDB REST API v1",
+    "description": "An OpenAPI description of the OpenLink Smart Data Bot REST API v1",
+    "version": "1.0.0",
+    "license": {
+      "name": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0/legalcode"
+    },
+    "contact": {
+      "email": "osdb@openlinksw.com"
+    }
+  },
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://openlinksw-com-osdb.dataman.ai"
+    }
+  ],
+  "paths": {
+    "/api/v1/services": {
+      "get": {
+        "summary": "List services",
+        "description": "Returns descriptions of all services registered with the OSDB server.",
+        "operationId": "listServices",
+        "tags": [
+          "OSDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of service descriptions for all services registered with the OSDB server",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListServicesResponse"
+                },
+                "example": {
+                  "status": "success",
+                  "method": "list_services",
+                  "api": "/osdb/api/v1/services",
+                  "response": [
+                    {
+                      "service_id": "ldp_generic",
+                      "service_name": "LDP generic",
+                      "description": "Host-independent Linked Data Platform service",
+                      "import_source_uri": "http://ods-qa.openlinksw.com:8896/DAV/home/nobody/ldp_svc.host_independent.ttl"
+                    },
+                    {
+                      "service_id": "anonymous_facet",
+                      "service_name": "anonymous_facet",
+                      "description": null,
+                      "import_source_uri": "http://ods-qa.openlinksw.com:8896/DAV/home/nobody/fct_svc.ki.170103.cmsb.ttl"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorModel"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Load service",
+        "description": "Loads a service description into the OSDB Service Registry",
+        "operationId": "loadService",
+        "tags": [
+          "OSDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "loadService response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "default": "success",
+                      "enum": [
+                        "success"
+                      ]
+                    },
+                    "method": {
+                      "type": "string",
+                      "description": "The name of the REST API method"
+                    },
+                    "api": {
+                      "type": "string",
+                      "description": "The path of the REST API method"
+                    },
+                    "response": {
+                      "type": "string",
+                      "description": "Confirmation message"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "method",
+                    "api",
+                    "response"
+                  ]
+                },
+                "example": {
+                  "status": "success",
+                  "method": "load_service",
+                  "api": "/osdb/api/v1/services",
+                  "response": "Loaded service description"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorModel"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "description": "Service to register with OSDB",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "service_description_url": {
+                    "type": "string",
+                    "description": "The URL of the resource containing the service description to load."
+                  },
+                  "service_moniker": {
+                    "type": "string",
+                    "description": "Service ID to be used to uniquely identify the service. (Optional: Required for anonymous services or to override the service name in the service description.)"
+                  }
+                },
+                "required": [
+                  "service_description_url"
+                ]
+              },
+              "example": {
+                "service_description_url": "http://ods-qa.openlinksw.com:8896/DAV/home/nobody/csv_extractor_svc.ods-qa.170109.ttl",
+                "service_moniker": "csv_extractor"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/services/{serviceId}": {
+      "delete": {
+        "summary": "Unload service",
+        "description": "Removes a service description from the OSDB Service Registry",
+        "operationId": "unloadService",
+        "tags": [
+          "OSDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "unloadService response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "default": "success",
+                      "enum": [
+                        "success"
+                      ]
+                    },
+                    "method": {
+                      "type": "string",
+                      "description": "The name of the REST API method"
+                    },
+                    "api": {
+                      "type": "string",
+                      "description": "The path of the REST API method"
+                    },
+                    "response": {
+                      "type": "string",
+                      "description": "Confirmation message"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "method",
+                    "api",
+                    "response"
+                  ]
+                },
+                "example": {
+                  "status": "success",
+                  "method": "unload_service",
+                  "api": "/osdb/api/v1/services",
+                  "response": "Unloaded service csv_transformer from the Service Registry"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorModel"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Service ID of the service to be unloaded",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "get": {
+        "summary": "Describe service",
+        "description": "Returns a description of a given service",
+        "operationId": "describeService",
+        "tags": [
+          "OSDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "A single service description",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DescribeServiceResponse"
+                },
+                "example": {
+                  "status": "success",
+                  "method": "describe_service",
+                  "api": "/osdb/api/v1/services/:service_id",
+                  "response": {
+                    "service_id": "ldp_generic",
+                    "service_name": "LDP generic",
+                    "description": "Host-independent Linked Data Platform service",
+                    "import_source_uri": "http://ods-qa.openlinksw.com:8896/DAV/home/nobody/ldp_svc.host_independent.ttl"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorModel"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Service ID of the service to describe.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/actions/{serviceId}": {
+      "get": {
+        "summary": "List actions",
+        "description": "Returns an array of action descriptions for the actions supported by the given service",
+        "operationId": "listActions",
+        "tags": [
+          "OSDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of action descriptions for the actions supported by the given service.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListActionsResponse"
+                },
+                "example": {
+                  "status": "success",
+                  "method": "list_actions",
+                  "api": "/osdb/api/v1/actions/:service_id",
+                  "response": [
+                    {
+                      "action_id": "read",
+                      "description": "List a container's details and contents",
+                      "entry_point": {
+                        "http_method": "GET",
+                        "url_template": "(ldpResourceUri)",
+                        "url": null,
+                        "name": "LDP Read - Retrieve a resource description",
+                        "description": "Retrieve a description of an LDP resource or container",
+                        "encoding_types": null,
+                        "content_types": [
+                          "application/ld+json",
+                          "text/turtle"
+                        ],
+                        "parameters": [
+                          {
+                            "parameter_name": "ldpResourceUri",
+                            "display_name": "Resource URL",
+                            "description": "The URL of an LDPR or LDPC. LDPCs must be terminated by /",
+                            "type": "uri",
+                            "required": 1,
+                            "permitted_values": null
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "action_id": "update",
+                      "description": "Update an LDP RDF resource",
+                      "entry_point": {
+                        "http_method": "PUT",
+                        "url_template": "(ldpResourceUri)",
+                        "url": null,
+                        "name": "LDP-RS Update - Update an RDF resource",
+                        "description": "Update an RDF resource (LDP-RS) including containers (LDPCs)",
+                        "encoding_types": [
+                          "text/turtle"
+                        ],
+                        "content_types": [
+                          "text/html"
+                        ],
+                        "parameters": [
+                          {
+                            "parameter_name": "ldpResourceUri",
+                            "display_name": "Resource URL",
+                            "description": "The URL of an LDPR or LDPC. LDPCs must be terminated by /",
+                            "type": "uri",
+                            "required": 1,
+                            "permitted_values": null
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "action_id": "delete",
+                      "description": "Delete an LDP resource",
+                      "entry_point": {
+                        "http_method": "DELETE",
+                        "url_template": "(ldpResourceUri)",
+                        "url": null,
+                        "name": "LDP Delete - Delete an LDP resource",
+                        "description": "Deletes an LDP resource or container",
+                        "encoding_types": null,
+                        "content_types": "",
+                        "parameters": [
+                          {
+                            "parameter_name": "ldpResourceUri",
+                            "display_name": "Resource URL",
+                            "description": "The URL of an LDPR or LDPC. LDPCs must be terminated by /",
+                            "type": "uri",
+                            "required": 1,
+                            "permitted_values": null
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "action_id": "create",
+                      "description": "Create an LDP RDF resource",
+                      "entry_point": {
+                        "http_method": "POST",
+                        "url_template": "(ldpResourceUri)",
+                        "url": null,
+                        "name": "LDP-RS Create - Create an RDF resource",
+                        "description": "Create an RDF resource (LDP-RS) including containers (LDPCs)",
+                        "encoding_types": [
+                          "text/turtle"
+                        ],
+                        "content_types": [
+                          "text/html"
+                        ],
+                        "parameters": [
+                          {
+                            "parameter_name": "Slug",
+                            "display_name": "Suggested name",
+                            "description": "The suggested name (slug) for the new resource",
+                            "type": "header",
+                            "required": 1,
+                            "permitted_values": null
+                          },
+                          {
+                            "parameter_name": "ldpResourceUri",
+                            "display_name": "Resource URL",
+                            "description": "The URL of an LDPR or LDPC. LDPCs must be terminated by /",
+                            "type": "uri",
+                            "required": 1,
+                            "permitted_values": null
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorModel"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Service ID of the service for which actions are to be listed",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/actions/{serviceId}/{actionId}": {
+      "get": {
+        "summary": "Describe action",
+        "description": "Returns a description of a given service action.",
+        "operationId": "describeAction",
+        "tags": [
+          "OSDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "A single action description",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DescribeActionResponse"
+                },
+                "example": {
+                  "status": "success",
+                  "method": "describe_action",
+                  "api": "/osdb/api/v1/actions/:service_id/:action_id",
+                  "response": {
+                    "action_id": "products",
+                    "description": "Returns information about the Uber products offered at a given location",
+                    "entry_point": {
+                      "http_method": "GET",
+                      "url_template": "https://sandbox-api.uber.com/v1/products(?latitude,longitude)",
+                      "url": "https://sandbox-api.uber.com/v1/products",
+                      "name": "Products — Uber products at a given location",
+                      "description": "The Products endpoint returns information about the Uber products offered at a given location. \n    The response includes the display name and other details about each product.\n    \n    This endpoint does not reflect real-time availability of the products. Please use the Time \n    Estimates endpoint to determine real-time availability and ETAs of products.\n\n    In some markets, the list of products returned from this endpoint may vary by the time of \n    day due to time restrictions on when that product may be utilized.\n   ",
+                      "encoding_types": null,
+                      "content_types": [
+                        "application/json",
+                        "text/turtle",
+                        "application/rdf+xml",
+                        "application/ld+json"
+                      ],
+                      "parameters": [
+                        {
+                          "parameter_name": "longitude",
+                          "display_name": "Longitude",
+                          "description": "Longitude component of location",
+                          "type": "query",
+                          "required": 1,
+                          "permitted_values": null
+                        },
+                        {
+                          "parameter_name": "latitude",
+                          "display_name": "Latitude",
+                          "description": "Latitude component of location",
+                          "type": "query",
+                          "required": 1,
+                          "permitted_values": null
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorModel"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Service ID of the service supporting the action.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "actionId",
+            "in": "path",
+            "description": "Action ID of the action to describe.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/actions/{serviceId}/{actionId}/help": {
+      "get": {
+        "summary": "Action help",
+        "description": "Returns the help text for a given service action",
+        "operationId": "actionHelp",
+        "tags": [
+          "OSDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "Action help text",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionHelpResponse"
+                },
+                "example": {
+                  "status": "success",
+                  "method": "action_help",
+                  "api": "/osdb/api/v1/actions/:service_id/:action_id/help",
+                  "response": {
+                    "service_id": "facet",
+                    "action_id": "search",
+                    "help_text": "\nAction options:\n\n-s, --same_as [same_as]\n\tEnables owl:sameAs inferencing for facet search\n\tRequired: no\n\tPermitted values: yes\n-v, --view_type [view_type]\n\tSets the default view orientation\n\tRequired: no\n\tPermitted values: entity-types, attribute-names\n-l, --limit [limit]\n\tLimits the number of result set entities returned\n\tRequired: no\n-o, --offset [offset]\n\tSets the result set page size for scrolling\n\tRequired: no\n-q, --q <q>\n\tA word or phrase to be used for the Facet free text search. Multiple words should be delimited by '+'\n\tRequired: yes\n-u, --url_only [url_only]\n\tReturn only the action URL, not the action results\n\tRequired: no\n-r, --response_format [response_format]\n\tSets the response media type through an Accept header.\n\tRequired: no\n\tPermitted values: application/json, application/rdf+xml, text/html, text/turtle\n-t, --quality_values [quality_values]\n\tQuality value string. e.g. application/json;q=1.0,text/turtle;q=0.8,*/*;q=0.5. \n\t--response_format takes precedence.\n\tRequired: no\n"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorModel"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Service ID of the service supporting the action.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "actionId",
+            "in": "path",
+            "description": "Action ID of the action for which help text is being requested.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/actions/{serviceId}/{actionId}/exec": {
+      "post": {
+        "summary": "Execute action",
+        "operationId": "executeAction",
+        "description": "Executes a registered service action and returns any output from the action.\nThe data returned in the POST response body may be: \n* the raw action output, \n* a URL encapsulating the action request which executes the action when dereferenced  (only for actions using GET), \n* RDF generated from the action output,\n* a URL to an RDF viewer's display of the generated RDF.\n\nAny parameters required by the action are supplied as a JSON object in the POST body. The parameter types supported are: \"query\", \"header\", \"uri\", \"path\" and \"body\".  The parameter type determines where a supplied parameter value is inserted into the HTTP request constructed by OSDB to invoke the target service action. In addition to native parameters required by the service action, 'Execute action' accepts some OSDB-specific parameters.<br/><br/>\n\n**Examples**\n* ```curl -ik -X POST -d '{ \"latitude\":\"37.7759792\", \"longitude\":\"-122.41823\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/uber/products/exec```  \n* ```curl -ikL -X POST -d '{ \"latitude\":\"37.7759792\", \"longitude\":\"-122.41823\", \"osdb:output_type\":\"generate_rdf\", \"osdb:response_format\":\"application/rdf+xml\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/uber/products/exec``` \n* ```curl -ikL -X POST -d '{ \"latitude\":\"37.7759792\", \"longitude\":\"-122.41823\", \"osdb:output_type\":\"display_rdf\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/uber/products/exec``` \n* ```curl -ik -X POST -d '{ \"q\":\"skiing\", \"osdb:response_format\": \"application/rdf+xml\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/facet/search/exec``` \n* ```curl -ik -X POST -d '{ \"q\":\"skiing\", \"osdb:output_type\": \"url_only\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/facet/search/exec``` \n* ```curl -ik -X POST -d '{ \"Content-Location\": \"http://demo.openlinksw.co.uk/pubs\", \"osdb:body_data_src_url\": \"http://ods-qa.openlinksw.com/DAV/home/osdb/pubs.csv\", \"extractor\": \"csv\", \"osdb:response_format\": \"application/rdf+xml\", \"osdb:body_data_encoding\": \"text/csv\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/csv_transformer/transform/exec```",
+        "tags": [
+          "OSDB"
+        ],
+        "responses": {
+          "2XX": {
+            "description": "Response from an OSDB action invocation.",
+            "content": {
+              "*/*": {
+                "example": {
+                  "description": "The response from an action varies depending on the target service invoked by the action."
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorModel"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Service ID of the service supporting the action.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "actionId",
+            "in": "path",
+            "description": "Action ID of the action to execute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Any parameters required by the action are supplied as a JSON object in the request body. The properties of this object depend on the service action being invoked.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecBody"
+              },
+              "examples": {
+                "example1_uber_products": {
+                  "value": {
+                    "latitude": "37.7759792",
+                    "longitude": "-122.41823"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/login": {
+      "get": {
+        "summary": "Login",
+        "description": "Logs a user into the OSDB server, authenticating them by their WebID and returning an OSDB session ID in cookie osdb.sid",
+        "operationId": "login",
+        "tags": [
+          "OSDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "Confirmation of a successful OSDB login.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                },
+                "example": {
+                  "status": "success",
+                  "method": "login",
+                  "api": "/osdb/api/v1/login",
+                  "response": {
+                    "user": "http://ods-qa.openlinksw.com:8896/DAV/home/nobody/cmsb_ex_webid_170223.ttl#identity"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/logout": {
+      "get": {
+        "summary": "Logout",
+        "description": "Logs a user out of the OSDB server, ending their OSDB session",
+        "operationId": "logout",
+        "tags": [
+          "OSDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "Confirmation of a successful OSDB logout.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogoutResponse"
+                },
+                "example": {
+                  "status": "success",
+                  "method": "logout",
+                  "api": "/osdb/api/v1/logout",
+                  "response": {
+                    "user": "http://ods-qa.openlinksw.com:8896/DAV/home/nobody/cmsb_ex_webid_170223.ttl#identity"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorModel": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "error",
+            "enum": [
+              "error"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "description": "The name of the REST API method reporting the error"
+          },
+          "api": {
+            "type": "string",
+            "description": "The path of the REST API method reporting the error"
+          },
+          "response": {
+            "type": "string",
+            "description": "A message describing the error"
+          }
+        }
+      },
+      "ActionHelpResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "success",
+            "enum": [
+              "success"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "description": "The name of the REST API method"
+          },
+          "api": {
+            "type": "string",
+            "description": "The path of the REST API method"
+          },
+          "response": {
+            "$ref": "#/components/schemas/ActionHelp"
+          }
+        },
+        "required": [
+          "status",
+          "method",
+          "api",
+          "response"
+        ]
+      },
+      "ActionHelp": {
+        "type": "object",
+        "properties": {
+          "service_id": {
+            "type": "string",
+            "description": "A unique one word identifier for the service."
+          },
+          "action_id": {
+            "type": "string",
+            "description": "A unique one word identifier for the action."
+          },
+          "help_text": {
+            "type": "string",
+            "description": "The help text for the action."
+          }
+        },
+        "required": [
+          "service_id",
+          "action_id",
+          "help_text"
+        ]
+      },
+      "ListServicesResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "success",
+            "enum": [
+              "success"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "description": "The name of the REST API method"
+          },
+          "api": {
+            "type": "string",
+            "description": "The path of the REST API method"
+          },
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceDescription"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "method",
+          "api",
+          "response"
+        ]
+      },
+      "DescribeServiceResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "success",
+            "enum": [
+              "success"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "description": "The name of the REST API method"
+          },
+          "api": {
+            "type": "string",
+            "description": "The path of the REST API method"
+          },
+          "response": {
+            "$ref": "#/components/schemas/ServiceDescription"
+          }
+        },
+        "required": [
+          "status",
+          "method",
+          "api",
+          "response"
+        ]
+      },
+      "ServiceDescription": {
+        "type": "object",
+        "properties": {
+          "service_id": {
+            "type": "string",
+            "description": "A unique one word identifier for the service."
+          },
+          "service_name": {
+            "type": "string",
+            "description": "A word or phrase naming the service."
+          },
+          "description": {
+            "type": "string",
+            "description": "A short description of the service."
+          },
+          "import_source_uri": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URI of the source service description document used to load the service into OSDB."
+          }
+        },
+        "required": [
+          "service_id",
+          "service_name",
+          "import_source_uri"
+        ]
+      },
+      "ListActionsResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "success",
+            "enum": [
+              "success"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "description": "The name of the REST API method"
+          },
+          "api": {
+            "type": "string",
+            "description": "The path of the REST API method"
+          },
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActionDescription"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "method",
+          "api",
+          "response"
+        ]
+      },
+      "DescribeActionResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "success",
+            "enum": [
+              "success"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "description": "The name of the REST API method"
+          },
+          "api": {
+            "type": "string",
+            "description": "The path of the REST API method"
+          },
+          "response": {
+            "$ref": "#/components/schemas/ActionDescription"
+          }
+        },
+        "required": [
+          "status",
+          "method",
+          "api",
+          "response"
+        ]
+      },
+      "ActionDescription": {
+        "type": "object",
+        "properties": {
+          "action_id": {
+            "type": "string",
+            "description": "A unique one word identifier for the action."
+          },
+          "description": {
+            "type": "string",
+            "description": "A short description of the action."
+          },
+          "entry_point": {
+            "$ref": "#/components/schemas/EntryPoint"
+          }
+        },
+        "required": [
+          "action_id",
+          "entry_point"
+        ]
+      },
+      "EntryPoint": {
+        "type": "object",
+        "properties": {
+          "http_method": {
+            "type": "string",
+            "enum": [
+              "GET",
+              "PUT",
+              "POST",
+              "DELETE"
+            ],
+            "description": "The HTTP method used by the EntryPoint."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "The EntryPoint URL. It will be non-null if url_template is null."
+          },
+          "url_template": {
+            "type": "string",
+            "format": "uri-template",
+            "description": "The EntryPoint's URL template. Only required if the entry point URL is parameterized. Property 'url' will be null if url_template is non-null."
+          },
+          "name": {
+            "type": "string",
+            "description": "A word or short phrase to be used as the action's display name. Optional - may be null."
+          },
+          "description": {
+            "type": "string",
+            "description": "A short description of the action. Optional - may be null."
+          },
+          "encoding_types": {
+            "description": "The supported MIME type(s) for an EntryPoint request. Null if not applicable.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "content_types": {
+            "description": "The supported MIME type(s) for an EntryPoint response.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "parameters": {
+            "description": "Descriptions of the EntryPoint parameters. Null if not applicable.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntryPointParameter"
+            }
+          }
+        },
+        "required": [
+          "http_method",
+          "url",
+          "url_template",
+          "name",
+          "description",
+          "encoding_types",
+          "content_types",
+          "parameters"
+        ]
+      },
+      "EntryPointParameter": {
+        "type": "object",
+        "properties": {
+          "parameter_name": {
+            "type": "string",
+            "description": "The parameter name as present in the HTTP request. e.g. the key name in a query string key-value pair."
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The parameter's display name in the OSDB Action Console. Optional - may be null."
+          },
+          "description": {
+            "type": "string",
+            "description": "A short description of the parameter for use in the OSDB Action Console. Optional - may be null."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "query",
+              "header",
+              "uri",
+              "path",
+              "body"
+            ],
+            "description": "The type of the parameter, indicating its location in the HTTP request."
+          },
+          "required": {
+            "type": "integer",
+            "format": "int32",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "A flag indicating if the parameter is optional."
+          },
+          "permitted_values": {
+            "description": "If the parameter accepts only a limited set of values, the allowed set of values. Null if not applicable.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "parameter_name",
+          "display_name",
+          "description",
+          "type",
+          "required",
+          "permitted_values"
+        ]
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "success",
+            "enum": [
+              "success"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "description": "The name of the REST API method"
+          },
+          "api": {
+            "type": "string",
+            "description": "The path of the REST API method"
+          },
+          "response": {
+            "type": "object",
+            "properties": {
+              "user": {
+                "type": "string",
+                "description": "The WebID of the user who has logged in."
+              }
+            },
+            "required": [
+              "user"
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "method",
+          "api",
+          "response"
+        ]
+      },
+      "LogoutResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "success",
+            "enum": [
+              "success"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "description": "The name of the REST API method"
+          },
+          "api": {
+            "type": "string",
+            "description": "The path of the REST API method"
+          },
+          "response": {
+            "type": "object",
+            "properties": {
+              "user": {
+                "type": "string",
+                "description": "The WebID of the user who has logged out."
+              }
+            },
+            "required": [
+              "user"
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "method",
+          "api",
+          "response"
+        ]
+      },
+      "ExecBody": {
+        "type": "object",
+        "properties": {
+          "action_specific_property1": {
+            "type": "string",
+            "description": "An example action specific property. There may be 0, 1 or more action specific properties, each holding an action specific parameter value."
+          },
+          "action_specific_property2": {
+            "type": "string",
+            "description": "An example action specific property. There may be 0, 1 or more action specific properties, each holding an action specific parameter value."
+          },
+          "osdb:output_type": {
+            "type": "string",
+            "description": "An OSDB-specific parameter controlling the action output type. If omitted, the native action output is returned.",
+            "enum": [
+              "url_only",
+              "generate_rdf",
+              "display_rdf"
+            ]
+          },
+          "osdb:response_format": {
+            "type": "string",
+            "description": "Preferred response MIME type. This must be an output MIME type supported natively by the action or, if 'osdb:output_type' is set to 'generate_rdf', a Virtuoso Sponger output format. i.e. 'application/ld+json', 'text/turtle' or 'application/rdf+xml'."
+          },
+          "osdb:body_data_src_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL of a resource containing input data for the action (e.g. CSV data). Clients can instead use osdb:body_data_raw to supply the input data directly."
+          },
+          "osdb:body_data_raw": {
+            "type": "string",
+            "format": "byte",
+            "description": "Input data for the action (e.g. CSV data). The data must be base64 encoded by the client. Alternatively, clients can use osdb:body_data_src_url to supply the input data via a web-accessible document."
+          },
+          "osdb:body_data_encoding": {
+            "type": "string",
+            "description": "The media type of the data associated with osdb:body_data_raw or osdb:body_data_src_url. In the case of osdb:body_data_raw, this is the media type before base64 encoding."
+          }
+        }
+      }
+    }
+  },
+  "x-origin-servers": [
+    {
+      "url": "https://osdb.openlinksw.com/osdb",
+      "description": "OSDB demo server"
+    }
+  ]
+}

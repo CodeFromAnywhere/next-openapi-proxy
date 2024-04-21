@@ -1,0 +1,1452 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Aggregators API Service",
+    "description": "Aggregators API",
+    "version": "0.41-365d528"
+  },
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://zeno-fm.dataman.ai"
+    }
+  ],
+  "security": [
+    {
+      "API_Key": []
+    }
+  ],
+  "paths": {
+    "/api/v2/podcasts/{podcastKey}": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get podcast",
+        "operationId": "getPodcast",
+        "parameters": [
+          {
+            "name": "podcastKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Podcast"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Update podcast",
+        "operationId": "updatePodcast",
+        "parameters": [
+          {
+            "name": "podcastKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "podcast"
+                ],
+                "type": "object",
+                "properties": {
+                  "podcast": {
+                    "$ref": "#/components/schemas/Podcast"
+                  },
+                  "file_logo": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Podcast"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Delete podcast",
+        "operationId": "deletePodcast",
+        "parameters": [
+          {
+            "name": "podcastKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get podcast episode",
+        "operationId": "getPodcastEpisode",
+        "parameters": [
+          {
+            "name": "podcastKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "episodeKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PodcastEpisode"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Update podcast episode",
+        "operationId": "updatePodcastEpisode",
+        "parameters": [
+          {
+            "name": "podcastKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "episodeKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "episode"
+                ],
+                "type": "object",
+                "properties": {
+                  "episode": {
+                    "$ref": "#/components/schemas/PodcastEpisode"
+                  },
+                  "file_logo": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PodcastEpisode"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Delete podcast episode",
+        "operationId": "deletePodcast_1",
+        "parameters": [
+          {
+            "name": "podcastKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "episodeKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/partners/streams": {
+      "post": {
+        "tags": [
+          "Partners"
+        ],
+        "description": "Get the partner information for a list of streams.",
+        "operationId": "getStreamListInformation",
+        "parameters": [
+          {
+            "name": "currentTrack",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PartnerStreamInformation"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/stations/search": {
+      "post": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Search stations",
+        "operationId": "searchStations",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StationSearchParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StationSearchResults"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/stations/listener/location": {
+      "post": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get top stations by listener location",
+        "operationId": "getStationsByListenerLocation",
+        "parameters": [
+          {
+            "name": "maxResults",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "maximum": 10000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListenerLocationFilter"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Station"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/podcasts/{podcastKey}/episodes/create": {
+      "post": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Create podcast episode",
+        "operationId": "createPodcastEpisode",
+        "parameters": [
+          {
+            "name": "podcastKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "episode",
+                  "file_logo",
+                  "file_media"
+                ],
+                "type": "object",
+                "properties": {
+                  "episode": {
+                    "$ref": "#/components/schemas/PodcastEpisode"
+                  },
+                  "file_logo": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "file_media": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PodcastEpisode"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/podcasts/search": {
+      "post": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Search podcasts",
+        "operationId": "searchPodcasts",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PodcastSearchParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PodcastSearchResults"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/podcasts/create": {
+      "post": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Create podcast",
+        "operationId": "createPodcast",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "file_logo",
+                  "podcast"
+                ],
+                "type": "object",
+                "properties": {
+                  "podcast": {
+                    "$ref": "#/components/schemas/Podcast"
+                  },
+                  "file_logo": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Podcast"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/partners/streams/{streamId}": {
+      "get": {
+        "tags": [
+          "Partners"
+        ],
+        "description": "Get the stream partner information.",
+        "operationId": "getStreamInformation",
+        "parameters": [
+          {
+            "name": "streamId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "currentTrack",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PartnerStreamInformation"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/partners/streams/{streamId}/tracks": {
+      "get": {
+        "tags": [
+          "Partners"
+        ],
+        "description": "Get the stream partner information.",
+        "operationId": "getStreamTracks",
+        "parameters": [
+          {
+            "name": "streamId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PartnerStreamTrackInformation"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/stations/{stationKey}": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get station",
+        "operationId": "getStation",
+        "parameters": [
+          {
+            "name": "stationKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Station"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/stations/list": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "List stations",
+        "operationId": "getPartnerAggregatorStations",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "hitsPerPage",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "minSessions",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "minimum": 0,
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StationList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/stations/languages": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get the list of Languages that can be used to filter stations in the search stations request",
+        "operationId": "getStationLanguages",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Language"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/stations/genres": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get the list of Genres that can be used to filter stations in the search stations request",
+        "operationId": "getStationGenres",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StationGenre"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/stations/countries": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get the list of Countries that can be used to filter stations in the search stations request",
+        "operationId": "getStationCountries",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Country"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/stations/browse": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Browse all stations",
+        "operationId": "browseStations",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "maximum": 5000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "minimum": 0,
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StationList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/podcasts/{podcastKey}/episodes": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get podcast episodes",
+        "operationId": "getPodcastEpisodes",
+        "parameters": [
+          {
+            "name": "podcastKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "string",
+              "default": "10"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "minimum": 0,
+              "type": "string",
+              "default": "0"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PodcastEpisodeList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/podcasts/languages": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get the list of Languages that can be used to filter podcasts in the search podcasts request",
+        "operationId": "getPodcastLanguages",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Language"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/podcasts/countries": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get the list of Countries that can be used to filter podcasts in the search podcasts request",
+        "operationId": "getPodcastCountries",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Country"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/podcasts/categories": {
+      "get": {
+        "tags": [
+          "API-v2"
+        ],
+        "description": "Get the list of Categories that can be used to filter podcasts in the search podcasts request",
+        "operationId": "getPodcastCategories",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PodcastCategory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Podcast": {
+        "required": [
+          "categories",
+          "description",
+          "language",
+          "summary",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "showType": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "categories": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "author": {
+            "type": "string"
+          },
+          "ownerName": {
+            "type": "string"
+          },
+          "ownerEmail": {
+            "type": "string"
+          },
+          "keywords": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "link": {
+            "type": "string"
+          },
+          "copyright": {
+            "type": "string"
+          },
+          "explicit": {
+            "type": "boolean"
+          },
+          "block": {
+            "type": "boolean"
+          }
+        },
+        "description": "Podcast model"
+      },
+      "PodcastEpisode": {
+        "required": [
+          "description",
+          "publishDate",
+          "summary",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "fileUrl": {
+            "type": "string"
+          },
+          "episodeType": {
+            "type": "string"
+          },
+          "publishDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "season": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "episode": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "author": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string"
+          },
+          "tags": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "explicit": {
+            "type": "boolean"
+          },
+          "block": {
+            "type": "boolean"
+          }
+        },
+        "description": "PodcastEpisode model"
+      },
+      "PartnerStreamInformation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "active",
+              "idle",
+              "unknown"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "streamUrl": {
+            "type": "string",
+            "format": "url"
+          },
+          "siteUrl": {
+            "type": "string",
+            "format": "url"
+          },
+          "currentTrack": {
+            "$ref": "#/components/schemas/PartnerStreamTrackInformation"
+          },
+          "listeners": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "listenersTimestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "PartnerStreamTrackInformation": {
+        "type": "object",
+        "properties": {
+          "album": {
+            "type": "string"
+          },
+          "artist": {
+            "type": "string"
+          },
+          "track": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "StationFilters": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "language": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "genre": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "description": "Filters for station search"
+      },
+      "StationSearchParams": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/StationFilters"
+          },
+          "hitsPerPage": {
+            "maximum": 1000,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32",
+            "default": 10
+          },
+          "page": {
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+          },
+          "minSessions": {
+            "minimum": 0,
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "Station search params"
+      },
+      "Station": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "stream": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "genre": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
+          },
+          "wallpaper": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "Station model"
+      },
+      "StationSearchResults": {
+        "type": "object",
+        "properties": {
+          "hits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Station"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "Station search results"
+      },
+      "ListenerLocationFilter": {
+        "type": "object",
+        "properties": {
+          "continents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "countries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "description": "Listener location filter"
+      },
+      "PodcastFilters": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "language": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "category": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "podcastType": {
+            "type": "string",
+            "enum": [
+              "podcasts",
+              "shows"
+            ]
+          }
+        },
+        "description": "Filters for podcast search"
+      },
+      "PodcastSearchParams": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/PodcastFilters"
+          },
+          "hitsPerPage": {
+            "maximum": 1000,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32",
+            "default": 10
+          },
+          "page": {
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+          }
+        },
+        "description": "Podcast search params"
+      },
+      "PodcastSearchResults": {
+        "type": "object",
+        "properties": {
+          "hits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Podcast"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "Podcast search results"
+      },
+      "StationList": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Station"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "List of Station"
+      },
+      "Language": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "description": "Language model"
+      },
+      "StationGenre": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "description": "StationGenre model"
+      },
+      "Country": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "iso": {
+            "type": "string"
+          },
+          "iso3": {
+            "type": "string"
+          }
+        },
+        "description": "Country model"
+      },
+      "PodcastEpisodeList": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PodcastEpisode"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "List of PodcastEpisode"
+      },
+      "PodcastCategory": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "parent": {
+            "type": "string"
+          }
+        },
+        "description": "PodcastCategory model"
+      }
+    },
+    "securitySchemes": {
+      "API_Key": {
+        "type": "apiKey",
+        "name": "x-zeno-api-key",
+        "in": "header"
+      }
+    }
+  },
+  "x-origin-servers": [
+    {
+      "url": "https://api.zeno.fm",
+      "description": "Generated server url"
+    }
+  ]
+}

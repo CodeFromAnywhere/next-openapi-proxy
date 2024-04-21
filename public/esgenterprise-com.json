@@ -1,0 +1,76 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "ESG Rating Data",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://esgenterprise-com.dataman.ai"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "token",
+        "in": "query"
+      }
+    }
+  },
+  "paths": {
+    "/search": {
+      "get": {
+        "summary": "List all company ESG Ratings",
+        "tags": [
+          "rating"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Company name or stock symbol",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of ESG Ratings",
+            "headers": {
+              "x-next": {
+                "description": "ESG ratings",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://www.esgenterprise.com/wp-content/api/ESGRating.json#/components/schemas/ESGRating"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-origin-servers": [
+    {
+      "url": "https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization"
+    }
+  ]
+}

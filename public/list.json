@@ -1,0 +1,4657 @@
+[
+  {
+    "key": "1password-com-events",
+    "originalUrl": "https://i.1password.com/media/1password-events-reporting/1password-events-api.yaml",
+    "title": "Events API"
+  },
+  {
+    "key": "1password-local-connect",
+    "originalUrl": "https://i.1password.com/media/1password-connect/1password-connect-api.yaml",
+    "title": "1Password Connect"
+  },
+  {
+    "key": "6-dot-authentiqio-appspot-com",
+    "originalUrl": "https://raw.githubusercontent.com/AuthentiqID/authentiq-docs/master/docs/swagger/issuer.yaml",
+    "title": "Authentiq API"
+  },
+  {
+    "key": "ably-io-platform",
+    "originalUrl": "https://raw.githubusercontent.com/ably/open-specs/main/definitions/platform-v1.yaml",
+    "title": "Platform API"
+  },
+  {
+    "key": "ably-net-control",
+    "originalUrl": "https://raw.githubusercontent.com/ably/open-specs/main/definitions/control-v1.yaml",
+    "title": "Control API v1"
+  },
+  {
+    "key": "abstractapi-com-geolocation",
+    "originalUrl": "https://documentation.abstractapi.com/ip-geolocation-openapi.json",
+    "title": "IP geolocation API"
+  },
+  {
+    "key": "adobe-com-aem",
+    "originalUrl": "https://raw.githubusercontent.com/shinesolutions/swagger-aem/master/conf/api.yml",
+    "title": "Adobe Experience Manager (AEM) API"
+  },
+  {
+    "key": "adyen-com-accountservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/AccountService-v6.json",
+    "title": "Account API"
+  },
+  {
+    "key": "adyen-com-balancecontrolservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/BalanceControlService-v1.json",
+    "title": "Adyen Balance Control API"
+  },
+  {
+    "key": "adyen-com-balanceplatformconfigurationnotification-v1",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/BalancePlatformConfigurationNotification-v1.json",
+    "title": "Configuration webhooks"
+  },
+  {
+    "key": "adyen-com-balanceplatformpaymentnotification-v1",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/BalancePlatformPaymentNotification-v1.json",
+    "title": "Payment webhooks (deprecated)"
+  },
+  {
+    "key": "adyen-com-balanceplatformreportnotification-v1",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/BalancePlatformReportNotification-v1.json",
+    "title": "Report webhooks"
+  },
+  {
+    "key": "adyen-com-balanceplatformservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/BalancePlatformService-v2.json",
+    "title": "Configuration API"
+  },
+  {
+    "key": "adyen-com-balanceplatformtransfernotification-v3",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/BalancePlatformTransferNotification-v3.json",
+    "title": "Transfer webhooks"
+  },
+  {
+    "key": "adyen-com-binlookupservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/BinLookupService-v54.json",
+    "title": "Adyen BinLookup API"
+  },
+  {
+    "key": "adyen-com-checkoutservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/CheckoutService-v70.json",
+    "title": "Adyen Checkout API"
+  },
+  {
+    "key": "adyen-com-checkoututilityservice",
+    "originalUrl": "https://raw.githubusercontent.com/adyen/adyen-openapi/master/specs/3.0/CheckoutUtilityService-v1.json",
+    "title": "Adyen Checkout Utility Service"
+  },
+  {
+    "key": "adyen-com-dataprotectionservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/DataProtectionService-v1.json",
+    "title": "Adyen Data Protection API"
+  },
+  {
+    "key": "adyen-com-fundservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/FundService-v6.json",
+    "title": "Fund API"
+  },
+  {
+    "key": "adyen-com-hopservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/HopService-v6.json",
+    "title": "Hosted onboarding API"
+  },
+  {
+    "key": "adyen-com-legalentityservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/LegalEntityService-v3.json",
+    "title": "Legal Entity Management API"
+  },
+  {
+    "key": "adyen-com-managementnotificationservice-v1",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/ManagementNotificationService-v1.json",
+    "title": "Management Webhooks"
+  },
+  {
+    "key": "adyen-com-managementservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/ManagementService-v1.json",
+    "title": "Management API"
+  },
+  {
+    "key": "adyen-com-marketpaynotificationservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/master/json/MarketPayNotificationService-v6.json",
+    "title": "Classic Platforms - Notifications"
+  },
+  {
+    "key": "adyen-com-notificationconfigurationservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/NotificationConfigurationService-v6.json",
+    "title": "Notification Configuration API"
+  },
+  {
+    "key": "adyen-com-paymentservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/PaymentService-v68.json",
+    "title": "Adyen Payment API"
+  },
+  {
+    "key": "adyen-com-payoutservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/PayoutService-v68.json",
+    "title": "Adyen Payout API"
+  },
+  {
+    "key": "adyen-com-recurringservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/RecurringService-v68.json",
+    "title": "Adyen Recurring API"
+  },
+  {
+    "key": "adyen-com-storedvalueservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/StoredValueService-v46.json",
+    "title": "Adyen Stored Value API"
+  },
+  {
+    "key": "adyen-com-testcardservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/TestCardService-v1.json",
+    "title": "Adyen Test Cards API"
+  },
+  {
+    "key": "adyen-com-tfmapiservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/TfmAPIService-v1.json",
+    "title": "POS Terminal Management API"
+  },
+  {
+    "key": "adyen-com-transferservice",
+    "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/TransferService-v3.json",
+    "title": "Transfers API"
+  },
+  {
+    "key": "agco-ats-com",
+    "originalUrl": "https://secure.agco-ats.com:443/swagger/docs/v1",
+    "title": "AGCO API"
+  },
+  {
+    "key": "airbyte-local-config",
+    "originalUrl": "https://raw.githubusercontent.com/airbytehq/airbyte/master/airbyte-api/src/main/openapi/config.yaml",
+    "title": "Airbyte Configuration API"
+  },
+  {
+    "key": "alertersystem-com",
+    "originalUrl": "https://www.alertersystem.com/api/docs.json",
+    "title": "Alerter System API"
+  },
+  {
+    "key": "amadeus-com-amadeus-flight-price-analysis",
+    "originalUrl": "https://raw.githubusercontent.com/amadeus4dev/amadeus-open-api-specification/main/spec/json/FlightPriceAnalysis_v1_swagger_specification.json",
+    "title": "Flight Price Analysis API"
+  },
+  {
+    "key": "amadeus-com-amadeus-location-score",
+    "originalUrl": "https://raw.githubusercontent.com/amadeus4dev/amadeus-open-api-specification/main/spec/json/LocationScore_v1_swagger_specification.json",
+    "title": "Location Score"
+  },
+  {
+    "key": "amadeus-com-amadeus-travel-recommendations",
+    "originalUrl": "https://raw.githubusercontent.com/amadeus4dev/amadeus-open-api-specification/main/spec/json/TravelRecommendations_v1_swagger_specification.json",
+    "title": "Travel Recommendations API"
+  },
+  {
+    "key": "amadeus-com-amadeus-trip-parser",
+    "originalUrl": "https://raw.githubusercontent.com/amadeus4dev/amadeus-open-api-specification/main/spec/json/TripParser_v3_swagger_specification.json",
+    "title": "Trip Parser"
+  },
+  {
+    "key": "amentum-space-atmosphere",
+    "originalUrl": "https://atmosphere.amentum.space/openapi.json",
+    "title": "Atmosphere API"
+  },
+  {
+    "key": "amentum-space-aviation_radiation",
+    "originalUrl": "https://cosmicrays.amentum.space//openapi.json",
+    "title": "Aviation Radiation API"
+  },
+  {
+    "key": "amentum-space-global-magnet",
+    "originalUrl": "https://globalmagnet.amentum.space/wmm/openapi.json",
+    "title": "Geomag API"
+  },
+  {
+    "key": "amentum-space-gravity",
+    "originalUrl": "https://gravity.amentum.space//openapi.json",
+    "title": "Gravity API"
+  },
+  {
+    "key": "amentum-space-space_radiation",
+    "originalUrl": "https://spaceradiation.amentum.space/openapi.json",
+    "title": "Space Radiation API"
+  },
+  {
+    "key": "anchore-io",
+    "originalUrl": "https://raw.githubusercontent.com/anchore/anchore-engine/master/anchore_engine/services/apiext/swagger/swagger.yaml",
+    "title": "Anchore Engine API Server"
+  },
+  {
+    "key": "apache-org",
+    "originalUrl": "https://airflow.apache.org/docs/apache-airflow/stable/_specs/v1.yaml",
+    "title": "Airflow API (Stable)"
+  },
+  {
+    "key": "apache-org-airflow",
+    "originalUrl": "https://airflow.apache.org/docs/apache-airflow/stable/_specs/v1.yaml",
+    "title": "Airflow API (Stable)"
+  },
+  {
+    "key": "apache-org-qakka",
+    "originalUrl": "https://raw.githubusercontent.com/apache/usergrid-qakka/master/docs/swagger.json",
+    "title": "Qakka"
+  },
+  {
+    "key": "apacta-com",
+    "originalUrl": "http://apidoc.apacta.com/swagger.yaml",
+    "title": "Apacta"
+  },
+  {
+    "key": "api-ebay-com-sell-account",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/account/openapi/3/sell_account_v1_oas3.json",
+    "title": "Account API"
+  },
+  {
+    "key": "api-ebay-com-sell-analytics",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/analytics/openapi/3/sell_analytics_v1_oas3.json",
+    "title": " Seller Service Metrics API "
+  },
+  {
+    "key": "api-ebay-com-sell-compliance",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/compliance/openapi/3/sell_compliance_v1_oas3.json",
+    "title": "Compliance API"
+  },
+  {
+    "key": "api-gov-uk-vehicle-enquiry",
+    "originalUrl": "https://developer-portal.driver-vehicle-licensing.api.gov.uk/apis/vehicle-enquiry-service/v1.1.0-vehicle-enquiry-service.json",
+    "title": "Vehicle Enquiry API"
+  },
+  {
+    "key": "api-video",
+    "originalUrl": "https://docs.api.video/openapi/5f0d4679158b8d006ea6f068",
+    "title": "api.video"
+  },
+  {
+    "key": "api2cart-com",
+    "originalUrl": "https://app.api2cart.com/default/index/swagger-json",
+    "title": "Swagger API2Cart"
+  },
+  {
+    "key": "api2pdf-com",
+    "originalUrl": "https://app.swaggerhub.com/apiproxy/schema/file/api2pdf/api2pdf/1.0.0/swagger.json",
+    "title": "Api2Pdf - PDF Generation, Powered by AWS Lambda"
+  },
+  {
+    "key": "apicurio-local-registry",
+    "originalUrl": "https://raw.githubusercontent.com/Apicurio/apicurio-registry/master/app/src/main/resources-unfiltered/META-INF/resources/api-specifications/registry/v2/openapi.json",
+    "title": "Apicurio Registry API [v2]"
+  },
+  {
+    "key": "apidapp-com",
+    "originalUrl": "https://apidapp.s3.amazonaws.com/ApiDapp-Start-swagger-7/ApiDapp-Start-swagger+(7).json",
+    "title": "ApiDapp"
+  },
+  {
+    "key": "apideck-com-accounting",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/accounting.yml",
+    "title": "Accounting API"
+  },
+  {
+    "key": "apideck-com-ats",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/ats.yml",
+    "title": "ATS API"
+  },
+  {
+    "key": "apideck-com-connector",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/connector.yml",
+    "title": "Connector API"
+  },
+  {
+    "key": "apideck-com-crm",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/crm.yml",
+    "title": "CRM API"
+  },
+  {
+    "key": "apideck-com-customer-support",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/customer-support.yml",
+    "title": "Customer Support"
+  },
+  {
+    "key": "apideck-com-ecommerce",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/ecommerce.yml",
+    "title": "Ecommerce API"
+  },
+  {
+    "key": "apideck-com-ecosystem",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/ecosystem.yml",
+    "title": "Ecosystem API"
+  },
+  {
+    "key": "apideck-com-file-storage",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/file-storage.yml",
+    "title": "File storage API"
+  },
+  {
+    "key": "apideck-com-hris",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/hris.yml",
+    "title": "HRIS API"
+  },
+  {
+    "key": "apideck-com-issue-tracking",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/issue-tracking.yml",
+    "title": "Issue Tracking API"
+  },
+  {
+    "key": "apideck-com-lead",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/lead.yml",
+    "title": "Lead API"
+  },
+  {
+    "key": "apideck-com-pos",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/pos.yml",
+    "title": "POS API"
+  },
+  {
+    "key": "apideck-com-proxy",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/proxy.yml",
+    "title": "Proxy API"
+  },
+  {
+    "key": "apideck-com-sms",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/sms.yml",
+    "title": "SMS API"
+  },
+  {
+    "key": "apideck-com-vault",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/vault.yml",
+    "title": "Vault API"
+  },
+  {
+    "key": "apideck-com-webhook",
+    "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/webhook.yml",
+    "title": "Webhook API"
+  },
+  {
+    "key": "apigee-local-registry",
+    "originalUrl": "https://raw.githubusercontent.com/apigee/registry/main/openapi.yaml",
+    "title": "Registry API"
+  },
+  {
+    "key": "apigee-net-marketcheck-cars",
+    "originalUrl": "https://new-verticals-dot-marketcheck-gcp.uc.r.appspot.com/api-docs",
+    "title": "Marketcheck APIs"
+  },
+  {
+    "key": "apimatic-io",
+    "originalUrl": "https://raw.githubusercontent.com/Mermade/open_api_specifications/master/APIMATIC%20API%20Transformer/swagger.json",
+    "title": "APIMATIC API Transformer"
+  },
+  {
+    "key": "apis-guru",
+    "originalUrl": "https://api.apis.guru/v2/openapi.yaml",
+    "title": "APIs.guru"
+  },
+  {
+    "key": "apisetu-gov-in-aaharjh",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/aaharjh.yaml",
+    "title": "Department of Food, Public Distribution & Consumer Affairs (PDS), Jharkhand"
+  },
+  {
+    "key": "apisetu-gov-in-acko",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/acko.yaml",
+    "title": "Acko General Insurance Limited"
+  },
+  {
+    "key": "apisetu-gov-in-agtripura",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/agtripura.yaml",
+    "title": "Accountants General, Tripura"
+  },
+  {
+    "key": "apisetu-gov-in-aharakar",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/aharakar.yaml",
+    "title": "Food, Civil Supplies and Consumer Affairs Department, Karnataka"
+  },
+  {
+    "key": "apisetu-gov-in-aiimsmangalagiri",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/aiimsmangalagiri.yaml",
+    "title": "AIIMS Mangalagiri"
+  },
+  {
+    "key": "apisetu-gov-in-aiimspatna",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/aiimspatna.yaml",
+    "title": "AIIMS, Patna"
+  },
+  {
+    "key": "apisetu-gov-in-aiimsrishikesh",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/aiimsrishikesh.yaml",
+    "title": "AIIMS Rishikesh"
+  },
+  {
+    "key": "apisetu-gov-in-aktu",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/aktu.yaml",
+    "title": "Dr. A. P. J. Abdul Kalam Technical University, Lucknow, Uttar Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-apmcservices",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/apmcservices.yaml",
+    "title": "Department of Agricultural Marketing, Karnataka"
+  },
+  {
+    "key": "apisetu-gov-in-asrb",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/asrb.yaml",
+    "title": "Agricultural Scientists Recruitment Board"
+  },
+  {
+    "key": "apisetu-gov-in-bajajallianz",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/bajajallianz.yaml",
+    "title": "Bajaj Allianz General Insurance Company Ltd. (BAGIC)"
+  },
+  {
+    "key": "apisetu-gov-in-bajajallianzlife",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/bajajallianzlife.yaml",
+    "title": "Bajaj Allianz Life Insurance Company Ltd"
+  },
+  {
+    "key": "apisetu-gov-in-barti",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/barti.yaml",
+    "title": "Dr. Babasaheb Ambedkar Research & Training Institute, Maharashtra"
+  },
+  {
+    "key": "apisetu-gov-in-bharatpetroleum",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/bharatpetroleum.yaml",
+    "title": "Ministry of Petroleum and Natural Gas(BPCL)"
+  },
+  {
+    "key": "apisetu-gov-in-bhartiaxagi",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/bhartiaxagi.yaml",
+    "title": "Bharti AXA General Insurance Company Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-bhavishya",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/bhavishya.yaml",
+    "title": "Department of Pension and Pensioners Welfare"
+  },
+  {
+    "key": "apisetu-gov-in-biharboard",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/biharboard.yaml",
+    "title": "Bihar State Board of School Examination, Bihar"
+  },
+  {
+    "key": "apisetu-gov-in-bput",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/bput.yaml",
+    "title": "Biju Patnaik University Of Technology, Odisha"
+  },
+  {
+    "key": "apisetu-gov-in-bsehr",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/bsehr.yaml",
+    "title": "Haryana State Board of School Education, Haryana"
+  },
+  {
+    "key": "apisetu-gov-in-cbse",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/cbse.yaml",
+    "title": "Central Board of Secondary Education"
+  },
+  {
+    "key": "apisetu-gov-in-cgbse",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/cgbse.yaml",
+    "title": "Chhattisgarh State Board of Secondary Education, Chhattisgarh"
+  },
+  {
+    "key": "apisetu-gov-in-chennaicorp",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/chennaicorp.yaml",
+    "title": "Greater Chennai Corporation, Tamil Nadu"
+  },
+  {
+    "key": "apisetu-gov-in-chitkarauniversity",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/chitkarauniversity.yaml",
+    "title": "Chitkara University"
+  },
+  {
+    "key": "apisetu-gov-in-cholainsurance",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/cholainsurance.yaml",
+    "title": "Cholamandalam MS General Insurance Company Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-cisce",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/cisce.yaml",
+    "title": "CISCE"
+  },
+  {
+    "key": "apisetu-gov-in-civilsupplieskerala",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/civilsupplieskerala.yaml",
+    "title": "Civil Supplies Department, Kerala"
+  },
+  {
+    "key": "apisetu-gov-in-cpctmp",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/cpctmp.yaml",
+    "title": "CPCT-MAPIT, Madhya Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-csc",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/csc.yaml",
+    "title": "Common Service Centre (CSC)"
+  },
+  {
+    "key": "apisetu-gov-in-dbraitandaman",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/dbraitandaman.yaml",
+    "title": "Dr. B.R. Ambedkar Institute of Technology,Andaman & Nicobar Islands"
+  },
+  {
+    "key": "apisetu-gov-in-dgecerttn",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/dgecerttn.yaml",
+    "title": "Tamil Nadu State Board (Tamil Nadu Directorate of Government Examinations), Tamil Nadu"
+  },
+  {
+    "key": "apisetu-gov-in-dgft",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/dgft.yaml",
+    "title": "Importer-Exporter Details API"
+  },
+  {
+    "key": "apisetu-gov-in-dhsekerala",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/dhsekerala.yaml",
+    "title": "BOARD OF HIGHER SECONDARY EXAMINATION, KERALA, Kerala"
+  },
+  {
+    "key": "apisetu-gov-in-ditarunachal",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ditarunachal.yaml",
+    "title": "Department of IT and Communication, Arunachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-ditch",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ditch.yaml",
+    "title": "eDistrict Chandigarh, Chandigarh"
+  },
+  {
+    "key": "apisetu-gov-in-dittripura",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/dittripura.yaml",
+    "title": "Directorate of Information Technology, Government of Tripura, Tripura"
+  },
+  {
+    "key": "apisetu-gov-in-duexam",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/duexam.yaml",
+    "title": "University Of Delhi"
+  },
+  {
+    "key": "apisetu-gov-in-edistrictandaman",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/edistrictandaman.yaml",
+    "title": "eDistrict Andaman & Nicobar Islands, Andaman & Nicobar"
+  },
+  {
+    "key": "apisetu-gov-in-edistricthp",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/edistricthp.yaml",
+    "title": "eDistrict Himachal Pradesh, Himachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-edistrictkerala",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/edistrictkerala.yaml",
+    "title": "eDistrict Kerala, Kerala"
+  },
+  {
+    "key": "apisetu-gov-in-edistrictodisha",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/edistrictodisha.yaml",
+    "title": "eDistrict Odisha, Odisha"
+  },
+  {
+    "key": "apisetu-gov-in-edistrictodishasp",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/edistrictodishasp.yaml",
+    "title": "eDistrict Odisha ServicePlus, Odisha"
+  },
+  {
+    "key": "apisetu-gov-in-edistrictpb",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/edistrictpb.yaml",
+    "title": "Punjab State eGovernance Society, Punjab"
+  },
+  {
+    "key": "apisetu-gov-in-edistrictup",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/edistrictup.yaml",
+    "title": "eDistrict Uttar Pradesh, Uttar Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-ehimapurtihp",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ehimapurtihp.yaml",
+    "title": "Department of Food and Civil Supplies Himachal Pradesh, Himachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-enibandhanjh",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/enibandhanjh.yaml",
+    "title": "Revenue, Registration & Land Reforms Department, Jharkhand"
+  },
+  {
+    "key": "apisetu-gov-in-epfindia",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/epfindia.yaml",
+    "title": "Employees' Provident Fund Organization"
+  },
+  {
+    "key": "apisetu-gov-in-epramanhp",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/epramanhp.yaml",
+    "title": "Himachal Pradesh Department of Revenue, Himachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-eservicearunachal",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/eservicearunachal.yaml",
+    "title": "eService (eDistrict), Arunachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-fsdhr",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/fsdhr.yaml",
+    "title": "Food and Supplies Department, Haryana"
+  },
+  {
+    "key": "apisetu-gov-in-futuregenerali",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/futuregenerali.yaml",
+    "title": "Future Generali Total Insurance Solutions"
+  },
+  {
+    "key": "apisetu-gov-in-gadbih",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/gadbih.yaml",
+    "title": "General Administration Department, Bihar"
+  },
+  {
+    "key": "apisetu-gov-in-gauhati",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/gauhati.yaml",
+    "title": "Gauhati University"
+  },
+  {
+    "key": "apisetu-gov-in-gbshse",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/gbshse.yaml",
+    "title": "Goa State Board of Secondary and Higher Secondary Education, Goa"
+  },
+  {
+    "key": "apisetu-gov-in-geetanjaliuniv",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/geetanjaliuniv.yaml",
+    "title": "Geetanjali University, Udaipur"
+  },
+  {
+    "key": "apisetu-gov-in-gmch",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/gmch.yaml",
+    "title": "GMCH, Chandigarh"
+  },
+  {
+    "key": "apisetu-gov-in-goawrd",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/goawrd.yaml",
+    "title": "Goa Water Resources Department, Goa"
+  },
+  {
+    "key": "apisetu-gov-in-godigit",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/godigit.yaml",
+    "title": "Go Digit General Insurance Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-gujaratvidyapith",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/gujaratvidyapith.yaml",
+    "title": "Gujarat Vidyapith, Ahmedabad"
+  },
+  {
+    "key": "apisetu-gov-in-hindustanpetroleum",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/hindustanpetroleum.yaml",
+    "title": "Ministry of Petroleum and Natural Gas (HPCL)"
+  },
+  {
+    "key": "apisetu-gov-in-hpayushboard",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/hpayushboard.yaml",
+    "title": "Board of Ayurvedic and Unani Systems of Medicine, Himachal Pradesh, Himachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-hpbose",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/hpbose.yaml",
+    "title": "Himachal Pradesh Board of School Education, Himachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-hppanchayat",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/hppanchayat.yaml",
+    "title": "Panchayati Raj Department, Himachal Pradesh, Himachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-hpsbys",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/hpsbys.yaml",
+    "title": "HP Swasthya Bima Yojna Society, Himachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-hpsssb",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/hpsssb.yaml",
+    "title": "HP Staff Selection Commission - HPSSC - Himachal Pradesh, Himachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-hptechboard",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/hptechboard.yaml",
+    "title": "Himachal Pradesh Takniki Shiksha Board Dharamshala, Himachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-hsbte",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/hsbte.yaml",
+    "title": "Haryana State Board of Technical Education, Haryana"
+  },
+  {
+    "key": "apisetu-gov-in-hsscboardmh",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/hsscboardmh.yaml",
+    "title": "Maharashtra State Board of Secondary and Higher Secondary Education, Maharashtra"
+  },
+  {
+    "key": "apisetu-gov-in-icicilombard",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/icicilombard.yaml",
+    "title": "ICICI Lombard GIC Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-iciciprulife",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/iciciprulife.yaml",
+    "title": "ICICI Prudential Life Insurance Company Ltd"
+  },
+  {
+    "key": "apisetu-gov-in-icsi",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/icsi.yaml",
+    "title": "Institute of Company Secretaries of India"
+  },
+  {
+    "key": "apisetu-gov-in-igrmaharashtra",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/igrmaharashtra.yaml",
+    "title": "Department of Registration & Stamps, Maharashtra"
+  },
+  {
+    "key": "apisetu-gov-in-insvalsura",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/insvalsura.yaml",
+    "title": "Indian Navy (INS Valsura)"
+  },
+  {
+    "key": "apisetu-gov-in-iocl",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/iocl.yaml",
+    "title": "Ministry of Petroleum and Natural Gas (IOCL)"
+  },
+  {
+    "key": "apisetu-gov-in-issuer",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/issuer.yaml",
+    "title": "DigiLocker Issuer APIs"
+  },
+  {
+    "key": "apisetu-gov-in-jac",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/jac.yaml",
+    "title": "Jharkhand State Board (Jharkhand Academic Council), Jharkhand"
+  },
+  {
+    "key": "apisetu-gov-in-jeecup",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/jeecup.yaml",
+    "title": "Joint Entrance Examination Council, Uttar Pradesh, Uttar Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-jharsewa",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/jharsewa.yaml",
+    "title": "Jharsewa (eDistrict), Jharkhand"
+  },
+  {
+    "key": "apisetu-gov-in-jnrmand",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/jnrmand.yaml",
+    "title": "Jawaharlal Nehru Rajkeeya Mahavidyalaya"
+  },
+  {
+    "key": "apisetu-gov-in-juit",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/juit.yaml",
+    "title": "Jaypee University Of Information Technology, Waknaghat (H. P.)"
+  },
+  {
+    "key": "apisetu-gov-in-keralapsc",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/keralapsc.yaml",
+    "title": "KERALA PUBLIC SERVICE COMMISSION, Kerala"
+  },
+  {
+    "key": "apisetu-gov-in-kiadb",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/kiadb.yaml",
+    "title": "Karnataka Industrial Areas Development Board, Karnataka"
+  },
+  {
+    "key": "apisetu-gov-in-kkhsou",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/kkhsou.yaml",
+    "title": "Krishna Kanta Handique State Open University (KKHSOU), Assam"
+  },
+  {
+    "key": "apisetu-gov-in-kotakgeneralinsurance",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/kotakgeneralinsurance.yaml",
+    "title": "Kotak Mahindra General Insurance Company Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-kseebkr",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/kseebkr.yaml",
+    "title": "Karnataka Secondary Education Examination Board, Karnataka"
+  },
+  {
+    "key": "apisetu-gov-in-ktech",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ktech.yaml",
+    "title": "Department of IT and BT, Karnataka"
+  },
+  {
+    "key": "apisetu-gov-in-labourbih",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/labourbih.yaml",
+    "title": "Labour Resource Department, Bihar"
+  },
+  {
+    "key": "apisetu-gov-in-landrecordskar",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/landrecordskar.yaml",
+    "title": "Revenue Department - Land Records, Karnataka"
+  },
+  {
+    "key": "apisetu-gov-in-lawcollegeandaman",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/lawcollegeandaman.yaml",
+    "title": "Andaman Law College, Andaman & Nicobar"
+  },
+  {
+    "key": "apisetu-gov-in-legalmetrologyup",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/legalmetrologyup.yaml",
+    "title": "Department of Legal Metrology, Uttar Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-licindia",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/licindia.yaml",
+    "title": "Life Insurance Corporation of India"
+  },
+  {
+    "key": "apisetu-gov-in-maxlifeinsurance",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/maxlifeinsurance.yaml",
+    "title": "Max Life Insurance Co. Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-mbose",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/mbose.yaml",
+    "title": "Meghalaya Board of School Education, Tura, Meghalaya"
+  },
+  {
+    "key": "apisetu-gov-in-mbse",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/mbse.yaml",
+    "title": "Mizoram State Board of School education"
+  },
+  {
+    "key": "apisetu-gov-in-mcimindia",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/mcimindia.yaml",
+    "title": "Maharashtra Council of Indian Medicine"
+  },
+  {
+    "key": "apisetu-gov-in-meark",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/meark.yaml",
+    "title": "Meark Enterprise Pvt. Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-mizoramlesde",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/mizoramlesde.yaml",
+    "title": "Labour Employment, Skill Development and Entrepreneurship, Mizoram"
+  },
+  {
+    "key": "apisetu-gov-in-mizorampolice",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/mizorampolice.yaml",
+    "title": "Mizoram Police, Mizoram"
+  },
+  {
+    "key": "apisetu-gov-in-mpmsu",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/mpmsu.yaml",
+    "title": "Madhya Pradesh Medical Science University, Jabalpur M.P., Madhya Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-mppmc",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/mppmc.yaml",
+    "title": "Paramedical Council, Madhya Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-mriu",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/mriu.yaml",
+    "title": "Manav Rachna International Institute of Research & Studies"
+  },
+  {
+    "key": "apisetu-gov-in-msde",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/msde.yaml",
+    "title": "Ministry of Skill Development And Entrepreneurship"
+  },
+  {
+    "key": "apisetu-gov-in-municipaladmin",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/municipaladmin.yaml",
+    "title": "Directorate of Municipal Administration, Karnataka"
+  },
+  {
+    "key": "apisetu-gov-in-nationalinsurance",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/nationalinsurance.yaml",
+    "title": "National Insurance Company Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-ncert",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ncert.yaml",
+    "title": "NCERT"
+  },
+  {
+    "key": "apisetu-gov-in-negd",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/negd.yaml",
+    "title": "National e-Governance Division"
+  },
+  {
+    "key": "apisetu-gov-in-neilit",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/neilit.yaml",
+    "title": "National Institute of Electronics and Information Technology"
+  },
+  {
+    "key": "apisetu-gov-in-newindia",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/newindia.yaml",
+    "title": "New India Assurance Co. Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-niesbud",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/niesbud.yaml",
+    "title": "NIESBUD"
+  },
+  {
+    "key": "apisetu-gov-in-nios",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/nios.yaml",
+    "title": "National Institute of Open Schooling"
+  },
+  {
+    "key": "apisetu-gov-in-nitap",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/nitap.yaml",
+    "title": "National Institute Of Technology Arunachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-nitp",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/nitp.yaml",
+    "title": "National Institute of Technology, Patna"
+  },
+  {
+    "key": "apisetu-gov-in-npsailu",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/npsailu.yaml",
+    "title": "Sailu Municipal Council, Maharashtra"
+  },
+  {
+    "key": "apisetu-gov-in-nsdcindia",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/nsdcindia.yaml",
+    "title": "National Skill Development Corporation (NSDC)"
+  },
+  {
+    "key": "apisetu-gov-in-orientalinsurance",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/orientalinsurance.yaml",
+    "title": "The Oriental Insurance Co. Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-pan",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/pan.yaml",
+    "title": "Income Tax Department"
+  },
+  {
+    "key": "apisetu-gov-in-pareekshabhavanker",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/pareekshabhavanker.yaml",
+    "title": "Kerala State Board of Public Examinations, Kerala"
+  },
+  {
+    "key": "apisetu-gov-in-pblabour",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/pblabour.yaml",
+    "title": "Department of Labour, Govt of Punjab, Punjab"
+  },
+  {
+    "key": "apisetu-gov-in-pgimer",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/pgimer.yaml",
+    "title": "PGIMER, Chandigarh"
+  },
+  {
+    "key": "apisetu-gov-in-phedharyana",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/phedharyana.yaml",
+    "title": "Public Health Engineering Department, Haryana, Haryana"
+  },
+  {
+    "key": "apisetu-gov-in-pmjay",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/pmjay.yaml",
+    "title": "National Health Authority"
+  },
+  {
+    "key": "apisetu-gov-in-pramericalife",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/pramericalife.yaml",
+    "title": "Pramerica Life Insurance Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-pseb",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/pseb.yaml",
+    "title": "Punjab School Education Board, Punjab"
+  },
+  {
+    "key": "apisetu-gov-in-puekar",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/puekar.yaml",
+    "title": "Karnataka State Board (Department of Pre University Education), Karnataka"
+  },
+  {
+    "key": "apisetu-gov-in-punjabteched",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/punjabteched.yaml",
+    "title": "The Punjab State Board of Technical Education & Industrial Training"
+  },
+  {
+    "key": "apisetu-gov-in-rajasthandsa",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/rajasthandsa.yaml",
+    "title": "Social Justice and Empowerment Department, Rajasthan"
+  },
+  {
+    "key": "apisetu-gov-in-rajasthanrajeduboard",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/rajasthanrajeduboard.yaml",
+    "title": "Rajasthan Board of Secondary Education"
+  },
+  {
+    "key": "apisetu-gov-in-reliancegeneral",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/reliancegeneral.yaml",
+    "title": "Reliance General Insurance Company Ltd"
+  },
+  {
+    "key": "apisetu-gov-in-revenueassam",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/revenueassam.yaml",
+    "title": "Revenue & Disaster Management Department, Assam, Assam"
+  },
+  {
+    "key": "apisetu-gov-in-revenueodisha",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/revenueodisha.yaml",
+    "title": "Revenue Department, Odisha"
+  },
+  {
+    "key": "apisetu-gov-in-sainikwelfarepud",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/sainikwelfarepud.yaml",
+    "title": "Department of Sainik Welfare, Puducherry"
+  },
+  {
+    "key": "apisetu-gov-in-saralharyana",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/saralharyana.yaml",
+    "title": "Antyodaya Saral Haryana, Haryana"
+  },
+  {
+    "key": "apisetu-gov-in-sbigeneral",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/sbigeneral.yaml",
+    "title": "SBI General Insurance Company Ltd"
+  },
+  {
+    "key": "apisetu-gov-in-scvtup",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/scvtup.yaml",
+    "title": "UP State Council of Vocational Training, Uttar Pradesh, Uttar Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-sebaonline",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/sebaonline.yaml",
+    "title": "Assam State Board of Secondary Education, Assam"
+  },
+  {
+    "key": "apisetu-gov-in-statisticsrajasthan",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/statisticsrajasthan.yaml",
+    "title": "Directorate of Economics and Statistics Cum Chief Registrar, Rajasthan, Rajasthan"
+  },
+  {
+    "key": "apisetu-gov-in-swavlambancard",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/swavlambancard.yaml",
+    "title": "Department of Empowerment of Persons with Disabilities"
+  },
+  {
+    "key": "apisetu-gov-in-tataaia",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/tataaia.yaml",
+    "title": "Tata AIA Life Insurance Co. Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-tataaig",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/tataaig.yaml",
+    "title": "Tata AIG General Insurance Company Ltd."
+  },
+  {
+    "key": "apisetu-gov-in-tbse",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/tbse.yaml",
+    "title": "Tripura State Board of Secondary Education, Tripura"
+  },
+  {
+    "key": "apisetu-gov-in-transport",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transport.yaml",
+    "title": "Ministry of Road Transport and Highways"
+  },
+  {
+    "key": "apisetu-gov-in-transportan",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportan.yaml",
+    "title": "Transport Department, Andaman & Nicobar"
+  },
+  {
+    "key": "apisetu-gov-in-transportap",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportap.yaml",
+    "title": "Transport Department, Andhra  Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-transportar",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportar.yaml",
+    "title": "Transport Department, Arunachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-transportas",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportas.yaml",
+    "title": "Transport Department, Assam"
+  },
+  {
+    "key": "apisetu-gov-in-transportbr",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportbr.yaml",
+    "title": "Transport Department, Bihar"
+  },
+  {
+    "key": "apisetu-gov-in-transportcg",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportcg.yaml",
+    "title": "Transport Department, Chhattisgarh"
+  },
+  {
+    "key": "apisetu-gov-in-transportdd",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportdd.yaml",
+    "title": "Transport Department, Daman & Diu"
+  },
+  {
+    "key": "apisetu-gov-in-transportdh",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportdh.yaml",
+    "title": "Transport Department, Dadra & Nagar Haveli"
+  },
+  {
+    "key": "apisetu-gov-in-transportdl",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportdl.yaml",
+    "title": "Transport Department, Delhi"
+  },
+  {
+    "key": "apisetu-gov-in-transportga",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportga.yaml",
+    "title": "Transport Department, Goa"
+  },
+  {
+    "key": "apisetu-gov-in-transportgj",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportgj.yaml",
+    "title": "Transport Department, Gujarat"
+  },
+  {
+    "key": "apisetu-gov-in-transporthp",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transporthp.yaml",
+    "title": "Transport Department, Himachal Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-transporthr",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transporthr.yaml",
+    "title": "Transport Department, Haryana"
+  },
+  {
+    "key": "apisetu-gov-in-transportjh",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportjh.yaml",
+    "title": "Transport Department, Jharkhand"
+  },
+  {
+    "key": "apisetu-gov-in-transportjk",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportjk.yaml",
+    "title": "Transport Department, Jammu & Kashmir"
+  },
+  {
+    "key": "apisetu-gov-in-transportka",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportka.yaml",
+    "title": "Karnataka Department of Transport, Karnataka"
+  },
+  {
+    "key": "apisetu-gov-in-transportkl",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportkl.yaml",
+    "title": "Motor Vehicle Department, Kerala"
+  },
+  {
+    "key": "apisetu-gov-in-transportld",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportld.yaml",
+    "title": "Transport Department, Lakshadweep"
+  },
+  {
+    "key": "apisetu-gov-in-transportmh",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportmh.yaml",
+    "title": "Motor Vehicle Department, Maharashtra"
+  },
+  {
+    "key": "apisetu-gov-in-transportml",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportml.yaml",
+    "title": "Transport Department, Meghalaya"
+  },
+  {
+    "key": "apisetu-gov-in-transportmn",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportmn.yaml",
+    "title": "Transport Department, Manipur"
+  },
+  {
+    "key": "apisetu-gov-in-transportmp",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportmp.yaml",
+    "title": "Transport Department, Madhya Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-transportmz",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportmz.yaml",
+    "title": "Transport Department, Mizoram"
+  },
+  {
+    "key": "apisetu-gov-in-transportnl",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportnl.yaml",
+    "title": "Motor Vehicle Department, Nagaland"
+  },
+  {
+    "key": "apisetu-gov-in-transportod",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportod.yaml",
+    "title": "Motor Vehicle Department, Odisha"
+  },
+  {
+    "key": "apisetu-gov-in-transportpb",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportpb.yaml",
+    "title": "Transport Department, Punjab"
+  },
+  {
+    "key": "apisetu-gov-in-transportpy",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportpy.yaml",
+    "title": "Transport Department, Puducherry"
+  },
+  {
+    "key": "apisetu-gov-in-transportrj",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportrj.yaml",
+    "title": "Transport Department, Rajasthan"
+  },
+  {
+    "key": "apisetu-gov-in-transportsk",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportsk.yaml",
+    "title": "Transport Department, Sikkim"
+  },
+  {
+    "key": "apisetu-gov-in-transporttn",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transporttn.yaml",
+    "title": "Transport Department, Tamil Nadu"
+  },
+  {
+    "key": "apisetu-gov-in-transporttr",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transporttr.yaml",
+    "title": "Transport Department, Tripura"
+  },
+  {
+    "key": "apisetu-gov-in-transportts",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportts.yaml",
+    "title": "State Transport Department, Telangana"
+  },
+  {
+    "key": "apisetu-gov-in-transportuk",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportuk.yaml",
+    "title": "Transport Department, Uttarakhand"
+  },
+  {
+    "key": "apisetu-gov-in-transportup",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportup.yaml",
+    "title": "Transport Department, Uttar Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-transportwb",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/transportwb.yaml",
+    "title": "Transport Department, West Bengal"
+  },
+  {
+    "key": "apisetu-gov-in-ubseuk",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ubseuk.yaml",
+    "title": "Uttarakhand State Board of School Education, Uttarakhand"
+  },
+  {
+    "key": "apisetu-gov-in-ucobank",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ucobank.yaml",
+    "title": "UCO Bank"
+  },
+  {
+    "key": "apisetu-gov-in-uiic",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/uiic.yaml",
+    "title": "United India Insurance Company Limited"
+  },
+  {
+    "key": "apisetu-gov-in-upmsp",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/upmsp.yaml",
+    "title": "UP State Board of High School and Intermediate Education, Uttar Pradesh"
+  },
+  {
+    "key": "apisetu-gov-in-vhseker",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/vhseker.yaml",
+    "title": "Board of Vocational Higher Secondary Examinations, Kerala"
+  },
+  {
+    "key": "apisetu-gov-in-vssut",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/vssut.yaml",
+    "title": "Veer Surendra Sai University Of Technology"
+  },
+  {
+    "key": "apispot-io-whois",
+    "originalUrl": "https://apispot.io/static/whois.yml",
+    "title": "Bulk WHOIS API"
+  },
+  {
+    "key": "apiz-ebay-com-commerce-identity",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/commerce/identity/openapi/3/commerce_identity_v1_oas3.json",
+    "title": "Identity API"
+  },
+  {
+    "key": "apiz-ebay-com-sell-finances",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/finances/openapi/3/sell_finances_v1_oas3.json",
+    "title": "eBay Finances API"
+  },
+  {
+    "key": "appcenter-ms",
+    "originalUrl": "https://api.appcenter.ms/preview/swagger.json",
+    "title": "App Center Client"
+  },
+  {
+    "key": "apple-com-app-store-connect",
+    "originalUrl": "app-store-connect-openapi-specification.json",
+    "title": "App Store Connect API"
+  },
+  {
+    "key": "apple-com-sirikit-cloud-media",
+    "originalUrl": "sirikit-cloud-media.json",
+    "title": "SiriKit Cloud Media"
+  },
+  {
+    "key": "apptigent-com",
+    "originalUrl": "https://portal.apptigent.com/sites/portal.apptigent.com/files/v3-powertools-developer-2021-1-01.json",
+    "title": "PowerTools Developer"
+  },
+  {
+    "key": "appwrite-io-client",
+    "originalUrl": "https://appwrite.io/specs/open-api3?platform=client",
+    "title": "Appwrite"
+  },
+  {
+    "key": "appwrite-io-server",
+    "originalUrl": "https://appwrite.io/specs/open-api3?platform=server",
+    "title": "Appwrite"
+  },
+  {
+    "key": "archive-org-search",
+    "originalUrl": "https://raw.githubusercontent.com/ArchiveLabs/api.archive.org/master/swagger/search.yaml",
+    "title": "Search Services"
+  },
+  {
+    "key": "archive-org-wayback",
+    "originalUrl": "https://raw.githubusercontent.com/ArchiveLabs/api.archive.org/master/swagger/wayback.json",
+    "title": "Wayback API"
+  },
+  {
+    "key": "arespass-net",
+    "originalUrl": "https://arespass.net/assets/arespassv1.0-openapi.yaml",
+    "title": "Arespass"
+  },
+  {
+    "key": "art19-com",
+    "originalUrl": "https://art19.com/swagger_json/external/content.json",
+    "title": "ART19 Content API Documentation"
+  },
+  {
+    "key": "asana-com",
+    "originalUrl": "https://raw.githubusercontent.com/Asana/developer-docs/master/defs/asana_oas.yaml",
+    "title": "Asana"
+  },
+  {
+    "key": "asuarez-dev-searchly",
+    "originalUrl": "https://raw.githubusercontent.com/AlbertSuarez/searchly/master/src/searchly/static/openapi/openapi_v1.yaml",
+    "title": "SearchLy API v1"
+  },
+  {
+    "key": "atlassian-com-jira",
+    "originalUrl": "https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json",
+    "title": "The Jira Cloud platform REST API"
+  },
+  {
+    "key": "authentiq-io",
+    "originalUrl": "https://raw.githubusercontent.com/AuthentiqID/authentiq-docs/master/docs/swagger/provider.yaml",
+    "title": "Authentiq Connect API"
+  },
+  {
+    "key": "autodealerdata-com",
+    "originalUrl": "https://api.autodealerdata.com/openapi.json",
+    "title": "CIS Automotive API"
+  },
+  {
+    "key": "axesso-de",
+    "originalUrl": "https://raw.githubusercontent.com/Axesso/axesso-java-client/master/swagger/axessor_api_def_swagger.yaml",
+    "title": "Axesso Api"
+  },
+  {
+    "key": "bbc-com",
+    "originalUrl": "https://raw.githubusercontent.com/Mermade/bbcparse/master/nitroApi/openapi.yaml",
+    "title": "BBC Nitro API"
+  },
+  {
+    "key": "bbci-co-uk",
+    "originalUrl": "https://raw.githubusercontent.com/Mermade/bbcparse/master/iblApi/openapi.yaml",
+    "title": "BBC iPlayer Business Layer"
+  },
+  {
+    "key": "bclaws-ca-bclaws",
+    "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/bclaws/bclaws.json",
+    "title": "BC Laws"
+  },
+  {
+    "key": "beezup-com",
+    "originalUrl": "https://api-docs.beezup.com/swagger.json",
+    "title": "BeezUP Merchant API "
+  },
+  {
+    "key": "betfair-com",
+    "originalUrl": "https://raw.githubusercontent.com/betfair/stream-api-sample-code/master/ESASwaggerSchema.json",
+    "title": "Betfair: Exchange Streaming API"
+  },
+  {
+    "key": "bhagavadgita-io",
+    "originalUrl": "http://bhagavadgita.io/apispec_1.json",
+    "title": "Bhagavad Gita API"
+  },
+  {
+    "key": "bigoven-com",
+    "originalUrl": "http://api2.bigoven.com/swagger/docs/partner",
+    "title": "1,000,000+ Recipe and Grocery List API (v2)"
+  },
+  {
+    "key": "billbee-io",
+    "originalUrl": "https://app.billbee.io/swagger/docs/v1",
+    "title": "Billbee API"
+  },
+  {
+    "key": "billingo-hu",
+    "originalUrl": "https://api.swaggerhub.com/apis/Billingo/Billingo/3.0.7",
+    "title": "Billingo API v3"
+  },
+  {
+    "key": "bintable-com",
+    "originalUrl": "https://bintable.com/api-files/openapi.json",
+    "title": "BIN Lookup API"
+  },
+  {
+    "key": "bitbucket-org",
+    "originalUrl": "https://bitbucket.org/api/swagger.json",
+    "title": "Bitbucket API"
+  },
+  {
+    "key": "biztoc-com",
+    "originalUrl": "https://ai.biztoc.com/openapi.yaml",
+    "title": "BizToc"
+  },
+  {
+    "key": "bluemix-net-containers",
+    "originalUrl": "http://ccsapi-doc.mybluemix.net/swagger.json",
+    "title": "IBM Containers API"
+  },
+  {
+    "key": "botify-com",
+    "originalUrl": "https://raw.githubusercontent.com/botify-labs/botify-sdk-js/master/swagger.json",
+    "title": "Botify API"
+  },
+  {
+    "key": "botschaft-local",
+    "originalUrl": "https://raw.githubusercontent.com/ttymck/botschaft/master/example/openapi.json",
+    "title": "FastAPI"
+  },
+  {
+    "key": "box-com",
+    "originalUrl": "https://opensource.box.com/box-openapi/openapi.json",
+    "title": "Box Platform API"
+  },
+  {
+    "key": "brex-io",
+    "originalUrl": "https://api.brex.io/docs/api-docs.json",
+    "title": "KYC API Documentation"
+  },
+  {
+    "key": "britbox-co-uk",
+    "originalUrl": "https://isl.britbox.co.uk/api/spec",
+    "title": "Rocket Services"
+  },
+  {
+    "key": "bulksms-com",
+    "originalUrl": "http://developer.bulksms.com/json/v1/swagger.yaml",
+    "title": "BulkSMS JSON REST API"
+  },
+  {
+    "key": "bungie-net",
+    "originalUrl": "https://raw.githubusercontent.com/Bungie-net/api/master/openapi-2.json",
+    "title": "Bungie.Net API"
+  },
+  {
+    "key": "bunq-com",
+    "originalUrl": "https://raw.githubusercontent.com/bunq/doc/master/swagger.json",
+    "title": "bunq API"
+  },
+  {
+    "key": "byautomata-io",
+    "originalUrl": "https://s3.amazonaws.com/api.specs.byautomata.io/automata_api.json",
+    "title": "Automata Market Intelligence API"
+  },
+  {
+    "key": "c19qrserver-local",
+    "originalUrl": "https://raw.githubusercontent.com/aijaz/qrCodeSigninServer/main/openapi.yaml",
+    "title": "API for the COVID-19 Tracking QR Code Signin Server."
+  },
+  {
+    "key": "callfire-com",
+    "originalUrl": "https://www.callfire.com/v2/api-docs/swagger.json",
+    "title": "CallFire API Documentation"
+  },
+  {
+    "key": "calorieninjas-com",
+    "originalUrl": "https://www.calorieninjas.com/openapi.json",
+    "title": "CalorieNinjas"
+  },
+  {
+    "key": "canada-holidays-ca",
+    "originalUrl": "https://api.swaggerhub.com/apis/pcraig3/canada-holidays/1.8.0",
+    "title": "Canada Holidays API"
+  },
+  {
+    "key": "cdcgov-local-prime-data-hub",
+    "originalUrl": "https://raw.githubusercontent.com/CDCgov/prime-reportstream/master/prime-router/docs/openapi.yml",
+    "title": "Prime ReportStream"
+  },
+  {
+    "key": "change-local",
+    "originalUrl": "https://change-api-definition.s3-us-west-1.amazonaws.com/swagger.yaml",
+    "title": "API V1"
+  },
+  {
+    "key": "chompthis-com",
+    "originalUrl": "https://raw.githubusercontent.com/chompfoods/examples/master/chomp-Chomp-1.0.0-oas3-swagger.json",
+    "title": "Chomp Food Database API Documentation"
+  },
+  {
+    "key": "circl-lu-hashlookup",
+    "originalUrl": "https://hashlookup.circl.lu/swagger.json",
+    "title": "hashlookup CIRCL API"
+  },
+  {
+    "key": "circleci-com",
+    "originalUrl": "https://raw.githubusercontent.com/kamikazechaser/spec-circleci/master/swagger.yml",
+    "title": "CircleCI REST API"
+  },
+  {
+    "key": "circuitsandbox-net",
+    "originalUrl": "https://circuitsandbox.net/rest/v2/swagger",
+    "title": "REST API Version 2"
+  },
+  {
+    "key": "clever-cloud-com",
+    "originalUrl": "https://www.clever-cloud.com/doc/api/swagger.json",
+    "title": "Clever-Cloud API"
+  },
+  {
+    "key": "clever-com",
+    "originalUrl": "https://raw.githubusercontent.com/Clever/swagger-api/master/v1.2.yml",
+    "title": "Data API"
+  },
+  {
+    "key": "clickmeter-com",
+    "originalUrl": "http://api.v2.clickmeter.com.s3.amazonaws.com/docs/api-docs-v2.json",
+    "title": "ClickMeter API"
+  },
+  {
+    "key": "climate-com",
+    "originalUrl": "https://dev.fieldview.com/openapi/platform.yaml",
+    "title": "Climate FieldView Platform APIs"
+  },
+  {
+    "key": "climatekuul-com",
+    "originalUrl": "http://api.climatekuul.com/api-docs",
+    "title": "climateKuul live"
+  },
+  {
+    "key": "cloudrf-com",
+    "originalUrl": "https://api.cloudrf.com/swagger-ui/Cloud-RF_API2.0.yaml",
+    "title": "Cloud-RF API"
+  },
+  {
+    "key": "clubhouseapi-com",
+    "originalUrl": "https://raw.githubusercontent.com/zhuowei/ClubhouseAPI/main/doc/openapi.yaml",
+    "title": "Clubhouse API"
+  },
+  {
+    "key": "codat-io-accounting",
+    "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Accounting.json",
+    "title": "Accounting API"
+  },
+  {
+    "key": "codat-io-assess",
+    "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Assess.json",
+    "title": "Assess API"
+  },
+  {
+    "key": "codat-io-bank-feeds",
+    "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Bank-Feeds.json",
+    "title": "Bank Feeds API"
+  },
+  {
+    "key": "codat-io-banking",
+    "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Banking.json",
+    "title": "Banking API"
+  },
+  {
+    "key": "codat-io-commerce",
+    "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Commerce.json",
+    "title": "Commerce API"
+  },
+  {
+    "key": "codat-io-sync-for-commerce",
+    "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Sync-Commerce.json",
+    "title": "Sync for Commerce API"
+  },
+  {
+    "key": "codat-io-sync-for-expenses",
+    "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Expenses.json",
+    "title": "Codat Expense API"
+  },
+  {
+    "key": "codesearch-debian-net",
+    "originalUrl": "https://codesearch.debian.net/openapi.yaml",
+    "title": "Debian Code Search"
+  },
+  {
+    "key": "collegefootballdata-com",
+    "originalUrl": "https://api.collegefootballdata.com/api-docs.json",
+    "title": "College Football Data API"
+  },
+  {
+    "key": "color-pizza",
+    "originalUrl": "https://raw.githubusercontent.com/meodai/color-name-api/main/color-names-v1-OpenAPI.yml",
+    "title": "Color Name API"
+  },
+  {
+    "key": "combell-com",
+    "originalUrl": "https://api.combell.com/v2/documentation/swagger-v2.json",
+    "title": "Public Api"
+  },
+  {
+    "key": "configcat-com",
+    "originalUrl": "https://api.configcat.com/docs/v1/swagger.json",
+    "title": "ConfigCat Public Management API"
+  },
+  {
+    "key": "conjur-local",
+    "originalUrl": "https://raw.githubusercontent.com/cyberark/conjur-openapi-spec/main/spec/openapi.yml",
+    "title": "Conjur"
+  },
+  {
+    "key": "contentgroove-com",
+    "originalUrl": "https://api.contentgroove.com/api-docs/v1/openapi.json",
+    "title": "ContentGroove API"
+  },
+  {
+    "key": "contract-p-fit",
+    "originalUrl": "https://cfportal.contract-p.fit/swagger.json",
+    "title": "Contract.fit API"
+  },
+  {
+    "key": "contribly-com",
+    "originalUrl": "https://api.contribly.com/1/swagger.json",
+    "title": "Contribly"
+  },
+  {
+    "key": "corrently-io",
+    "originalUrl": "https://corrently.io/dist.yaml",
+    "title": "Corrently.io"
+  },
+  {
+    "key": "covid19-api-com",
+    "originalUrl": "https://covid19-api.com/docs.json",
+    "title": "COVID-19 data API"
+  },
+  {
+    "key": "cowin-gov-cin-cowincert",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/cowincert.yaml",
+    "title": "Co-WIN Certificate API"
+  },
+  {
+    "key": "cpy-re-peertube",
+    "originalUrl": "https://raw.githubusercontent.com/Chocobozzz/PeerTube/develop/support/doc/api/openapi.yaml",
+    "title": "PeerTube"
+  },
+  {
+    "key": "credas-co-uk-pi",
+    "originalUrl": "https://pi-api.credas.co.uk/swagger/v1/swagger.json",
+    "title": "Credas API"
+  },
+  {
+    "key": "crediwatch-com-covid19",
+    "originalUrl": "https://api-covid.crediwatch.com/openapi.json",
+    "title": "Crediwatch's Covid APIs"
+  },
+  {
+    "key": "crossbrowsertesting-com",
+    "originalUrl": "https://crossbrowsertesting.com/apidocs/definitions/screenshot-comparisons.json",
+    "title": "Crossbrowsertesting.com Screenshot Comparisons API"
+  },
+  {
+    "key": "d7networks-com",
+    "originalUrl": "https://api.swaggerhub.com/apis/Direct7Networks/D7SMS/1.0.2",
+    "title": "D7SMS"
+  },
+  {
+    "key": "daniweb-com",
+    "originalUrl": "https://www.daniweb.com/connect/developers/swagger",
+    "title": "DaniWeb Connect API"
+  },
+  {
+    "key": "dataflowkit-com",
+    "originalUrl": "https://api.dataflowkit.com/v1/swagger.yaml",
+    "title": "Dataflow Kit Web Scraper"
+  },
+  {
+    "key": "datasette-local",
+    "originalUrl": "https://datasette.io/-/chatgpt-openapi-schema.yml",
+    "title": "Datasette API"
+  },
+  {
+    "key": "departureboard-io",
+    "originalUrl": "https://api.departureboard.io/openapi.json",
+    "title": "departureboard.io API"
+  },
+  {
+    "key": "deutschebahn-com-reisezentren",
+    "originalUrl": "https://developer.deutschebahn.com/store/api-docs/DBOpenData/Reisezentren/v1",
+    "title": "Reisezentren-API"
+  },
+  {
+    "key": "dev-to",
+    "originalUrl": "https://raw.githubusercontent.com/forem/forem/main/swagger/v1/api_v1.json",
+    "title": "Forem API V1"
+  },
+  {
+    "key": "digitallocker-gov-in-authpartner",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/authpartner.yaml",
+    "title": "Authorized Partner API Specification"
+  },
+  {
+    "key": "digitalnz-org",
+    "originalUrl": "https://api.swaggerhub.com/apis/DigitalNZ/Records/3",
+    "title": "DigitalNZ API"
+  },
+  {
+    "key": "digitalocean-com",
+    "originalUrl": "https://raw.githubusercontent.com/digitalocean/openapi/main/specification/DigitalOcean-public.v2.yaml",
+    "title": "DigitalOcean API"
+  },
+  {
+    "key": "discourse-local",
+    "originalUrl": "http://docs.discourse.org/openapi.json",
+    "title": "Discourse API Documentation"
+  },
+  {
+    "key": "dnd5eapi-co",
+    "originalUrl": "https://www.dnd5eapi.co/swagger/openapi.json",
+    "title": "D&D 5e API"
+  },
+  {
+    "key": "docker-com-dvp",
+    "originalUrl": "https://raw.githubusercontent.com/docker/docs/main/docker-hub/api/dvp.yaml",
+    "title": "DVP Data API"
+  },
+  {
+    "key": "docker-com-engine",
+    "originalUrl": "https://raw.githubusercontent.com/docker/go-docker/master/api/swagger.yaml",
+    "title": "Docker Engine API"
+  },
+  {
+    "key": "docker-com-hub",
+    "originalUrl": "https://raw.githubusercontent.com/docker/docs/main/docker-hub/api/latest.yaml",
+    "title": "Docker HUB API"
+  },
+  {
+    "key": "docusign-net",
+    "originalUrl": "https://raw.githubusercontent.com/docusign/eSign-OpenAPI-Specification/master/esignature.rest.swagger-v2.1.json",
+    "title": "DocuSign REST API"
+  },
+  {
+    "key": "dodo-ac",
+    "originalUrl": "https://api.nookipedia.com/static/doc.yaml",
+    "title": "Nookipedia"
+  },
+  {
+    "key": "domainsdb-info",
+    "originalUrl": "https://api.domains-index.com/v1/swagger.json",
+    "title": "Domains-Index API"
+  },
+  {
+    "key": "doqs-dev",
+    "originalUrl": "https://api.doqs.dev/v1/openapi.json",
+    "title": "doqs.dev | PDF filling API"
+  },
+  {
+    "key": "dracoon-team",
+    "originalUrl": "https://dracoon.team/api/spec_v4/",
+    "title": "DRACOON API"
+  },
+  {
+    "key": "drchrono-com",
+    "originalUrl": "https://drchrono.com/openapi-schema",
+    "title": ""
+  },
+  {
+    "key": "easypdfserver-com",
+    "originalUrl": "https://www.easypdfserver.com/openapi.yaml",
+    "title": "EasyPDFServer"
+  },
+  {
+    "key": "ebay-com-buy-deal",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/buy/deal/openapi/3/buy_deal_v1_oas3.json",
+    "title": "Deal API"
+  },
+  {
+    "key": "ebay-com-buy-feed",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/buy/feed/openapi/2/buy_feed_v1_beta_oas2.json",
+    "title": "Item Feed Service"
+  },
+  {
+    "key": "ebay-com-buy-marketing",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/buy/marketing/openapi/2/buy_marketing_v1_beta_oas2.json",
+    "title": "Buy Marketing API"
+  },
+  {
+    "key": "ebay-com-commerce-catalog",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/commerce/catalog/openapi/3/commerce_catalog_v1_beta_oas3.json",
+    "title": "Catalog API"
+  },
+  {
+    "key": "ebay-com-commerce-charity",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/commerce/charity/openapi/3/commerce_charity_v1_oas3.json",
+    "title": "Charity API"
+  },
+  {
+    "key": "ebay-com-commerce-translation",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/commerce/translation/openapi/3/commerce_translation_v1_oas3.json",
+    "title": "Translation API"
+  },
+  {
+    "key": "ebay-com-developer-analytics",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/developer/analytics/openapi/3/developer_analytics_v1_beta_oas3.json",
+    "title": "Analytics API"
+  },
+  {
+    "key": "ebay-com-sell-account",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/account/openapi/3/sell_account_v1_oas3.json",
+    "title": "Account API"
+  },
+  {
+    "key": "ebay-com-sell-analytics",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/analytics/openapi/3/sell_analytics_v1_oas3.json",
+    "title": " Seller Service Metrics API "
+  },
+  {
+    "key": "ebay-com-sell-compliance",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/compliance/openapi/3/sell_compliance_v1_oas3.json",
+    "title": "Compliance API"
+  },
+  {
+    "key": "ebay-com-sell-feed",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/feed/openapi/3/sell_feed_v1_oas3.json",
+    "title": "Feed API"
+  },
+  {
+    "key": "ebay-com-sell-fulfillment",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/fulfillment/openapi/3/sell_fulfillment_v1_oas3.json",
+    "title": "Fulfillment API"
+  },
+  {
+    "key": "ebay-com-sell-listing",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/listing/openapi/3/sell_listing_v1_beta_oas3.json",
+    "title": "Listing API"
+  },
+  {
+    "key": "ebay-com-sell-logistics",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/logistics/openapi/3/sell_logistics_v1_oas3.json",
+    "title": "Logistics API"
+  },
+  {
+    "key": "ebay-com-sell-marketing",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/marketing/openapi/3/sell_marketing_v1_oas3.json",
+    "title": "Marketing API"
+  },
+  {
+    "key": "ebay-com-sell-metadata",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/metadata/openapi/3/sell_metadata_v1_oas3.json",
+    "title": "Metadata API"
+  },
+  {
+    "key": "ebay-com-sell-negotiation",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/negotiation/openapi/3/sell_negotiation_v1_oas3.json",
+    "title": "Negotiation API"
+  },
+  {
+    "key": "ebay-com-sell-recommendation",
+    "originalUrl": "https://developer.ebay.com/api-docs/master/sell/recommendation/openapi/3/sell_recommendation_v1_oas3.json",
+    "title": "Recommendation API"
+  },
+  {
+    "key": "edrv-io",
+    "originalUrl": "https://developers.edrv.io/openapi/5f15c43c87b0d6001ea97414",
+    "title": "eDRV API"
+  },
+  {
+    "key": "elevenlabs-io",
+    "originalUrl": "https://api.elevenlabs.io/openapi.json",
+    "title": "ElevenLabs API Documentation"
+  },
+  {
+    "key": "elmah-io",
+    "originalUrl": "https://api.elmah.io/swagger/docs/v3",
+    "title": "elmah.io API"
+  },
+  {
+    "key": "enode-io",
+    "originalUrl": "https://docs.enode.io/OpenAPI-Enode-v1.3.10.json",
+    "title": "Enode API"
+  },
+  {
+    "key": "envoice-in",
+    "originalUrl": "https://www.envoice.in/docs/api/v1/specification",
+    "title": "API v1.0.0"
+  },
+  {
+    "key": "eos-local",
+    "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/9b1349082ac4eca3660eaf6ad31e70d2/raw/88dacf4280e9aca949b5f4692904229fdf2457ff/swagger(1).json",
+    "title": "Net API"
+  },
+  {
+    "key": "esgenterprise-com",
+    "originalUrl": "https://www.esgenterprise.com/wp-content/api/ESGRatingAPI-Definition.json",
+    "title": "ESG Rating Data"
+  },
+  {
+    "key": "etherpad-local",
+    "originalUrl": "https://pads.mro.name/api/openapi.json",
+    "title": "Etherpad API"
+  },
+  {
+    "key": "etmdb-com",
+    "originalUrl": "https://etmdb.com/api/docs/endpoints/?format=openapi",
+    "title": "EtMDB REST API v1"
+  },
+  {
+    "key": "etsi-local-mec010-2_apppkgmgmt",
+    "originalUrl": "https://forge.etsi.org/rep/mec/gs010-2-app-pkg-lcm-api/raw/v2.1.1/MEC010-2_AppPkgMgmt.yaml",
+    "title": "ETSI GS MEC 010-2 - Part 2: Application lifecycle, rules and requirements management"
+  },
+  {
+    "key": "exavault-com",
+    "originalUrl": "https://exavault-website.cdn.prismic.io/exavault-website/2d2d871e-394d-433e-9305-f38b6656f279_evapi_2.0_public.yaml",
+    "title": "ExaVault"
+  },
+  {
+    "key": "exchangerate-api-com",
+    "originalUrl": "https://www.exchangerate-api.com/openapi.yaml",
+    "title": "ExchangeRate-API"
+  },
+  {
+    "key": "exlibrisgroup-com-tasklists",
+    "originalUrl": "https://developers.exlibrisgroup.com/wp-content/uploads/alma/openapi/tasklists.yaml",
+    "title": "Ex Libris APIs"
+  },
+  {
+    "key": "extendsclass-com-json-storage",
+    "originalUrl": "https://extendsclass.com/json-storage.openapi.json",
+    "title": "JSON storage"
+  },
+  {
+    "key": "extpose-com",
+    "originalUrl": "https://extpose.com/openapi.yaml",
+    "title": "Extpose"
+  },
+  {
+    "key": "exude-api-herokuapp-com",
+    "originalUrl": "http://uttesh.com/exude-api/exude-service-open-api.json",
+    "title": "Exude API Service"
+  },
+  {
+    "key": "facecheck-id",
+    "originalUrl": "https://facecheck.id/Swagger/v1/swagger.json",
+    "title": "Facial Recognition Reverse Image Face Search API"
+  },
+  {
+    "key": "fec-gov",
+    "originalUrl": "https://api.open.fec.gov/swagger/",
+    "title": "OpenFEC"
+  },
+  {
+    "key": "figshare-com",
+    "originalUrl": "http://docs.figshare.com/swagger.json",
+    "title": "Figshare API"
+  },
+  {
+    "key": "files-com",
+    "originalUrl": "https://app.files.com/api/rest/v1/swagger_doc.json",
+    "title": "Files.com API"
+  },
+  {
+    "key": "fire-com",
+    "originalUrl": "https://raw.githubusercontent.com/firefinancialservices/fire-business-api-openapi/master/fire-business-api-v1.yaml",
+    "title": "Fire Financial Services Business API"
+  },
+  {
+    "key": "firmalyzer-com-iotvas",
+    "originalUrl": "https://iotvas-api.firmalyzer.com/api/v1/openapi.json",
+    "title": "IoTVAS API"
+  },
+  {
+    "key": "flat-io",
+    "originalUrl": "https://raw.githubusercontent.com/FlatIO/api-reference/master/spec/swagger.yaml",
+    "title": "Flat API"
+  },
+  {
+    "key": "flickr-com",
+    "originalUrl": "https://raw.githubusercontent.com/flickr/flickr-api-swagger/master/dist/schema.json",
+    "title": "Flickr API Schema"
+  },
+  {
+    "key": "formapi-io",
+    "originalUrl": "https://docspring.com/api-docs/v1/swagger.json",
+    "title": "API v1"
+  },
+  {
+    "key": "fraudlabspro-com-fraud-detection",
+    "originalUrl": "https://app.swaggerhub.com/apiproxy/schema/file/fraudlabspro/fraudlabspro-fraud-detection/1.1/swagger.json",
+    "title": "FraudLabs Pro Fraud Detection"
+  },
+  {
+    "key": "fraudlabspro-com-sms-verification",
+    "originalUrl": "https://api.swaggerhub.com/apis/fraudlabs-pro/fraudlabspro-sms-verification/1.0",
+    "title": "FraudLabs Pro SMS Verification"
+  },
+  {
+    "key": "freetv-app-com",
+    "originalUrl": "https://www.freetv-app.com/openapi.json",
+    "title": "News Plugin"
+  },
+  {
+    "key": "fulfillment-com",
+    "originalUrl": "https://fulfillment.github.io/api/openapi.json",
+    "title": "Fulfillment.com APIv2"
+  },
+  {
+    "key": "fungenerators-com-barcode",
+    "originalUrl": "https://fungenerators.com/yaml/barcode.yaml",
+    "title": "Barcode API"
+  },
+  {
+    "key": "fungenerators-com-pirate",
+    "originalUrl": "https://fungenerators.com/yaml/pirate.yaml",
+    "title": "Pirates API"
+  },
+  {
+    "key": "fungenerators-com-riddle",
+    "originalUrl": "https://fungenerators.com/yaml/riddle.yaml",
+    "title": "Fun Generators API"
+  },
+  {
+    "key": "fungenerators-com-shakespeare",
+    "originalUrl": "https://fungenerators.com/yaml/shakespeare.yaml",
+    "title": "Shakespeare API"
+  },
+  {
+    "key": "fungenerators-com-uuid",
+    "originalUrl": "https://fungenerators.com/yaml/uuid.yaml",
+    "title": "UUID Generation API"
+  },
+  {
+    "key": "gambitcomm-local-mimic",
+    "originalUrl": "https://www.gambitcomm.com/docs/mimic.yaml",
+    "title": "MIMIC REST API"
+  },
+  {
+    "key": "gamesparks-net-game-details",
+    "originalUrl": "https://config2.gamesparks.net/restv2/admin/api/schema",
+    "title": "GameSparks Game Details API"
+  },
+  {
+    "key": "geodatasource-com",
+    "originalUrl": "https://app.swaggerhub.com/apiproxy/schema/file/geodatasource/geodatasource-location-search/1.0/swagger.yaml",
+    "title": "GeoDataSource Location Search"
+  },
+  {
+    "key": "gerermesaffaires-com",
+    "originalUrl": "https://api.gerermesaffaires.com/wp-content/uploads/2022/09/GmaAPI-GererMesAffairesAPI-1.0.6-swagger.json",
+    "title": "GererMesAffaires {REST:API}"
+  },
+  {
+    "key": "getpostman-com",
+    "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/f5dd7e7e712a4f2caa8f1783f1053dbc/raw/05fb7ae8b877b37d93413a0b8183bf60c2e1bdfe/postman-api.yaml",
+    "title": "Postman API"
+  },
+  {
+    "key": "getthedata-com-bng2latlong",
+    "originalUrl": "https://www.getthedata.com/bng2latlong/openapi",
+    "title": "bng2latlong"
+  },
+  {
+    "key": "gettyimages-com",
+    "originalUrl": "https://api.gettyimages.com/swagger/v3/swagger.json",
+    "title": "Getty Images"
+  },
+  {
+    "key": "giphy-com",
+    "originalUrl": "https://raw.githubusercontent.com/faragorn/open-api-specs/master/specs/giphy_api/1.0/index.yml",
+    "title": "Giphy API"
+  },
+  {
+    "key": "gitea-io",
+    "originalUrl": "https://try.gitea.io/swagger.v1.json",
+    "title": "Gitea API."
+  },
+  {
+    "key": "github-com",
+    "originalUrl": "https://eqivo.org/openapi.yaml",
+    "title": "Eqivo API"
+  },
+  {
+    "key": "github-com-api-github-com",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-api-github-com-2022-11-28",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.2022-11-28.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghec",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghec/ghec.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghec-2022-11-28",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghec/ghec.2022-11-28.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-2-18",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.18/ghes-2.18.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-2-19",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.19/ghes-2.19.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-2-20",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.20/ghes-2.20.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-2-21",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.21/ghes-2.21.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-2-22",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.22/ghes-2.22.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-3-0",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.0/ghes-3.0.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-3-1",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.1/ghes-3.1.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-3-2",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.2/ghes-3.2.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-3-3",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.3/ghes-3.3.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-3-4",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.4/ghes-3.4.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-3-5",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.5/ghes-3.5.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-3-6",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.6/ghes-3.6.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-3-7",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.7/ghes-3.7.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-ghes-3-8",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.8/ghes-3.8.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "github-com-github-ae",
+    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/github.ae/github.ae.json",
+    "title": "GitHub v3 REST API"
+  },
+  {
+    "key": "globalwinescore-com",
+    "originalUrl": "https://globalwinescore.docs.apiary.io/api-description-document",
+    "title": "GlobalWineScore API Documentation"
+  },
+  {
+    "key": "go-upc-com",
+    "originalUrl": "https://gist.githubusercontent.com/blizzrdof77/c3aa75284830179b44acc1aebd236e1a/raw/437d7bbb822f069efd700f1081a55f421bb3453d/go-upc-barcode-api-definition.yaml",
+    "title": "Go-UPC Barcode-Lookup API"
+  },
+  {
+    "key": "goog-io",
+    "originalUrl": "https://goog.io/openapi.json",
+    "title": "goog.io | Unoffical Google Search API"
+  },
+  {
+    "key": "google-home",
+    "originalUrl": "https://raw.githubusercontent.com/rithvikvibhu/GHLocalApi/master/GoogleHome.openapi3.json",
+    "title": "Google Home"
+  },
+  {
+    "key": "googleapis-com-admin",
+    "originalUrl": "https://admin.googleapis.com/$discovery/rest?version=reports_v1",
+    "title": "Admin SDK API"
+  },
+  {
+    "key": "googleapis-com-adsense",
+    "originalUrl": "https://adsense.googleapis.com/$discovery/rest?version=v2",
+    "title": "AdSense Management API"
+  },
+  {
+    "key": "googleapis-com-apigateway",
+    "originalUrl": "https://apigateway.googleapis.com/$discovery/rest?version=v1beta",
+    "title": "API Gateway API"
+  },
+  {
+    "key": "googleapis-com-apikeys",
+    "originalUrl": "https://apikeys.googleapis.com/$discovery/rest?version=v2",
+    "title": "API Keys API"
+  },
+  {
+    "key": "googleapis-com-automl",
+    "originalUrl": "https://automl.googleapis.com/$discovery/rest?version=v1beta1",
+    "title": "Cloud AutoML API"
+  },
+  {
+    "key": "googleapis-com-bigquery",
+    "originalUrl": "https://bigquery.googleapis.com/$discovery/rest?version=v2",
+    "title": "BigQuery API"
+  },
+  {
+    "key": "googleapis-com-bigtableadmin",
+    "originalUrl": "https://bigtableadmin.googleapis.com/$discovery/rest?version=v2",
+    "title": "Cloud Bigtable Admin API"
+  },
+  {
+    "key": "googleapis-com-chromemanagement",
+    "originalUrl": "https://chromemanagement.googleapis.com/$discovery/rest?version=v1",
+    "title": "Chrome Management API"
+  },
+  {
+    "key": "googleapis-com-cloudbuild",
+    "originalUrl": "https://cloudbuild.googleapis.com/$discovery/rest?version=v1beta1",
+    "title": "Cloud Build API"
+  },
+  {
+    "key": "googleapis-com-cloudchannel",
+    "originalUrl": "https://cloudchannel.googleapis.com/$discovery/rest?version=v1",
+    "title": "Cloud Channel API"
+  },
+  {
+    "key": "googleapis-com-contactcenterinsights",
+    "originalUrl": "https://contactcenterinsights.googleapis.com/$discovery/rest?version=v1",
+    "title": "Contact Center AI Insights API"
+  },
+  {
+    "key": "googleapis-com-content",
+    "originalUrl": "https://shoppingcontent.googleapis.com/$discovery/rest?version=v2.1",
+    "title": "Content API for Shopping"
+  },
+  {
+    "key": "googleapis-com-datalabeling",
+    "originalUrl": "https://datalabeling.googleapis.com/$discovery/rest?version=v1beta1",
+    "title": "Data Labeling API"
+  },
+  {
+    "key": "googleapis-com-dataproc",
+    "originalUrl": "https://dataproc.googleapis.com/$discovery/rest?version=v1",
+    "title": "Cloud Dataproc API"
+  },
+  {
+    "key": "googleapis-com-doubleclicksearch",
+    "originalUrl": "https://doubleclicksearch.googleapis.com/$discovery/rest?version=v2",
+    "title": "Search Ads 360 API"
+  },
+  {
+    "key": "googleapis-com-essentialcontacts",
+    "originalUrl": "https://essentialcontacts.googleapis.com/$discovery/rest?version=v1",
+    "title": "Essential Contacts API"
+  },
+  {
+    "key": "googleapis-com-file",
+    "originalUrl": "https://file.googleapis.com/$discovery/rest?version=v1beta1",
+    "title": "Cloud Filestore API"
+  },
+  {
+    "key": "googleapis-com-gameservices",
+    "originalUrl": "https://gameservices.googleapis.com/$discovery/rest?version=v1beta",
+    "title": "Game Services API"
+  },
+  {
+    "key": "googleapis-com-indexing",
+    "originalUrl": "https://indexing.googleapis.com/$discovery/rest?version=v3",
+    "title": "Indexing API"
+  },
+  {
+    "key": "googleapis-com-jobs",
+    "originalUrl": "https://jobs.googleapis.com/$discovery/rest?version=v4",
+    "title": "Cloud Talent Solution API"
+  },
+  {
+    "key": "googleapis-com-logging",
+    "originalUrl": "https://logging.googleapis.com/$discovery/rest?version=v2",
+    "title": "Cloud Logging API"
+  },
+  {
+    "key": "googleapis-com-managedidentities",
+    "originalUrl": "https://managedidentities.googleapis.com/$discovery/rest?version=v1beta1",
+    "title": "Managed Service for Microsoft Active Directory API"
+  },
+  {
+    "key": "googleapis-com-policytroubleshooter",
+    "originalUrl": "https://policytroubleshooter.googleapis.com/$discovery/rest?version=v1beta",
+    "title": "Policy Troubleshooter API"
+  },
+  {
+    "key": "googleapis-com-recaptchaenterprise",
+    "originalUrl": "https://recaptchaenterprise.googleapis.com/$discovery/rest?version=v1",
+    "title": "reCAPTCHA Enterprise API"
+  },
+  {
+    "key": "googleapis-com-redis",
+    "originalUrl": "https://redis.googleapis.com/$discovery/rest?version=v1beta1",
+    "title": "Google Cloud Memorystore for Redis API"
+  },
+  {
+    "key": "googleapis-com-remotebuildexecution",
+    "originalUrl": "https://admin-remotebuildexecution.googleapis.com/$discovery/rest?version=v1alpha",
+    "title": "Remote Build Execution API"
+  },
+  {
+    "key": "googleapis-com-reseller",
+    "originalUrl": "https://reseller.googleapis.com/$discovery/rest?version=v1",
+    "title": "Google Workspace Reseller API"
+  },
+  {
+    "key": "googleapis-com-resourcesettings",
+    "originalUrl": "https://resourcesettings.googleapis.com/$discovery/rest?version=v1",
+    "title": "Resource Settings API"
+  },
+  {
+    "key": "googleapis-com-securitycenter",
+    "originalUrl": "https://securitycenter.googleapis.com/$discovery/rest?version=v1p1alpha1",
+    "title": "Security Command Center API"
+  },
+  {
+    "key": "googleapis-com-shoppingcontent",
+    "originalUrl": "https://shoppingcontent.googleapis.com/$discovery/rest?version=v2",
+    "title": "Content API for Shopping"
+  },
+  {
+    "key": "googleapis-com-speech",
+    "originalUrl": "https://speech.googleapis.com/$discovery/rest?version=v2beta1",
+    "title": "Cloud Speech-to-Text API"
+  },
+  {
+    "key": "googleapis-com-sqladmin",
+    "originalUrl": "https://sqladmin.googleapis.com/$discovery/rest?version=v1",
+    "title": "Cloud SQL Admin API"
+  },
+  {
+    "key": "googleapis-com-vision",
+    "originalUrl": "https://vision.googleapis.com/$discovery/rest?version=v1p2beta1",
+    "title": "Cloud Vision API"
+  },
+  {
+    "key": "googleapis-com-webrisk",
+    "originalUrl": "https://webrisk.googleapis.com/$discovery/rest?version=v1",
+    "title": "Web Risk API"
+  },
+  {
+    "key": "googleapis-com-youtubeanalytics",
+    "originalUrl": "https://youtubeanalytics.googleapis.com/$discovery/rest?version=v2",
+    "title": "YouTube Analytics API"
+  },
+  {
+    "key": "gov-bc-ca-bcdc",
+    "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/bcdc/bcdc.json",
+    "title": "BC Data Catalogue API"
+  },
+  {
+    "key": "gov-bc-ca-bcgnws",
+    "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/bcgnws/bcgnws.json",
+    "title": "BC Geographical Names Web Service - REST API"
+  },
+  {
+    "key": "gov-bc-ca-geocoder",
+    "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/geocoder/geocoder-combined.json",
+    "title": "Geocoder REST API"
+  },
+  {
+    "key": "gov-bc-ca-geomark",
+    "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/geomark/geomark.json",
+    "title": "GeoMark Web Service REST API"
+  },
+  {
+    "key": "gov-bc-ca-gwells",
+    "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/gwells/gwells.json",
+    "title": "Groundwater Wells, Aquifers and Registry API"
+  },
+  {
+    "key": "gov-bc-ca-jobposting",
+    "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/jobposting/jobposting.json",
+    "title": "WorkBC Job Posting API"
+  },
+  {
+    "key": "gov-bc-ca-news",
+    "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/news/news-oas3.yaml",
+    "title": "BC Gov News API Service 1.0"
+  },
+  {
+    "key": "gov-bc-ca-open511",
+    "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/open511/open511_OAS3.json",
+    "title": "DriveBC's Open511 API"
+  },
+  {
+    "key": "gov-bc-ca-router",
+    "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/router/router.json",
+    "title": "BC Route Planner REST API"
+  },
+  {
+    "key": "graphhopper-com",
+    "originalUrl": "https://docs.graphhopper.com/openapi.json",
+    "title": "GraphHopper Directions API"
+  },
+  {
+    "key": "greip-io",
+    "originalUrl": "https://greip.io/OpenAPI.json",
+    "title": "Greip API"
+  },
+  {
+    "key": "groundhog-day-com",
+    "originalUrl": "https://api.swaggerhub.com/apis/pcraig3/groundhog-day-api/1.2.1",
+    "title": "Groundhog Day API"
+  },
+  {
+    "key": "gsmtasks-com",
+    "originalUrl": "https://raw.githubusercontent.com/oeklo/gsmtasks-schema/v2.4.13/GSMTasks.yaml",
+    "title": "GSMTasks Project API"
+  },
+  {
+    "key": "healthcare-gov",
+    "originalUrl": "https://raw.githubusercontent.com/APIs-guru/unofficial_openapi_specs/master/healthcare.gov/1.0.0/swagger.yaml",
+    "title": "Healthcare"
+  },
+  {
+    "key": "here-com-positioning",
+    "originalUrl": "https://developer.here.com/documentation/positioning-api/swagger/positioning-v2-external-spec.yaml",
+    "title": "HERE Network Positioning API v2"
+  },
+  {
+    "key": "here-com-tracking",
+    "originalUrl": "https://developer.here.com/documentation/tracking/swagger/swagger.json",
+    "title": "HERE Tracking"
+  },
+  {
+    "key": "hetzner-cloud",
+    "originalUrl": "https://docs.hetzner.cloud/spec.json",
+    "title": "Hetzner Cloud API"
+  },
+  {
+    "key": "hhs-gov",
+    "originalUrl": "https://api.digitalmedia.hhs.gov/swagger",
+    "title": "HHS Media Services API"
+  },
+  {
+    "key": "highwaysengland-co-uk",
+    "originalUrl": "http://webtris.highwaysengland.co.uk/api/swagger/docs/v1",
+    "title": "Highways England API"
+  },
+  {
+    "key": "hubapi-com-analytics",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/events/v3/send",
+    "title": "Custom Behavioral Events API"
+  },
+  {
+    "key": "hubapi-com-auth",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/oauth/v1",
+    "title": ""
+  },
+  {
+    "key": "hubapi-com-automation",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/automation/v4/actions",
+    "title": "Custom Workflow Actions"
+  },
+  {
+    "key": "hubapi-com-business units",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/business-units/v3",
+    "title": "Business Unit"
+  },
+  {
+    "key": "hubapi-com-cms",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/cms/v3/domains",
+    "title": "Domains"
+  },
+  {
+    "key": "hubapi-com-communication-preferences",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/communication-preferences/v3",
+    "title": "Subscriptions"
+  },
+  {
+    "key": "hubapi-com-conversations",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/conversations/v3/visitor-identification",
+    "title": "Visitor Identification"
+  },
+  {
+    "key": "hubapi-com-crm",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/extensions/sales-objects/v1/object-types",
+    "title": "CRM cards"
+  },
+  {
+    "key": "hubapi-com-events",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/events/v3/events",
+    "title": "HubSpot Events API"
+  },
+  {
+    "key": "hubapi-com-files",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/files/v3/files",
+    "title": "Files"
+  },
+  {
+    "key": "hubapi-com-marketing",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/marketing/v3/marketing-events-beta",
+    "title": "Marketing Events Extension"
+  },
+  {
+    "key": "hubapi-com-webhooks",
+    "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/webhooks/v3",
+    "title": "Webhooks API"
+  },
+  {
+    "key": "i-cue-solutions",
+    "originalUrl": "https://api.i-cue.solutions/swagger/v1/swagger.json",
+    "title": "Growth Services"
+  },
+  {
+    "key": "ibanapi-com",
+    "originalUrl": "https://api.ibanapi.com/docs/api-docs.json",
+    "title": "IBANAPI OpenApi Documentation"
+  },
+  {
+    "key": "id4i-de",
+    "originalUrl": "https://backend.id4i.de/docs/swagger.json",
+    "title": "ID4i API"
+  },
+  {
+    "key": "ideaconsult-net-enanomapper",
+    "originalUrl": "https://api.ideaconsult.net/management/apis/b5e2f290-5673-49da-a2f2-90567359da82/pages/ee38f795-655c-40b7-b8f7-95655cc0b7a1/content",
+    "title": "eNanoMapper database"
+  },
+  {
+    "key": "ideaconsult-net-nanoreg",
+    "originalUrl": "https://api.ideaconsult.net/management/apis/7d2c3a0e-ddc5-4553-ac3a-0eddc5e5532a/pages/161df366-7bae-410c-9df3-667bae510c7c/content",
+    "title": "eNanoMapper database"
+  },
+  {
+    "key": "ideal-postcodes-co-uk",
+    "originalUrl": "https://openapi.ideal-postcodes.dev/openapi.json",
+    "title": "API Reference - Ideal Postcodes"
+  },
+  {
+    "key": "impala-travel-hotels",
+    "originalUrl": "https://docs.impala.travel/api/v1/projects/impala/booking-api/nodes/spec/openapi.seller.yaml?branch=v1.003",
+    "title": "Impala Hotel Booking API"
+  },
+  {
+    "key": "increase-com",
+    "originalUrl": "https://increase.com/openapi.json",
+    "title": "Increase API"
+  },
+  {
+    "key": "influxdata-com",
+    "originalUrl": "blob:https://docs.influxdata.com/blobId",
+    "title": "Influx OSS API Service"
+  },
+  {
+    "key": "intellifi-nl",
+    "originalUrl": "https://intellifi-nl.github.io/brain-rest-api-spec/openapi.yml",
+    "title": "Brain Web API"
+  },
+  {
+    "key": "interzoid-com-convertcurrency",
+    "originalUrl": "https://oas.interzoid.com/api/convertcurrency.json",
+    "title": "Interzoid Convert Currency Rate API"
+  },
+  {
+    "key": "interzoid-com-getaddressmatch",
+    "originalUrl": "https://oas.interzoid.com/api/getaddressmatch.json",
+    "title": "Interzoid Get Address Match Similarity Key API"
+  },
+  {
+    "key": "interzoid-com-getareacodefromnumber",
+    "originalUrl": "https://oas.interzoid.com/api/getareacodefromnumber.json",
+    "title": "Interzoid Get Area Code From Number API"
+  },
+  {
+    "key": "interzoid-com-getcitymatch",
+    "originalUrl": "https://oas.interzoid.com/api/getcitymatch.json",
+    "title": "Interzoid Get City Match Similarity Key API"
+  },
+  {
+    "key": "interzoid-com-getcitystandard",
+    "originalUrl": "https://oas.interzoid.com/api/getcitystandard.json",
+    "title": "Interzoid City Data Standardization API"
+  },
+  {
+    "key": "interzoid-com-getcompanymatch",
+    "originalUrl": "https://oas.interzoid.com/api/getcompanymatch.json",
+    "title": "Interzoid Get Company Name Match Similarity Key API"
+  },
+  {
+    "key": "interzoid-com-getcountrymatch",
+    "originalUrl": "https://oas.interzoid.com/api/getcountrymatch.json",
+    "title": "Interzoid Get Country Match Similarity Key API"
+  },
+  {
+    "key": "interzoid-com-getcountrystandard",
+    "originalUrl": "https://oas.interzoid.com/api/getcountrystandard.json",
+    "title": "Interzoid Country Data Standardization API"
+  },
+  {
+    "key": "interzoid-com-getcurrencyrate",
+    "originalUrl": "https://oas.interzoid.com/api/getcurrencyrate.json",
+    "title": "Interzoid Get Currency Rate API"
+  },
+  {
+    "key": "interzoid-com-getemailinfo",
+    "originalUrl": "https://oas.interzoid.com/api/getemailinfo.json",
+    "title": "Interzoid Get Email Information API"
+  },
+  {
+    "key": "interzoid-com-getfullnamematch",
+    "originalUrl": "https://oas.interzoid.com/api/getfullnamematch.json",
+    "title": "Interzoid Get Full Name Match Similarity Key API"
+  },
+  {
+    "key": "interzoid-com-getfullnameparsedmatch",
+    "originalUrl": "https://oas.interzoid.com/api/getfullnameparsedmatch.json",
+    "title": "Interzoid Get Full Name Parsed Match Similarity Key API"
+  },
+  {
+    "key": "interzoid-com-getglobalnumberinfo",
+    "originalUrl": "https://oas.interzoid.com/api/getglobalnumberinfo.json",
+    "title": "Interzoid Get Global Phone Number Information API"
+  },
+  {
+    "key": "interzoid-com-getglobaltime",
+    "originalUrl": "https://oas.interzoid.com/api/getglobaltime.json",
+    "title": "Interzoid Get Global Time API"
+  },
+  {
+    "key": "interzoid-com-getstateabbreviation",
+    "originalUrl": "https://oas.interzoid.com/api/getstateabbreviation.json",
+    "title": "Interzoid State Data Standardization API"
+  },
+  {
+    "key": "interzoid-com-getweathercity",
+    "originalUrl": "https://oas.interzoid.com/api/getweathercity.json",
+    "title": "Interzoid Get Weather City API"
+  },
+  {
+    "key": "interzoid-com-getweatherzip",
+    "originalUrl": "https://oas.interzoid.com/api/getweatherzip.json",
+    "title": "Interzoid Get Weather By Zip Code API"
+  },
+  {
+    "key": "interzoid-com-getzipinfo",
+    "originalUrl": "https://oas.interzoid.com/api/getzipinfo.json",
+    "title": "Interzoid Zip Code Detailed Info API"
+  },
+  {
+    "key": "interzoid-com-globalpageload",
+    "originalUrl": "https://oas.interzoid.com/api/globalpageload.json",
+    "title": "Interzoid Global Page Load Performance API"
+  },
+  {
+    "key": "interzoid-com-lookupareacode",
+    "originalUrl": "https://oas.interzoid.com/api/lookupareacode.json",
+    "title": "Interzoid Get Area Code API"
+  },
+  {
+    "key": "ip2location-com-geolocation",
+    "originalUrl": "https://api.swaggerhub.com/apis/ip2location/ip2location-ip-geolocation/1.0",
+    "title": "IP2Location IP Geolocation"
+  },
+  {
+    "key": "ip2location-io",
+    "originalUrl": "https://api.swaggerhub.com/apis/ip2location/ip2location-io-ip-geolocation-api/1.0",
+    "title": "IP2Location.io IP Geolocation API"
+  },
+  {
+    "key": "ip2proxy-com",
+    "originalUrl": "https://api.swaggerhub.com/apis/ip2location/ip2proxy-proxy-detection/1.0",
+    "title": "IP2Proxy Proxy Detection"
+  },
+  {
+    "key": "ip2whois-com",
+    "originalUrl": "https://api.swaggerhub.com/apis/ip2whois/ip2whois-domain-lookup/1.0",
+    "title": "IP2WHOIS Domain Lookup"
+  },
+  {
+    "key": "ipinfodb-com",
+    "originalUrl": "https://api.swaggerhub.com/apis/ipinfodb/ipinfodb-ip-address-lookup/1.0",
+    "title": ""
+  },
+  {
+    "key": "iptwist-com",
+    "originalUrl": "https://iptwist.com/schema",
+    "title": "ipTwist"
+  },
+  {
+    "key": "iqualify-com",
+    "originalUrl": "https://api.iqualify.com/v1/management.json",
+    "title": "iQualify Management API"
+  },
+  {
+    "key": "isendpro-com",
+    "originalUrl": "https://apirest.isendpro.com/isendpro.json",
+    "title": "API iSendPro"
+  },
+  {
+    "key": "ix-api-net",
+    "originalUrl": "https://docs.ix-api.net/v2/ix-api-latest.json",
+    "title": "IX-API"
+  },
+  {
+    "key": "izettle-com-products",
+    "originalUrl": "https://products.izettle.com/openapi.json",
+    "title": "Product Library API"
+  },
+  {
+    "key": "jellyfin-local",
+    "originalUrl": "https://repo.jellyfin.org/releases/openapi/stable/jellyfin-openapi-10.7.0-rc2.json",
+    "title": "Jellyfin API"
+  },
+  {
+    "key": "journy-io",
+    "originalUrl": "https://api.journy.io/spec.json",
+    "title": "Developer documentation"
+  },
+  {
+    "key": "json2video-com",
+    "originalUrl": "https://json2video.com/docs/api/json2video-api.json",
+    "title": "JSON2Video API"
+  },
+  {
+    "key": "jumpseller-com",
+    "originalUrl": "https://api.jumpseller.com/swagger.json",
+    "title": "Jumpseller API"
+  },
+  {
+    "key": "just-eat-co-uk",
+    "originalUrl": "https://uk.api.just-eat.io/docs/openapi.json",
+    "title": "Just Eat UK"
+  },
+  {
+    "key": "keycloak-local",
+    "originalUrl": "https://raw.githubusercontent.com/ccouzens/keycloak-openapi/master/keycloak/10.0.json",
+    "title": "Keycloak Admin REST API"
+  },
+  {
+    "key": "keyserv-solutions",
+    "originalUrl": "https://keyserv.solutions/v1/spec.json",
+    "title": "KeyServ"
+  },
+  {
+    "key": "klarna-com-openai",
+    "originalUrl": "https://www.klarna.com/us/shopping/public/openai/v0/api-docs/",
+    "title": "Open AI Klarna product Api"
+  },
+  {
+    "key": "klarna-com-payments",
+    "originalUrl": "file:///home/mike/Downloads/swagger.json",
+    "title": "Klarna Payments API V1"
+  },
+  {
+    "key": "kumpeapps-com",
+    "originalUrl": "https://api.kumpeapps.com/python/swagger/swagger.yaml",
+    "title": "KumpeApps API"
+  },
+  {
+    "key": "lambdatest-com",
+    "originalUrl": "https://screenshot-public-api.s3.amazonaws.com/openapi.yaml",
+    "title": "LambdaTest Screenshots API Documentation"
+  },
+  {
+    "key": "letmc-com-customer",
+    "originalUrl": "https://live-api.letmc.com/swagger/docs/v2-customer",
+    "title": "agentOS Api V2, Customer Login Call Group"
+  },
+  {
+    "key": "letmc-com-diary",
+    "originalUrl": "https://live-api.letmc.com/swagger/docs/v3-diary",
+    "title": "agentOS API V3, Diary Call Group"
+  },
+  {
+    "key": "letmc-com-maintenance",
+    "originalUrl": "https://live-api.letmc.com/swagger/docs/v3-maintenance",
+    "title": "agentOS API V3, Maintenance Call Group"
+  },
+  {
+    "key": "lgtm-com",
+    "originalUrl": "https://lgtm.com/api/v1.0/openapi",
+    "title": "LGTM API specification"
+  },
+  {
+    "key": "libretranslate-local",
+    "originalUrl": "https://libretranslate.com/spec",
+    "title": "LibreTranslate"
+  },
+  {
+    "key": "linode-com",
+    "originalUrl": "https://www.linode.com/docs/api/openapi.yaml",
+    "title": "Linode API"
+  },
+  {
+    "key": "linqr-app",
+    "originalUrl": "https://linqr.app/openapi/openapi.json",
+    "title": "LinQR"
+  },
+  {
+    "key": "listennotes-com",
+    "originalUrl": "https://listen-api.listennotes.com/api/v2/openapi.yaml",
+    "title": "Listen API: Podcast Search, Directory, and Insights API"
+  },
+  {
+    "key": "ljaero-com-dflight",
+    "originalUrl": "https://dflight-api.ljaero.com/openapi.json",
+    "title": "DFlight API"
+  },
+  {
+    "key": "logoraisr-com",
+    "originalUrl": "https://docs.logoraisr.com/swagger.json",
+    "title": "API docs | logoraisr.com"
+  },
+  {
+    "key": "loket-nl",
+    "originalUrl": "https://developer.loket.nl/swagger.json",
+    "title": "Loket.nl API"
+  },
+  {
+    "key": "lufthansa-com-partner",
+    "originalUrl": "https://raw.githubusercontent.com/LufthansaOpenAPI/Swagger4Partners/master/LH-OpenAPI-Partners-Swagger2.json",
+    "title": "LH Partner API"
+  },
+  {
+    "key": "lufthansa-com-public",
+    "originalUrl": "https://raw.githubusercontent.com/LufthansaOpenAPI/Swagger/master/LH_public_API_swagger_2_0.json",
+    "title": "LH Public API"
+  },
+  {
+    "key": "magento-com",
+    "originalUrl": "https://devdocs.magento.com/redoc/2.2/latest-2.2.schema.json",
+    "title": "Magento B2B"
+  },
+  {
+    "key": "maif-local-otoroshi",
+    "originalUrl": "https://raw.githubusercontent.com/MAIF/otoroshi/master/docs/manual/code/swagger.json",
+    "title": "Otoroshi Admin API"
+  },
+  {
+    "key": "mailboxvalidator-com-checker",
+    "originalUrl": "https://api.swaggerhub.com/apis/mailboxvalidator/MailboxValidator-Free-Email-Checker/1.0.0",
+    "title": "MailboxValidator Free Email Checker"
+  },
+  {
+    "key": "mailboxvalidator-com-disposable",
+    "originalUrl": "https://api.swaggerhub.com/apis/mailboxvalidator/MailboxValidator-Disposable-Email-Checker/1.0.0",
+    "title": "MailboxValidator Disposable Email Checker"
+  },
+  {
+    "key": "mailboxvalidator-com-validation",
+    "originalUrl": "https://api.swaggerhub.com/apis/mailboxvalidator/MailboxValidator-Email-Validation/0.1",
+    "title": "MailboxValidator Email Validation"
+  },
+  {
+    "key": "mailscript-com",
+    "originalUrl": "http://api.mailscript.com/v2/swagger",
+    "title": "Mailscript"
+  },
+  {
+    "key": "mastodon-local",
+    "originalUrl": "https://raw.githubusercontent.com/oneslash/mastodon/feat/add-open-api-spec/api-specification.yml",
+    "title": "Mastodon API Specification (https://github.com/mastodon/mastodon)"
+  },
+  {
+    "key": "math-tools",
+    "originalUrl": "https://api.math.tools/yaml/math.tools.numbers.openapi.yaml",
+    "title": "Numbers API"
+  },
+  {
+    "key": "mbus-local",
+    "originalUrl": "https://raw.githubusercontent.com/packom/mbus-api/master/api/openapi.yaml",
+    "title": "M-Bus HTTPD API"
+  },
+  {
+    "key": "mcw-edu",
+    "originalUrl": "http://rest.rgd.mcw.edu/rgdws/v2/api-docs",
+    "title": "Rat Genome Database REST API"
+  },
+  {
+    "key": "medium-com",
+    "originalUrl": "blob:https://docs.mediumapi.com/blobId",
+    "title": "Medium API"
+  },
+  {
+    "key": "meraki-com",
+    "originalUrl": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec2.json",
+    "title": "Meraki Dashboard API"
+  },
+  {
+    "key": "mercure-local",
+    "originalUrl": "https://raw.githubusercontent.com/dunglas/mercure/main/spec/openapi.yaml",
+    "title": "The Mercure protocol"
+  },
+  {
+    "key": "mermade-org-uk-openapi-converter",
+    "originalUrl": "https://raw.githubusercontent.com/Mermade/openapi-webconverter/master/contract/openapi.json",
+    "title": "Swagger2OpenAPI Converter"
+  },
+  {
+    "key": "meteosource-com",
+    "originalUrl": "https://www.meteosource.com/api/v1/premium/openapi.json",
+    "title": "Interactive documentation for your Premium plan"
+  },
+  {
+    "key": "microcks-local",
+    "originalUrl": "https://raw.githubusercontent.com/microcks/microcks/master/api/microcks-openapi-v1.7.yaml",
+    "title": "Microcks API v1.7"
+  },
+  {
+    "key": "microsoft-com-cognitiveservices-computervision",
+    "originalUrl": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/cognitiveservices/data-plane/ComputerVision/stable/v2.1/ComputerVision.json",
+    "title": "Computer Vision Client"
+  },
+  {
+    "key": "microsoft-com-cognitiveservices-ocr",
+    "originalUrl": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/cognitiveservices/data-plane/ComputerVision/stable/v2.1/Ocr.json",
+    "title": "Computer Vision Client"
+  },
+  {
+    "key": "microsoft-com-cognitiveservices-prediction",
+    "originalUrl": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/cognitiveservices/data-plane/CustomVision/Prediction/stable/v3.0/Prediction.json",
+    "title": "Custom Vision Prediction Client"
+  },
+  {
+    "key": "microsoft-com-cognitiveservices-training",
+    "originalUrl": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/cognitiveservices/data-plane/CustomVision/Training/stable/v3.2/Training.json",
+    "title": "Custom Vision Training Client"
+  },
+  {
+    "key": "microsoft-com-graph",
+    "originalUrl": "https://raw.githubusercontent.com/microsoftgraph/msgraph-metadata/master/openapi/v1.0/openapi.yaml",
+    "title": "OData Service for namespace microsoft.graph"
+  },
+  {
+    "key": "microsoft-com-graph-beta",
+    "originalUrl": "https://raw.githubusercontent.com/microsoftgraph/msgraph-metadata/master/openapi/beta/openapi.yaml",
+    "title": "OData Service for namespace microsoft.graph"
+  },
+  {
+    "key": "mineskin-org",
+    "originalUrl": "https://api.mineskin.org/openapi.yml",
+    "title": "MineSkin API"
+  },
+  {
+    "key": "mist-com",
+    "originalUrl": "https://raw.githubusercontent.com/tmunzer/mist_openapi/main/mist.openapi.yml",
+    "title": "Mist API"
+  },
+  {
+    "key": "monarchinitiative-org",
+    "originalUrl": "https://api.monarchinitiative.org/api/swagger.json",
+    "title": "BioLink API"
+  },
+  {
+    "key": "motaword-com",
+    "originalUrl": "https://api.motaword.com/swagger",
+    "title": "MotaWord API"
+  },
+  {
+    "key": "mozilla-com-kinto",
+    "originalUrl": "https://firefox.settings.services.mozilla.com/v1/__api__",
+    "title": "Remote Settings PROD"
+  },
+  {
+    "key": "mtaa-api-herokuapp-com",
+    "originalUrl": "https://raw.githubusercontent.com/Kalebu/mtaa-docs/main/openapi.yaml",
+    "title": "Mtaa API Documentation"
+  },
+  {
+    "key": "namsor-com",
+    "originalUrl": "https://v2.namsor.com/NamSorAPIv2/api2/openapi.json",
+    "title": "NamSor API v2"
+  },
+  {
+    "key": "nbg-gr",
+    "originalUrl": "https://developer.nbg.gr/api.gateway/publicportal/sites/default/files/2020-09/NBGSwagger-account-and_transaction_api_specification_uk-v3.1.5-swagger%20%284%29.yaml",
+    "title": "Account and Transaction API Specification - UK"
+  },
+  {
+    "key": "ndhm-gov-in-ndhm-cm",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ndhm-cm.yaml",
+    "title": "Health Data Consent Manager"
+  },
+  {
+    "key": "ndhm-gov-in-ndhm-gateway",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ndhm-gateway.yaml",
+    "title": "Gateway"
+  },
+  {
+    "key": "ndhm-gov-in-ndhm-healthid",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ndhm-healthid.yaml",
+    "title": "Health ID Service"
+  },
+  {
+    "key": "ndhm-gov-in-ndhm-hip",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ndhm-hip.yaml",
+    "title": "Health Repository Provider Specifications for HIP"
+  },
+  {
+    "key": "ndhm-gov-in-ndhm-hiu",
+    "originalUrl": "https://apisetu.gov.in/api_specification_v8/ndhm-hiu.yaml",
+    "title": "Health Repository Provider Specifications for HIU"
+  },
+  {
+    "key": "nebl-io",
+    "originalUrl": "https://raw.githubusercontent.com/NeblioTeam/neblio-api-swagger-docs/master/swagger.yaml",
+    "title": "Neblio REST API Suite"
+  },
+  {
+    "key": "netatmo-net",
+    "originalUrl": "https://raw.githubusercontent.com/cbornet/netatmo-swagger-decl/master/spec/swagger.yaml",
+    "title": "Netatmo"
+  },
+  {
+    "key": "netlicensing-io",
+    "originalUrl": "http://io.labs64.com/NetLicensing-API/v2.x/netlicensing.json",
+    "title": "Labs64 NetLicensing RESTful API Test Center"
+  },
+  {
+    "key": "neutrinoapi-net",
+    "originalUrl": "https://www.neutrinoapi.com/api/swagger.json",
+    "title": "Neutrino API"
+  },
+  {
+    "key": "nexmo-com-account",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/account.yml",
+    "title": "Account API"
+  },
+  {
+    "key": "nexmo-com-application",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/application.yml",
+    "title": "Nexmo Application API"
+  },
+  {
+    "key": "nexmo-com-application-v2",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/application.v2.yml",
+    "title": "Application API"
+  },
+  {
+    "key": "nexmo-com-audit",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/audit.yml",
+    "title": "Audit API"
+  },
+  {
+    "key": "nexmo-com-conversation",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/conversation.yml",
+    "title": "Conversation API"
+  },
+  {
+    "key": "nexmo-com-conversation-v2",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/conversation.v2.yml",
+    "title": "Conversation API"
+  },
+  {
+    "key": "nexmo-com-conversion",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/conversion.yml",
+    "title": "Nexmo Conversion API"
+  },
+  {
+    "key": "nexmo-com-dispatch",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/dispatch.yml",
+    "title": "Dispatch API"
+  },
+  {
+    "key": "nexmo-com-external-accounts",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/external-accounts.yml",
+    "title": "External Accounts API"
+  },
+  {
+    "key": "nexmo-com-media",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/media.yml",
+    "title": "Media API"
+  },
+  {
+    "key": "nexmo-com-messages-olympus",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/messages-olympus.yml",
+    "title": "Messages API"
+  },
+  {
+    "key": "nexmo-com-number-insight",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/number-insight.yml",
+    "title": "Number Insight API"
+  },
+  {
+    "key": "nexmo-com-numbers",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/numbers.yml",
+    "title": "Numbers API"
+  },
+  {
+    "key": "nexmo-com-pricing",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/pricing.yml",
+    "title": "Pricing API"
+  },
+  {
+    "key": "nexmo-com-redact",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/redact.yml",
+    "title": "Redact API"
+  },
+  {
+    "key": "nexmo-com-reports",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/reports.yml",
+    "title": "Reports API"
+  },
+  {
+    "key": "nexmo-com-sms",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/sms.yml",
+    "title": "SMS API"
+  },
+  {
+    "key": "nexmo-com-subaccounts",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/subaccounts.yml",
+    "title": "Subaccounts API"
+  },
+  {
+    "key": "nexmo-com-verify",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/verify.yml",
+    "title": "Verify API"
+  },
+  {
+    "key": "nexmo-com-voice",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/voice.yml",
+    "title": "Voice API"
+  },
+  {
+    "key": "nfusionsolutions-biz",
+    "originalUrl": "https://api.nfusionsolutions.biz/swagger/1/swagger.json",
+    "title": "nFusion Solutions Market Data API"
+  },
+  {
+    "key": "nic-at-domainfinder",
+    "originalUrl": "https://domainfinder.nic.at/openapi/",
+    "title": "nic.at Domainfinder API Documentation"
+  },
+  {
+    "key": "nlpcloud-io",
+    "originalUrl": "https://nlpcloud.io/openapi.json",
+    "title": "NLPCloud"
+  },
+  {
+    "key": "noosh-com",
+    "originalUrl": "https://api.noosh.com/api/swagger.json",
+    "title": "Noosh API application"
+  },
+  {
+    "key": "nordigen-com",
+    "originalUrl": "https://ob.nordigen.com/api/swagger.json",
+    "title": "Nordigen Account Information Services API"
+  },
+  {
+    "key": "nrel-gov-transportation-incentives-laws",
+    "originalUrl": "http://developer.nrel.gov/docs/transportation/transportation-incentives-laws-v1/spec.yml",
+    "title": "Transportation Laws and Incentives"
+  },
+  {
+    "key": "nytimes-com-archive",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/archive_api/archive_api.json",
+    "title": "Archive API"
+  },
+  {
+    "key": "nytimes-com-article_search",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/article_search/article_search_v2.json",
+    "title": "Article Search API"
+  },
+  {
+    "key": "nytimes-com-books_api",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/books_api/books_api.json",
+    "title": "Books API"
+  },
+  {
+    "key": "nytimes-com-community",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/community/community_api_v3.json",
+    "title": "Community API"
+  },
+  {
+    "key": "nytimes-com-geo_api",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/geo_api/geo_api_v2.json",
+    "title": "Geographic API"
+  },
+  {
+    "key": "nytimes-com-most_popular_api",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/most_popular_api/most_popular_api_v2.json",
+    "title": "Most Popular API"
+  },
+  {
+    "key": "nytimes-com-movie_reviews",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/movie_reviews/movie_reviews_v2.json",
+    "title": "Movie Reviews API"
+  },
+  {
+    "key": "nytimes-com-semantic_api",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/semantic_api/semantic_api.json",
+    "title": "Semantic API"
+  },
+  {
+    "key": "nytimes-com-times_tags",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/times_tags/times_tags_v3.json",
+    "title": "TimesTags API"
+  },
+  {
+    "key": "nytimes-com-timeswire",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/timeswire/timeswire_v3.json",
+    "title": "Times Newswire API"
+  },
+  {
+    "key": "nytimes-com-top_stories",
+    "originalUrl": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/top_stories/top_stories_v2.json",
+    "title": "Top Stories"
+  },
+  {
+    "key": "obono-at",
+    "originalUrl": "https://app.obono.at/api/docs/api.yml",
+    "title": "obono RKSV API"
+  },
+  {
+    "key": "onsched-com-consumer",
+    "originalUrl": "https://sandbox-api.onsched.com/swagger/consumer/swagger.json",
+    "title": "OnSched Consumer API"
+  },
+  {
+    "key": "onsched-com-setup",
+    "originalUrl": "https://sandbox-api.onsched.com/swagger/setup/swagger.json",
+    "title": "OnSched Setup API"
+  },
+  {
+    "key": "onsched-com-utility",
+    "originalUrl": "https://sandbox-api.onsched.com/swagger/utility/swagger.json",
+    "title": "OnSched API Utility"
+  },
+  {
+    "key": "openai-com",
+    "originalUrl": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+    "title": "OpenAI API"
+  },
+  {
+    "key": "openapi-generator-tech",
+    "originalUrl": "http://api.openapi-generator.tech/api-docs",
+    "title": "OpenAPI Generator Online"
+  },
+  {
+    "key": "openaq-local",
+    "originalUrl": "https://docs.openaq.org/openapi.json",
+    "title": "OpenAQ"
+  },
+  {
+    "key": "openbanking-org-uk",
+    "originalUrl": "https://raw.githubusercontent.com/OpenBankingUK/opendata-api-spec-compiled/master/opendata-swagger.json",
+    "title": "Open Data API"
+  },
+  {
+    "key": "openbanking-org-uk-account-info-openapi",
+    "originalUrl": "https://raw.githubusercontent.com/OpenBankingUK/read-write-api-specs/master/dist/openapi/account-info-openapi.yaml",
+    "title": "Account and Transaction API Specification"
+  },
+  {
+    "key": "openbanking-org-uk-confirmation-funds-openapi",
+    "originalUrl": "https://raw.githubusercontent.com/OpenBankingUK/read-write-api-specs/master/dist/openapi/confirmation-funds-openapi.yaml",
+    "title": "Confirmation of Funds API Specification"
+  },
+  {
+    "key": "openbanking-org-uk-event-notifications-openapi",
+    "originalUrl": "https://raw.githubusercontent.com/OpenBankingUK/read-write-api-specs/master/dist/openapi/event-notifications-openapi.yaml",
+    "title": "Event Notification API Specification - TPP Endpoints"
+  },
+  {
+    "key": "openbanking-org-uk-payment-initiation-openapi",
+    "originalUrl": "https://raw.githubusercontent.com/OpenBankingUK/read-write-api-specs/master/dist/openapi/payment-initiation-openapi.yaml",
+    "title": "Payment Initiation API"
+  },
+  {
+    "key": "openbankingproject-ch",
+    "originalUrl": "https://raw.githubusercontent.com/openbankingproject-ch/obp-apis/master/swiss-ng-api.yaml",
+    "title": "Swiss NextGen Banking API-Framework"
+  },
+  {
+    "key": "openfigi-com",
+    "originalUrl": "https://api.openfigi.com/schema",
+    "title": "OpenFIGI API"
+  },
+  {
+    "key": "openindex-ai",
+    "originalUrl": "https://retriever.openindex.ai/.well-known/openapi.yaml",
+    "title": "OpenIndex Retrieval Plugin API"
+  },
+  {
+    "key": "openlinksw-com-osdb",
+    "originalUrl": "https://osdb.openlinksw.com/osdb/osdb_rest_api.openapi.json",
+    "title": "OSDB REST API v1"
+  },
+  {
+    "key": "openpolicy-local",
+    "originalUrl": "https://raw.githubusercontent.com/open-policy-agent/contrib/master/open_api/openapi.yaml",
+    "title": "Open Policy Agent (OPA) REST API"
+  },
+  {
+    "key": "openstates-org",
+    "originalUrl": "https://v3.openstates.org/openapi.json",
+    "title": "Open States API v3"
+  },
+  {
+    "key": "opensuse-org-obs",
+    "originalUrl": "https://build.opensuse.org/apidocs-new/OBS-v2.10.50.yaml",
+    "title": "Open Build Service API"
+  },
+  {
+    "key": "opentargets-io",
+    "originalUrl": "http://api.opentargets.io/v3/platform/swagger",
+    "title": "Open Targets Platform REST API"
+  },
+  {
+    "key": "openuv-io",
+    "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/77bb693d4cf9213909527b9cc4566609/raw/9febc5d16d8d162c93f3503510ce0808a8075d5b/openuv.yaml",
+    "title": "OpenUV - Global Real-Time UV Index Forecast API"
+  },
+  {
+    "key": "optimade-local",
+    "originalUrl": "https://raw.githubusercontent.com/Materials-Consortia/OPTIMADE/master/schemas/openapi_schema.json",
+    "title": "OPTIMADE API"
+  },
+  {
+    "key": "orbit-love",
+    "originalUrl": "https://app.orbit.love/api-docs/v1/swagger.json",
+    "title": "Orbit API"
+  },
+  {
+    "key": "orthanc-server-com",
+    "originalUrl": "https://api.orthanc-server.com/orthanc-openapi.json",
+    "title": "Orthanc API"
+  },
+  {
+    "key": "osf-io",
+    "originalUrl": "http://developer.osf.io/swagger.json",
+    "title": "OSF APIv2 Documentation"
+  },
+  {
+    "key": "oxforddictionaries-com",
+    "originalUrl": "https://developer.oxforddictionaries.com/swagger/spec/public_doc_guest.json",
+    "title": "Oxford Dictionaries"
+  },
+  {
+    "key": "pandascore-co",
+    "originalUrl": "blob:https://developers.pandascore.co/blobId",
+    "title": "PandaScore REST API for All Videogames"
+  },
+  {
+    "key": "papinet-io-order_status",
+    "originalUrl": "https://raw.githubusercontent.com/papinet/papiNet-API/master/1.0.0/papiNet-API.yaml",
+    "title": "papiNet API"
+  },
+  {
+    "key": "parliament-uk-bills",
+    "originalUrl": "https://bills-api.parliament.uk/swagger/v1/swagger.json",
+    "title": "Bills API"
+  },
+  {
+    "key": "parliament-uk-erskine-may",
+    "originalUrl": "https://erskinemay-api.parliament.uk/swagger/v1/swagger.json",
+    "title": "Erskine May API"
+  },
+  {
+    "key": "parliament-uk-lordsvotes",
+    "originalUrl": "https://lordsvotes-api.parliament.uk/swagger/v1/swagger.json",
+    "title": "Lords Votes API"
+  },
+  {
+    "key": "parliament-uk-members",
+    "originalUrl": "https://members-api.parliament.uk/swagger/v1/swagger.json",
+    "title": "Members API"
+  },
+  {
+    "key": "parliament-uk-now",
+    "originalUrl": "https://now-api.parliament.uk/swagger/v1/swagger.json",
+    "title": "Annunciator content API"
+  },
+  {
+    "key": "parliament-uk-search",
+    "originalUrl": "https://api.parliament.uk/search/openapi.json",
+    "title": "UK Parliament Search Service"
+  },
+  {
+    "key": "parliament-uk-statutoryinstruments",
+    "originalUrl": "https://statutoryinstruments-api.parliament.uk/swagger/v1/swagger.json",
+    "title": "Statutory Instruments API"
+  },
+  {
+    "key": "parliament-uk-treaties",
+    "originalUrl": "https://treaties-api.parliament.uk/swagger/v1/swagger.json",
+    "title": "Treaties API"
+  },
+  {
+    "key": "parliament-uk-writtenquestions",
+    "originalUrl": "https://writtenquestions-api.parliament.uk/swagger/v1/swagger.json",
+    "title": "Written Questions Service API"
+  },
+  {
+    "key": "patrowl-local",
+    "originalUrl": "https://raw.githubusercontent.com/Patrowl/PatrowlDocs/master/api/openapi-patrowl-engines.yaml",
+    "title": "Swagger API-REST for Patrowl Engines"
+  },
+  {
+    "key": "pay1-de-link",
+    "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/b526159dff395f5da394bdf0c1d8b004/raw/ec8e44241fcd114d00c4662a04d2ff5b16f4b95f/payone-openapi.yaml",
+    "title": "PAYONE Link API"
+  },
+  {
+    "key": "paylocity-com",
+    "originalUrl": "https://api.paylocity.com/api/v2/openapi",
+    "title": "Paylocity API"
+  },
+  {
+    "key": "paypi-dev",
+    "originalUrl": "https://paypi-default-images.s3.eu-west-1.amazonaws.com/openapi.yaml",
+    "title": "EmailVerify"
+  },
+  {
+    "key": "payrun-io",
+    "originalUrl": "https://api.test.payrun.io/swagger/json",
+    "title": "PayRun.IO"
+  },
+  {
+    "key": "pdfblocks-com",
+    "originalUrl": "https://www.pdfblocks.com/assets/specs/pdfblocks.openapi.yaml",
+    "title": "PDF Blocks API"
+  },
+  {
+    "key": "pdfbroker-io",
+    "originalUrl": "https://api.pdfbroker.io/swagger/v1/swagger.json",
+    "title": "PdfBroker.io API"
+  },
+  {
+    "key": "pdfgeneratorapi-com",
+    "originalUrl": "https://docs.pdfgeneratorapi.com/api-docs.json?_c=1590697087",
+    "title": "PDF Generator API"
+  },
+  {
+    "key": "peoplegeneratorapi-live",
+    "originalUrl": "https://peoplegeneratorapi.live/v3/api-docs",
+    "title": "OpenAPI definition"
+  },
+  {
+    "key": "personio-de-authentication",
+    "originalUrl": "https://raw.githubusercontent.com/personio/api-docs/master/personio-auth-api.yaml",
+    "title": "Authentication"
+  },
+  {
+    "key": "personio-de-personnel",
+    "originalUrl": "https://raw.githubusercontent.com/personio/api-docs/master/personio-personnel-data-api.yaml",
+    "title": "Personnel Data"
+  },
+  {
+    "key": "phantauth-net",
+    "originalUrl": "https://www.phantauth.net/api.json",
+    "title": "PhantAuth"
+  },
+  {
+    "key": "pinecone-io",
+    "originalUrl": "https://raw.githubusercontent.com/sigpwned/pinecone-openapi-spec/main/openapi.yml",
+    "title": "Pinecone API"
+  },
+  {
+    "key": "plaid-com",
+    "originalUrl": "https://raw.githubusercontent.com/plaid/plaid-openapi/master/2020-09-14.yml",
+    "title": "The Plaid API"
+  },
+  {
+    "key": "pocketsmith-com",
+    "originalUrl": "https://raw.githubusercontent.com/pocketsmith/api/master/openapi.json",
+    "title": "PocketSmith"
+  },
+  {
+    "key": "portfoliooptimizer-io",
+    "originalUrl": "https://docs.portfoliooptimizer.io/openapi/portfoliooptimizer.yaml",
+    "title": "Portfolio Optimizer"
+  },
+  {
+    "key": "presalytics-io-converter",
+    "originalUrl": "https://api.presalytics.io/doc-converter/openapi.json",
+    "title": "Doc Converter"
+  },
+  {
+    "key": "presalytics-io-ooxml",
+    "originalUrl": "https://api.presalytics.io/ooxml-automation/docs/v1/openapi.json",
+    "title": "OOXML Automation"
+  },
+  {
+    "key": "presalytics-io-story",
+    "originalUrl": "https://api.presalytics.io/story/openapi.json",
+    "title": "Story"
+  },
+  {
+    "key": "pressassociation-io",
+    "originalUrl": "https://raw.githubusercontent.com/PressAssociation/tv-api-v2-development-kit/master/swagger.yaml",
+    "title": "TV API"
+  },
+  {
+    "key": "probely-com",
+    "originalUrl": "https://developers.probely.com/openapi.yaml",
+    "title": "Probely Developers"
+  },
+  {
+    "key": "proxykingdom-com",
+    "originalUrl": "https://api.proxykingdom.com/swagger/v1/swagger.json",
+    "title": "ProxyKingdom-Api"
+  },
+  {
+    "key": "prss-org",
+    "originalUrl": "https://contentdepot.prss.org/api/swagger-v2.yaml",
+    "title": "ContentDepot"
+  },
+  {
+    "key": "ptv-vic-gov-au",
+    "originalUrl": "http://timetableapi.ptv.vic.gov.au/swagger/docs/v3",
+    "title": "PTV Timetable API - Version 3"
+  },
+  {
+    "key": "quickchart-io",
+    "originalUrl": "https://quickchart.io/openapi.yaml",
+    "title": "QuickChart API"
+  },
+  {
+    "key": "quotes-rest",
+    "originalUrl": "http://quotes.rest/yaml/theysaidso.quotes.openapi.yaml?v1.1",
+    "title": "They Said So Quotes API"
+  },
+  {
+    "key": "randomlovecraft-com",
+    "originalUrl": "https://raw.githubusercontent.com/dekadans/randomlovecraft.com/master/public/openapi.yaml",
+    "title": "Random Lovecraft"
+  },
+  {
+    "key": "randommer-io",
+    "originalUrl": "https://randommer.io/api/docs/v1/swagger.json",
+    "title": "Randommer API"
+  },
+  {
+    "key": "rapidapi-com-dynamicdocs",
+    "originalUrl": "https://advicement.io/open_api_spec/dynamicdocs.json",
+    "title": "DynamicDocs"
+  },
+  {
+    "key": "rapidapi-com-ecowetter",
+    "originalUrl": "https://corrently.io/attachments/4",
+    "title": "Historische  Daten"
+  },
+  {
+    "key": "rapidapi-com-football-prediction",
+    "originalUrl": "https://boggio-analytics.com/fp-api/schema/football-prediction-openapi.yaml",
+    "title": "Football Prediction API"
+  },
+  {
+    "key": "rapidapi-com-idealspot-geodata",
+    "originalUrl": "https://idealspot.gitlab.io/developer-docs/specs/idealspot-swagger20.json",
+    "title": "IdealSpot GeoData"
+  },
+  {
+    "key": "rawg-io",
+    "originalUrl": "https://api.rawg.io/docs/?format=openapi",
+    "title": "RAWG Video Games Database API"
+  },
+  {
+    "key": "readme-io",
+    "originalUrl": "https://raw.githubusercontent.com/readmeio/oas/master/packages/examples/3.0/json/readme.json",
+    "title": "API Endpoints"
+  },
+  {
+    "key": "rebilly-com",
+    "originalUrl": "https://api-reference.rebilly.com/openapi.json",
+    "title": "Rebilly REST API"
+  },
+  {
+    "key": "redeal-io",
+    "originalUrl": "https://static.redeal.se/APIDefinitions/analytics.redeal.io-1.0.0-swagger.yaml",
+    "title": "Redeal Analytics API"
+  },
+  {
+    "key": "redeal-io-analytics",
+    "originalUrl": "https://static.redeal.se/APIDefinitions/analytics.redeal.io-1.0.0-swagger.yaml",
+    "title": "Redeal Analytics API"
+  },
+  {
+    "key": "redhat-com-catalog_inventory",
+    "originalUrl": "https://raw.githubusercontent.com/RedHatInsights/catalog_inventory-api/master/public/doc/openapi-3-v1.0.json",
+    "title": "Catalog Inventory"
+  },
+  {
+    "key": "redhat-local-patchman-engine",
+    "originalUrl": "https://raw.githubusercontent.com/RedHatInsights/patchman-engine/master/docs/openapi.json",
+    "title": "Patchman-engine API"
+  },
+  {
+    "key": "reloadly-com",
+    "originalUrl": "https://topupsapi.docs.apiary.io/api-description-document",
+    "title": "topupsapi"
+  },
+  {
+    "key": "remove-bg",
+    "originalUrl": "https://www.remove.bg/api/swagger.yaml",
+    "title": "Background Removal API"
+  },
+  {
+    "key": "restful4up-local",
+    "originalUrl": "https://raw.githubusercontent.com/rpgeeganage/restful4up/master/app/spec/api.yml",
+    "title": "RESTful4Up"
+  },
+  {
+    "key": "rev-ai",
+    "originalUrl": "http://api.rev.ai/openapi/v1/documentation.yaml",
+    "title": "Asynchronous Speech-To-Text API Documentation"
+  },
+  {
+    "key": "reverb-com",
+    "originalUrl": "https://s3.amazonaws.com/swagger.reverb.com/swagger.json",
+    "title": "reverb"
+  },
+  {
+    "key": "rudder-example-local",
+    "originalUrl": "https://docs.rudder.io/api/openapi.yml",
+    "title": "Rudder API"
+  },
+  {
+    "key": "rumble-run",
+    "originalUrl": "https://raw.githubusercontent.com/RumbleDiscovery/rumble-api/main/rumble-api.yml",
+    "title": "Rumble API (deprecated)"
+  },
+  {
+    "key": "sakari-io",
+    "originalUrl": "https://developer.sakari.io/openapi.yaml",
+    "title": "Sakari"
+  },
+  {
+    "key": "salesforce-local-einstein",
+    "originalUrl": "https://raw.githubusercontent.com/MetaMind/openapi/master/vision-language-api-openapi-2.0.1.yaml",
+    "title": "Einstein Vision and Einstein Language"
+  },
+  {
+    "key": "salesloft-com",
+    "originalUrl": "https://developers.salesloft.com/v2_api_def.json",
+    "title": "SalesLoft Platform"
+  },
+  {
+    "key": "scideas-net-perfectpdf",
+    "originalUrl": "https://services.scideas.net/perfectpdf/resources/openapi3.0.0-perfectpdf-1.0.json",
+    "title": "perfectpdf api"
+  },
+  {
+    "key": "scideas-net-regression",
+    "originalUrl": "https://services.scideas.net/regression/resources/openapi3.0.0-regression-1.0.json",
+    "title": "Regression analysis api"
+  },
+  {
+    "key": "seldon-local-core",
+    "originalUrl": "https://raw.githubusercontent.com/SeldonIO/seldon-core/master/openapi/wrapper.oas3.json",
+    "title": "Seldon External API"
+  },
+  {
+    "key": "seldon-local-engine",
+    "originalUrl": "https://raw.githubusercontent.com/SeldonIO/seldon-core/master/openapi/engine.oas3.json",
+    "title": "Seldon External API"
+  },
+  {
+    "key": "seldon-local-wrapper",
+    "originalUrl": "https://raw.githubusercontent.com/SeldonIO/seldon-core/master/openapi/wrapper.oas3.json",
+    "title": "Seldon External API"
+  },
+  {
+    "key": "sendgrid-com",
+    "originalUrl": "https://raw.githubusercontent.com/sendgrid/sendgrid-oai/main/oai.json",
+    "title": "Email Activity (beta)"
+  },
+  {
+    "key": "shipengine-com",
+    "originalUrl": "https://raw.githubusercontent.com/ShipEngine/shipengine-openapi/master/openapi.yaml",
+    "title": "ShipEngine API"
+  },
+  {
+    "key": "shipstation-com",
+    "originalUrl": "https://shipstation.docs.apiary.io/api-description-document",
+    "title": "shipstation"
+  },
+  {
+    "key": "shop-app",
+    "originalUrl": "https://server.shop.app/openai/v1/api.json",
+    "title": "Shop"
+  },
+  {
+    "key": "shorten-rest",
+    "originalUrl": "https://docs.shorten.rest/swagger.json",
+    "title": "Shorten.REST API Documentation"
+  },
+  {
+    "key": "shotstack-io",
+    "originalUrl": "https://raw.githubusercontent.com/shotstack/oas-api-definition/main/api.oas3.yaml",
+    "title": "Shotstack"
+  },
+  {
+    "key": "shutterstock-com",
+    "originalUrl": "https://api-explorer.shutterstock.com/openapi.json",
+    "title": "Shutterstock API Explorer"
+  },
+  {
+    "key": "signl4-com",
+    "originalUrl": "https://connect.signl4.com/api/docs/v1/swagger.json",
+    "title": "SIGNL4 API"
+  },
+  {
+    "key": "simplivpn-net",
+    "originalUrl": "https://api.simplivpn.net/swagger/v1/swagger.json",
+    "title": "SimpliVPNAPI"
+  },
+  {
+    "key": "sinao-app",
+    "originalUrl": "https://api.sinao.app/v1/swagger.yaml",
+    "title": "Sinao API"
+  },
+  {
+    "key": "slack-com",
+    "originalUrl": "https://raw.githubusercontent.com/slackapi/slack-api-specs/master/web-api/slack_web_openapi_v2.json",
+    "title": "Slack Web API"
+  },
+  {
+    "key": "slack-com-openai",
+    "originalUrl": "https://api.slack.com/specs/openapi/ai-plugin.yaml",
+    "title": "Slack AI Plugin"
+  },
+  {
+    "key": "smart-me-com",
+    "originalUrl": "https://smart-me.com/swagger/docs/v1",
+    "title": "smart-me"
+  },
+  {
+    "key": "sms77-io",
+    "originalUrl": "https://raw.githubusercontent.com/sms77io/api-schemes/master/json/openapi.json",
+    "title": "sms77.io API"
+  },
+  {
+    "key": "soundcloud-com",
+    "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/a9eb3040cb611121b568844958564849/raw/d0996b827b9eb2ae4fa946b9aacf02b03dc3d933/openapi.json",
+    "title": "SoundCloud Public API Specification"
+  },
+  {
+    "key": "spoonacular-com",
+    "originalUrl": "https://spoonacular.com/application/frontend/downloads/spoonacular-openapi-3.json",
+    "title": "spoonacular API"
+  },
+  {
+    "key": "spotify-com",
+    "originalUrl": "https://developer.spotify.com/_data/documentation/web-api/reference/open-api-schema.yml",
+    "title": "Spotify Web API"
+  },
+  {
+    "key": "spotify-com-sonallux",
+    "originalUrl": "https://raw.githubusercontent.com/sonallux/spotify-web-api/main/fixed-spotify-open-api.yml",
+    "title": "Spotify Web API with fixes and improvements from sonallux"
+  },
+  {
+    "key": "squareup-com",
+    "originalUrl": "https://raw.githubusercontent.com/square/connect-api-specification/master/api.json",
+    "title": "Square Connect API"
+  },
+  {
+    "key": "stackexchange-com",
+    "originalUrl": "https://raw.githubusercontent.com/APIs-guru/unofficial_openapi_specs/master/stackexchange.com/2.0/openapi.yaml",
+    "title": "StackExchange"
+  },
+  {
+    "key": "staging-ecotaco-com",
+    "originalUrl": "https://ecotaco.docs.apiary.io/api-description-document",
+    "title": "api.ecota.co v2"
+  },
+  {
+    "key": "statsocial-com",
+    "originalUrl": "https://docs.statsocial.com/wp-content/themes/twentyfifteen/json/swagger.json",
+    "title": "StatSocial Platform API"
+  },
+  {
+    "key": "stellastra-com",
+    "originalUrl": "https://stellastra.com/stellastra.json",
+    "title": "Stellastra"
+  },
+  {
+    "key": "stoplight-io",
+    "originalUrl": "https://api.stoplight.io/v1/versions/wDcMCTKXwn8X4ynL9/export/oas.json",
+    "title": "Stoplight"
+  },
+  {
+    "key": "storecove-com",
+    "originalUrl": "https://www.storecove.com/api/v2/openapi.json",
+    "title": "Storecove API"
+  },
+  {
+    "key": "stream-io-api-com",
+    "originalUrl": "https://stream-openapi.s3.us-east-1.amazonaws.com/chat/openapi-latest.yaml",
+    "title": "Stream Chat API"
+  },
+  {
+    "key": "stripe-com",
+    "originalUrl": "https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.yaml",
+    "title": "Stripe API"
+  },
+  {
+    "key": "superset-apache-local-superset",
+    "originalUrl": "https://raw.githubusercontent.com/apache/superset/master/docs/src/resources/openapi.json",
+    "title": "Superset"
+  },
+  {
+    "key": "surevoip-co-uk",
+    "originalUrl": "https://raw.githubusercontent.com/SureVoIP/API-Specification/master/openapi/openapi.yaml",
+    "title": "The SureVoIP RESTful API"
+  },
+  {
+    "key": "svix-com",
+    "originalUrl": "https://api.svix.com/api/v1/openapi.json",
+    "title": "Svix API"
+  },
+  {
+    "key": "symanto-net",
+    "originalUrl": "https://api.symanto.net/docs/v1/openapi.json",
+    "title": "Psycholinguistic Text Analytics"
+  },
+  {
+    "key": "tafqit-herokuapp-com",
+    "originalUrl": "https://tafqit.herokuapp.com/open_api/TafqitOpenAPI.json",
+    "title": "Tafqit"
+  },
+  {
+    "key": "taxrates-io",
+    "originalUrl": "https://www.postman.com/collections/10601972-0bdabb72-f66a-4b75-bb29-e1c01dc81baa-TVev6RW8",
+    "title": "Taxrates.io API"
+  },
+  {
+    "key": "tcgdex-net",
+    "originalUrl": "https://api.tcgdex.net/v2/openapi.yaml",
+    "title": "TCGdex API"
+  },
+  {
+    "key": "telegram-org",
+    "originalUrl": "https://josxa.stoplight.io/api/v1/projects/josxa/bot-api/nodes/openapi.json?branch=main",
+    "title": "Telegram Bot API"
+  },
+  {
+    "key": "telnyx-com",
+    "originalUrl": "https://raw.githubusercontent.com/team-telnyx/openapi/master/openapi/spec3.yml",
+    "title": "Telnyx API"
+  },
+  {
+    "key": "tfl-gov-uk",
+    "originalUrl": "https://api.tfl.gov.uk/swagger/docs/v1",
+    "title": "Transport for London Unified API"
+  },
+  {
+    "key": "thebluealliance-com",
+    "originalUrl": "https://www.thebluealliance.com/swagger/api_v3.json",
+    "title": "The Blue Alliance API v3"
+  },
+  {
+    "key": "threatjammer-com",
+    "originalUrl": "https://dublin.api.threatjammer.com/openapi.json",
+    "title": "ThreatJammer.com User API"
+  },
+  {
+    "key": "ticketmaster-com-publish",
+    "originalUrl": "https://raw.githubusercontent.com/ticketmaster-api/ticketmaster-api.github.io/dev/_data/orgs/publish-api/v1/api.json",
+    "title": "ticketmaster publish api"
+  },
+  {
+    "key": "tisane-ai",
+    "originalUrl": "https://www.postman.com/collections/15057172-1e147114-3936-4a52-a21e-681e72b90b53-TzeUnUQU",
+    "title": "Tisane API Documentation"
+  },
+  {
+    "key": "tl-api-azurewebsites-net",
+    "originalUrl": "https://tl-api.azurewebsites.net/swagger/default/swagger.json",
+    "title": "API"
+  },
+  {
+    "key": "tokenjay-app",
+    "originalUrl": "https://api.tokenjay.app/api-docs",
+    "title": "TokenJay API services"
+  },
+  {
+    "key": "tomtom-com-maps",
+    "originalUrl": "https://developer.tomtom.com/system/files/swagger_models/maps_api_0.yaml",
+    "title": "Maps"
+  },
+  {
+    "key": "tomtom-com-routing",
+    "originalUrl": "https://developer.tomtom.com/system/files/swagger_models/routing_api.yaml",
+    "title": "Routing"
+  },
+  {
+    "key": "tomtom-com-search",
+    "originalUrl": "https://developer.tomtom.com/system/files/swagger_models/search_api.yaml",
+    "title": "Search"
+  },
+  {
+    "key": "traccar-org",
+    "originalUrl": "https://raw.githubusercontent.com/tananaev/traccar/master/swagger.json",
+    "title": "Traccar"
+  },
+  {
+    "key": "trapstreet-com",
+    "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/e455f437f87a149ae0501d8cefe2ecab/raw/8f3608b72b0ab6eb6b0cea1c54ff9d84df7de05d/openapi.yaml",
+    "title": "TrapStreet API"
+  },
+  {
+    "key": "trashnothing-com",
+    "originalUrl": "http://trashnothing.com/api/trashnothing-openapi.yaml",
+    "title": "trash nothing"
+  },
+  {
+    "key": "trello-com",
+    "originalUrl": "https://raw.githubusercontent.com/APIs-guru/unofficial_openapi_specs/master/trello.com/1.0/swagger.yaml",
+    "title": "Trello"
+  },
+  {
+    "key": "truesight-local",
+    "originalUrl": "https://www.sentrysoftware.com/library/mshw/11.1.00/hardware-tsps-openapi.yaml",
+    "title": "Hardware Sentry TrueSight Presentation Server REST API"
+  },
+  {
+    "key": "truora-com",
+    "originalUrl": "https://docs.truora.com/openapi.json",
+    "title": "Checks API"
+  },
+  {
+    "key": "tsapi-net",
+    "originalUrl": "https://api.tsapi.net/swagger/v1/swagger.json",
+    "title": "TSAPI"
+  },
+  {
+    "key": "tvmaze-com",
+    "originalUrl": "http://static.tvmaze.com/apidoc/v1.yaml",
+    "title": "TVmaze user API"
+  },
+  {
+    "key": "twilio-com-api",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_api_v2010.json",
+    "title": "Twilio - Api"
+  },
+  {
+    "key": "twilio-com-twilio_accounts_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_accounts_v1.json",
+    "title": "Twilio - Accounts"
+  },
+  {
+    "key": "twilio-com-twilio_autopilot_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_autopilot_v1.json",
+    "title": "Twilio - Autopilot"
+  },
+  {
+    "key": "twilio-com-twilio_bulkexports_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_bulkexports_v1.json",
+    "title": "Twilio - Bulkexports"
+  },
+  {
+    "key": "twilio-com-twilio_chat_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_chat_v1.json",
+    "title": "Twilio - Chat"
+  },
+  {
+    "key": "twilio-com-twilio_chat_v2",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_chat_v2.json",
+    "title": "Twilio - Chat"
+  },
+  {
+    "key": "twilio-com-twilio_chat_v3",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_chat_v3.json",
+    "title": "Twilio - Chat"
+  },
+  {
+    "key": "twilio-com-twilio_content_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_content_v1.json",
+    "title": "Twilio - Content"
+  },
+  {
+    "key": "twilio-com-twilio_conversations_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_conversations_v1.json",
+    "title": "Twilio - Conversations"
+  },
+  {
+    "key": "twilio-com-twilio_events_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_events_v1.json",
+    "title": "Twilio - Events"
+  },
+  {
+    "key": "twilio-com-twilio_fax_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_fax_v1.json",
+    "title": "Twilio - Fax"
+  },
+  {
+    "key": "twilio-com-twilio_flex_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_flex_v1.json",
+    "title": "Twilio - Flex"
+  },
+  {
+    "key": "twilio-com-twilio_flex_v2",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_flex_v2.json",
+    "title": "Twilio - Flex"
+  },
+  {
+    "key": "twilio-com-twilio_frontline_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_frontline_v1.json",
+    "title": "Twilio - Frontline"
+  },
+  {
+    "key": "twilio-com-twilio_insights_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_insights_v1.json",
+    "title": "Twilio - Insights"
+  },
+  {
+    "key": "twilio-com-twilio_ip_messaging_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_ip_messaging_v1.json",
+    "title": "Twilio - Ip_messaging"
+  },
+  {
+    "key": "twilio-com-twilio_ip_messaging_v2",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_ip_messaging_v2.json",
+    "title": "Twilio - Ip_messaging"
+  },
+  {
+    "key": "twilio-com-twilio_lookups_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_lookups_v1.json",
+    "title": "Twilio - Lookups"
+  },
+  {
+    "key": "twilio-com-twilio_lookups_v2",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_lookups_v2.json",
+    "title": "Twilio - Lookups"
+  },
+  {
+    "key": "twilio-com-twilio_media_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_media_v1.json",
+    "title": "Twilio - Media"
+  },
+  {
+    "key": "twilio-com-twilio_messaging_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_messaging_v1.json",
+    "title": "Twilio - Messaging"
+  },
+  {
+    "key": "twilio-com-twilio_microvisor_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_microvisor_v1.json",
+    "title": "Twilio - Microvisor"
+  },
+  {
+    "key": "twilio-com-twilio_monitor_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_monitor_v1.json",
+    "title": "Twilio - Monitor"
+  },
+  {
+    "key": "twilio-com-twilio_notify_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_notify_v1.json",
+    "title": "Twilio - Notify"
+  },
+  {
+    "key": "twilio-com-twilio_numbers_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_numbers_v1.json",
+    "title": "Twilio - Numbers"
+  },
+  {
+    "key": "twilio-com-twilio_numbers_v2",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_numbers_v2.json",
+    "title": "Twilio - Numbers"
+  },
+  {
+    "key": "twilio-com-twilio_oauth_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_oauth_v1.json",
+    "title": "Twilio - Oauth"
+  },
+  {
+    "key": "twilio-com-twilio_preview",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_preview.json",
+    "title": "Twilio - Preview"
+  },
+  {
+    "key": "twilio-com-twilio_pricing_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_pricing_v1.json",
+    "title": "Twilio - Pricing"
+  },
+  {
+    "key": "twilio-com-twilio_pricing_v2",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_pricing_v2.json",
+    "title": "Twilio - Pricing"
+  },
+  {
+    "key": "twilio-com-twilio_proxy_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_proxy_v1.json",
+    "title": "Twilio - Proxy"
+  },
+  {
+    "key": "twilio-com-twilio_routes_v2",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_routes_v2.json",
+    "title": "Twilio - Routes"
+  },
+  {
+    "key": "twilio-com-twilio_serverless_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_serverless_v1.json",
+    "title": "Twilio - Serverless"
+  },
+  {
+    "key": "twilio-com-twilio_studio_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_studio_v1.json",
+    "title": "Twilio - Studio"
+  },
+  {
+    "key": "twilio-com-twilio_studio_v2",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_studio_v2.json",
+    "title": "Twilio - Studio"
+  },
+  {
+    "key": "twilio-com-twilio_supersim_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_supersim_v1.json",
+    "title": "Twilio - Supersim"
+  },
+  {
+    "key": "twilio-com-twilio_sync_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_sync_v1.json",
+    "title": "Twilio - Sync"
+  },
+  {
+    "key": "twilio-com-twilio_taskrouter_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_taskrouter_v1.json",
+    "title": "Twilio - Taskrouter"
+  },
+  {
+    "key": "twilio-com-twilio_trunking_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_trunking_v1.json",
+    "title": "Twilio - Trunking"
+  },
+  {
+    "key": "twilio-com-twilio_trusthub_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_trusthub_v1.json",
+    "title": "Twilio - Trusthub"
+  },
+  {
+    "key": "twilio-com-twilio_verify_v2",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_verify_v2.json",
+    "title": "Twilio - Verify"
+  },
+  {
+    "key": "twilio-com-twilio_video_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_video_v1.json",
+    "title": "Twilio - Video"
+  },
+  {
+    "key": "twilio-com-twilio_voice_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_voice_v1.json",
+    "title": "Twilio - Voice"
+  },
+  {
+    "key": "twilio-com-twilio_wireless_v1",
+    "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_wireless_v1.json",
+    "title": "Twilio - Wireless"
+  },
+  {
+    "key": "twinehealth-com",
+    "originalUrl": "https://raw.githubusercontent.com/TwineHealth/TwineDeveloperDocs/master/spec/swagger.yaml",
+    "title": "Fitbit Plus API"
+  },
+  {
+    "key": "twitter-com-current",
+    "originalUrl": "https://api.twitter.com/2/openapi.json",
+    "title": "Twitter API v2"
+  },
+  {
+    "key": "unicourt-com",
+    "originalUrl": "https://docs.unicourt.com/enterpriseapi/download/UniCourt-Enterprise-API-Spec.yaml",
+    "title": "UniCourt Enterprise APIs"
+  },
+  {
+    "key": "up-com-au",
+    "originalUrl": "https://raw.githubusercontent.com/up-banking/api/master/v1/openapi.json",
+    "title": "Up API"
+  },
+  {
+    "key": "urlbox-io",
+    "originalUrl": "https://www.urlbox.io/.well-known/open-api.yaml",
+    "title": "Urlbox API"
+  },
+  {
+    "key": "va-gov-benefits",
+    "originalUrl": "https://api.va.gov/services/vba_documents/docs/v1/api",
+    "title": "Benefits Intake"
+  },
+  {
+    "key": "va-gov-confirmation",
+    "originalUrl": "https://api.va.gov/services/veteran_confirmation/docs/v0/api",
+    "title": "Veteran Confirmation"
+  },
+  {
+    "key": "va-gov-facilities",
+    "originalUrl": "https://api.va.gov/services/va_facilities/docs/v0/api",
+    "title": "VA Facilities"
+  },
+  {
+    "key": "va-gov-forms",
+    "originalUrl": "https://api.va.gov/services/va_forms/docs/v0/api",
+    "title": "VA Forms"
+  },
+  {
+    "key": "vectara-io",
+    "originalUrl": "https://docs.vectara.com/vectara-oas.yaml",
+    "title": "Vectara REST API"
+  },
+  {
+    "key": "velopayments-com",
+    "originalUrl": "https://raw.githubusercontent.com/velopaymentsapi/VeloOpenApi/master/spec/openapi.yaml",
+    "title": "Velo Payments APIs"
+  },
+  {
+    "key": "vercel-com",
+    "originalUrl": "https://openapi.vercel.sh",
+    "title": "Vercel API"
+  },
+  {
+    "key": "versioneye-com",
+    "originalUrl": "https://www.versioneye.com/api-docs/v1/swagger.yaml",
+    "title": "API V1"
+  },
+  {
+    "key": "viator-com",
+    "originalUrl": "blob:https://docs.viator.com/blobId",
+    "title": "Viator API Documentation &amp; Specification – Merchant Partners"
+  },
+  {
+    "key": "vimeo-com",
+    "originalUrl": "https://raw.githubusercontent.com/vimeo/openapi/master/api.yaml",
+    "title": "Vimeo"
+  },
+  {
+    "key": "visualcrossing-com-weather",
+    "originalUrl": "https://www.visualcrossing.com/weather/specs/visualcrossing-weather-api-openapi.json",
+    "title": "Visual Crossing Weather API"
+  },
+  {
+    "key": "visualstudio-com",
+    "originalUrl": "https://online.visualstudio.com/api/v1/swagger",
+    "title": "VSOnline"
+  },
+  {
+    "key": "vocadb-net",
+    "originalUrl": "https://vocadb.net/swagger/v1/swagger.json",
+    "title": "VocaDbWeb"
+  },
+  {
+    "key": "vonage-com-account",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/vonage-business-cloud/account.yml",
+    "title": "Account API"
+  },
+  {
+    "key": "vonage-com-extension",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/vonage-business-cloud/extension.yml",
+    "title": "Extension API"
+  },
+  {
+    "key": "vonage-com-reports",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/vonage-business-cloud/reports.yml",
+    "title": "Reports API"
+  },
+  {
+    "key": "vonage-com-user",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/vonage-business-cloud/user.yml",
+    "title": "User API"
+  },
+  {
+    "key": "vonage-com-vgis",
+    "originalUrl": "https://raw.githubusercontent.com/nexmo/api-specification/master/definitions/vonage-business-cloud/vgis.yml",
+    "title": "Vonage Integration Suite"
+  },
+  {
+    "key": "vtex-local-catalog-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Catalog API.json",
+    "title": "Catalog API"
+  },
+  {
+    "key": "vtex-local-catalog-api-seller-portal",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Catalog API Seller Portal.json",
+    "title": "Catalog API - Seller Portal"
+  },
+  {
+    "key": "vtex-local-checkout-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Checkout API.json",
+    "title": "Checkout API"
+  },
+  {
+    "key": "vtex-local-customer-credit-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Customer Credit API.json",
+    "title": "Customer Credit API"
+  },
+  {
+    "key": "vtex-local-giftcard-hub-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - GiftCard Hub API.json",
+    "title": "GiftCard Hub API"
+  },
+  {
+    "key": "vtex-local-giftcard-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Giftcard API.json",
+    "title": "GiftCard API"
+  },
+  {
+    "key": "vtex-local-headless-cms-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Headless CMS API.json",
+    "title": "VTEX Headless CMS"
+  },
+  {
+    "key": "vtex-local-intelligent-search-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Intelligent Search API.json",
+    "title": "Intelligent Search API"
+  },
+  {
+    "key": "vtex-local-license-manager-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - License Manager API.json",
+    "title": "License Manager API"
+  },
+  {
+    "key": "vtex-local-logistics-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Logistics API.json",
+    "title": "Logistics API"
+  },
+  {
+    "key": "vtex-local-marketplace-apis",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Marketplace APIs.json",
+    "title": "Marketplace API"
+  },
+  {
+    "key": "vtex-local-marketplace-apis-",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Marketplace APIs - Suggestions.json",
+    "title": "Suggestions"
+  },
+  {
+    "key": "vtex-local-marketplace-protocol",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Marketplace Protocol.json",
+    "title": "Marketplace Protocol"
+  },
+  {
+    "key": "vtex-local-master-data-api-",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Master Data API - v2.json",
+    "title": "Master Data API - v2"
+  },
+  {
+    "key": "vtex-local-masterdata-api-",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - MasterData API - v10.2.json",
+    "title": "MasterData API - v1"
+  },
+  {
+    "key": "vtex-local-message-center-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Message Center API.json",
+    "title": "Message Center API"
+  },
+  {
+    "key": "vtex-local-orders-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Orders API.json",
+    "title": "Orders API"
+  },
+  {
+    "key": "vtex-local-orders-api--pii-version-",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Orders API (PII version).json",
+    "title": "Orders API (PII version)"
+  },
+  {
+    "key": "vtex-local-payments-gateway-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Payments Gateway API.json",
+    "title": "Payments Gateway API"
+  },
+  {
+    "key": "vtex-local-policies-system-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Policies System API.json",
+    "title": "Policies System API"
+  },
+  {
+    "key": "vtex-local-price-simulations",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Price Simulations.json",
+    "title": "Price Simulations API"
+  },
+  {
+    "key": "vtex-local-pricing-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Pricing API.json",
+    "title": "Pricing API"
+  },
+  {
+    "key": "vtex-local-pricing-hub",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Pricing Hub.json",
+    "title": "Pricing Hub"
+  },
+  {
+    "key": "vtex-local-profile-system",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Profile System.json",
+    "title": "Profile System"
+  },
+  {
+    "key": "vtex-local-promotions-",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Promotions & Taxes API.json",
+    "title": "Promotions & Taxes API"
+  },
+  {
+    "key": "vtex-local-recurrence--v1-",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Recurrence (v1 - deprecated).json",
+    "title": "Subscription (v1 - deprecated)"
+  },
+  {
+    "key": "vtex-local-reviews-and-ratings-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Reviews and Ratings API.json",
+    "title": "Reviews and Ratings API"
+  },
+  {
+    "key": "vtex-local-sku-bindings-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - SKU Bindings API.json",
+    "title": "SKU Bindings API"
+  },
+  {
+    "key": "vtex-local-search-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Search API.json",
+    "title": "Legacy Search API"
+  },
+  {
+    "key": "vtex-local-session-manager-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Session Manager API.json",
+    "title": "Session Manager API"
+  },
+  {
+    "key": "vtex-local-subscriptions-api--v2-",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Subscriptions API (v2).json",
+    "title": "Subscriptions API (v2 - DEPRECATED)"
+  },
+  {
+    "key": "vtex-local-subscriptions-api--v3-",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Subscriptions API (v3).json",
+    "title": "Subscriptions API (v3)"
+  },
+  {
+    "key": "vtex-local-vtex-do-api",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - VTEX Do API.json",
+    "title": "VTEX Do API"
+  },
+  {
+    "key": "vtex-local-vtex_template",
+    "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX_TEMPLATE.json",
+    "title": "Pets Api"
+  },
+  {
+    "key": "walmart-com-inventory",
+    "originalUrl": "https://developer.walmart.com/api/detail",
+    "title": "Inventory Management"
+  },
+  {
+    "key": "walmart-com-price",
+    "originalUrl": "https://developer.walmart.com/api/detail",
+    "title": "Price Management"
+  },
+  {
+    "key": "warwick-ac-uk-enterobase",
+    "originalUrl": "http://enterobase.warwick.ac.uk/api/v2.0/swagger",
+    "title": "Enterobase-API"
+  },
+  {
+    "key": "wealthreader-com",
+    "originalUrl": "https://api.swaggerhub.com/apis/Wealth-Reader/api/1.0.0",
+    "title": "Wealth Reader API"
+  },
+  {
+    "key": "webflow-com",
+    "originalUrl": "https://raw.githubusercontent.com/LucidtechAI/cradl-docs/master/static/oas.yaml",
+    "title": "Lucidtech API"
+  },
+  {
+    "key": "webscraping-ai",
+    "originalUrl": "https://webscraping.ai/openapi.yml",
+    "title": "WebScraping.AI"
+  },
+  {
+    "key": "wellknown-ai",
+    "originalUrl": "https://www.wellknown.ai/api/doc",
+    "title": "Wellknown"
+  },
+  {
+    "key": "whapi-com-bets",
+    "originalUrl": "https://developer.williamhill.com/wh-docs/docs-sdks/bets/swagger/docs",
+    "title": "Bets API"
+  },
+  {
+    "key": "whatsapp-local",
+    "originalUrl": "https://raw.githubusercontent.com/unblu/WhatsApp-Business-API-OpenAPI/master/openapi.yaml",
+    "title": "WhatsApp Business API"
+  },
+  {
+    "key": "wheretocredit-com",
+    "originalUrl": "https://www.wheretocredit.com/swagger/v1/swagger.json",
+    "title": "Where to Credit API"
+  },
+  {
+    "key": "windows-net-graphrbac",
+    "originalUrl": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/graphrbac/data-plane/Microsoft.GraphRbac/stable/1.6/graphrbac.json",
+    "title": "GraphRbacManagementClient"
+  },
+  {
+    "key": "wiremock-org-admin",
+    "originalUrl": "http://wiremock.org/assets/js/wiremock-admin-api.json",
+    "title": "WireMock"
+  },
+  {
+    "key": "wolframalpha-com",
+    "originalUrl": "https://www.wolframalpha.com/.well-known/apispec.json",
+    "title": "Wolfram"
+  },
+  {
+    "key": "wordnik-com",
+    "originalUrl": "https://developer.wordnik.com/api-docs/swagger.json",
+    "title": "Wordnik"
+  },
+  {
+    "key": "worldtimeapi-org",
+    "originalUrl": "http://worldtimeapi.org/api",
+    "title": "World Time API"
+  },
+  {
+    "key": "wso2apistore-com-transform",
+    "originalUrl": "https://developers.wso2apistore.com/api-docs/manjular-AT-wso2.com-AT-developer/Transform/1.0.0",
+    "title": "Transform"
+  },
+  {
+    "key": "xero-com-xero-identity",
+    "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero-identity.yaml",
+    "title": "Xero OAuth 2 Identity Service API"
+  },
+  {
+    "key": "xero-com-xero-payroll-au",
+    "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero-payroll-au.yaml",
+    "title": "Xero Payroll AU API"
+  },
+  {
+    "key": "xero-com-xero_accounting",
+    "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero_accounting.yaml",
+    "title": "Xero Accounting API"
+  },
+  {
+    "key": "xero-com-xero_assets",
+    "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero_assets.yaml",
+    "title": "Xero Assets API"
+  },
+  {
+    "key": "xero-com-xero_bankfeeds",
+    "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero_bankfeeds.yaml",
+    "title": "Xero Bank Feeds API"
+  },
+  {
+    "key": "xero-com-xero_files",
+    "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero_files.yaml",
+    "title": "Xero Files API"
+  },
+  {
+    "key": "xkcd-com",
+    "originalUrl": "https://raw.githubusercontent.com/APIs-guru/unofficial_openapi_specs/master/xkcd.com/1.0.0/openapi.yaml",
+    "title": "XKCD"
+  },
+  {
+    "key": "xtrf-eu",
+    "originalUrl": "https://presentation.s.xtrf.eu/home-api/openapi.json",
+    "title": "XTRF Home Portal API"
+  },
+  {
+    "key": "yodlee-com",
+    "originalUrl": "https://developer.yodlee.com/sites/default/files/api_spec/coreapisoas3.yml",
+    "title": "Yodlee Core APIs"
+  },
+  {
+    "key": "youneedabudget-com",
+    "originalUrl": "https://api.youneedabudget.com/papi/spec-v1-swagger.json",
+    "title": "YNAB API Endpoints"
+  },
+  {
+    "key": "zapier-com-nla",
+    "originalUrl": "https://nla.zapier.com/api/v1/openapi.json",
+    "title": "Zapier Natural Language Actions (NLA) API - Beta"
+  },
+  {
+    "key": "zeit-co",
+    "originalUrl": "https://unpkg.com/@zeit/openapi",
+    "title": "ZEIT API"
+  },
+  {
+    "key": "zeno-fm",
+    "originalUrl": "https://api.zeno.fm/v3/api-docs",
+    "title": "Aggregators API Service"
+  },
+  {
+    "key": "zenoti-com",
+    "originalUrl": "https://zenotiopenapi.docs.apiary.io/api-description-document",
+    "title": "Zenoti API"
+  },
+  {
+    "key": "zoom-us",
+    "originalUrl": "https://marketplace.zoom.us/docs/api-reference/zoom-api/Zoom%20API.oas2.json",
+    "title": "Zoom API"
+  },
+  {
+    "key": "zuora-com",
+    "originalUrl": "https://www.zuora.com/wp-content/themes/zuora/yaml/swagger.yaml?v-7.0",
+    "title": "API Reference: Billing"
+  }
+]
