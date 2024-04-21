@@ -1,0 +1,7378 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://rumblerun.dataman.ai"
+    }
+  ],
+  "info": {
+    "description": "<p><b><i>Rumble Network Discovery is now runZero. <a href=\"https://www.runzero.com/blog/introducing-runzero/\">Read the announcement</a></i></b>.</p> <p>This API is frozen and no longer being updated as of version 2.15.0.</p> <p>See our latest API documentation at <a href=\"https://app.swaggerhub.com/apis-docs/runZero/runZero\">swaggerhub.com/apis-docs/runZero/runZero</a>.</p>\n",
+    "version": "2.15.0",
+    "title": "Rumble API (deprecated)",
+    "contact": {
+      "email": "support@runzero.com"
+    },
+    "license": {
+      "name": "Commercial",
+      "url": "https://www.runzero.com/legal/terms"
+    }
+  },
+  "tags": [
+    {
+      "name": "Organization",
+      "description": "Requires Organization Key"
+    },
+    {
+      "name": "Export",
+      "description": "Requires Export Token or Organization Key"
+    },
+    {
+      "name": "Public",
+      "description": "Unauthenticated"
+    }
+  ],
+  "paths": {
+    "/releases/agent/version": {
+      "get": {
+        "tags": [
+          "Public"
+        ],
+        "operationId": "getLatestAgentVersion",
+        "summary": "Returns latest agent version",
+        "responses": {
+          "200": {
+            "description": "component version",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentVersion"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/releases/scanner/version": {
+      "get": {
+        "tags": [
+          "Public"
+        ],
+        "operationId": "getLatestScannerVersion",
+        "summary": "Returns latest scanner version",
+        "responses": {
+          "200": {
+            "description": "component version",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentVersion"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/releases/platform/version": {
+      "get": {
+        "tags": [
+          "Public"
+        ],
+        "operationId": "getLatestPlatformVersion",
+        "summary": "Returns latest platform version",
+        "responses": {
+          "200": {
+            "description": "component version",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentVersion"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/export/org/assets.json": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportAssetsJSON",
+        "summary": "Exports the asset inventory",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered asset results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Asset"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/assets.jsonl": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportAssetsJSONL",
+        "summary": "Asset inventory as JSON line-delimited",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered asset results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/assets.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportAssetsCSV",
+        "summary": "Asset inventory as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered asset results",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/assets.nmap.xml": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportAssetsNmapXML",
+        "summary": "Asset inventory as Nmap-style XML",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered asset results",
+            "content": {
+              "text/xml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/services.json": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportServicesJSON",
+        "summary": "Service inventory as JSON",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered service results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Service"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/services.jsonl": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportServicesJSONL",
+        "summary": "Service inventory as JSON line-delimited",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered service results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/services.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportServicesCSV",
+        "summary": "Service inventory as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered service results",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/sites.json": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportSitesJSON",
+        "summary": "Export all sites",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "all sites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Site"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/sites.jsonl": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportSitesJSONL",
+        "summary": "Site list as JSON line-delimited",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "all sites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/sites.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportSitesCSV",
+        "summary": "Site list as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "all sites",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/wireless.json": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportWirelessJSON",
+        "summary": "Wireless inventory as JSON",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered wireless results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Wireless"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/wireless.jsonl": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportWirelessJSONL",
+        "summary": "Wireless inventory as JSON line-delimited",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered wireless results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/wireless.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportWirelessCSV",
+        "summary": "Wireless inventory as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered wireless results",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/assets/top.types.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportAssetTopTypesCSV",
+        "summary": "Top asset types as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "top asset types and counts as csv",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/assets/top.os.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportAssetTopOSCSV",
+        "summary": "Top asset operating systems as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "top operating systems and counts as csv",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/assets/top.hw.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportAssetTopHWCSV",
+        "summary": "Top asset hardware products as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "top asset hardware platforms and counts as csv",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/assets/top.tags.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportAssetTopTagsCSV",
+        "summary": "Top asset tags as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "top asset tags and counts as csv",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/services/top.tcp.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportServicesTopTCPCSV",
+        "summary": "Top TCP services as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "top TCP services and counts as csv",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/services/top.udp.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportServicesTopUDPCSV",
+        "summary": "Top UDP services as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "top UDP services and counts as csv",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/services/top.protocols.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportServicesTopProtocolsCSV",
+        "summary": "Top service protocols as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "top service protocols and counts as csv",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/services/top.products.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportServicesTopProductsCSV",
+        "summary": "Top service products as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "top service products and counts as csv",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/services/subnet.stats.csv": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "operationId": "exportSubnetUtilizationStatsCSV",
+        "summary": "Subnet utilization statistics as as CSV",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "mask",
+            "description": "an optional subnet mask size (ex:24)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "subnet utilization stats as csv",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getOrganization",
+        "summary": "Get organization details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "organization details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "updateOrganization",
+        "summary": "Update organization details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "organization options",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrgOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "organization details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/key": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getKey",
+        "summary": "Get API key details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "api key details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIKey"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "removeKey",
+        "summary": "Remove the current API key",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/key/rotate": {
+      "patch": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "rotateKey",
+        "summary": "Rotate the API key secret and return the updated key",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "api key details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIKey"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/agents": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getAgents",
+        "summary": "Get all agents",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of agents",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Agent"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/agents/{agent_id}": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getAgent",
+        "summary": "Get details for a single agent",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "agent_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the agent"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "agent details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Agent"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "removeAgent",
+        "summary": "Remove and uninstall an agent",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "agent_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the agent to remove"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "updateAgentSite",
+        "summary": "Update the site associated with agent",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "agent_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the agent to update"
+          }
+        ],
+        "requestBody": {
+          "description": "site_id to associate with the agent",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgentSiteID"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "agent details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Agent"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/agents/{agent_id}/update": {
+      "post": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "upgradeAgent",
+        "summary": "Force an agent to update and restart",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "agent_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the agent to update"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/sites": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getSites",
+        "summary": "Get all sites",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of sites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Site"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "createSite",
+        "summary": "Create a new site",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "site definition",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "site details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Site"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/sites/{site_id}": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getSite",
+        "summary": "Get site details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID or name of the site"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "site details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Site"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "removeSite",
+        "summary": "Remove a site and associated assets",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID or name of the site to remove"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "updateSite",
+        "summary": "Update a site definition",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID or name of the site to update"
+          }
+        ],
+        "requestBody": {
+          "description": "site object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "site details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Site"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/sites/{site_id}/import": {
+      "put": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "importScanData",
+        "summary": "Import a scan data file into a site",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID or name of the site to import scan data into"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "import task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/LicenseExpiredError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          },
+          "500": {
+            "$ref": "#/components/responses/ProcessingError"
+          }
+        }
+      }
+    },
+    "/org/sites/{site_id}/import/nessus": {
+      "put": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "importNessusScanData",
+        "summary": "Import a Nessus scan data file into a site",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID or name of the site to import Nessus scan data into"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "import task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/LicenseExpiredError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          },
+          "500": {
+            "$ref": "#/components/responses/ProcessingError"
+          }
+        }
+      }
+    },
+    "/org/sites/{site_id}/scan": {
+      "put": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "createScan",
+        "summary": "Create a scan task for a given site",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID or name of the site to scan"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScanOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "a created scan task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/LicenseExpiredError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          },
+          "500": {
+            "$ref": "#/components/responses/ProcessingError"
+          }
+        }
+      }
+    },
+    "/org/assets": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getAssets",
+        "summary": "Get all assets",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of assets",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Asset"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/assets/{asset_id}": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getAsset",
+        "summary": "Get asset details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the asset to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "asset details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Asset"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "removeAsset",
+        "summary": "Remove an asset",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the asset to remove"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/assets/{asset_id}/comments": {
+      "patch": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "updateAssetComments",
+        "summary": "Update asset comments",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the asset to update"
+          }
+        ],
+        "requestBody": {
+          "description": "comments to apply to the asset",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetComments"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "asset details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Asset"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/assets/{asset_id}/tags": {
+      "patch": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "updateAssetTags",
+        "summary": "Update asset tags",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the asset to update"
+          }
+        ],
+        "requestBody": {
+          "description": "tags to apply to the asset",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetTags"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "asset details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Asset"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/assets/bulk/tags": {
+      "patch": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "updateBulkAssetTags",
+        "summary": "Update tags across multiple assets based on a search query",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "search query to filter and tags to apply",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetTagsWithSearch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "status message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/StatusMessage"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/assets/bulk/clearTags": {
+      "post": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "clearBulkAssetTags",
+        "summary": "Clear all tags across multiple assets based on a search query",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "search query to filter",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Search"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "status message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/StatusMessage"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/services": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getServices",
+        "summary": "Get all services",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of services",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Service"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/services/{service_id}": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getService",
+        "summary": "Get service details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the service to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "service details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Service"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "removeService",
+        "summary": "Remove a service",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the service to remove"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/wireless": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getWirelessLANs",
+        "summary": "Get all wireless LANs",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of wireless LANs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Wireless"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/wireless/{wireless_id}": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getWirelessLAN",
+        "summary": "Get wireless LAN details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "wireless_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the wireless LAN to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "wireless details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Wireless"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "removeWirelessLAN",
+        "summary": "Remove a wireless LAN",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "wireless_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the wireless LAN to remove"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/tasks": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getTasks",
+        "summary": "Get all tasks (last 1000)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "status",
+            "description": "an optional status string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of tasks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Task"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/org/tasks/{task_id}": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getTask",
+        "summary": "Get task details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the task to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "task details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "updateTask",
+        "summary": "Update task parameters",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the task to update"
+          }
+        ],
+        "requestBody": {
+          "description": "task object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "task details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/tasks/{task_id}/data": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getTaskScanData",
+        "summary": "Returns a temporary task scan data url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the task"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/URL"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/tasks/{task_id}/changes": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getTaskChangeReport",
+        "summary": "Returns a temporary task change report data url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the task"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/URL"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/tasks/{task_id}/log": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "getTaskLog",
+        "summary": "Returns a temporary task log data url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the task"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/URL"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/tasks/{task_id}/stop": {
+      "post": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "stopTask",
+        "summary": "Signal that a task should be stopped or canceledThis will also remove recurring and scheduled tasks",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the task to stop"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/Task"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/org/tasks/{task_id}/hide": {
+      "post": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "hideTask",
+        "summary": "Signal that a completed task should be hidden",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the task to hide"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/Task"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/account/orgs": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountOrganizations",
+        "summary": "Get all organization details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of organizations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Organization"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "createAccountOrganization",
+        "summary": "Create a new organization",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "organization definition",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrgOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "organization details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/account/orgs/{org_id}": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountOrganization",
+        "summary": "Get organization details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "org_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the organization to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/Organization"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "updateAccountOrganization",
+        "summary": "Update organization details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "org_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the organization to retrieve"
+          }
+        ],
+        "requestBody": {
+          "description": "organization options",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrgOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "organization details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "removeAccountOrganization",
+        "summary": "Remove this organization",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "org_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the organization to retrieve"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/orgs/{org_id}/exportToken": {
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "deleteAccountOrganizationExportToken",
+        "summary": "Removes the export token from the specified organization",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "org_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the organization to retrieve"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/orgs/{org_id}/exportToken/rotate": {
+      "patch": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "rotateAccountOrganizationExportToken",
+        "summary": "Rotates the organization export token and returns the updated organization",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "org_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the organization to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "organization details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/license": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountLicense",
+        "summary": "Get license details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/License"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/sites": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountSites",
+        "summary": "Get all sites details across all organizations",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of sites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Site"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/credentials": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountCredentials",
+        "summary": "Get all account credentials",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Credential"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "createAccountCredential",
+        "summary": "Create a new credential",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "credential parameters",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CredentialOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "credential details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Credential"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/account/credentials/{credential_id}": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountCredential",
+        "summary": "Get credential details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "credential_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the credential to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "credential details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Credential"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "removeAccountCredential",
+        "summary": "Remove this credential",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "credential_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the credential to delete"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/account/keys": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountKeys",
+        "summary": "Get all active API keys",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of keys",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/APIKey"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "createAccountKey",
+        "summary": "Create a new key",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "key parameters",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/APIKeyOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "key details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIKey"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/account/keys/{key_id}": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountKey",
+        "summary": "Get key details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the key to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/APIKey"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "removeAccountKey",
+        "summary": "Remove this key",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the key to retrieve"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/keys/{key_id}/rotate": {
+      "patch": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "rotateAccountKey",
+        "summary": "Rotates the key secret",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the key to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "key details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIKey"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/events.json": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "exportEventsJSON",
+        "summary": "System event log as JSON",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered event results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/events.jsonl": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "exportEventsJSONL",
+        "summary": "System event log as JSON line-delimited",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered event results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/tasks": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountTasks",
+        "summary": "Get all task details across all organizations (up to 1000)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of tasks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Task"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/tasks/templates": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountScanTemplates",
+        "summary": "Get all scan templates across all organizations (up to 1000)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of scan templates",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScanTemplate"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "422": {
+            "description": "failed to parse search string"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "createAccountScanTemplate",
+        "summary": "Create a new scan template",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScanTemplateOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "scan template",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanTemplate"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid request body"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "422": {
+            "description": "invalid request body"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "updateAccountScanTemplate",
+        "summary": "Update scan template",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScanTemplate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "scan template",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanTemplate"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid request body"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "description": "scan template or permissions not found"
+          },
+          "422": {
+            "description": "invalid request body"
+          }
+        }
+      }
+    },
+    "/account/tasks/templates/{scan_template_id}": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountScanTemplate",
+        "summary": "Get scan template details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "scan_template_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the scan template to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "scan template",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanTemplate"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "description": "scan template not found"
+          },
+          "422": {
+            "description": "invalid scan template id"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "removeAccountScanTemplate",
+        "summary": "Remove scan template",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "scan_template_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the scan template to remove"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "scan template",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanTemplate"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "description": "scan template not found"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/account/agents": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountAgents",
+        "summary": "Get all agents across all organizations",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of tasks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Agent"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/users": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountUsers",
+        "summary": "Get all users",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "array of users",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "createAccountUser",
+        "summary": "Create a new user account",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "user parameters",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "key details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/account/users/invite": {
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "createAccountUserInvite",
+        "summary": "Create a new user account and send an email invite",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "user invite parameters",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserInviteOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "key details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      }
+    },
+    "/account/users/{user_id}": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountUser",
+        "summary": "Get user details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the user to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/User"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "removeAccountUser",
+        "summary": "Remove this user",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the user to delete"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "updateAccountUser",
+        "summary": "Update a user's details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the user to retrieve"
+          }
+        ],
+        "requestBody": {
+          "description": "user parameters",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserOptions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/User"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/users/{user_id}/resetMFA": {
+      "patch": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "resetAccountUserMFA",
+        "summary": "Resets the user's MFA tokens",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the user to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/User"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/users/{user_id}/resetLockout": {
+      "patch": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "resetAccountUserLockout",
+        "summary": "Resets the user's lockout status",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the user to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/User"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/users/{user_id}/resetPassword": {
+      "patch": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "resetAccountUserPassword",
+        "summary": "Sends the user a password reset email",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "description": "UUID of the user to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/User"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/groups": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountGroups",
+        "summary": "Get all groups",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/Group"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "createAccountGroup",
+        "summary": "Create a new group",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupPost"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/Group"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "updateAccountGroup",
+        "summary": "Update an existing group",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupPut"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/Group"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/groups/{group_id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "group_id",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "required": true,
+          "description": "UUID of the group"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountGroup",
+        "summary": "Get group details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/Group"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "removeAccountGroup",
+        "summary": "Remove this group",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/sso/groups": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountGroupMappings",
+        "summary": "Get all SSO group mappings",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/GroupMapping"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "createAccountGroupMapping",
+        "summary": "Create a new SSO group mapping",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupMapping"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/GroupMapping"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "updateAccountGroupMapping",
+        "summary": "Update an existing SSO group mapping",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupMapping"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/GroupMapping"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/account/sso/groups/{group_mapping_id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "group_mapping_id",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "required": true,
+          "description": "UUID of the SSO group mapping"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getAccountGroupMapping",
+        "summary": "Get SSO group mapping details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/schemas/GroupMapping"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "removeAccountGroupMapping",
+        "summary": "Remove this SSO group mapping",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "empty response"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/assets/sync/created/assets.json": {
+      "get": {
+        "tags": [
+          "Splunk"
+        ],
+        "operationId": "splunkAssetSyncCreatedJSON",
+        "summary": "Exports the asset inventory in a sync-friendly manner using created_at as a checkpoint. Requires the Splunk entitlement.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "since",
+            "description": "an optional unix timestamp to use as a checkpoint",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "example": 1576300370
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered asset results with a checkpoint wrapper",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetsWithCheckpoint"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/assets/sync/updated/assets.json": {
+      "get": {
+        "tags": [
+          "Splunk"
+        ],
+        "operationId": "splunkAssetSyncUpdatedJSON",
+        "summary": "Exports the asset inventory in a sync-friendly manner using updated_at as a checkpoint. Requires the Splunk entitlement.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "an optional list of fields to export, comma-separated",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "since",
+            "description": "an optional unix timestamp to use as a checkpoint",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "example": 1576300370
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered asset results with a checkpoint wrapper",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetsWithCheckpoint"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/assets.servicenow.csv": {
+      "get": {
+        "tags": [
+          "ServiceNow"
+        ],
+        "operationId": "snowExportAssetsCSV",
+        "summary": "Export an asset inventory as CSV for ServiceNow integration",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "asset export",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/assets.servicenow.json": {
+      "get": {
+        "tags": [
+          "ServiceNow"
+        ],
+        "operationId": "snowExportAssetsJSON",
+        "summary": "Exports the asset inventory as JSON",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered asset results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AssetServiceNow"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/services.servicenow.csv": {
+      "get": {
+        "tags": [
+          "ServiceNow"
+        ],
+        "operationId": "snowExportServicesCSV",
+        "summary": "Export a service inventory as CSV for ServiceNow integration",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "services export",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/export/org/assets.cisco.csv": {
+      "get": {
+        "tags": [
+          "Cisco SNTC"
+        ],
+        "operationId": "exportAssetsCiscoCSV",
+        "summary": "Cisco serial number and model name export for Cisco Smart Net Total Care Service.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "description": "an optional search string for filtering results",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filtered asset results",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "responses": {
+      "UnauthorizedError": {
+        "description": "Access token is missing or invalid"
+      },
+      "LicenseExpiredError": {
+        "description": "License has expired"
+      },
+      "ProcessingError": {
+        "description": "Request could not be processed"
+      },
+      "NotFoundError": {
+        "description": "Resource not found"
+      },
+      "StatusMessage": {
+        "description": "Summary of operation results"
+      }
+    },
+    "schemas": {
+      "StatusMessage": {
+        "type": "object"
+      },
+      "MiradoreCredentialFields": {
+        "type": "object",
+        "required": [
+          "hostname",
+          "api_key"
+        ],
+        "properties": {
+          "hostname": {
+            "type": "string",
+            "format": "string",
+            "example": "yourcompanyinc.online.miradore.com"
+          },
+          "api_key": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          }
+        }
+      },
+      "AWSCredentialFields": {
+        "type": "object",
+        "required": [
+          "access_key",
+          "secret_access_key"
+        ],
+        "properties": {
+          "access_key": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "secret_access_key": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "regions": {
+            "type": "string",
+            "format": "string",
+            "example": "us-west-1, us-east-2"
+          },
+          "use_cross_account_org": {
+            "type": "string",
+            "format": "string",
+            "example": "true"
+          },
+          "role": {
+            "type": "string",
+            "format": "string",
+            "example": "rumble-role"
+          }
+        }
+      },
+      "AzureClientSecretCredentialFields": {
+        "type": "object",
+        "required": [
+          "client_id",
+          "client_secret",
+          "tenant_id"
+        ],
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "client_secret": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "tenant_id": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "multi_subscription": {
+            "type": "string",
+            "format": "string",
+            "example": "true"
+          },
+          "subscription_id": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          }
+        }
+      },
+      "AzureUsernamePasswordCredentialFields": {
+        "type": "object",
+        "required": [
+          "client_id",
+          "tenant_id",
+          "username",
+          "password"
+        ],
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "tenant_id": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "username": {
+            "type": "string",
+            "format": "string",
+            "example": "user@example.com"
+          },
+          "password": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          }
+        }
+      },
+      "CrowdstrikeCredentialFields": {
+        "type": "object",
+        "required": [
+          "client_id",
+          "client_secret",
+          "api_url"
+        ],
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "client_secret": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "api_url": {
+            "type": "string",
+            "format": "string",
+            "example": "example.crowdstrike.com"
+          }
+        }
+      },
+      "CensysCredentialFields": {
+        "type": "object",
+        "required": [
+          "client_id",
+          "client_secret"
+        ],
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "client_secret": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "api_url": {
+            "type": "string",
+            "format": "string",
+            "example": "https://search.censys.io"
+          }
+        }
+      },
+      "SNMPv2CommunitiesCredentialFields": {
+        "type": "object",
+        "required": [
+          "community"
+        ],
+        "properties": {
+          "community": {
+            "type": "string",
+            "format": "string",
+            "example": "public,private"
+          }
+        }
+      },
+      "SNMPv3CredentialFields": {
+        "type": "object",
+        "required": [
+          "username"
+        ],
+        "properties": {
+          "username": {
+            "type": "string",
+            "format": "string",
+            "example": "user"
+          },
+          "context": {
+            "type": "string",
+            "format": "string",
+            "example": "vlan-32"
+          },
+          "auth-protocol": {
+            "type": "string",
+            "format": "string",
+            "example": "sha"
+          },
+          "auth-passphrase": {
+            "type": "string",
+            "format": "string",
+            "example": "authpass"
+          },
+          "privacy-protocol": {
+            "type": "string",
+            "format": "string",
+            "example": "aes"
+          },
+          "privacy-passphrase": {
+            "type": "string",
+            "format": "string",
+            "example": "privpass"
+          }
+        }
+      },
+      "VMwareCredentialFields": {
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ],
+        "properties": {
+          "username": {
+            "type": "string",
+            "format": "string",
+            "example": "user"
+          },
+          "password": {
+            "type": "string",
+            "format": "string",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "insecure": {
+            "type": "string",
+            "format": "string",
+            "example": "true"
+          },
+          "thumbprints": {
+            "type": "string",
+            "format": "string",
+            "example": "IP=SHA256:B64HASH"
+          }
+        }
+      },
+      "ComponentVersion": {
+        "type": "object",
+        "description": "A component ID and version",
+        "required": [
+          "id",
+          "version"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "string",
+            "example": "agent"
+          },
+          "version": {
+            "type": "string",
+            "format": "string",
+            "example": "1.0.0"
+          }
+        }
+      },
+      "URL": {
+        "description": "A URL to a resource",
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "url",
+            "example": "https://www.rumble.run/docs/"
+          }
+        }
+      },
+      "ScanOptions": {
+        "type": "object",
+        "required": [
+          "targets"
+        ],
+        "properties": {
+          "targets": {
+            "type": "string",
+            "example": "defaults"
+          },
+          "excludes": {
+            "type": "string"
+          },
+          "scan-name": {
+            "type": "string",
+            "example": "My Scan"
+          },
+          "scan-description": {
+            "type": "string",
+            "example": "Scan of Wireless"
+          },
+          "scan-frequency": {
+            "type": "string",
+            "enum": [
+              "once",
+              "hourly",
+              "daily",
+              "weekly",
+              "monthly",
+              "continuous"
+            ]
+          },
+          "scan-start": {
+            "type": "string",
+            "format": "unixtime",
+            "example": "0"
+          },
+          "scan-tags": {
+            "type": "string",
+            "example": "owner=IT location=Texas"
+          },
+          "scan-grace-period": {
+            "type": "string",
+            "example": "4"
+          },
+          "agent": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "rate": {
+            "type": "string",
+            "example": "10000"
+          },
+          "max-host-rate": {
+            "type": "string",
+            "example": "100"
+          },
+          "passes": {
+            "type": "string",
+            "example": "3"
+          },
+          "max-attempts": {
+            "type": "string",
+            "example": "3"
+          },
+          "max-sockets": {
+            "type": "string",
+            "example": "500"
+          },
+          "max-group-size": {
+            "type": "string",
+            "example": "4096"
+          },
+          "max-ttl": {
+            "type": "string",
+            "example": "255"
+          },
+          "tcp-ports": {
+            "type": "string",
+            "example": "1-1000,5000-6000"
+          },
+          "tcp-excludes": {
+            "type": "string",
+            "example": "9500"
+          },
+          "screenshots": {
+            "type": "string",
+            "example": "true"
+          },
+          "nameservers": {
+            "type": "string",
+            "example": "8.8.8.8"
+          },
+          "subnet-ping": {
+            "type": "string",
+            "example": "true"
+          },
+          "subnet-ping-net-size": {
+            "type": "string",
+            "example": "256"
+          },
+          "subnet-ping-sample-rate": {
+            "type": "string",
+            "example": "3"
+          },
+          "host-ping": {
+            "type": "string",
+            "example": "false"
+          },
+          "probes": {
+            "type": "string",
+            "description": "Optional probe list, otherwise all probes are used",
+            "example": "arp,bacnet,connect,dns,echo,ike,ipmi,mdns,memcache,mssql,natpmp,netbios,pca,rdns,rpcbind,sip,snmp,ssdp,syn,ubnt,wlan-list,wsd"
+          }
+        }
+      },
+      "ScanTemplateOptions": {
+        "type": "object",
+        "required": [
+          "name",
+          "global",
+          "acl"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "My Scan Template"
+          },
+          "description": {
+            "type": "string",
+            "example": "My Scan Template"
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "global": {
+            "type": "boolean",
+            "example": false
+          },
+          "acl": {
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8": "user"
+            }
+          }
+        }
+      },
+      "ScanTemplate": {
+        "type": "object",
+        "required": [
+          "id",
+          "global",
+          "acl"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "client_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "agent_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "site_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "cruncher_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "created_by": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          },
+          "created_by_user_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "type": {
+            "type": "string",
+            "example": "scan"
+          },
+          "status": {
+            "type": "string",
+            "example": "processed"
+          },
+          "error": {
+            "type": "string",
+            "example": "agent unavailable"
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "stats": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "hidden": {
+            "type": "boolean",
+            "example": false
+          },
+          "parent_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "recur": {
+            "type": "boolean",
+            "example": false
+          },
+          "recur_frequency": {
+            "type": "string",
+            "example": "hour"
+          },
+          "start_time": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "recur_last": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "recur_next": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "recur_last_task_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "name": {
+            "type": "string",
+            "example": "My Scan Template"
+          },
+          "description": {
+            "type": "string",
+            "example": "My Scan Template"
+          },
+          "grace_period": {
+            "type": "string",
+            "example": "4"
+          },
+          "source_id": {
+            "type": "string",
+            "example": "1"
+          },
+          "template_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "size_site": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          },
+          "size_data": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          },
+          "size_results": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          },
+          "hosted_zone_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "linked_task_count": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "global": {
+            "type": "boolean",
+            "example": false
+          },
+          "acl": {
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8": "user"
+            }
+          }
+        }
+      },
+      "AgentSiteID": {
+        "type": "object",
+        "required": [
+          "site_id"
+        ],
+        "properties": {
+          "site_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          }
+        }
+      },
+      "OrgOptions": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "My Organization"
+          },
+          "description": {
+            "type": "string",
+            "example": "Wobbly Widgets, Inc."
+          },
+          "export_token": {
+            "type": "string",
+            "example": "ETXXXXXXXXXXXXXXXX"
+          },
+          "project": {
+            "type": "string",
+            "format": "boolean",
+            "example": false
+          },
+          "parent_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "expiration_assets_stale": {
+            "type": "string",
+            "format": "number",
+            "example": "365"
+          },
+          "expiration_assets_offline": {
+            "type": "string",
+            "format": "number",
+            "example": "365"
+          },
+          "expiration_scans": {
+            "type": "string",
+            "format": "number",
+            "example": "365"
+          }
+        }
+      },
+      "SiteOptions": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "New Site"
+          },
+          "description": {
+            "type": "string",
+            "example": "County Office"
+          },
+          "scope": {
+            "type": "string",
+            "example": "192.168.10.0/24"
+          },
+          "excludes": {
+            "type": "string",
+            "example": "192.168.10.1"
+          }
+        }
+      },
+      "CredentialFields": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MiradoreCredentialFields"
+          },
+          {
+            "$ref": "#/components/schemas/AWSCredentialFields"
+          },
+          {
+            "$ref": "#/components/schemas/AzureClientSecretCredentialFields"
+          },
+          {
+            "$ref": "#/components/schemas/AzureUsernamePasswordCredentialFields"
+          },
+          {
+            "$ref": "#/components/schemas/CrowdstrikeCredentialFields"
+          },
+          {
+            "$ref": "#/components/schemas/CensysCredentialFields"
+          },
+          {
+            "$ref": "#/components/schemas/SNMPv2CommunitiesCredentialFields"
+          },
+          {
+            "$ref": "#/components/schemas/SNMPv3CredentialFields"
+          },
+          {
+            "$ref": "#/components/schemas/VMwareCredentialFields"
+          }
+        ]
+      },
+      "CredentialOptions": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "credentials_name"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "miradore_api_key_v1",
+              "aws_access_secret"
+            ],
+            "example": "miradore_api_key_v1"
+          },
+          "acl": {
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8": "user",
+              "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa9": "none"
+            }
+          },
+          "global": {
+            "type": "boolean",
+            "example": false
+          },
+          "cidrs": {
+            "type": "string",
+            "example": "10.0.0.17/32, 192.168.1.0/24"
+          },
+          "secret": {
+            "$ref": "#/components/schemas/CredentialFields"
+          }
+        }
+      },
+      "APIKeyOptions": {
+        "type": "object",
+        "properties": {
+          "comment": {
+            "type": "string",
+            "example": "Splunk integration key"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          }
+        }
+      },
+      "AssetsWithCheckpoint": {
+        "type": "object",
+        "required": [
+          "since",
+          "assets"
+        ],
+        "properties": {
+          "since": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Asset"
+            }
+          }
+        }
+      },
+      "AssetComments": {
+        "type": "object",
+        "required": [
+          "comments"
+        ],
+        "properties": {
+          "comments": {
+            "type": "string",
+            "example": "Sales Laptop"
+          }
+        }
+      },
+      "AssetTags": {
+        "type": "object",
+        "required": [
+          "tags"
+        ],
+        "properties": {
+          "tags": {
+            "type": "string",
+            "example": "ThisTag=Value -OldTag"
+          }
+        }
+      },
+      "AssetTagsWithSearch": {
+        "type": "object",
+        "required": [
+          "tags",
+          "search"
+        ],
+        "properties": {
+          "tags": {
+            "type": "string",
+            "example": "ThisTag=Value -OldTag"
+          },
+          "search": {
+            "type": "string",
+            "example": "alive:true and os:windows"
+          }
+        }
+      },
+      "Search": {
+        "type": "object",
+        "required": [
+          "search"
+        ],
+        "properties": {
+          "search": {
+            "type": "string",
+            "example": "alive:true and os:windows"
+          }
+        }
+      },
+      "Asset": {
+        "type": "object",
+        "required": [
+          "id",
+          "version"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "site_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "alive": {
+            "type": "boolean",
+            "format": "boolean",
+            "example": true
+          },
+          "first_seen": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "last_seen": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "detected_by": {
+            "type": "string",
+            "example": "icmp"
+          },
+          "type": {
+            "type": "string",
+            "example": "Server"
+          },
+          "os": {
+            "type": "string",
+            "example": "Ubuntu Linux"
+          },
+          "os_version": {
+            "type": "string",
+            "example": 18.04
+          },
+          "hw": {
+            "type": "string",
+            "example": "Dell PowerEdge 2500"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "192.168.0.1"
+            }
+          },
+          "addresses_extra": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "192.168.100.1"
+            }
+          },
+          "macs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "mac",
+              "example": "11:22:33:44:55:66"
+            }
+          },
+          "mac_vendors": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "Dell"
+            }
+          },
+          "names": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "www"
+            }
+          },
+          "domains": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "www"
+            }
+          },
+          "service_count": {
+            "type": "integer",
+            "format": "int64",
+            "example": 10
+          },
+          "service_count_tcp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 7
+          },
+          "service_count_udp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "service_count_arp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "service_count_icmp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "lowest_ttl": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          },
+          "lowest_rtt": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "last_agent_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "last_task_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "newest_mac": {
+            "type": "string",
+            "format": "mac",
+            "example": "11:22:33:44:55:66"
+          },
+          "newest_mac_vendor": {
+            "type": "string",
+            "example": "Intel Corporate"
+          },
+          "newest_mac_age": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1304035200000000000
+          },
+          "comments": {
+            "type": "string",
+            "example": "File Server"
+          },
+          "service_ports_tcp": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "port",
+              "example": 22
+            }
+          },
+          "service_ports_udp": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "port",
+              "example": 53
+            }
+          },
+          "service_ports_protocols": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "ssh"
+            }
+          },
+          "service_ports_products": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "bind"
+            }
+          },
+          "org_name": {
+            "type": "string",
+            "example": "Test Labs"
+          },
+          "site_name": {
+            "type": "string",
+            "example": "Primary"
+          },
+          "agent_name": {
+            "type": "string",
+            "example": "LAPTOP-F4P1R6"
+          },
+          "tags": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "services": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "rtts": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "credentials": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "additionalProperties": {
+                "type": "boolean"
+              }
+            }
+          },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Service": {
+        "type": "object",
+        "required": [
+          "id",
+          "service_id"
+        ],
+        "properties": {
+          "service_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "service_asset_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "service_created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "service_updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "service_address": {
+            "type": "string",
+            "example": "192.168.0.1"
+          },
+          "service_transport": {
+            "type": "string",
+            "example": "tcp"
+          },
+          "service_vhost": {
+            "type": "string",
+            "example": "www"
+          },
+          "service_port": {
+            "type": "string",
+            "format": "port",
+            "example": 80
+          },
+          "service_data": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "service_protocol": {
+            "type": "string",
+            "example": "http tls"
+          },
+          "service_summary": {
+            "type": "string",
+            "example": "Login Page"
+          },
+          "service_screenshot_link": {
+            "type": "string"
+          },
+          "service_link": {
+            "type": "string",
+            "example": "http://192.168.0.1:80/"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "site_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "alive": {
+            "type": "boolean",
+            "format": "boolean",
+            "example": true
+          },
+          "first_seen": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "last_seen": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "detected_by": {
+            "type": "string",
+            "example": "icmp"
+          },
+          "type": {
+            "type": "string",
+            "example": "Server"
+          },
+          "os": {
+            "type": "string",
+            "example": "Ubuntu Linux"
+          },
+          "os_version": {
+            "type": "string",
+            "example": 18.04
+          },
+          "hw": {
+            "type": "string",
+            "example": "Dell PowerEdge 2500"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "192.168.0.1"
+            }
+          },
+          "addresses_extra": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "192.168.100.1"
+            }
+          },
+          "macs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "mac",
+              "example": "11:22:33:44:55:66"
+            }
+          },
+          "mac_vendors": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "Dell"
+            }
+          },
+          "names": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "www"
+            }
+          },
+          "domains": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "CORPNET"
+            }
+          },
+          "service_count": {
+            "type": "integer",
+            "format": "int64",
+            "example": 10
+          },
+          "service_count_tcp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 7
+          },
+          "service_count_udp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "service_count_arp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "service_count_icmp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "lowest_ttl": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          },
+          "lowest_rtt": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "last_agent_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "last_task_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "newest_mac": {
+            "type": "string",
+            "format": "mac",
+            "example": "11:22:33:44:55:66"
+          },
+          "newest_mac_vendor": {
+            "type": "string",
+            "example": "Intel Corporate"
+          },
+          "newest_mac_age": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1304035200000000000
+          },
+          "comments": {
+            "type": "string",
+            "example": "File Server"
+          },
+          "service_ports_tcp": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "port",
+              "example": 22
+            }
+          },
+          "service_ports_udp": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "port",
+              "example": 53
+            }
+          },
+          "service_ports_protocols": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "ssh"
+            }
+          },
+          "service_ports_products": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "bind"
+            }
+          },
+          "org_name": {
+            "type": "string",
+            "example": "Test Labs"
+          },
+          "site_name": {
+            "type": "string",
+            "example": "Primary"
+          },
+          "agent_name": {
+            "type": "string",
+            "example": "LAPTOP-F4P1R6"
+          },
+          "tags": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "services": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "rtts": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "credentials": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "additionalProperties": {
+                "type": "boolean"
+              }
+            }
+          },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Site": {
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "permanent": {
+            "type": "boolean",
+            "example": true
+          },
+          "name": {
+            "type": "string",
+            "example": "Primary"
+          },
+          "description": {
+            "type": "string",
+            "example": "Headquarters"
+          },
+          "scope": {
+            "type": "string",
+            "example": "192.168.0.0/24"
+          },
+          "excludes": {
+            "type": "string",
+            "example": "192.168.0.5"
+          },
+          "subnets": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "Wireless": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "last_seen": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "site_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "last_agent_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "last_task_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "essid": {
+            "type": "string",
+            "format": "uuid",
+            "example": "Free WiFi"
+          },
+          "bssid": {
+            "type": "string",
+            "format": "mac",
+            "example": "11:22:33:44:55:66"
+          },
+          "type": {
+            "type": "string",
+            "example": "infrastructure"
+          },
+          "authentication": {
+            "type": "string",
+            "example": "wpa2-psk"
+          },
+          "encryption": {
+            "type": "string",
+            "example": "aes"
+          },
+          "signal": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "example": 99
+          },
+          "channels": {
+            "type": "string",
+            "example": "11, 158+1"
+          },
+          "interface": {
+            "type": "string",
+            "example": "wlan0"
+          },
+          "vendor": {
+            "type": "string",
+            "example": "Ubiquiti Networks"
+          },
+          "family": {
+            "type": "string",
+            "example": 223344
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "org_name": {
+            "type": "string",
+            "example": "Test Labs"
+          },
+          "site_name": {
+            "type": "string",
+            "example": "Primary"
+          },
+          "agent_name": {
+            "type": "string",
+            "example": "LAPTOP-F4P1R6"
+          }
+        }
+      },
+      "Organization": {
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "client_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "download_token": {
+            "type": "string",
+            "example": "DT11226D9EEEA2B035D42569585900"
+          },
+          "download_token_created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "permanent": {
+            "type": "boolean",
+            "example": true
+          },
+          "name": {
+            "type": "string",
+            "example": "My Company"
+          },
+          "description": {
+            "type": "string",
+            "example": "All subdivisions of my company"
+          },
+          "inactive": {
+            "type": "boolean",
+            "example": false
+          },
+          "deactivated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          },
+          "service_count": {
+            "type": "integer",
+            "format": "int64",
+            "example": 10
+          },
+          "service_count_tcp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 7
+          },
+          "service_count_udp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "service_count_arp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "service_count_icmp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "asset_count": {
+            "type": "integer",
+            "format": "int64",
+            "example": 100
+          },
+          "export_token": {
+            "type": "string",
+            "example": "ET11226D9EEEA2B035D42569585900"
+          },
+          "export_token_created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "export_token_last_used_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          },
+          "export_token_last_used_by": {
+            "type": "string",
+            "example": "127.0.0.1"
+          },
+          "export_token_counter": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          },
+          "project": {
+            "type": "boolean",
+            "example": false
+          },
+          "parent_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "expiration_assets_stale": {
+            "type": "integer",
+            "format": "int64",
+            "example": 365
+          },
+          "expiration_assets_offline": {
+            "type": "integer",
+            "format": "int64",
+            "example": 365
+          },
+          "expiration_scans": {
+            "type": "integer",
+            "format": "int64",
+            "example": 365
+          }
+        }
+      },
+      "Credential": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "client_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "name": {
+            "type": "string",
+            "example": "credentials_name"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "miradore_api_key_v1",
+              "aws_access_secret",
+              "crowdstrike_api_key",
+              "azure_client_secret",
+              "azure_username_password",
+              "censys_search_api_key",
+              "snmpv2_community",
+              "snmpv3_credential",
+              "vmware_username_password"
+            ],
+            "description": "The service the credentials are for."
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "created_by_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_by_email": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          },
+          "acl": {
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8": "user"
+            }
+          },
+          "global": {
+            "type": "boolean",
+            "example": false
+          },
+          "cidrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "10.0.0.47/32",
+              "192.168.1.0/24"
+            ]
+          },
+          "last_used_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "last_used_by_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          }
+        }
+      },
+      "APIKey": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "client_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "created_by": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          },
+          "comment": {
+            "type": "string",
+            "example": "API key used for Splunk integration"
+          },
+          "last_used_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          },
+          "last_used_ip": {
+            "type": "string",
+            "example": "127.0.0.1"
+          },
+          "last_used_ua": {
+            "type": "string",
+            "example": "curl/7.44.1"
+          },
+          "counter": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "usage_today": {
+            "type": "integer",
+            "format": "int64",
+            "example": 100
+          },
+          "usage_limit": {
+            "type": "integer",
+            "format": "int64",
+            "example": 10000
+          },
+          "token": {
+            "type": "string",
+            "example": "CTXXXXXXXXXXXXX"
+          },
+          "inactive": {
+            "type": "boolean",
+            "example": "tue"
+          },
+          "type": {
+            "type": "string",
+            "example": "org"
+          }
+        }
+      },
+      "Agent": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "client_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "host_id": {
+            "type": "string",
+            "example": "6f9e6fe52271da70962e007183c5c9c9"
+          },
+          "hub_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "name": {
+            "type": "string",
+            "format": "hostname",
+            "example": "RUMBLE-AGENT"
+          },
+          "site_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "last_checkin": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "os": {
+            "type": "string",
+            "example": "Windows"
+          },
+          "arch": {
+            "type": "string",
+            "example": "amd64"
+          },
+          "version": {
+            "type": "string",
+            "example": "1.2.3 (build 20191219224016) [fc50c5eefdc3ff5c60533c3c345d14d336396272]"
+          },
+          "external_ip": {
+            "type": "string",
+            "example": "1.1.1.1"
+          },
+          "internal_ip": {
+            "type": "string",
+            "example": "192.168.0.1"
+          },
+          "system_info": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "connected": {
+            "type": "boolean",
+            "example": true
+          },
+          "inactive": {
+            "type": "boolean",
+            "example": false
+          },
+          "deactivated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          }
+        }
+      },
+      "Task": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "name": {
+            "type": "string",
+            "example": "Hourly Scan"
+          },
+          "description": {
+            "type": "string",
+            "example": "Scan the headquarters hourly"
+          },
+          "template_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "client_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "agent_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "site_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "cruncher_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "created_by": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          },
+          "created_by_user_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "type": {
+            "type": "string",
+            "example": "scan"
+          },
+          "status": {
+            "type": "string",
+            "example": "processed"
+          },
+          "error": {
+            "type": "string",
+            "example": "agent unavailable"
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "stats": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "hidden": {
+            "type": "boolean",
+            "example": false
+          },
+          "parent_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "recur": {
+            "type": "boolean",
+            "example": false
+          },
+          "recur_frequency": {
+            "type": "string",
+            "example": "hour"
+          },
+          "start_time": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "recur_last": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "recur_next": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "recur_last_task_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          }
+        }
+      },
+      "License": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "name": {
+            "type": "string",
+            "example": "My Company"
+          },
+          "activated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "license_type": {
+            "type": "string",
+            "example": "platform"
+          },
+          "license_expiration": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "license_max_assets": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1000000
+          },
+          "license_live_asset_count": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1000
+          },
+          "license_project_asset_count": {
+            "type": "integer",
+            "format": "int64",
+            "example": 5000
+          },
+          "via_reseller": {
+            "type": "boolean",
+            "example": false
+          },
+          "phone": {
+            "type": "string",
+            "example": "512-555-5555"
+          },
+          "address_street": {
+            "type": "string",
+            "example": "1111 Main St"
+          },
+          "address_country": {
+            "type": "string",
+            "example": "US"
+          },
+          "address_city": {
+            "type": "string",
+            "example": "Austin"
+          },
+          "address_region": {
+            "type": "string",
+            "example": "Texas"
+          },
+          "address_postal": {
+            "type": "string",
+            "example": 78700
+          },
+          "subscription_period_start": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "subscription_period_end": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "subscription_cancel_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "subscription_canceled_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "settings": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "sso_type": {
+            "type": "string",
+            "example": "saml20"
+          },
+          "sso_domain": {
+            "type": "string",
+            "example": "rumble.run"
+          },
+          "sso_mode": {
+            "type": "string",
+            "example": "required"
+          },
+          "sso_login_message": {
+            "type": "string",
+            "example": "Hello"
+          },
+          "sso_login_issuer_url": {
+            "type": "string",
+            "example": "https://accounts.google.com/o/saml2?idpid=issuer"
+          },
+          "sso_login_login_url": {
+            "type": "string",
+            "example": "https://accounts.google.com/o/saml2?idpid=login"
+          },
+          "sso_login_logout_url": {
+            "type": "string",
+            "example": "https://accounts.google.com/o/saml2?idpid=logout"
+          },
+          "sso_default_role": {
+            "type": "string",
+            "example": "viewer"
+          },
+          "partner": {
+            "type": "string",
+            "example": "Rumble"
+          }
+        }
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "client_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "site_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "action": {
+            "type": "string",
+            "example": "login"
+          },
+          "source_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "source_name": {
+            "type": "string",
+            "example": "SiteName"
+          },
+          "source_type": {
+            "type": "string",
+            "example": "api"
+          },
+          "target_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "target_name": {
+            "type": "string",
+            "example": "SiteName"
+          },
+          "target_type": {
+            "type": "string",
+            "example": "api"
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "details": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "state": {
+            "type": "string",
+            "example": "SiteName"
+          },
+          "processor_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "processed_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "client_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "first_name": {
+            "type": "string",
+            "example": "James"
+          },
+          "last_name": {
+            "type": "string",
+            "example": "Smith"
+          },
+          "email": {
+            "type": "string",
+            "example": "jsmith@example.com"
+          },
+          "client_admin": {
+            "type": "boolean",
+            "example": true
+          },
+          "org_default_role": {
+            "type": "string",
+            "example": "admin"
+          },
+          "org_roles": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "reset_token_expiration": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "invite_token_expiration": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "last_login_ip": {
+            "type": "string",
+            "example": "192.168.0.1"
+          },
+          "last_login_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "last_login_ua": {
+            "type": "string",
+            "example": "curl/1.0"
+          },
+          "sso_only": {
+            "type": "boolean",
+            "example": false
+          },
+          "login_failures": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          }
+        }
+      },
+      "Group": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "description": {
+            "type": "string",
+            "example": "Viewers Group"
+          },
+          "name": {
+            "type": "string",
+            "example": "Viewers"
+          },
+          "role_summary": {
+            "type": "string",
+            "example": "all:viewer"
+          },
+          "user_count": {
+            "type": "integer",
+            "format": "int64",
+            "example": 2
+          },
+          "created_by_email": {
+            "type": "string",
+            "example": "jsmith@example.com"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "expires_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "org_default_role": {
+            "type": "string",
+            "example": "admin"
+          },
+          "org_roles": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "GroupPost": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "example": "Viewers Group"
+          },
+          "name": {
+            "type": "string",
+            "example": "Viewers"
+          },
+          "expires_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "org_default_role": {
+            "type": "string",
+            "example": "admin"
+          },
+          "org_roles": {
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "1a5e612e-4d64-45fe-aa3e-afba5cf3b9bf": "viewer",
+              "fd6d6662-732b-4c4b-8331-051178994384": "admin"
+            }
+          }
+        }
+      },
+      "GroupPut": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "description": {
+            "type": "string",
+            "example": "Viewers Group"
+          },
+          "name": {
+            "type": "string",
+            "example": "Viewers"
+          },
+          "expires_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "org_default_role": {
+            "type": "string",
+            "example": "admin"
+          },
+          "org_roles": {
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "1a5e612e-4d64-45fe-aa3e-afba5cf3b9bf": "viewer",
+              "fd6d6662-732b-4c4b-8331-051178994384": "admin"
+            }
+          }
+        }
+      },
+      "GroupMapping": {
+        "type": "object",
+        "required": [
+          "id",
+          "group_id",
+          "sso_attribute",
+          "sso_value"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "f6cfb91a-52ea-4a86-bf9a-5a891a26f52b"
+          },
+          "group_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "2b096711-4d28-4417-8635-64af4f62c1ae"
+          },
+          "group_name": {
+            "type": "string",
+            "example": "Viewers Group"
+          },
+          "sso_attribute": {
+            "type": "string",
+            "example": "basic-attribute"
+          },
+          "sso_value": {
+            "type": "string",
+            "example": "basic-attribute-value"
+          },
+          "description": {
+            "type": "string",
+            "example": "Maps basic-attribute to Viewers Group"
+          },
+          "created_by_email": {
+            "type": "string",
+            "example": "jsmith@example.com"
+          },
+          "created_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          },
+          "updated_at": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1576300370
+          }
+        }
+      },
+      "UserOptions": {
+        "type": "object",
+        "properties": {
+          "first_name": {
+            "type": "string",
+            "example": "James"
+          },
+          "last_name": {
+            "type": "string",
+            "example": "Smith"
+          },
+          "email": {
+            "type": "string",
+            "example": "jsmith@example.com"
+          },
+          "client_admin": {
+            "type": "boolean",
+            "example": true
+          },
+          "org_default_role": {
+            "type": "string",
+            "example": "admin"
+          },
+          "org_roles": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "UserInviteOptions": {
+        "type": "object",
+        "properties": {
+          "first_name": {
+            "type": "string",
+            "example": "James"
+          },
+          "last_name": {
+            "type": "string",
+            "example": "Smith"
+          },
+          "email": {
+            "type": "string",
+            "example": "jsmith@example.com"
+          },
+          "client_admin": {
+            "type": "boolean",
+            "example": true
+          },
+          "org_default_role": {
+            "type": "string",
+            "example": "admin"
+          },
+          "org_roles": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "subject": {
+            "type": "string",
+            "example": "Welcome to Rumble"
+          },
+          "message": {
+            "type": "string",
+            "example": "You have been invited to the Rumble Network Discovery platform"
+          }
+        }
+      },
+      "AssetServiceNow": {
+        "type": "object",
+        "required": [
+          "asset_id"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "e77602e0-3fb8-4734-aef9-fbc6fdcb0fa8"
+          },
+          "organization": {
+            "type": "string",
+            "example": "Headquarters"
+          },
+          "site": {
+            "type": "string",
+            "example": "Primary"
+          },
+          "detected_by": {
+            "type": "string",
+            "example": "icmp"
+          },
+          "type": {
+            "type": "string",
+            "example": "Server"
+          },
+          "sys_class_name": {
+            "type": "string",
+            "example": "cmdb_ci_iot"
+          },
+          "os_vendor": {
+            "type": "string",
+            "example": "Microsoft"
+          },
+          "os_product": {
+            "type": "string",
+            "example": "Windows 10"
+          },
+          "os_version": {
+            "type": "string",
+            "example": 1903
+          },
+          "hw_vendor": {
+            "type": "string",
+            "example": "Dell"
+          },
+          "hw_product": {
+            "type": "string",
+            "example": "PowerEdge"
+          },
+          "hw_version": {
+            "type": "string",
+            "example": 2
+          },
+          "ip_address": {
+            "type": "string",
+            "example": "192.168.0.1"
+          },
+          "addresses_scope": {
+            "type": "string",
+            "example": "192.168.100.1;192.168.100.2"
+          },
+          "addresses_extra": {
+            "type": "string",
+            "example": "192.168.0.5;192.168.0.3"
+          },
+          "mac_address": {
+            "type": "string",
+            "format": "mac",
+            "example": "11:22:33:44:55:66"
+          },
+          "mac_manufacturer": {
+            "type": "string",
+            "example": "Dell"
+          },
+          "newest_mac_age": {
+            "type": "string",
+            "example": "2020-01-01T00:00:00.000Z"
+          },
+          "macs": {
+            "type": "string",
+            "format": "mac",
+            "example": "11:22:33:44:55:66"
+          },
+          "mac_vendors": {
+            "type": "string",
+            "example": "Dell"
+          },
+          "name": {
+            "type": "string",
+            "example": "www;server"
+          },
+          "tags": {
+            "type": "string",
+            "example": "owner=IT;location=Austin"
+          },
+          "domains": {
+            "type": "string",
+            "example": "rumble.run;rumble.local.lan"
+          },
+          "service_count": {
+            "type": "integer",
+            "format": "int64",
+            "example": 10
+          },
+          "service_count_tcp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 7
+          },
+          "service_count_udp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "service_count_arp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "service_count_icmp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "lowest_ttl": {
+            "type": "integer",
+            "format": "int64",
+            "example": 0
+          },
+          "lowest_rtt": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "alive": {
+            "type": "boolean",
+            "format": "boolean",
+            "example": true
+          },
+          "first_discovered": {
+            "type": "string",
+            "example": "2006-01-02T15:04:05.000Z"
+          },
+          "last_discovered": {
+            "type": "string",
+            "example": "2006-01-02T15:04:05.000Z"
+          },
+          "last_updated": {
+            "type": "string",
+            "example": "2006-01-02T15:04:05.000Z"
+          },
+          "comments": {
+            "type": "string",
+            "example": "File Server"
+          }
+        }
+      }
+    }
+  },
+  "x-origin-servers": [
+    {
+      "description": "Rumble Console",
+      "url": "https://console.rumble.run/api/v1.0"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "EasyPDFServer",
+    "description": "API for converting HTML to PDF.",
+    "version": 1
+  },
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://easypdfservercom.dataman.ai"
+    }
+  ],
+  "paths": {
+    "/make-pdf": {
+      "post": {
+        "summary": "Generate a PDF from HTML or URL.",
+        "requestBody": {
+          "description": "Pass the API key from easypdfserver.com and either HTML or URL to generate your PDF.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "html": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "key"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Your PDF file",
+            "content": {
+              "application/pdf": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-origin-servers": [
+    {
+      "url": "https://api.easypdfserver.com",
+      "description": "Main (production) server"
+    }
+  ]
+}

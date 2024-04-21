@@ -1,1976 +1,1976 @@
 [
   {
-    "key": "1password-com-events",
+    "key": "1passwordcom-events",
     "originalUrl": "https://i.1password.com/media/1password-events-reporting/1password-events-api.yaml",
     "title": "Events API"
   },
   {
-    "key": "1password-local-connect",
+    "key": "1passwordlocal-connect",
     "originalUrl": "https://i.1password.com/media/1password-connect/1password-connect-api.yaml",
     "title": "1Password Connect"
   },
   {
-    "key": "ably-io-platform",
+    "key": "ablyio-platform",
     "originalUrl": "https://raw.githubusercontent.com/ably/open-specs/main/definitions/platform-v1.yaml",
     "title": "Platform API"
   },
   {
-    "key": "ably-net-control",
+    "key": "ablynet-control",
     "originalUrl": "https://raw.githubusercontent.com/ably/open-specs/main/definitions/control-v1.yaml",
     "title": "Control API v1"
   },
   {
-    "key": "adobe-com-aem",
+    "key": "adobecom-aem",
     "originalUrl": "https://raw.githubusercontent.com/shinesolutions/swagger-aem/master/conf/api.yml",
     "title": "Adobe Experience Manager (AEM) API"
   },
   {
-    "key": "adyen-com-accountservice",
+    "key": "adyencom-accountservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/AccountService-v6.json",
     "title": "Account API"
   },
   {
-    "key": "adyen-com-balancecontrolservice",
+    "key": "adyencom-balancecontrolservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/BalanceControlService-v1.json",
     "title": "Adyen Balance Control API"
   },
   {
-    "key": "adyen-com-balanceplatformservice",
+    "key": "adyencom-balanceplatformservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/BalancePlatformService-v2.json",
     "title": "Configuration API"
   },
   {
-    "key": "adyen-com-binlookupservice",
+    "key": "adyencom-binlookupservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/BinLookupService-v54.json",
     "title": "Adyen BinLookup API"
   },
   {
-    "key": "adyen-com-checkoutservice",
+    "key": "adyencom-checkoutservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/CheckoutService-v70.json",
     "title": "Adyen Checkout API"
   },
   {
-    "key": "adyen-com-dataprotectionservice",
+    "key": "adyencom-dataprotectionservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/DataProtectionService-v1.json",
     "title": "Adyen Data Protection API"
   },
   {
-    "key": "adyen-com-fundservice",
+    "key": "adyencom-fundservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/FundService-v6.json",
     "title": "Fund API"
   },
   {
-    "key": "adyen-com-hopservice",
+    "key": "adyencom-hopservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/HopService-v6.json",
     "title": "Hosted onboarding API"
   },
   {
-    "key": "adyen-com-legalentityservice",
+    "key": "adyencom-legalentityservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/LegalEntityService-v3.json",
     "title": "Legal Entity Management API"
   },
   {
-    "key": "adyen-com-managementservice",
+    "key": "adyencom-managementservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/ManagementService-v1.json",
     "title": "Management API"
   },
   {
-    "key": "adyen-com-notificationconfigurationservice",
+    "key": "adyencom-notificationconfigurationservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/NotificationConfigurationService-v6.json",
     "title": "Notification Configuration API"
   },
   {
-    "key": "adyen-com-paymentservice",
+    "key": "adyencom-paymentservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/PaymentService-v68.json",
     "title": "Adyen Payment API"
   },
   {
-    "key": "adyen-com-payoutservice",
+    "key": "adyencom-payoutservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/PayoutService-v68.json",
     "title": "Adyen Payout API"
   },
   {
-    "key": "adyen-com-recurringservice",
+    "key": "adyencom-recurringservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/RecurringService-v68.json",
     "title": "Adyen Recurring API"
   },
   {
-    "key": "adyen-com-storedvalueservice",
+    "key": "adyencom-storedvalueservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/StoredValueService-v46.json",
     "title": "Adyen Stored Value API"
   },
   {
-    "key": "adyen-com-testcardservice",
+    "key": "adyencom-testcardservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/TestCardService-v1.json",
     "title": "Adyen Test Cards API"
   },
   {
-    "key": "adyen-com-tfmapiservice",
+    "key": "adyencom-tfmapiservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/TfmAPIService-v1.json",
     "title": "POS Terminal Management API"
   },
   {
-    "key": "adyen-com-transferservice",
+    "key": "adyencom-transferservice",
     "originalUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/TransferService-v3.json",
     "title": "Transfers API"
   },
   {
-    "key": "amadeus-com-amadeus-flight-price-analysis",
+    "key": "amadeuscom-amadeus-flight-price-analysis",
     "originalUrl": "https://raw.githubusercontent.com/amadeus4dev/amadeus-open-api-specification/main/spec/json/FlightPriceAnalysis_v1_swagger_specification.json",
     "title": "Flight Price Analysis API"
   },
   {
-    "key": "amadeus-com-amadeus-location-score",
+    "key": "amadeuscom-amadeus-location-score",
     "originalUrl": "https://raw.githubusercontent.com/amadeus4dev/amadeus-open-api-specification/main/spec/json/LocationScore_v1_swagger_specification.json",
     "title": "Location Score"
   },
   {
-    "key": "amadeus-com-amadeus-travel-recommendations",
+    "key": "amadeuscom-amadeus-travel-recommendations",
     "originalUrl": "https://raw.githubusercontent.com/amadeus4dev/amadeus-open-api-specification/main/spec/json/TravelRecommendations_v1_swagger_specification.json",
     "title": "Travel Recommendations API"
   },
   {
-    "key": "amadeus-com-amadeus-trip-parser",
+    "key": "amadeuscom-amadeus-trip-parser",
     "originalUrl": "https://raw.githubusercontent.com/amadeus4dev/amadeus-open-api-specification/main/spec/json/TripParser_v3_swagger_specification.json",
     "title": "Trip Parser"
   },
   {
-    "key": "apache-org",
+    "key": "apacheorg",
     "originalUrl": "https://airflow.apache.org/docs/apache-airflow/stable/_specs/v1.yaml",
     "title": "Airflow API (Stable)"
   },
   {
-    "key": "apache-org-airflow",
+    "key": "apacheorg-airflow",
     "originalUrl": "https://airflow.apache.org/docs/apache-airflow/stable/_specs/v1.yaml",
     "title": "Airflow API (Stable)"
   },
   {
-    "key": "api-ebay-com-sell-account",
+    "key": "apiebaycom-sell-account",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/account/openapi/3/sell_account_v1_oas3.json",
     "title": "Account API"
   },
   {
-    "key": "api-ebay-com-sell-analytics",
+    "key": "apiebaycom-sell-analytics",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/analytics/openapi/3/sell_analytics_v1_oas3.json",
     "title": " Seller Service Metrics API "
   },
   {
-    "key": "api-ebay-com-sell-compliance",
+    "key": "apiebaycom-sell-compliance",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/compliance/openapi/3/sell_compliance_v1_oas3.json",
     "title": "Compliance API"
   },
   {
-    "key": "apideck-com-accounting",
+    "key": "apideckcom-accounting",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/accounting.yml",
     "title": "Accounting API"
   },
   {
-    "key": "apideck-com-ats",
+    "key": "apideckcom-ats",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/ats.yml",
     "title": "ATS API"
   },
   {
-    "key": "apideck-com-connector",
+    "key": "apideckcom-connector",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/connector.yml",
     "title": "Connector API"
   },
   {
-    "key": "apideck-com-crm",
+    "key": "apideckcom-crm",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/crm.yml",
     "title": "CRM API"
   },
   {
-    "key": "apideck-com-customer-support",
+    "key": "apideckcom-customer-support",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/customer-support.yml",
     "title": "Customer Support"
   },
   {
-    "key": "apideck-com-ecommerce",
+    "key": "apideckcom-ecommerce",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/ecommerce.yml",
     "title": "Ecommerce API"
   },
   {
-    "key": "apideck-com-ecosystem",
+    "key": "apideckcom-ecosystem",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/ecosystem.yml",
     "title": "Ecosystem API"
   },
   {
-    "key": "apideck-com-file-storage",
+    "key": "apideckcom-file-storage",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/file-storage.yml",
     "title": "File storage API"
   },
   {
-    "key": "apideck-com-hris",
+    "key": "apideckcom-hris",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/hris.yml",
     "title": "HRIS API"
   },
   {
-    "key": "apideck-com-issue-tracking",
+    "key": "apideckcom-issue-tracking",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/issue-tracking.yml",
     "title": "Issue Tracking API"
   },
   {
-    "key": "apideck-com-lead",
+    "key": "apideckcom-lead",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/lead.yml",
     "title": "Lead API"
   },
   {
-    "key": "apideck-com-pos",
+    "key": "apideckcom-pos",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/pos.yml",
     "title": "POS API"
   },
   {
-    "key": "apideck-com-proxy",
+    "key": "apideckcom-proxy",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/proxy.yml",
     "title": "Proxy API"
   },
   {
-    "key": "apideck-com-sms",
+    "key": "apideckcom-sms",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/sms.yml",
     "title": "SMS API"
   },
   {
-    "key": "apideck-com-vault",
+    "key": "apideckcom-vault",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/vault.yml",
     "title": "Vault API"
   },
   {
-    "key": "apideck-com-webhook",
+    "key": "apideckcom-webhook",
     "originalUrl": "https://raw.githubusercontent.com/apideck-libraries/openapi-specs/master/webhook.yml",
     "title": "Webhook API"
   },
   {
-    "key": "apigee-local-registry",
+    "key": "apigeelocal-registry",
     "originalUrl": "https://raw.githubusercontent.com/apigee/registry/main/openapi.yaml",
     "title": "Registry API"
   },
   {
-    "key": "apis-guru",
+    "key": "apisguru",
     "originalUrl": "https://api.apis.guru/v2/openapi.yaml",
     "title": "APIs.guru"
   },
   {
-    "key": "apiz-ebay-com-commerce-identity",
+    "key": "apizebaycom-commerce-identity",
     "originalUrl": "https://developer.ebay.com/api-docs/master/commerce/identity/openapi/3/commerce_identity_v1_oas3.json",
     "title": "Identity API"
   },
   {
-    "key": "apiz-ebay-com-sell-finances",
+    "key": "apizebaycom-sell-finances",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/finances/openapi/3/sell_finances_v1_oas3.json",
     "title": "eBay Finances API"
   },
   {
-    "key": "arespass-net",
+    "key": "arespassnet",
     "originalUrl": "https://arespass.net/assets/arespassv1.0-openapi.yaml",
     "title": "Arespass"
   },
   {
-    "key": "asana-com",
+    "key": "asanacom",
     "originalUrl": "https://raw.githubusercontent.com/Asana/developer-docs/master/defs/asana_oas.yaml",
     "title": "Asana"
   },
   {
-    "key": "asuarez-dev-searchly",
+    "key": "asuarezdev-searchly",
     "originalUrl": "https://raw.githubusercontent.com/AlbertSuarez/searchly/master/src/searchly/static/openapi/openapi_v1.yaml",
     "title": "SearchLy API v1"
   },
   {
-    "key": "atlassian-com-jira",
+    "key": "atlassiancom-jira",
     "originalUrl": "https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json",
     "title": "The Jira Cloud platform REST API"
   },
   {
-    "key": "bbc-com",
+    "key": "bbccom",
     "originalUrl": "https://raw.githubusercontent.com/Mermade/bbcparse/master/nitroApi/openapi.yaml",
     "title": "BBC Nitro API"
   },
   {
-    "key": "bbci-co-uk",
+    "key": "bbcicouk",
     "originalUrl": "https://raw.githubusercontent.com/Mermade/bbcparse/master/iblApi/openapi.yaml",
     "title": "BBC iPlayer Business Layer"
   },
   {
-    "key": "bclaws-ca-bclaws",
+    "key": "bclawsca-bclaws",
     "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/bclaws/bclaws.json",
     "title": "BC Laws"
   },
   {
-    "key": "billingo-hu",
+    "key": "billingohu",
     "originalUrl": "https://api.swaggerhub.com/apis/Billingo/Billingo/3.0.7",
     "title": "Billingo API v3"
   },
   {
-    "key": "bintable-com",
+    "key": "bintablecom",
     "originalUrl": "https://bintable.com/api-files/openapi.json",
     "title": "BIN Lookup API"
   },
   {
-    "key": "biztoc-com",
+    "key": "biztoccom",
     "originalUrl": "https://ai.biztoc.com/openapi.yaml",
     "title": "BizToc"
   },
   {
-    "key": "box-com",
+    "key": "boxcom",
     "originalUrl": "https://opensource.box.com/box-openapi/openapi.json",
     "title": "Box Platform API"
   },
   {
-    "key": "brex-io",
+    "key": "brexio",
     "originalUrl": "https://api.brex.io/docs/api-docs.json",
     "title": "KYC API Documentation"
   },
   {
-    "key": "bunq-com",
+    "key": "bunqcom",
     "originalUrl": "https://raw.githubusercontent.com/bunq/doc/master/swagger.json",
     "title": "bunq API"
   },
   {
-    "key": "c19qrserver-local",
+    "key": "c19qrserverlocal",
     "originalUrl": "https://raw.githubusercontent.com/aijaz/qrCodeSigninServer/main/openapi.yaml",
     "title": "API for the COVID-19 Tracking QR Code Signin Server."
   },
   {
-    "key": "calorieninjas-com",
+    "key": "calorieninjascom",
     "originalUrl": "https://www.calorieninjas.com/openapi.json",
     "title": "CalorieNinjas"
   },
   {
-    "key": "canada-holidays-ca",
+    "key": "canada-holidaysca",
     "originalUrl": "https://api.swaggerhub.com/apis/pcraig3/canada-holidays/1.8.0",
     "title": "Canada Holidays API"
   },
   {
-    "key": "change-local",
+    "key": "changelocal",
     "originalUrl": "https://change-api-definition.s3-us-west-1.amazonaws.com/swagger.yaml",
     "title": "API V1"
   },
   {
-    "key": "chompthis-com",
+    "key": "chompthiscom",
     "originalUrl": "https://raw.githubusercontent.com/chompfoods/examples/master/chomp-Chomp-1.0.0-oas3-swagger.json",
     "title": "Chomp Food Database API Documentation"
   },
   {
-    "key": "climate-com",
+    "key": "climatecom",
     "originalUrl": "https://dev.fieldview.com/openapi/platform.yaml",
     "title": "Climate FieldView Platform APIs"
   },
   {
-    "key": "clubhouseapi-com",
+    "key": "clubhouseapicom",
     "originalUrl": "https://raw.githubusercontent.com/zhuowei/ClubhouseAPI/main/doc/openapi.yaml",
     "title": "Clubhouse API"
   },
   {
-    "key": "codat-io-accounting",
+    "key": "codatio-accounting",
     "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Accounting.json",
     "title": "Accounting API"
   },
   {
-    "key": "codat-io-assess",
+    "key": "codatio-assess",
     "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Assess.json",
     "title": "Assess API"
   },
   {
-    "key": "codat-io-bank-feeds",
+    "key": "codatio-bank-feeds",
     "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Bank-Feeds.json",
     "title": "Bank Feeds API"
   },
   {
-    "key": "codat-io-banking",
+    "key": "codatio-banking",
     "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Banking.json",
     "title": "Banking API"
   },
   {
-    "key": "codat-io-commerce",
+    "key": "codatio-commerce",
     "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Commerce.json",
     "title": "Commerce API"
   },
   {
-    "key": "codat-io-sync-for-commerce",
+    "key": "codatio-sync-for-commerce",
     "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Sync-Commerce.json",
     "title": "Sync for Commerce API"
   },
   {
-    "key": "codat-io-sync-for-expenses",
+    "key": "codatio-sync-for-expenses",
     "originalUrl": "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Expenses.json",
     "title": "Codat Expense API"
   },
   {
-    "key": "codesearch-debian-net",
+    "key": "codesearchdebiannet",
     "originalUrl": "https://codesearch.debian.net/openapi.yaml",
     "title": "Debian Code Search"
   },
   {
-    "key": "color-pizza",
+    "key": "colorpizza",
     "originalUrl": "https://raw.githubusercontent.com/meodai/color-name-api/main/color-names-v1-OpenAPI.yml",
     "title": "Color Name API"
   },
   {
-    "key": "combell-com",
+    "key": "combellcom",
     "originalUrl": "https://api.combell.com/v2/documentation/swagger-v2.json",
     "title": "Public Api"
   },
   {
-    "key": "configcat-com",
+    "key": "configcatcom",
     "originalUrl": "https://api.configcat.com/docs/v1/swagger.json",
     "title": "ConfigCat Public Management API"
   },
   {
-    "key": "conjur-local",
+    "key": "conjurlocal",
     "originalUrl": "https://raw.githubusercontent.com/cyberark/conjur-openapi-spec/main/spec/openapi.yml",
     "title": "Conjur"
   },
   {
-    "key": "contentgroove-com",
+    "key": "contentgroovecom",
     "originalUrl": "https://api.contentgroove.com/api-docs/v1/openapi.json",
     "title": "ContentGroove API"
   },
   {
-    "key": "cpy-re-peertube",
+    "key": "cpyre-peertube",
     "originalUrl": "https://raw.githubusercontent.com/Chocobozzz/PeerTube/develop/support/doc/api/openapi.yaml",
     "title": "PeerTube"
   },
   {
-    "key": "dataflowkit-com",
+    "key": "dataflowkitcom",
     "originalUrl": "https://api.dataflowkit.com/v1/swagger.yaml",
     "title": "Dataflow Kit Web Scraper"
   },
   {
-    "key": "datasette-local",
+    "key": "datasettelocal",
     "originalUrl": "https://datasette.io/-/chatgpt-openapi-schema.yml",
     "title": "Datasette API"
   },
   {
-    "key": "dev-to",
+    "key": "devto",
     "originalUrl": "https://raw.githubusercontent.com/forem/forem/main/swagger/v1/api_v1.json",
     "title": "Forem API V1"
   },
   {
-    "key": "digitalnz-org",
+    "key": "digitalnzorg",
     "originalUrl": "https://api.swaggerhub.com/apis/DigitalNZ/Records/3",
     "title": "DigitalNZ API"
   },
   {
-    "key": "digitalocean-com",
+    "key": "digitaloceancom",
     "originalUrl": "https://raw.githubusercontent.com/digitalocean/openapi/main/specification/DigitalOcean-public.v2.yaml",
     "title": "DigitalOcean API"
   },
   {
-    "key": "discourse-local",
+    "key": "discourselocal",
     "originalUrl": "http://docs.discourse.org/openapi.json",
     "title": "Discourse API Documentation"
   },
   {
-    "key": "dnd5eapi-co",
+    "key": "dnd5eapico",
     "originalUrl": "https://www.dnd5eapi.co/swagger/openapi.json",
     "title": "D&D 5e API"
   },
   {
-    "key": "dodo-ac",
+    "key": "dodoac",
     "originalUrl": "https://api.nookipedia.com/static/doc.yaml",
     "title": "Nookipedia"
   },
   {
-    "key": "doqs-dev",
+    "key": "doqsdev",
     "originalUrl": "https://api.doqs.dev/v1/openapi.json",
     "title": "doqs.dev | PDF filling API"
   },
   {
-    "key": "dracoon-team",
+    "key": "dracoonteam",
     "originalUrl": "https://dracoon.team/api/spec_v4/",
     "title": "DRACOON API"
   },
   {
-    "key": "drchrono-com",
+    "key": "drchronocom",
     "originalUrl": "https://drchrono.com/openapi-schema",
     "title": ""
   },
   {
-    "key": "easypdfserver-com",
+    "key": "easypdfservercom",
     "originalUrl": "https://www.easypdfserver.com/openapi.yaml",
     "title": "EasyPDFServer"
   },
   {
-    "key": "ebay-com-buy-deal",
+    "key": "ebaycom-buy-deal",
     "originalUrl": "https://developer.ebay.com/api-docs/master/buy/deal/openapi/3/buy_deal_v1_oas3.json",
     "title": "Deal API"
   },
   {
-    "key": "ebay-com-commerce-catalog",
+    "key": "ebaycom-commerce-catalog",
     "originalUrl": "https://developer.ebay.com/api-docs/master/commerce/catalog/openapi/3/commerce_catalog_v1_beta_oas3.json",
     "title": "Catalog API"
   },
   {
-    "key": "ebay-com-commerce-charity",
+    "key": "ebaycom-commerce-charity",
     "originalUrl": "https://developer.ebay.com/api-docs/master/commerce/charity/openapi/3/commerce_charity_v1_oas3.json",
     "title": "Charity API"
   },
   {
-    "key": "ebay-com-developer-analytics",
+    "key": "ebaycom-developer-analytics",
     "originalUrl": "https://developer.ebay.com/api-docs/master/developer/analytics/openapi/3/developer_analytics_v1_beta_oas3.json",
     "title": "Analytics API"
   },
   {
-    "key": "ebay-com-sell-account",
+    "key": "ebaycom-sell-account",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/account/openapi/3/sell_account_v1_oas3.json",
     "title": "Account API"
   },
   {
-    "key": "ebay-com-sell-analytics",
+    "key": "ebaycom-sell-analytics",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/analytics/openapi/3/sell_analytics_v1_oas3.json",
     "title": " Seller Service Metrics API "
   },
   {
-    "key": "ebay-com-sell-compliance",
+    "key": "ebaycom-sell-compliance",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/compliance/openapi/3/sell_compliance_v1_oas3.json",
     "title": "Compliance API"
   },
   {
-    "key": "ebay-com-sell-feed",
+    "key": "ebaycom-sell-feed",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/feed/openapi/3/sell_feed_v1_oas3.json",
     "title": "Feed API"
   },
   {
-    "key": "ebay-com-sell-fulfillment",
+    "key": "ebaycom-sell-fulfillment",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/fulfillment/openapi/3/sell_fulfillment_v1_oas3.json",
     "title": "Fulfillment API"
   },
   {
-    "key": "ebay-com-sell-logistics",
+    "key": "ebaycom-sell-logistics",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/logistics/openapi/3/sell_logistics_v1_oas3.json",
     "title": "Logistics API"
   },
   {
-    "key": "ebay-com-sell-marketing",
+    "key": "ebaycom-sell-marketing",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/marketing/openapi/3/sell_marketing_v1_oas3.json",
     "title": "Marketing API"
   },
   {
-    "key": "ebay-com-sell-metadata",
+    "key": "ebaycom-sell-metadata",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/metadata/openapi/3/sell_metadata_v1_oas3.json",
     "title": "Metadata API"
   },
   {
-    "key": "ebay-com-sell-negotiation",
+    "key": "ebaycom-sell-negotiation",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/negotiation/openapi/3/sell_negotiation_v1_oas3.json",
     "title": "Negotiation API"
   },
   {
-    "key": "ebay-com-sell-recommendation",
+    "key": "ebaycom-sell-recommendation",
     "originalUrl": "https://developer.ebay.com/api-docs/master/sell/recommendation/openapi/3/sell_recommendation_v1_oas3.json",
     "title": "Recommendation API"
   },
   {
-    "key": "eos-local",
+    "key": "eoslocal",
     "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/9b1349082ac4eca3660eaf6ad31e70d2/raw/88dacf4280e9aca949b5f4692904229fdf2457ff/swagger(1).json",
     "title": "Net API"
   },
   {
-    "key": "esgenterprise-com",
+    "key": "esgenterprisecom",
     "originalUrl": "https://www.esgenterprise.com/wp-content/api/ESGRatingAPI-Definition.json",
     "title": "ESG Rating Data"
   },
   {
-    "key": "etsi-local-mec010-2_apppkgmgmt",
+    "key": "etsilocal-mec010-2-apppkgmgmt",
     "originalUrl": "https://forge.etsi.org/rep/mec/gs010-2-app-pkg-lcm-api/raw/v2.1.1/MEC010-2_AppPkgMgmt.yaml",
     "title": "ETSI GS MEC 010-2 - Part 2: Application lifecycle, rules and requirements management"
   },
   {
-    "key": "exavault-com",
+    "key": "exavaultcom",
     "originalUrl": "https://exavault-website.cdn.prismic.io/exavault-website/2d2d871e-394d-433e-9305-f38b6656f279_evapi_2.0_public.yaml",
     "title": "ExaVault"
   },
   {
-    "key": "exchangerate-api-com",
+    "key": "exchangerate-apicom",
     "originalUrl": "https://www.exchangerate-api.com/openapi.yaml",
     "title": "ExchangeRate-API"
   },
   {
-    "key": "exlibrisgroup-com-tasklists",
+    "key": "exlibrisgroupcom-tasklists",
     "originalUrl": "https://developers.exlibrisgroup.com/wp-content/uploads/alma/openapi/tasklists.yaml",
     "title": "Ex Libris APIs"
   },
   {
-    "key": "extendsclass-com-json-storage",
+    "key": "extendsclasscom-json-storage",
     "originalUrl": "https://extendsclass.com/json-storage.openapi.json",
     "title": "JSON storage"
   },
   {
-    "key": "extpose-com",
+    "key": "extposecom",
     "originalUrl": "https://extpose.com/openapi.yaml",
     "title": "Extpose"
   },
   {
-    "key": "exude-api-herokuapp-com",
+    "key": "exude-apiherokuappcom",
     "originalUrl": "http://uttesh.com/exude-api/exude-service-open-api.json",
     "title": "Exude API Service"
   },
   {
-    "key": "firmalyzer-com-iotvas",
+    "key": "firmalyzercom-iotvas",
     "originalUrl": "https://iotvas-api.firmalyzer.com/api/v1/openapi.json",
     "title": "IoTVAS API"
   },
   {
-    "key": "freetv-app-com",
+    "key": "freetv-appcom",
     "originalUrl": "https://www.freetv-app.com/openapi.json",
     "title": "News Plugin"
   },
   {
-    "key": "fulfillment-com",
+    "key": "fulfillmentcom",
     "originalUrl": "https://fulfillment.github.io/api/openapi.json",
     "title": "Fulfillment.com APIv2"
   },
   {
-    "key": "fungenerators-com-barcode",
+    "key": "fungeneratorscom-barcode",
     "originalUrl": "https://fungenerators.com/yaml/barcode.yaml",
     "title": "Barcode API"
   },
   {
-    "key": "fungenerators-com-pirate",
+    "key": "fungeneratorscom-pirate",
     "originalUrl": "https://fungenerators.com/yaml/pirate.yaml",
     "title": "Pirates API"
   },
   {
-    "key": "fungenerators-com-riddle",
+    "key": "fungeneratorscom-riddle",
     "originalUrl": "https://fungenerators.com/yaml/riddle.yaml",
     "title": "Fun Generators API"
   },
   {
-    "key": "fungenerators-com-shakespeare",
+    "key": "fungeneratorscom-shakespeare",
     "originalUrl": "https://fungenerators.com/yaml/shakespeare.yaml",
     "title": "Shakespeare API"
   },
   {
-    "key": "fungenerators-com-uuid",
+    "key": "fungeneratorscom-uuid",
     "originalUrl": "https://fungenerators.com/yaml/uuid.yaml",
     "title": "UUID Generation API"
   },
   {
-    "key": "gambitcomm-local-mimic",
+    "key": "gambitcommlocal-mimic",
     "originalUrl": "https://www.gambitcomm.com/docs/mimic.yaml",
     "title": "MIMIC REST API"
   },
   {
-    "key": "getpostman-com",
+    "key": "getpostmancom",
     "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/f5dd7e7e712a4f2caa8f1783f1053dbc/raw/05fb7ae8b877b37d93413a0b8183bf60c2e1bdfe/postman-api.yaml",
     "title": "Postman API"
   },
   {
-    "key": "getthedata-com-bng2latlong",
+    "key": "getthedatacom-bng2latlong",
     "originalUrl": "https://www.getthedata.com/bng2latlong/openapi",
     "title": "bng2latlong"
   },
   {
-    "key": "github-com-api-github-com",
+    "key": "githubcom-apigithubcom",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-api-github-com-2022-11-28",
+    "key": "githubcom-apigithubcom2022-11-28",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.2022-11-28.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghec",
+    "key": "githubcom-ghec",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghec/ghec.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghec-2022-11-28",
+    "key": "githubcom-ghec2022-11-28",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghec/ghec.2022-11-28.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-2-18",
+    "key": "githubcom-ghes-218",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.18/ghes-2.18.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-2-19",
+    "key": "githubcom-ghes-219",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.19/ghes-2.19.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-2-20",
+    "key": "githubcom-ghes-220",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.20/ghes-2.20.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-2-21",
+    "key": "githubcom-ghes-221",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.21/ghes-2.21.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-2-22",
+    "key": "githubcom-ghes-222",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.22/ghes-2.22.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-3-0",
+    "key": "githubcom-ghes-30",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.0/ghes-3.0.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-3-1",
+    "key": "githubcom-ghes-31",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.1/ghes-3.1.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-3-2",
+    "key": "githubcom-ghes-32",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.2/ghes-3.2.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-3-3",
+    "key": "githubcom-ghes-33",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.3/ghes-3.3.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-3-4",
+    "key": "githubcom-ghes-34",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.4/ghes-3.4.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-3-5",
+    "key": "githubcom-ghes-35",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.5/ghes-3.5.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-3-6",
+    "key": "githubcom-ghes-36",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.6/ghes-3.6.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-3-7",
+    "key": "githubcom-ghes-37",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.7/ghes-3.7.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-ghes-3-8",
+    "key": "githubcom-ghes-38",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.8/ghes-3.8.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "github-com-github-ae",
+    "key": "githubcom-githubae",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/github.ae/github.ae.json",
     "title": "GitHub v3 REST API"
   },
   {
-    "key": "go-upc-com",
+    "key": "go-upccom",
     "originalUrl": "https://gist.githubusercontent.com/blizzrdof77/c3aa75284830179b44acc1aebd236e1a/raw/437d7bbb822f069efd700f1081a55f421bb3453d/go-upc-barcode-api-definition.yaml",
     "title": "Go-UPC Barcode-Lookup API"
   },
   {
-    "key": "google-home",
+    "key": "googlehome",
     "originalUrl": "https://raw.githubusercontent.com/rithvikvibhu/GHLocalApi/master/GoogleHome.openapi3.json",
     "title": "Google Home"
   },
   {
-    "key": "gov-bc-ca-bcdc",
+    "key": "govbcca-bcdc",
     "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/bcdc/bcdc.json",
     "title": "BC Data Catalogue API"
   },
   {
-    "key": "gov-bc-ca-bcgnws",
+    "key": "govbcca-bcgnws",
     "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/bcgnws/bcgnws.json",
     "title": "BC Geographical Names Web Service - REST API"
   },
   {
-    "key": "gov-bc-ca-geocoder",
+    "key": "govbcca-geocoder",
     "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/geocoder/geocoder-combined.json",
     "title": "Geocoder REST API"
   },
   {
-    "key": "gov-bc-ca-geomark",
+    "key": "govbcca-geomark",
     "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/geomark/geomark.json",
     "title": "GeoMark Web Service REST API"
   },
   {
-    "key": "gov-bc-ca-gwells",
+    "key": "govbcca-gwells",
     "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/gwells/gwells.json",
     "title": "Groundwater Wells, Aquifers and Registry API"
   },
   {
-    "key": "gov-bc-ca-jobposting",
+    "key": "govbcca-jobposting",
     "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/jobposting/jobposting.json",
     "title": "WorkBC Job Posting API"
   },
   {
-    "key": "gov-bc-ca-news",
+    "key": "govbcca-news",
     "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/news/news-oas3.yaml",
     "title": "BC Gov News API Service 1.0"
   },
   {
-    "key": "gov-bc-ca-open511",
+    "key": "govbcca-open511",
     "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/open511/open511_OAS3.json",
     "title": "DriveBC's Open511 API"
   },
   {
-    "key": "gov-bc-ca-router",
+    "key": "govbcca-router",
     "originalUrl": "https://raw.githubusercontent.com/bcgov/api-specs/master/router/router.json",
     "title": "BC Route Planner REST API"
   },
   {
-    "key": "greip-io",
+    "key": "greipio",
     "originalUrl": "https://greip.io/OpenAPI.json",
     "title": "Greip API"
   },
   {
-    "key": "groundhog-day-com",
+    "key": "groundhog-daycom",
     "originalUrl": "https://api.swaggerhub.com/apis/pcraig3/groundhog-day-api/1.2.1",
     "title": "Groundhog Day API"
   },
   {
-    "key": "hetzner-cloud",
+    "key": "hetznercloud",
     "originalUrl": "https://docs.hetzner.cloud/spec.json",
     "title": "Hetzner Cloud API"
   },
   {
-    "key": "hubapi-com-analytics",
+    "key": "hubapicom-analytics",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/events/v3/send",
     "title": "Custom Behavioral Events API"
   },
   {
-    "key": "hubapi-com-auth",
+    "key": "hubapicom-auth",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/oauth/v1",
     "title": ""
   },
   {
-    "key": "hubapi-com-automation",
+    "key": "hubapicom-automation",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/automation/v4/actions",
     "title": "Custom Workflow Actions"
   },
   {
-    "key": "hubapi-com-business units",
+    "key": "hubapicom-business-units",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/business-units/v3",
     "title": "Business Unit"
   },
   {
-    "key": "hubapi-com-cms",
+    "key": "hubapicom-cms",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/cms/v3/domains",
     "title": "Domains"
   },
   {
-    "key": "hubapi-com-communication-preferences",
+    "key": "hubapicom-communication-preferences",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/communication-preferences/v3",
     "title": "Subscriptions"
   },
   {
-    "key": "hubapi-com-conversations",
+    "key": "hubapicom-conversations",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/conversations/v3/visitor-identification",
     "title": "Visitor Identification"
   },
   {
-    "key": "hubapi-com-events",
+    "key": "hubapicom-events",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/events/v3/events",
     "title": "HubSpot Events API"
   },
   {
-    "key": "hubapi-com-files",
+    "key": "hubapicom-files",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/files/v3/files",
     "title": "Files"
   },
   {
-    "key": "hubapi-com-marketing",
+    "key": "hubapicom-marketing",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/marketing/v3/marketing-events-beta",
     "title": "Marketing Events Extension"
   },
   {
-    "key": "hubapi-com-webhooks",
+    "key": "hubapicom-webhooks",
     "originalUrl": "https://api.hubspot.com/api-catalog-public/v1/apis/webhooks/v3",
     "title": "Webhooks API"
   },
   {
-    "key": "ideaconsult-net-enanomapper",
+    "key": "ideaconsultnet-enanomapper",
     "originalUrl": "https://api.ideaconsult.net/management/apis/b5e2f290-5673-49da-a2f2-90567359da82/pages/ee38f795-655c-40b7-b8f7-95655cc0b7a1/content",
     "title": "eNanoMapper database"
   },
   {
-    "key": "ideaconsult-net-nanoreg",
+    "key": "ideaconsultnet-nanoreg",
     "originalUrl": "https://api.ideaconsult.net/management/apis/7d2c3a0e-ddc5-4553-ac3a-0eddc5e5532a/pages/161df366-7bae-410c-9df3-667bae510c7c/content",
     "title": "eNanoMapper database"
   },
   {
-    "key": "ideal-postcodes-co-uk",
+    "key": "ideal-postcodescouk",
     "originalUrl": "https://openapi.ideal-postcodes.dev/openapi.json",
     "title": "API Reference - Ideal Postcodes"
   },
   {
-    "key": "increase-com",
+    "key": "increasecom",
     "originalUrl": "https://increase.com/openapi.json",
     "title": "Increase API"
   },
   {
-    "key": "intellifi-nl",
+    "key": "intellifinl",
     "originalUrl": "https://intellifi-nl.github.io/brain-rest-api-spec/openapi.yml",
     "title": "Brain Web API"
   },
   {
-    "key": "ip2location-com-geolocation",
+    "key": "ip2locationcom-geolocation",
     "originalUrl": "https://api.swaggerhub.com/apis/ip2location/ip2location-ip-geolocation/1.0",
     "title": "IP2Location IP Geolocation"
   },
   {
-    "key": "ip2location-io",
+    "key": "ip2locationio",
     "originalUrl": "https://api.swaggerhub.com/apis/ip2location/ip2location-io-ip-geolocation-api/1.0",
     "title": "IP2Location.io IP Geolocation API"
   },
   {
-    "key": "ip2proxy-com",
+    "key": "ip2proxycom",
     "originalUrl": "https://api.swaggerhub.com/apis/ip2location/ip2proxy-proxy-detection/1.0",
     "title": "IP2Proxy Proxy Detection"
   },
   {
-    "key": "ip2whois-com",
+    "key": "ip2whoiscom",
     "originalUrl": "https://api.swaggerhub.com/apis/ip2whois/ip2whois-domain-lookup/1.0",
     "title": "IP2WHOIS Domain Lookup"
   },
   {
-    "key": "iqualify-com",
+    "key": "iqualifycom",
     "originalUrl": "https://api.iqualify.com/v1/management.json",
     "title": "iQualify Management API"
   },
   {
-    "key": "izettle-com-products",
+    "key": "izettlecom-products",
     "originalUrl": "https://products.izettle.com/openapi.json",
     "title": "Product Library API"
   },
   {
-    "key": "jellyfin-local",
+    "key": "jellyfinlocal",
     "originalUrl": "https://repo.jellyfin.org/releases/openapi/stable/jellyfin-openapi-10.7.0-rc2.json",
     "title": "Jellyfin API"
   },
   {
-    "key": "journy-io",
+    "key": "journyio",
     "originalUrl": "https://api.journy.io/spec.json",
     "title": "Developer documentation"
   },
   {
-    "key": "json2video-com",
+    "key": "json2videocom",
     "originalUrl": "https://json2video.com/docs/api/json2video-api.json",
     "title": "JSON2Video API"
   },
   {
-    "key": "jumpseller-com",
+    "key": "jumpsellercom",
     "originalUrl": "https://api.jumpseller.com/swagger.json",
     "title": "Jumpseller API"
   },
   {
-    "key": "just-eat-co-uk",
+    "key": "just-eatcouk",
     "originalUrl": "https://uk.api.just-eat.io/docs/openapi.json",
     "title": "Just Eat UK"
   },
   {
-    "key": "keyserv-solutions",
+    "key": "keyservsolutions",
     "originalUrl": "https://keyserv.solutions/v1/spec.json",
     "title": "KeyServ"
   },
   {
-    "key": "klarna-com-openai",
+    "key": "klarnacom-openai",
     "originalUrl": "https://www.klarna.com/us/shopping/public/openai/v0/api-docs/",
     "title": "Open AI Klarna product Api"
   },
   {
-    "key": "kumpeapps-com",
+    "key": "kumpeappscom",
     "originalUrl": "https://api.kumpeapps.com/python/swagger/swagger.yaml",
     "title": "KumpeApps API"
   },
   {
-    "key": "linode-com",
+    "key": "linodecom",
     "originalUrl": "https://www.linode.com/docs/api/openapi.yaml",
     "title": "Linode API"
   },
   {
-    "key": "linqr-app",
+    "key": "linqrapp",
     "originalUrl": "https://linqr.app/openapi/openapi.json",
     "title": "LinQR"
   },
   {
-    "key": "listennotes-com",
+    "key": "listennotescom",
     "originalUrl": "https://listen-api.listennotes.com/api/v2/openapi.yaml",
     "title": "Listen API: Podcast Search, Directory, and Insights API"
   },
   {
-    "key": "ljaero-com-dflight",
+    "key": "ljaerocom-dflight",
     "originalUrl": "https://dflight-api.ljaero.com/openapi.json",
     "title": "DFlight API"
   },
   {
-    "key": "loket-nl",
+    "key": "loketnl",
     "originalUrl": "https://developer.loket.nl/swagger.json",
     "title": "Loket.nl API"
   },
   {
-    "key": "maif-local-otoroshi",
+    "key": "maiflocal-otoroshi",
     "originalUrl": "https://raw.githubusercontent.com/MAIF/otoroshi/master/docs/manual/code/swagger.json",
     "title": "Otoroshi Admin API"
   },
   {
-    "key": "mailboxvalidator-com-checker",
+    "key": "mailboxvalidatorcom-checker",
     "originalUrl": "https://api.swaggerhub.com/apis/mailboxvalidator/MailboxValidator-Free-Email-Checker/1.0.0",
     "title": "MailboxValidator Free Email Checker"
   },
   {
-    "key": "mailboxvalidator-com-disposable",
+    "key": "mailboxvalidatorcom-disposable",
     "originalUrl": "https://api.swaggerhub.com/apis/mailboxvalidator/MailboxValidator-Disposable-Email-Checker/1.0.0",
     "title": "MailboxValidator Disposable Email Checker"
   },
   {
-    "key": "mailboxvalidator-com-validation",
+    "key": "mailboxvalidatorcom-validation",
     "originalUrl": "https://api.swaggerhub.com/apis/mailboxvalidator/MailboxValidator-Email-Validation/0.1",
     "title": "MailboxValidator Email Validation"
   },
   {
-    "key": "math-tools",
+    "key": "mathtools",
     "originalUrl": "https://api.math.tools/yaml/math.tools.numbers.openapi.yaml",
     "title": "Numbers API"
   },
   {
-    "key": "mbus-local",
+    "key": "mbuslocal",
     "originalUrl": "https://raw.githubusercontent.com/packom/mbus-api/master/api/openapi.yaml",
     "title": "M-Bus HTTPD API"
   },
   {
-    "key": "mermade-org-uk-openapi-converter",
+    "key": "mermadeorguk-openapi-converter",
     "originalUrl": "https://raw.githubusercontent.com/Mermade/openapi-webconverter/master/contract/openapi.json",
     "title": "Swagger2OpenAPI Converter"
   },
   {
-    "key": "meteosource-com",
+    "key": "meteosourcecom",
     "originalUrl": "https://www.meteosource.com/api/v1/premium/openapi.json",
     "title": "Interactive documentation for your Premium plan"
   },
   {
-    "key": "microcks-local",
+    "key": "microckslocal",
     "originalUrl": "https://raw.githubusercontent.com/microcks/microcks/master/api/microcks-openapi-v1.7.yaml",
     "title": "Microcks API v1.7"
   },
   {
-    "key": "mineskin-org",
+    "key": "mineskinorg",
     "originalUrl": "https://api.mineskin.org/openapi.yml",
     "title": "MineSkin API"
   },
   {
-    "key": "mist-com",
+    "key": "mistcom",
     "originalUrl": "https://raw.githubusercontent.com/tmunzer/mist_openapi/main/mist.openapi.yml",
     "title": "Mist API"
   },
   {
-    "key": "motaword-com",
+    "key": "motawordcom",
     "originalUrl": "https://api.motaword.com/swagger",
     "title": "MotaWord API"
   },
   {
-    "key": "mtaa-api-herokuapp-com",
+    "key": "mtaa-apiherokuappcom",
     "originalUrl": "https://raw.githubusercontent.com/Kalebu/mtaa-docs/main/openapi.yaml",
     "title": "Mtaa API Documentation"
   },
   {
-    "key": "namsor-com",
+    "key": "namsorcom",
     "originalUrl": "https://v2.namsor.com/NamSorAPIv2/api2/openapi.json",
     "title": "NamSor API v2"
   },
   {
-    "key": "nebl-io",
+    "key": "neblio",
     "originalUrl": "https://raw.githubusercontent.com/NeblioTeam/neblio-api-swagger-docs/master/swagger.yaml",
     "title": "Neblio REST API Suite"
   },
   {
-    "key": "nfusionsolutions-biz",
+    "key": "nfusionsolutionsbiz",
     "originalUrl": "https://api.nfusionsolutions.biz/swagger/1/swagger.json",
     "title": "nFusion Solutions Market Data API"
   },
   {
-    "key": "nordigen-com",
+    "key": "nordigencom",
     "originalUrl": "https://ob.nordigen.com/api/swagger.json",
     "title": "Nordigen Account Information Services API"
   },
   {
-    "key": "onsched-com-consumer",
+    "key": "onschedcom-consumer",
     "originalUrl": "https://sandbox-api.onsched.com/swagger/consumer/swagger.json",
     "title": "OnSched Consumer API"
   },
   {
-    "key": "onsched-com-setup",
+    "key": "onschedcom-setup",
     "originalUrl": "https://sandbox-api.onsched.com/swagger/setup/swagger.json",
     "title": "OnSched Setup API"
   },
   {
-    "key": "onsched-com-utility",
+    "key": "onschedcom-utility",
     "originalUrl": "https://sandbox-api.onsched.com/swagger/utility/swagger.json",
     "title": "OnSched API Utility"
   },
   {
-    "key": "openai-com",
+    "key": "openaicom",
     "originalUrl": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
     "title": "OpenAI API"
   },
   {
-    "key": "openbanking-org-uk-account-info-openapi",
+    "key": "openbankingorguk-account-info-openapi",
     "originalUrl": "https://raw.githubusercontent.com/OpenBankingUK/read-write-api-specs/master/dist/openapi/account-info-openapi.yaml",
     "title": "Account and Transaction API Specification"
   },
   {
-    "key": "openbanking-org-uk-confirmation-funds-openapi",
+    "key": "openbankingorguk-confirmation-funds-openapi",
     "originalUrl": "https://raw.githubusercontent.com/OpenBankingUK/read-write-api-specs/master/dist/openapi/confirmation-funds-openapi.yaml",
     "title": "Confirmation of Funds API Specification"
   },
   {
-    "key": "openbanking-org-uk-event-notifications-openapi",
+    "key": "openbankingorguk-event-notifications-openapi",
     "originalUrl": "https://raw.githubusercontent.com/OpenBankingUK/read-write-api-specs/master/dist/openapi/event-notifications-openapi.yaml",
     "title": "Event Notification API Specification - TPP Endpoints"
   },
   {
-    "key": "openbanking-org-uk-payment-initiation-openapi",
+    "key": "openbankingorguk-payment-initiation-openapi",
     "originalUrl": "https://raw.githubusercontent.com/OpenBankingUK/read-write-api-specs/master/dist/openapi/payment-initiation-openapi.yaml",
     "title": "Payment Initiation API"
   },
   {
-    "key": "openbankingproject-ch",
+    "key": "openbankingprojectch",
     "originalUrl": "https://raw.githubusercontent.com/openbankingproject-ch/obp-apis/master/swiss-ng-api.yaml",
     "title": "Swiss NextGen Banking API-Framework"
   },
   {
-    "key": "openfigi-com",
+    "key": "openfigicom",
     "originalUrl": "https://api.openfigi.com/schema",
     "title": "OpenFIGI API"
   },
   {
-    "key": "openindex-ai",
+    "key": "openindexai",
     "originalUrl": "https://retriever.openindex.ai/.well-known/openapi.yaml",
     "title": "OpenIndex Retrieval Plugin API"
   },
   {
-    "key": "openlinksw-com-osdb",
+    "key": "openlinkswcom-osdb",
     "originalUrl": "https://osdb.openlinksw.com/osdb/osdb_rest_api.openapi.json",
     "title": "OSDB REST API v1"
   },
   {
-    "key": "openuv-io",
+    "key": "openuvio",
     "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/77bb693d4cf9213909527b9cc4566609/raw/9febc5d16d8d162c93f3503510ce0808a8075d5b/openuv.yaml",
     "title": "OpenUV - Global Real-Time UV Index Forecast API"
   },
   {
-    "key": "orbit-love",
+    "key": "orbitlove",
     "originalUrl": "https://app.orbit.love/api-docs/v1/swagger.json",
     "title": "Orbit API"
   },
   {
-    "key": "orthanc-server-com",
+    "key": "orthanc-servercom",
     "originalUrl": "https://api.orthanc-server.com/orthanc-openapi.json",
     "title": "Orthanc API"
   },
   {
-    "key": "papinet-io-order_status",
+    "key": "papinetio-order-status",
     "originalUrl": "https://raw.githubusercontent.com/papinet/papiNet-API/master/1.0.0/papiNet-API.yaml",
     "title": "papiNet API"
   },
   {
-    "key": "patrowl-local",
+    "key": "patrowllocal",
     "originalUrl": "https://raw.githubusercontent.com/Patrowl/PatrowlDocs/master/api/openapi-patrowl-engines.yaml",
     "title": "Swagger API-REST for Patrowl Engines"
   },
   {
-    "key": "pay1-de-link",
+    "key": "pay1de-link",
     "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/b526159dff395f5da394bdf0c1d8b004/raw/ec8e44241fcd114d00c4662a04d2ff5b16f4b95f/payone-openapi.yaml",
     "title": "PAYONE Link API"
   },
   {
-    "key": "paypi-dev",
+    "key": "paypidev",
     "originalUrl": "https://paypi-default-images.s3.eu-west-1.amazonaws.com/openapi.yaml",
     "title": "EmailVerify"
   },
   {
-    "key": "pdfblocks-com",
+    "key": "pdfblockscom",
     "originalUrl": "https://www.pdfblocks.com/assets/specs/pdfblocks.openapi.yaml",
     "title": "PDF Blocks API"
   },
   {
-    "key": "personio-de-authentication",
+    "key": "personiode-authentication",
     "originalUrl": "https://raw.githubusercontent.com/personio/api-docs/master/personio-auth-api.yaml",
     "title": "Authentication"
   },
   {
-    "key": "pinecone-io",
+    "key": "pineconeio",
     "originalUrl": "https://raw.githubusercontent.com/sigpwned/pinecone-openapi-spec/main/openapi.yml",
     "title": "Pinecone API"
   },
   {
-    "key": "plaid-com",
+    "key": "plaidcom",
     "originalUrl": "https://raw.githubusercontent.com/plaid/plaid-openapi/master/2020-09-14.yml",
     "title": "The Plaid API"
   },
   {
-    "key": "pocketsmith-com",
+    "key": "pocketsmithcom",
     "originalUrl": "https://raw.githubusercontent.com/pocketsmith/api/master/openapi.json",
     "title": "PocketSmith"
   },
   {
-    "key": "portfoliooptimizer-io",
+    "key": "portfoliooptimizerio",
     "originalUrl": "https://docs.portfoliooptimizer.io/openapi/portfoliooptimizer.yaml",
     "title": "Portfolio Optimizer"
   },
   {
-    "key": "probely-com",
+    "key": "probelycom",
     "originalUrl": "https://developers.probely.com/openapi.yaml",
     "title": "Probely Developers"
   },
   {
-    "key": "quickchart-io",
+    "key": "quickchartio",
     "originalUrl": "https://quickchart.io/openapi.yaml",
     "title": "QuickChart API"
   },
   {
-    "key": "quotes-rest",
+    "key": "quotesrest",
     "originalUrl": "http://quotes.rest/yaml/theysaidso.quotes.openapi.yaml?v1.1",
     "title": "They Said So Quotes API"
   },
   {
-    "key": "randomlovecraft-com",
+    "key": "randomlovecraftcom",
     "originalUrl": "https://raw.githubusercontent.com/dekadans/randomlovecraft.com/master/public/openapi.yaml",
     "title": "Random Lovecraft"
   },
   {
-    "key": "rapidapi-com-dynamicdocs",
+    "key": "rapidapicom-dynamicdocs",
     "originalUrl": "https://advicement.io/open_api_spec/dynamicdocs.json",
     "title": "DynamicDocs"
   },
   {
-    "key": "rapidapi-com-ecowetter",
+    "key": "rapidapicom-ecowetter",
     "originalUrl": "https://corrently.io/attachments/4",
     "title": "Historische  Daten"
   },
   {
-    "key": "rapidapi-com-football-prediction",
+    "key": "rapidapicom-football-prediction",
     "originalUrl": "https://boggio-analytics.com/fp-api/schema/football-prediction-openapi.yaml",
     "title": "Football Prediction API"
   },
   {
-    "key": "redeal-io",
+    "key": "redealio",
     "originalUrl": "https://static.redeal.se/APIDefinitions/analytics.redeal.io-1.0.0-swagger.yaml",
     "title": "Redeal Analytics API"
   },
   {
-    "key": "redeal-io-analytics",
+    "key": "redealio-analytics",
     "originalUrl": "https://static.redeal.se/APIDefinitions/analytics.redeal.io-1.0.0-swagger.yaml",
     "title": "Redeal Analytics API"
   },
   {
-    "key": "redhat-com-catalog_inventory",
+    "key": "redhatcom-catalog-inventory",
     "originalUrl": "https://raw.githubusercontent.com/RedHatInsights/catalog_inventory-api/master/public/doc/openapi-3-v1.0.json",
     "title": "Catalog Inventory"
   },
   {
-    "key": "remove-bg",
+    "key": "removebg",
     "originalUrl": "https://www.remove.bg/api/swagger.yaml",
     "title": "Background Removal API"
   },
   {
-    "key": "restful4up-local",
+    "key": "restful4uplocal",
     "originalUrl": "https://raw.githubusercontent.com/rpgeeganage/restful4up/master/app/spec/api.yml",
     "title": "RESTful4Up"
   },
   {
-    "key": "rudder-example-local",
+    "key": "rudderexamplelocal",
     "originalUrl": "https://docs.rudder.io/api/openapi.yml",
     "title": "Rudder API"
   },
   {
-    "key": "rumble-run",
+    "key": "rumblerun",
     "originalUrl": "https://raw.githubusercontent.com/RumbleDiscovery/rumble-api/main/rumble-api.yml",
     "title": "Rumble API (deprecated)"
   },
   {
-    "key": "sakari-io",
+    "key": "sakariio",
     "originalUrl": "https://developer.sakari.io/openapi.yaml",
     "title": "Sakari"
   },
   {
-    "key": "scideas-net-perfectpdf",
+    "key": "scideasnet-perfectpdf",
     "originalUrl": "https://services.scideas.net/perfectpdf/resources/openapi3.0.0-perfectpdf-1.0.json",
     "title": "perfectpdf api"
   },
   {
-    "key": "scideas-net-regression",
+    "key": "scideasnet-regression",
     "originalUrl": "https://services.scideas.net/regression/resources/openapi3.0.0-regression-1.0.json",
     "title": "Regression analysis api"
   },
   {
-    "key": "seldon-local-core",
+    "key": "seldonlocal-core",
     "originalUrl": "https://raw.githubusercontent.com/SeldonIO/seldon-core/master/openapi/wrapper.oas3.json",
     "title": "Seldon External API"
   },
   {
-    "key": "seldon-local-engine",
+    "key": "seldonlocal-engine",
     "originalUrl": "https://raw.githubusercontent.com/SeldonIO/seldon-core/master/openapi/engine.oas3.json",
     "title": "Seldon External API"
   },
   {
-    "key": "seldon-local-wrapper",
+    "key": "seldonlocal-wrapper",
     "originalUrl": "https://raw.githubusercontent.com/SeldonIO/seldon-core/master/openapi/wrapper.oas3.json",
     "title": "Seldon External API"
   },
   {
-    "key": "shipengine-com",
+    "key": "shipenginecom",
     "originalUrl": "https://raw.githubusercontent.com/ShipEngine/shipengine-openapi/master/openapi.yaml",
     "title": "ShipEngine API"
   },
   {
-    "key": "shop-app",
+    "key": "shopapp",
     "originalUrl": "https://server.shop.app/openai/v1/api.json",
     "title": "Shop"
   },
   {
-    "key": "shotstack-io",
+    "key": "shotstackio",
     "originalUrl": "https://raw.githubusercontent.com/shotstack/oas-api-definition/main/api.oas3.yaml",
     "title": "Shotstack"
   },
   {
-    "key": "shutterstock-com",
+    "key": "shutterstockcom",
     "originalUrl": "https://api-explorer.shutterstock.com/openapi.json",
     "title": "Shutterstock API Explorer"
   },
   {
-    "key": "signl4-com",
+    "key": "signl4com",
     "originalUrl": "https://connect.signl4.com/api/docs/v1/swagger.json",
     "title": "SIGNL4 API"
   },
   {
-    "key": "sinao-app",
+    "key": "sinaoapp",
     "originalUrl": "https://api.sinao.app/v1/swagger.yaml",
     "title": "Sinao API"
   },
   {
-    "key": "slack-com-openai",
+    "key": "slackcom-openai",
     "originalUrl": "https://api.slack.com/specs/openapi/ai-plugin.yaml",
     "title": "Slack AI Plugin"
   },
   {
-    "key": "sms77-io",
+    "key": "sms77io",
     "originalUrl": "https://raw.githubusercontent.com/sms77io/api-schemes/master/json/openapi.json",
     "title": "sms77.io API"
   },
   {
-    "key": "soundcloud-com",
+    "key": "soundcloudcom",
     "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/a9eb3040cb611121b568844958564849/raw/d0996b827b9eb2ae4fa946b9aacf02b03dc3d933/openapi.json",
     "title": "SoundCloud Public API Specification"
   },
   {
-    "key": "spoonacular-com",
+    "key": "spoonacularcom",
     "originalUrl": "https://spoonacular.com/application/frontend/downloads/spoonacular-openapi-3.json",
     "title": "spoonacular API"
   },
   {
-    "key": "spotify-com",
+    "key": "spotifycom",
     "originalUrl": "https://developer.spotify.com/_data/documentation/web-api/reference/open-api-schema.yml",
     "title": "Spotify Web API"
   },
   {
-    "key": "spotify-com-sonallux",
+    "key": "spotifycom-sonallux",
     "originalUrl": "https://raw.githubusercontent.com/sonallux/spotify-web-api/main/fixed-spotify-open-api.yml",
     "title": "Spotify Web API with fixes and improvements from sonallux"
   },
   {
-    "key": "stackexchange-com",
+    "key": "stackexchangecom",
     "originalUrl": "https://raw.githubusercontent.com/APIs-guru/unofficial_openapi_specs/master/stackexchange.com/2.0/openapi.yaml",
     "title": "StackExchange"
   },
   {
-    "key": "stellastra-com",
+    "key": "stellastracom",
     "originalUrl": "https://stellastra.com/stellastra.json",
     "title": "Stellastra"
   },
   {
-    "key": "stream-io-api-com",
+    "key": "stream-io-apicom",
     "originalUrl": "https://stream-openapi.s3.us-east-1.amazonaws.com/chat/openapi-latest.yaml",
     "title": "Stream Chat API"
   },
   {
-    "key": "stripe-com",
+    "key": "stripecom",
     "originalUrl": "https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.yaml",
     "title": "Stripe API"
   },
   {
-    "key": "surevoip-co-uk",
+    "key": "surevoipcouk",
     "originalUrl": "https://raw.githubusercontent.com/SureVoIP/API-Specification/master/openapi/openapi.yaml",
     "title": "The SureVoIP RESTful API"
   },
   {
-    "key": "svix-com",
+    "key": "svixcom",
     "originalUrl": "https://api.svix.com/api/v1/openapi.json",
     "title": "Svix API"
   },
   {
-    "key": "symanto-net",
+    "key": "symantonet",
     "originalUrl": "https://api.symanto.net/docs/v1/openapi.json",
     "title": "Psycholinguistic Text Analytics"
   },
   {
-    "key": "tafqit-herokuapp-com",
+    "key": "tafqitherokuappcom",
     "originalUrl": "https://tafqit.herokuapp.com/open_api/TafqitOpenAPI.json",
     "title": "Tafqit"
   },
   {
-    "key": "tcgdex-net",
+    "key": "tcgdexnet",
     "originalUrl": "https://api.tcgdex.net/v2/openapi.yaml",
     "title": "TCGdex API"
   },
   {
-    "key": "telegram-org",
+    "key": "telegramorg",
     "originalUrl": "https://josxa.stoplight.io/api/v1/projects/josxa/bot-api/nodes/openapi.json?branch=main",
     "title": "Telegram Bot API"
   },
   {
-    "key": "telnyx-com",
+    "key": "telnyxcom",
     "originalUrl": "https://raw.githubusercontent.com/team-telnyx/openapi/master/openapi/spec3.yml",
     "title": "Telnyx API"
   },
   {
-    "key": "thebluealliance-com",
+    "key": "thebluealliancecom",
     "originalUrl": "https://www.thebluealliance.com/swagger/api_v3.json",
     "title": "The Blue Alliance API v3"
   },
   {
-    "key": "tokenjay-app",
+    "key": "tokenjayapp",
     "originalUrl": "https://api.tokenjay.app/api-docs",
     "title": "TokenJay API services"
   },
   {
-    "key": "traccar-org",
+    "key": "traccarorg",
     "originalUrl": "https://raw.githubusercontent.com/tananaev/traccar/master/swagger.json",
     "title": "Traccar"
   },
   {
-    "key": "trapstreet-com",
+    "key": "trapstreetcom",
     "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/e455f437f87a149ae0501d8cefe2ecab/raw/8f3608b72b0ab6eb6b0cea1c54ff9d84df7de05d/openapi.yaml",
     "title": "TrapStreet API"
   },
   {
-    "key": "truesight-local",
+    "key": "truesightlocal",
     "originalUrl": "https://www.sentrysoftware.com/library/mshw/11.1.00/hardware-tsps-openapi.yaml",
     "title": "Hardware Sentry TrueSight Presentation Server REST API"
   },
   {
-    "key": "twilio-com-api",
+    "key": "twiliocom-api",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_api_v2010.json",
     "title": "Twilio - Api"
   },
   {
-    "key": "twilio-com-twilio_accounts_v1",
+    "key": "twiliocom-twilio-accounts-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_accounts_v1.json",
     "title": "Twilio - Accounts"
   },
   {
-    "key": "twilio-com-twilio_bulkexports_v1",
+    "key": "twiliocom-twilio-bulkexports-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_bulkexports_v1.json",
     "title": "Twilio - Bulkexports"
   },
   {
-    "key": "twilio-com-twilio_chat_v1",
+    "key": "twiliocom-twilio-chat-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_chat_v1.json",
     "title": "Twilio - Chat"
   },
   {
-    "key": "twilio-com-twilio_chat_v2",
+    "key": "twiliocom-twilio-chat-v2",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_chat_v2.json",
     "title": "Twilio - Chat"
   },
   {
-    "key": "twilio-com-twilio_chat_v3",
+    "key": "twiliocom-twilio-chat-v3",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_chat_v3.json",
     "title": "Twilio - Chat"
   },
   {
-    "key": "twilio-com-twilio_content_v1",
+    "key": "twiliocom-twilio-content-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_content_v1.json",
     "title": "Twilio - Content"
   },
   {
-    "key": "twilio-com-twilio_conversations_v1",
+    "key": "twiliocom-twilio-conversations-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_conversations_v1.json",
     "title": "Twilio - Conversations"
   },
   {
-    "key": "twilio-com-twilio_events_v1",
+    "key": "twiliocom-twilio-events-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_events_v1.json",
     "title": "Twilio - Events"
   },
   {
-    "key": "twilio-com-twilio_flex_v1",
+    "key": "twiliocom-twilio-flex-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_flex_v1.json",
     "title": "Twilio - Flex"
   },
   {
-    "key": "twilio-com-twilio_flex_v2",
+    "key": "twiliocom-twilio-flex-v2",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_flex_v2.json",
     "title": "Twilio - Flex"
   },
   {
-    "key": "twilio-com-twilio_frontline_v1",
+    "key": "twiliocom-twilio-frontline-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_frontline_v1.json",
     "title": "Twilio - Frontline"
   },
   {
-    "key": "twilio-com-twilio_insights_v1",
+    "key": "twiliocom-twilio-insights-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_insights_v1.json",
     "title": "Twilio - Insights"
   },
   {
-    "key": "twilio-com-twilio_ip_messaging_v1",
+    "key": "twiliocom-twilio-ip-messaging-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_ip_messaging_v1.json",
     "title": "Twilio - Ip_messaging"
   },
   {
-    "key": "twilio-com-twilio_ip_messaging_v2",
+    "key": "twiliocom-twilio-ip-messaging-v2",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_ip_messaging_v2.json",
     "title": "Twilio - Ip_messaging"
   },
   {
-    "key": "twilio-com-twilio_lookups_v1",
+    "key": "twiliocom-twilio-lookups-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_lookups_v1.json",
     "title": "Twilio - Lookups"
   },
   {
-    "key": "twilio-com-twilio_lookups_v2",
+    "key": "twiliocom-twilio-lookups-v2",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_lookups_v2.json",
     "title": "Twilio - Lookups"
   },
   {
-    "key": "twilio-com-twilio_messaging_v1",
+    "key": "twiliocom-twilio-messaging-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_messaging_v1.json",
     "title": "Twilio - Messaging"
   },
   {
-    "key": "twilio-com-twilio_microvisor_v1",
+    "key": "twiliocom-twilio-microvisor-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_microvisor_v1.json",
     "title": "Twilio - Microvisor"
   },
   {
-    "key": "twilio-com-twilio_monitor_v1",
+    "key": "twiliocom-twilio-monitor-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_monitor_v1.json",
     "title": "Twilio - Monitor"
   },
   {
-    "key": "twilio-com-twilio_notify_v1",
+    "key": "twiliocom-twilio-notify-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_notify_v1.json",
     "title": "Twilio - Notify"
   },
   {
-    "key": "twilio-com-twilio_numbers_v1",
+    "key": "twiliocom-twilio-numbers-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_numbers_v1.json",
     "title": "Twilio - Numbers"
   },
   {
-    "key": "twilio-com-twilio_numbers_v2",
+    "key": "twiliocom-twilio-numbers-v2",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_numbers_v2.json",
     "title": "Twilio - Numbers"
   },
   {
-    "key": "twilio-com-twilio_oauth_v1",
+    "key": "twiliocom-twilio-oauth-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_oauth_v1.json",
     "title": "Twilio - Oauth"
   },
   {
-    "key": "twilio-com-twilio_preview",
+    "key": "twiliocom-twilio-preview",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_preview.json",
     "title": "Twilio - Preview"
   },
   {
-    "key": "twilio-com-twilio_pricing_v1",
+    "key": "twiliocom-twilio-pricing-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_pricing_v1.json",
     "title": "Twilio - Pricing"
   },
   {
-    "key": "twilio-com-twilio_pricing_v2",
+    "key": "twiliocom-twilio-pricing-v2",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_pricing_v2.json",
     "title": "Twilio - Pricing"
   },
   {
-    "key": "twilio-com-twilio_proxy_v1",
+    "key": "twiliocom-twilio-proxy-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_proxy_v1.json",
     "title": "Twilio - Proxy"
   },
   {
-    "key": "twilio-com-twilio_routes_v2",
+    "key": "twiliocom-twilio-routes-v2",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_routes_v2.json",
     "title": "Twilio - Routes"
   },
   {
-    "key": "twilio-com-twilio_serverless_v1",
+    "key": "twiliocom-twilio-serverless-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_serverless_v1.json",
     "title": "Twilio - Serverless"
   },
   {
-    "key": "twilio-com-twilio_studio_v1",
+    "key": "twiliocom-twilio-studio-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_studio_v1.json",
     "title": "Twilio - Studio"
   },
   {
-    "key": "twilio-com-twilio_studio_v2",
+    "key": "twiliocom-twilio-studio-v2",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_studio_v2.json",
     "title": "Twilio - Studio"
   },
   {
-    "key": "twilio-com-twilio_supersim_v1",
+    "key": "twiliocom-twilio-supersim-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_supersim_v1.json",
     "title": "Twilio - Supersim"
   },
   {
-    "key": "twilio-com-twilio_sync_v1",
+    "key": "twiliocom-twilio-sync-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_sync_v1.json",
     "title": "Twilio - Sync"
   },
   {
-    "key": "twilio-com-twilio_taskrouter_v1",
+    "key": "twiliocom-twilio-taskrouter-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_taskrouter_v1.json",
     "title": "Twilio - Taskrouter"
   },
   {
-    "key": "twilio-com-twilio_trunking_v1",
+    "key": "twiliocom-twilio-trunking-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_trunking_v1.json",
     "title": "Twilio - Trunking"
   },
   {
-    "key": "twilio-com-twilio_trusthub_v1",
+    "key": "twiliocom-twilio-trusthub-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_trusthub_v1.json",
     "title": "Twilio - Trusthub"
   },
   {
-    "key": "twilio-com-twilio_verify_v2",
+    "key": "twiliocom-twilio-verify-v2",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_verify_v2.json",
     "title": "Twilio - Verify"
   },
   {
-    "key": "twilio-com-twilio_video_v1",
+    "key": "twiliocom-twilio-video-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_video_v1.json",
     "title": "Twilio - Video"
   },
   {
-    "key": "twilio-com-twilio_voice_v1",
+    "key": "twiliocom-twilio-voice-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_voice_v1.json",
     "title": "Twilio - Voice"
   },
   {
-    "key": "twilio-com-twilio_wireless_v1",
+    "key": "twiliocom-twilio-wireless-v1",
     "originalUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_wireless_v1.json",
     "title": "Twilio - Wireless"
   },
   {
-    "key": "twitter-com-current",
+    "key": "twittercom-current",
     "originalUrl": "https://api.twitter.com/2/openapi.json",
     "title": "Twitter API v2"
   },
   {
-    "key": "up-com-au",
+    "key": "upcomau",
     "originalUrl": "https://raw.githubusercontent.com/up-banking/api/master/v1/openapi.json",
     "title": "Up API"
   },
   {
-    "key": "urlbox-io",
+    "key": "urlboxio",
     "originalUrl": "https://www.urlbox.io/.well-known/open-api.yaml",
     "title": "Urlbox API"
   },
   {
-    "key": "va-gov-benefits",
+    "key": "vagov-benefits",
     "originalUrl": "https://api.va.gov/services/vba_documents/docs/v1/api",
     "title": "Benefits Intake"
   },
   {
-    "key": "va-gov-confirmation",
+    "key": "vagov-confirmation",
     "originalUrl": "https://api.va.gov/services/veteran_confirmation/docs/v0/api",
     "title": "Veteran Confirmation"
   },
   {
-    "key": "va-gov-forms",
+    "key": "vagov-forms",
     "originalUrl": "https://api.va.gov/services/va_forms/docs/v0/api",
     "title": "VA Forms"
   },
   {
-    "key": "vectara-io",
+    "key": "vectaraio",
     "originalUrl": "https://docs.vectara.com/vectara-oas.yaml",
     "title": "Vectara REST API"
   },
   {
-    "key": "velopayments-com",
+    "key": "velopaymentscom",
     "originalUrl": "https://raw.githubusercontent.com/velopaymentsapi/VeloOpenApi/master/spec/openapi.yaml",
     "title": "Velo Payments APIs"
   },
   {
-    "key": "vercel-com",
+    "key": "vercelcom",
     "originalUrl": "https://openapi.vercel.sh",
     "title": "Vercel API"
   },
   {
-    "key": "versioneye-com",
+    "key": "versioneyecom",
     "originalUrl": "https://www.versioneye.com/api-docs/v1/swagger.yaml",
     "title": "API V1"
   },
   {
-    "key": "vimeo-com",
+    "key": "vimeocom",
     "originalUrl": "https://raw.githubusercontent.com/vimeo/openapi/master/api.yaml",
     "title": "Vimeo"
   },
   {
-    "key": "visualcrossing-com-weather",
+    "key": "visualcrossingcom-weather",
     "originalUrl": "https://www.visualcrossing.com/weather/specs/visualcrossing-weather-api-openapi.json",
     "title": "Visual Crossing Weather API"
   },
   {
-    "key": "visualstudio-com",
+    "key": "visualstudiocom",
     "originalUrl": "https://online.visualstudio.com/api/v1/swagger",
     "title": "VSOnline"
   },
   {
-    "key": "vtex-local-catalog-api",
+    "key": "vtexlocal-catalog-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Catalog API.json",
     "title": "Catalog API"
   },
   {
-    "key": "vtex-local-catalog-api-seller-portal",
+    "key": "vtexlocal-catalog-api-seller-portal",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Catalog API Seller Portal.json",
     "title": "Catalog API - Seller Portal"
   },
   {
-    "key": "vtex-local-checkout-api",
+    "key": "vtexlocal-checkout-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Checkout API.json",
     "title": "Checkout API"
   },
   {
-    "key": "vtex-local-customer-credit-api",
+    "key": "vtexlocal-customer-credit-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Customer Credit API.json",
     "title": "Customer Credit API"
   },
   {
-    "key": "vtex-local-giftcard-hub-api",
+    "key": "vtexlocal-giftcard-hub-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - GiftCard Hub API.json",
     "title": "GiftCard Hub API"
   },
   {
-    "key": "vtex-local-giftcard-api",
+    "key": "vtexlocal-giftcard-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Giftcard API.json",
     "title": "GiftCard API"
   },
   {
-    "key": "vtex-local-headless-cms-api",
+    "key": "vtexlocal-headless-cms-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Headless CMS API.json",
     "title": "VTEX Headless CMS"
   },
   {
-    "key": "vtex-local-intelligent-search-api",
+    "key": "vtexlocal-intelligent-search-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Intelligent Search API.json",
     "title": "Intelligent Search API"
   },
   {
-    "key": "vtex-local-license-manager-api",
+    "key": "vtexlocal-license-manager-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - License Manager API.json",
     "title": "License Manager API"
   },
   {
-    "key": "vtex-local-logistics-api",
+    "key": "vtexlocal-logistics-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Logistics API.json",
     "title": "Logistics API"
   },
   {
-    "key": "vtex-local-marketplace-apis",
+    "key": "vtexlocal-marketplace-apis",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Marketplace APIs.json",
     "title": "Marketplace API"
   },
   {
-    "key": "vtex-local-marketplace-apis-",
+    "key": "vtexlocal-marketplace-apis",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Marketplace APIs - Suggestions.json",
     "title": "Suggestions"
   },
   {
-    "key": "vtex-local-master-data-api-",
+    "key": "vtexlocal-master-data-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Master Data API - v2.json",
     "title": "Master Data API - v2"
   },
   {
-    "key": "vtex-local-masterdata-api-",
+    "key": "vtexlocal-masterdata-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - MasterData API - v10.2.json",
     "title": "MasterData API - v1"
   },
   {
-    "key": "vtex-local-message-center-api",
+    "key": "vtexlocal-message-center-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Message Center API.json",
     "title": "Message Center API"
   },
   {
-    "key": "vtex-local-orders-api",
+    "key": "vtexlocal-orders-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Orders API.json",
     "title": "Orders API"
   },
   {
-    "key": "vtex-local-orders-api--pii-version-",
+    "key": "vtexlocal-orders-api-pii-version",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Orders API (PII version).json",
     "title": "Orders API (PII version)"
   },
   {
-    "key": "vtex-local-payments-gateway-api",
+    "key": "vtexlocal-payments-gateway-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Payments Gateway API.json",
     "title": "Payments Gateway API"
   },
   {
-    "key": "vtex-local-policies-system-api",
+    "key": "vtexlocal-policies-system-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Policies System API.json",
     "title": "Policies System API"
   },
   {
-    "key": "vtex-local-pricing-api",
+    "key": "vtexlocal-pricing-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Pricing API.json",
     "title": "Pricing API"
   },
   {
-    "key": "vtex-local-pricing-hub",
+    "key": "vtexlocal-pricing-hub",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Pricing Hub.json",
     "title": "Pricing Hub"
   },
   {
-    "key": "vtex-local-profile-system",
+    "key": "vtexlocal-profile-system",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Profile System.json",
     "title": "Profile System"
   },
   {
-    "key": "vtex-local-promotions-",
+    "key": "vtexlocal-promotions",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Promotions & Taxes API.json",
     "title": "Promotions & Taxes API"
   },
   {
-    "key": "vtex-local-recurrence--v1-",
+    "key": "vtexlocal-recurrence-v1",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Recurrence (v1 - deprecated).json",
     "title": "Subscription (v1 - deprecated)"
   },
   {
-    "key": "vtex-local-reviews-and-ratings-api",
+    "key": "vtexlocal-reviews-and-ratings-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Reviews and Ratings API.json",
     "title": "Reviews and Ratings API"
   },
   {
-    "key": "vtex-local-sku-bindings-api",
+    "key": "vtexlocal-sku-bindings-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - SKU Bindings API.json",
     "title": "SKU Bindings API"
   },
   {
-    "key": "vtex-local-search-api",
+    "key": "vtexlocal-search-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Search API.json",
     "title": "Legacy Search API"
   },
   {
-    "key": "vtex-local-session-manager-api",
+    "key": "vtexlocal-session-manager-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Session Manager API.json",
     "title": "Session Manager API"
   },
   {
-    "key": "vtex-local-subscriptions-api--v2-",
+    "key": "vtexlocal-subscriptions-api-v2",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Subscriptions API (v2).json",
     "title": "Subscriptions API (v2 - DEPRECATED)"
   },
   {
-    "key": "vtex-local-subscriptions-api--v3-",
+    "key": "vtexlocal-subscriptions-api-v3",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - Subscriptions API (v3).json",
     "title": "Subscriptions API (v3)"
   },
   {
-    "key": "vtex-local-vtex-do-api",
+    "key": "vtexlocal-vtex-do-api",
     "originalUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX - VTEX Do API.json",
     "title": "VTEX Do API"
   },
   {
-    "key": "wealthreader-com",
+    "key": "wealthreadercom",
     "originalUrl": "https://api.swaggerhub.com/apis/Wealth-Reader/api/1.0.0",
     "title": "Wealth Reader API"
   },
   {
-    "key": "webflow-com",
+    "key": "webflowcom",
     "originalUrl": "https://raw.githubusercontent.com/LucidtechAI/cradl-docs/master/static/oas.yaml",
     "title": "Lucidtech API"
   },
   {
-    "key": "webscraping-ai",
+    "key": "webscrapingai",
     "originalUrl": "https://webscraping.ai/openapi.yml",
     "title": "WebScraping.AI"
   },
   {
-    "key": "wellknown-ai",
+    "key": "wellknownai",
     "originalUrl": "https://www.wellknown.ai/api/doc",
     "title": "Wellknown"
   },
   {
-    "key": "whatsapp-local",
+    "key": "whatsapplocal",
     "originalUrl": "https://raw.githubusercontent.com/unblu/WhatsApp-Business-API-OpenAPI/master/openapi.yaml",
     "title": "WhatsApp Business API"
   },
   {
-    "key": "wiremock-org-admin",
+    "key": "wiremockorg-admin",
     "originalUrl": "http://wiremock.org/assets/js/wiremock-admin-api.json",
     "title": "WireMock"
   },
   {
-    "key": "wolframalpha-com",
+    "key": "wolframalphacom",
     "originalUrl": "https://www.wolframalpha.com/.well-known/apispec.json",
     "title": "Wolfram"
   },
   {
-    "key": "worldtimeapi-org",
+    "key": "worldtimeapiorg",
     "originalUrl": "http://worldtimeapi.org/api",
     "title": "World Time API"
   },
   {
-    "key": "xero-com-xero-identity",
+    "key": "xerocom-xero-identity",
     "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero-identity.yaml",
     "title": "Xero OAuth 2 Identity Service API"
   },
   {
-    "key": "xero-com-xero-payroll-au",
+    "key": "xerocom-xero-payroll-au",
     "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero-payroll-au.yaml",
     "title": "Xero Payroll AU API"
   },
   {
-    "key": "xero-com-xero_accounting",
+    "key": "xerocom-xero-accounting",
     "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero_accounting.yaml",
     "title": "Xero Accounting API"
   },
   {
-    "key": "xero-com-xero_assets",
+    "key": "xerocom-xero-assets",
     "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero_assets.yaml",
     "title": "Xero Assets API"
   },
   {
-    "key": "xero-com-xero_bankfeeds",
+    "key": "xerocom-xero-bankfeeds",
     "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero_bankfeeds.yaml",
     "title": "Xero Bank Feeds API"
   },
   {
-    "key": "xero-com-xero_files",
+    "key": "xerocom-xero-files",
     "originalUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero_files.yaml",
     "title": "Xero Files API"
   },
   {
-    "key": "xkcd-com",
+    "key": "xkcdcom",
     "originalUrl": "https://raw.githubusercontent.com/APIs-guru/unofficial_openapi_specs/master/xkcd.com/1.0.0/openapi.yaml",
     "title": "XKCD"
   },
   {
-    "key": "xtrf-eu",
+    "key": "xtrfeu",
     "originalUrl": "https://presentation.s.xtrf.eu/home-api/openapi.json",
     "title": "XTRF Home Portal API"
   },
   {
-    "key": "yodlee-com",
+    "key": "yodleecom",
     "originalUrl": "https://developer.yodlee.com/sites/default/files/api_spec/coreapisoas3.yml",
     "title": "Yodlee Core APIs"
   },
   {
-    "key": "zapier-com-nla",
+    "key": "zapiercom-nla",
     "originalUrl": "https://nla.zapier.com/api/v1/openapi.json",
     "title": "Zapier Natural Language Actions (NLA) API - Beta"
   },
   {
-    "key": "zeit-co",
+    "key": "zeitco",
     "originalUrl": "https://unpkg.com/@zeit/openapi",
     "title": "ZEIT API"
   },
   {
-    "key": "zeno-fm",
+    "key": "zenofm",
     "originalUrl": "https://api.zeno.fm/v3/api-docs",
     "title": "Aggregators API Service"
   }

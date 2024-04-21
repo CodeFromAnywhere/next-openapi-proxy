@@ -1,0 +1,841 @@
+{
+  "components": {
+    "schemas": {
+      "numbers.v1.bulk_eligibility": {
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^EC[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The SID of the bulk eligibility check that you want to know about."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "description": "This is the url of the request that you're trying to reach out to locate the resource."
+          },
+          "results": {
+            "type": "array",
+            "items": {},
+            "nullable": true,
+            "description": "The result set that contains the eligibility check response for each requested number, each result has at least the following attributes:  phone_number: The requested phone number ,hosting_account_sid: The account sid where the phone number will be hosted, country: Phone number’s country, eligibility_status: Indicates the eligibility status of the PN (Eligible/Ineligible), eligibility_sub_status: Indicates the sub status of the eligibility , ineligibility_reason: Reason for number's ineligibility (if applicable), next_step: Suggested next step in the hosting process based on the eligibility status."
+          },
+          "friendly_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "This is the string that you assigned as a friendly name for describing the eligibility check request."
+          },
+          "status": {
+            "type": "string",
+            "nullable": true,
+            "description": "This is the status of the bulk eligibility check request. (Example: COMPLETE, IN_PROGRESS)"
+          },
+          "date_created": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "date_completed": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "bulk_eligibility_enum_eligibility_status": {
+        "type": "string",
+        "enum": [
+          "ineligible",
+          "eligible"
+        ]
+      },
+      "bulk_eligibility_enum_eligibility_sub_status": {
+        "type": "string",
+        "enum": [
+          "country-ineligible",
+          "number-format-ineligible",
+          "number-type-ineligible",
+          "carrier-ineligible",
+          "already-in-twilio",
+          "internal-processing-error",
+          "invalid-phone-number",
+          "invalid-hosting-account-sid",
+          "eligible",
+          "eligible-by-manual-process"
+        ]
+      },
+      "numbers.v1.eligibility": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {},
+            "nullable": true,
+            "description": "The result set that contains the eligibility check response for the requested number, each result has at least the following attributes:  phone_number: The requested phone number ,hosting_account_sid: The account sid where the phone number will be hosted, date_last_checked: Datetime (ISO 8601) when the PN was last checked for eligibility, country: Phone number’s country, eligibility_status: Indicates the eligibility status of the PN (Eligible/Ineligible), eligibility_sub_status: Indicates the sub status of the eligibility , ineligibility_reason: Reason for number's ineligibility (if applicable), next_step: Suggested next step in the hosting process based on the eligibility status."
+          }
+        }
+      },
+      "eligibility_enum_eligibility_status": {
+        "type": "string",
+        "enum": [
+          "ineligible",
+          "eligible"
+        ]
+      },
+      "eligibility_enum_eligibility_sub_status": {
+        "type": "string",
+        "enum": [
+          "country-ineligible",
+          "number-format-ineligible",
+          "number-type-ineligible",
+          "carrier-ineligible",
+          "already-in-twilio",
+          "internal-processing-error",
+          "invalid-phone-number",
+          "invalid-hosting-account-sid",
+          "eligible"
+        ]
+      },
+      "numbers.v1.porting_bulk_portability": {
+        "type": "object",
+        "properties": {
+          "sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^KZ[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "A 34 character string that uniquely identifies this Portability check."
+          },
+          "status": {
+            "type": "string",
+            "$ref": "#/components/schemas/porting_bulk_portability_enum_status",
+            "nullable": true,
+            "description": "The Status of this Portability check. One of `in-progress`, `completed` or `expired`."
+          },
+          "datetime_created": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "The date that the Portability check was created, given in ISO 8601 format."
+          },
+          "phone_numbers": {
+            "type": "array",
+            "items": {},
+            "nullable": true,
+            "description": "Contains a list with all the information of the requested phone numbers. Each phone number contains the following properties: `phone_number`: The phone number which portability is to be checked. `portable`: Boolean flag specifying if phone number is portable or not. `not_portable_reason`: Reason why the phone number cannot be ported into Twilio, `null` otherwise. `not_portable_reason_code`: The Portability Reason Code for the phone number if it cannot be ported in Twilio, `null` otherwise. `pin_and_account_number_required`: Boolean flag specifying if PIN and account number is required for the phone number. `number_type`: The type of the requested phone number. `country` Country the phone number belongs to. `messaging_carrier` Current messaging carrier of the phone number. `voice_carrier` Current voice carrier of the phone number."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "description": "This is the url of the request that you're trying to reach out to locate the resource."
+          }
+        }
+      },
+      "porting_bulk_portability_enum_status": {
+        "type": "string",
+        "enum": [
+          "in-progress",
+          "completed",
+          "expired"
+        ]
+      },
+      "numbers.v1.porting_port_in": {
+        "type": "object",
+        "properties": {
+          "port_in_request_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^KW[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The SID of the Port In request. This is a unique identifier of the port in request."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        }
+      },
+      "numbers.v1.porting_port_in_fetch": {
+        "type": "object",
+        "properties": {
+          "port_in_request_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^KW[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The SID of the Port In request. This is a unique identifier of the port in request."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "description": "The URL of this Port In request"
+          },
+          "account_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^AC[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The Account SID that the numbers will be added to after they are ported into Twilio."
+          },
+          "notification_emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "List of emails for getting notifications about the LOA signing process. Allowed Max 10 emails."
+          },
+          "target_port_in_date": {
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "description": "Minimum number of days in the future (at least 2 days) needs to be established with the Ops team for validation."
+          },
+          "target_port_in_time_range_start": {
+            "type": "string",
+            "nullable": true,
+            "description": "Minimum hour in the future needs to be established with the Ops team for validation."
+          },
+          "target_port_in_time_range_end": {
+            "type": "string",
+            "nullable": true,
+            "description": "Maximum hour in the future needs to be established with the Ops team for validation."
+          },
+          "port_in_request_status": {
+            "type": "string",
+            "nullable": true,
+            "description": "The status of the port in request. The possible values are: In progress, Completed, Expired, In review, Waiting for Signature, Action Required, and Canceled."
+          },
+          "losing_carrier_information": {
+            "nullable": true,
+            "description": "The information for the losing carrier. "
+          },
+          "phone_numbers": {
+            "type": "array",
+            "items": {},
+            "nullable": true,
+            "description": "The list of phone numbers to Port in. Phone numbers are in E.164 format (e.g. +16175551212)."
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "The list of documents SID referencing a utility bills"
+          }
+        }
+      },
+      "numbers.v1.porting_port_in_phone_number": {
+        "type": "object",
+        "properties": {
+          "port_in_request_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^KW[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The SID of the Port In request. This is a unique identifier of the port in request."
+          },
+          "phone_number_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^PU[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The SID of the Port In request phone number. This is a unique identifier of the phone number."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        }
+      },
+      "numbers.v1.porting_portability": {
+        "type": "object",
+        "properties": {
+          "phone_number": {
+            "type": "string",
+            "format": "phone-number",
+            "nullable": true,
+            "description": "The phone number which portability is to be checked. Phone numbers are in E.164 format (e.g. +16175551212)."
+          },
+          "account_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^AC[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The target account sid to which the number will be ported"
+          },
+          "portable": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Boolean flag specifying if phone number is portable or not."
+          },
+          "pin_and_account_number_required": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Boolean flag specifying if PIN and account number is required for the phone number."
+          },
+          "not_portable_reason": {
+            "type": "string",
+            "nullable": true,
+            "description": "Reason why the phone number cannot be ported into Twilio, `null` otherwise."
+          },
+          "not_portable_reason_code": {
+            "type": "integer",
+            "nullable": true,
+            "description": "The Portability Reason Code for the phone number if it cannot be ported into Twilio, `null` otherwise. One of `22131`, `22132`, `22130`, `22133`, `22102` or `22135`."
+          },
+          "number_type": {
+            "type": "string",
+            "$ref": "#/components/schemas/porting_portability_enum_number_type",
+            "nullable": true,
+            "description": "The type of the requested phone number. One of `LOCAL`, `UNKNOWN`, `MOBILE`, `TOLL-FREE`."
+          },
+          "country": {
+            "type": "string",
+            "format": "iso-country-code",
+            "nullable": true,
+            "description": "Country the phone number belongs to."
+          },
+          "messaging_carrier": {
+            "type": "string",
+            "nullable": true,
+            "description": "Current messaging carrier of the phone number"
+          },
+          "voice_carrier": {
+            "type": "string",
+            "nullable": true,
+            "description": "Current voice carrier of the phone number"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "description": "This is the url of the request that you're trying to reach out to locate the resource."
+          }
+        }
+      },
+      "porting_portability_enum_number_type": {
+        "type": "string",
+        "enum": [
+          "LOCAL",
+          "UNKNOWN",
+          "MOBILE",
+          "TOLL-FREE"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "accountSid_authToken": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "info": {
+    "title": "Twilio - Numbers",
+    "description": "This is the public Twilio REST API.",
+    "termsOfService": "https://www.twilio.com/legal/tos",
+    "contact": {
+      "name": "Twilio Support",
+      "url": "https://support.twilio.com",
+      "email": "support@twilio.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.55.5"
+  },
+  "openapi": "3.0.1",
+  "paths": {
+    "/v1/HostedNumber/Eligibility/Bulk": {
+      "servers": [
+        {
+          "url": "https://numbers.twilio.com"
+        }
+      ],
+      "description": "TODO: Resource-level docs",
+      "x-twilio": {
+        "defaultOutputProperties": [],
+        "pathType": "list",
+        "mountName": "bulk_eligibilities"
+      }
+    },
+    "/v1/HostedNumber/Eligibility/Bulk/{RequestId}": {
+      "servers": [
+        {
+          "url": "https://numbers.twilio.com"
+        }
+      ],
+      "description": "TODO: Resource-level docs",
+      "x-twilio": {
+        "defaultOutputProperties": [],
+        "pathType": "instance",
+        "mountName": "bulk_eligibilities"
+      },
+      "get": {
+        "description": "Fetch an eligibility bulk check that you requested to host in Twilio.",
+        "tags": [
+          "NumbersV1BulkEligibility"
+        ],
+        "parameters": [
+          {
+            "name": "RequestId",
+            "in": "path",
+            "description": "The SID of the bulk eligibility check that you want to know about.",
+            "schema": {
+              "type": "string",
+              "minLength": 34,
+              "maxLength": 34,
+              "pattern": "^EC[0-9a-fA-F]{32}$"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/numbers.v1.bulk_eligibility"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "accountSid_authToken": []
+          }
+        ],
+        "operationId": "FetchBulkEligibility",
+        "x-maturity": [
+          "Beta"
+        ]
+      }
+    },
+    "/v1/HostedNumber/Eligibility": {
+      "servers": [
+        {
+          "url": "https://numbers.twilio.com"
+        }
+      ],
+      "description": "TODO: Resource-level docs",
+      "x-twilio": {
+        "defaultOutputProperties": [],
+        "pathType": "list",
+        "mountName": "eligibilities"
+      }
+    },
+    "/v1/Porting/Portability/{Sid}": {
+      "servers": [
+        {
+          "url": "https://numbers.twilio.com"
+        }
+      ],
+      "description": "TODO: Resource-level docs",
+      "x-twilio": {
+        "defaultOutputProperties": [
+          "sid",
+          "status"
+        ],
+        "pathType": "instance",
+        "mountName": "porting_bulk_portabilities"
+      },
+      "get": {
+        "description": "Fetch a previous portability check. This should return the current status of the validation and the result for all the numbers provided, given that they have been validated (as this process is performed asynchronously).",
+        "tags": [
+          "NumbersV1PortingBulkPortability"
+        ],
+        "parameters": [
+          {
+            "name": "Sid",
+            "in": "path",
+            "description": "A 34 character string that uniquely identifies the Portability check.",
+            "schema": {
+              "type": "string",
+              "minLength": 34,
+              "maxLength": 34,
+              "pattern": "^KZ[0-9a-fA-F]{32}$"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/numbers.v1.porting_bulk_portability"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "accountSid_authToken": []
+          }
+        ],
+        "operationId": "FetchPortingBulkPortability",
+        "x-maturity": [
+          "Beta"
+        ]
+      }
+    },
+    "/v1/Porting/Portability": {
+      "servers": [
+        {
+          "url": "https://numbers.twilio.com"
+        }
+      ],
+      "description": "TODO: Resource-level docs",
+      "x-twilio": {
+        "defaultOutputProperties": [
+          "sid",
+          "status"
+        ],
+        "pathType": "list",
+        "mountName": "porting_bulk_portabilities"
+      },
+      "post": {
+        "description": "Allows to check if a list of phone numbers can be ported to Twilio or not. This is done asynchronous for each phone number.",
+        "tags": [
+          "NumbersV1PortingBulkPortability"
+        ],
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/numbers.v1.porting_bulk_portability"
+                }
+              }
+            },
+            "description": "Accepted"
+          }
+        },
+        "security": [
+          {
+            "accountSid_authToken": []
+          }
+        ],
+        "operationId": "CreatePortingBulkPortability",
+        "x-maturity": [
+          "Beta"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "title": "CreatePortingBulkPortabilityRequest",
+                "properties": {
+                  "PhoneNumbers": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "The phone numbers which portability is to be checked. This should be a list of strings. Phone numbers are in E.164 format (e.g. +16175551212). ."
+                  }
+                },
+                "required": [
+                  "PhoneNumbers"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/Porting/PortIn": {
+      "servers": [
+        {
+          "url": "https://numbers.twilio.com"
+        }
+      ],
+      "description": "TODO: Resource-level docs",
+      "x-twilio": {
+        "defaultOutputProperties": [
+          "port_in_request_sid"
+        ],
+        "pathType": "list",
+        "mountName": "porting_port_ins"
+      }
+    },
+    "/v1/Porting/PortIn/{PortInRequestSid}": {
+      "servers": [
+        {
+          "url": "https://numbers.twilio.com"
+        }
+      ],
+      "description": "TODO: Resource-level docs",
+      "x-twilio": {
+        "defaultOutputProperties": [
+          "port_in_request_sid"
+        ],
+        "pathType": "instance",
+        "mountName": "porting_port_ins"
+      },
+      "delete": {
+        "description": "Allows to cancel a port in request by SID",
+        "tags": [
+          "NumbersV1PortingPortIn"
+        ],
+        "parameters": [
+          {
+            "name": "PortInRequestSid",
+            "in": "path",
+            "description": "The SID of the Port In request. This is a unique identifier of the port in request.",
+            "schema": {
+              "type": "string",
+              "minLength": 34,
+              "maxLength": 34,
+              "pattern": "^KW[0-9a-fA-F]{32}$"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The resource was deleted successfully."
+          }
+        },
+        "security": [
+          {
+            "accountSid_authToken": []
+          }
+        ],
+        "operationId": "DeletePortingPortIn",
+        "x-maturity": [
+          "Beta"
+        ]
+      },
+      "get": {
+        "description": "Fetch a port in request by SID",
+        "tags": [
+          "NumbersV1PortingPortInFetch"
+        ],
+        "parameters": [
+          {
+            "name": "PortInRequestSid",
+            "in": "path",
+            "description": "The SID of the Port In request. This is a unique identifier of the port in request.",
+            "schema": {
+              "type": "string",
+              "minLength": 34,
+              "maxLength": 34,
+              "pattern": "^KW[0-9a-fA-F]{32}$"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/numbers.v1.porting_port_in_fetch"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "accountSid_authToken": []
+          }
+        ],
+        "operationId": "FetchPortingPortInFetch",
+        "x-maturity": [
+          "Beta"
+        ],
+        "x-twilio": {
+          "mountName": "porting_port_ins_fetch",
+          "className": "porting_port_in_fetch"
+        }
+      }
+    },
+    "/v1/Porting/PortIn/{PortInRequestSid}/PhoneNumber/{PhoneNumberSid}": {
+      "servers": [
+        {
+          "url": "https://numbers.twilio.com"
+        }
+      ],
+      "description": "TODO: Resource-level docs",
+      "x-twilio": {
+        "defaultOutputProperties": [
+          "port_in_request_sid",
+          "phone_number_sid"
+        ],
+        "pathType": "instance",
+        "mountName": "porting_port_in_phone_number"
+      },
+      "delete": {
+        "description": "Allows to cancel a port in request phone number by SID",
+        "tags": [
+          "NumbersV1PortingPortInPhoneNumber"
+        ],
+        "parameters": [
+          {
+            "name": "PortInRequestSid",
+            "in": "path",
+            "description": "The SID of the Port In request. This is a unique identifier of the port in request.",
+            "schema": {
+              "type": "string",
+              "minLength": 34,
+              "maxLength": 34,
+              "pattern": "^KW[0-9a-fA-F]{32}$"
+            },
+            "required": true
+          },
+          {
+            "name": "PhoneNumberSid",
+            "in": "path",
+            "description": "The SID of the Port In request phone number. This is a unique identifier of the phone number.",
+            "schema": {
+              "type": "string",
+              "minLength": 34,
+              "maxLength": 34,
+              "pattern": "^PU[0-9a-fA-F]{32}$"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The resource was deleted successfully."
+          }
+        },
+        "security": [
+          {
+            "accountSid_authToken": []
+          }
+        ],
+        "operationId": "DeletePortingPortInPhoneNumber",
+        "x-maturity": [
+          "Beta"
+        ]
+      }
+    },
+    "/v1/Porting/Portability/PhoneNumber/{PhoneNumber}": {
+      "servers": [
+        {
+          "url": "https://numbers.twilio.com"
+        }
+      ],
+      "description": "TODO: Resource-level docs",
+      "x-twilio": {
+        "defaultOutputProperties": [],
+        "pathType": "instance",
+        "mountName": "porting_portabilities"
+      },
+      "get": {
+        "description": "Allows to check if a single phone number can be ported to Twilio or not.",
+        "tags": [
+          "NumbersV1PortingPortability"
+        ],
+        "parameters": [
+          {
+            "name": "PhoneNumber",
+            "in": "path",
+            "description": "The phone number which portability is to be checked. Phone numbers are in E.164 format (e.g. +16175551212).",
+            "schema": {
+              "type": "string",
+              "format": "phone-number"
+            },
+            "required": true
+          },
+          {
+            "name": "TargetAccountSid",
+            "in": "query",
+            "description": "The SID of the account where the phone number(s) will be ported.",
+            "schema": {
+              "type": "string",
+              "minLength": 34,
+              "maxLength": 34,
+              "pattern": "^AC[0-9a-fA-F]{32}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/numbers.v1.porting_portability"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "accountSid_authToken": []
+          }
+        ],
+        "operationId": "FetchPortingPortability",
+        "x-maturity": [
+          "Beta"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://twiliocom-twilio-numbers-v1.dataman.ai"
+    }
+  ],
+  "tags": [
+    {
+      "name": "NumbersV1BulkEligibility"
+    },
+    {
+      "name": "NumbersV1PortingBulkPortability"
+    },
+    {
+      "name": "NumbersV1PortingPortIn"
+    },
+    {
+      "name": "NumbersV1PortingPortInFetch"
+    },
+    {
+      "name": "NumbersV1PortingPortInPhoneNumber"
+    },
+    {
+      "name": "NumbersV1PortingPortability"
+    }
+  ],
+  "x-maturity": [
+    {
+      "name": "Beta",
+      "description": "PLEASE NOTE that this is a Beta product that is subject to change. Use it with caution."
+    }
+  ],
+  "x-origin-servers": [
+    {
+      "url": "https://numbers.twilio.com"
+    }
+  ]
+}

@@ -1,0 +1,2496 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ContentGroove API",
+    "version": "1.0.0",
+    "description": "# Overview\n\nThe ContentGroove Developer API enables you to add the power of ContentGroove's video AI to your own applications and workflows.\n\nWebhooks are a way for ContentGroove to send video information\nto your application, to update your system and/or trigger other business processes.\n\nYou can use Webhooks and the Developer API separately or together.\n\n# Getting Started with Webhooks\n\n- Sign up for an account at [app.contentgroove.com](https://app.contentgroove.com)\n- Read \"Using Webhooks\" on the [API Reference page](https://developers.contentgroove.com/api_reference)\n- Visit the [Webhooks page](https://app.contentgroove.com/webhook_subscriptions) and create a new webhook\n\n# Using Webhooks\n\nWebhooks, also known as callbacks, are a way for ContentGroove to notify your application as soon as possible after an event has occurred in ContentGroove.\nFor example after a media completes processing, ContentGroove can use a webhook to notify your application with information about the video: Suggested clips, transcription, and so on.\nYou can use the information sent to update your system and/or use the\nwebhook to trigger other business processes.\n\nThe webhook request is sent as an HTTP POST containing a payload of JSON-formatted data.\nFor the details of the payload format see the \"CALLBACKS\" sections below.\n\nWhen your application receives the webhook request, it must respond with\na 200 HTTP status code (success).\nIf a 200 HTTP status code is not returned,\nContentGroove will assume that the webhook was not delivered and\nwill retry a limited number of times, using an exponential backoff algorithm.\n\nContentGroove makes a best effort to attempt to send the webhook at\nleast once.\nApplications receiving webhooks must tolerate the\npossibility of a single webhook payload being sent more than once\n(idempotent behavior).\nApplications receiving webhooks should tolerate the possibility that\na webhook could not be delivered\n(for example your application was down when delivery was attempted).\n\n# Getting Started with the Developer API\n\n- Sign up for an account at [app.contentgroove.com](https://app.contentgroove.com)\n- Visit the [API Keys page](https://app.contentgroove.com/api_keys)\n  - Create a new API Key then copy and save the value.\n    > ⚠️ **IMPORTANT**: This API Key is intended only for use on the server side. Be sure never to use a server-side API Key in client-side (web, mobile, or otherwise) code. ⚠️\n- View all available endpoints, and try the API, on our [API Reference page](https://developers.contentgroove.com/api_reference)\n\n# Using the Developer API\n\n- Create a new media (video or audio) in ContentGroove\n  - If the video or audio is available from a URL, you can create a media by providing the `source_url` parameter. ContentGroove will fetch the video or audio from the URL if possible.\n  - Or, you can create a media from a video or audio file which you upload directly to ContentGroove (see File Uploading section below).\n- After the new media is created, at first it will be in a \"processing\" state.\n  Depending on the size and duration of the video or audio file, it will take some time for processing to complete.\n  - You can use ContentGroove Webhooks to be notified immediately when processing has completed. (Details coming soon.)\n  - You can also use the API to read the state of the media, to determine if the media has completed processing yet.\n- After the media has completed processing, you can access all of these details about the media:\n  - The media name and description\n  - The transcription of spoken words\n  - Topics and keywords which were discussed in the transcription\n  - Suggested video clips are automatically created\n- In addition to the automatically created video clips, you can create more video clips from the media\n\n# Response Codes\n\nThe following is a comprehensive list of the status codes you may receive while using the ContentGroove API:\n\n- 200 \"Ok\"\n  - The request was valid\n- 400 \"Bad Request\n  - This is returned when there was a problem parsing the JSON body of your request if you supplied the 'Content-Type': 'application/json' header, or if your request is missing the 'Content-Type' header altogether\n- 401 \"Unauthorized\"\n  - This is returned when you are attempting to perform an action on a resource that you are not authorized to do\n- 402 \"Payment Required\"\n  - This is returned when you are attempting to perform an action that would push your account above a usage limit. You can view your usage at: https://app.contentgroove.com/quota_usage\n- 404 \"Not Found\"\n  - This is returned when the resource you are trying to view does not exist\n- 429 \"Too Many Requests\"\n  - This is returned when you have performed too many requests within a given period of time\n- 500 \"Internal Server Error\"\n  - This is returned when your request was valid but there was a problem on our end\n\n# File Uploading\n\n- Step 1: Make a GET request to the direct uploads URL endpoint (/api/v1/direct_uploads) to receive an upload URL to upload the file to and an upload id.\n- Step 2: Make a PUT request with the file as the body to the upload URL received in step 1. The response will have a 200 status with no body if the upload is successful.\n  ```\n  curl -T /path/to/file upload_url\n  ```\n- Step 3: After uploading the file to the upload URL, make a POST request to the create medias endpoint (/api/v1/medias), with the upload id and optionally a name and description for the new media.\n  > At this time, file uploads are limited to 5gb per file.\n\n# Allowed media types\n\nVideo:\n\n- Supported: Most common video formats and codecs are supported.\n- Recommended: mp4\n\nAudio:\n\n- Supported: aac, mp3, flac, ogg, wav, and wma\n- Recommended: aac\n\n# Authentication\n\nYou can use the API Key to authenticate your API requests using any of these methods. (Replace abc123 with your actual API Key.)\n\n- Request header `Authorization: Bearer abc123`\n- Request header `X-API-KEY: abc123`\n- Query parameter `api_key=abc123`\n  > ⚠️ **IMPORTANT**: This API Key is intended only for use on the server side. Be sure never to use a server-side API Key in client-side (web, mobile, or otherwise) code. ⚠️\n\n# Transcriptions\n\nTranscriptions are available for all media objects. To receive a transcription in the response body, simply add the query parameter `include=transcription` to the show media endpoint.\n\n# Link to openapi.json spec\n\n- https://api.contentgroove.com/api-docs/v1/openapi.json\n"
+  },
+  "paths": {
+    "/clips": {
+      "get": {
+        "summary": "list clips",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "getClips",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "object"
+            },
+            "style": "deepObject",
+            "explode": true,
+            "description": "Filters to be applied to the query.\n\nQuery params in the url must look like this: \"filter[attributeName_*matcher*]\"\n\n(i.e. filter[name_eq]=chimp%20into%20space)\n\nAvailable matchers can be found here: https://activerecord-hackery.github.io/ransack/getting-started/search-matches/\n\n",
+            "example": "{\n  \"filter[name_eq]\": \"john h. glenn, kindly air force base hospital\",\n  \"filter[text_start]\": \"He landed in the sea\"\n}"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "object"
+            },
+            "style": "deepObject",
+            "explode": true,
+            "description": "Specify page number and page size for the query",
+            "example": "{\n  \"page[number]\": 1,\n  \"page[size]\": 5\n}"
+          },
+          {
+            "name": "sort",
+            "required": false,
+            "in": "query",
+            "description": "Sorting to be applied to the query. For more info: https://jsonapi.org/format/#fetching-sorting",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at",
+                "original_created_at",
+                "-original_created_at",
+                "name",
+                "-name"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "id": "32caa472-6a12-4a77-974a-52d1175502ab",
+                      "type": "clips",
+                      "attributes": {
+                        "name": "Example Clip",
+                        "rank": null,
+                        "text": null,
+                        "processing_started_at": "2022-08-15T18:34:08.391Z",
+                        "start_char": 0,
+                        "end_char": 0,
+                        "created_at": "2022-08-15T18:34:08.398Z",
+                        "external_id": "150",
+                        "is_processing": true,
+                        "start_time": 1,
+                        "end_time": 2,
+                        "media_file_url": null,
+                        "media_file_duration": null,
+                        "media_file_content_type": null,
+                        "media_file_height": null,
+                        "media_file_width": null,
+                        "media_file_preview_image_url": null
+                      },
+                      "relationships": {
+                        "media": {
+                          "data": {
+                            "id": "dde75ca2-77ad-4dfa-b4f0-61ccff99a296",
+                            "type": "medias"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/clips",
+                    "current": "http://api.contentgroove.com/api/v1/clips?page[number]=1"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/clips_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/unauthorized_error_response_object"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create clip",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "createClip",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "a5d24ac9-86bc-46a9-b188-6dfff81c838c",
+                    "type": "clips",
+                    "attributes": {
+                      "name": "Example New Clip",
+                      "rank": null,
+                      "text": null,
+                      "processing_started_at": "2022-08-17T21:08:29.615Z",
+                      "start_char": 0,
+                      "end_char": 0,
+                      "created_at": "2022-08-15T18:34:09.431Z",
+                      "external_id": null,
+                      "is_processing": null,
+                      "start_time": 1,
+                      "end_time": 2,
+                      "media_file_url": null,
+                      "media_file_duration": null,
+                      "media_file_content_type": null,
+                      "media_file_height": null,
+                      "media_file_width": null,
+                      "media_file_preview_image_url": null
+                    },
+                    "relationships": {
+                      "media": {
+                        "data": {
+                          "id": "dde75ca2-77ad-4dfa-b4f0-61ccff99a296",
+                          "type": "medias"
+                        }
+                      }
+                    }
+                  },
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/clips"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/clip_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/unauthorized_error_response_object"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "payment required",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "422",
+                      "source": {
+                        "pointer": ""
+                      },
+                      "title": "Unprocessable Entity",
+                      "detail": "You have exceeded the monthly quota for number of clips. Please visit the Settings / Quota Usage page to see your usage and manage your account.",
+                      "code": "exceeded_quota_count"
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/payment_required_error_response_object"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "required": [
+                      "attributes"
+                    ],
+                    "properties": {
+                      "attributes": {
+                        "type": "object",
+                        "required": [
+                          "name",
+                          "media_id",
+                          "start_time",
+                          "end_time"
+                        ],
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "example": "Example New Clip"
+                          },
+                          "media_id": {
+                            "type": "string",
+                            "example": "9b9a2e82-5b47-4f59-831d-4c239824b983"
+                          },
+                          "start_time": {
+                            "type": "number",
+                            "example": 10.1
+                          },
+                          "end_time": {
+                            "type": "number",
+                            "example": 12.3
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/clips/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "The id of the clip to be retrieved",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "show clip",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "getClipById",
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "32caa472-6a12-4a77-974a-52d1175502ab",
+                    "type": "clips",
+                    "attributes": {
+                      "name": "Example Clip",
+                      "rank": null,
+                      "text": null,
+                      "processing_started_at": "2022-08-15T18:34:08.391Z",
+                      "start_char": 0,
+                      "end_char": 0,
+                      "created_at": "2022-08-15T18:34:08.398Z",
+                      "external_id": "155",
+                      "is_processing": true,
+                      "start_time": 1,
+                      "end_time": 2,
+                      "media_file_url": null,
+                      "media_file_duration": null,
+                      "media_file_content_type": null,
+                      "media_file_height": null,
+                      "media_file_width": null,
+                      "media_file_preview_image_url": null
+                    },
+                    "relationships": {
+                      "media": {
+                        "data": {
+                          "id": "dde75ca2-77ad-4dfa-b4f0-61ccff99a296",
+                          "type": "medias"
+                        }
+                      }
+                    }
+                  },
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/clips/32caa472-6a12-4a77-974a-52d1175502ab"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/clip_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "not authorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "404",
+                      "source": null,
+                      "title": "Not Found",
+                      "detail": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "update clip",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "updateClipById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "32caa472-6a12-4a77-974a-52d1175502ab",
+                    "type": "clips",
+                    "attributes": {
+                      "name": "Example Clip",
+                      "rank": null,
+                      "text": null,
+                      "processing_started_at": "2022-08-15T18:34:08.391Z",
+                      "start_char": 0,
+                      "end_char": 0,
+                      "created_at": "2022-08-15T18:34:08.398Z",
+                      "external_id": "158",
+                      "is_processing": true,
+                      "start_time": 1,
+                      "end_time": 2,
+                      "media_file_url": null,
+                      "media_file_duration": null,
+                      "media_file_content_type": null,
+                      "media_file_height": null,
+                      "media_file_width": null,
+                      "media_file_preview_image_url": null
+                    },
+                    "relationships": {
+                      "media": {
+                        "data": {
+                          "id": "dde75ca2-77ad-4dfa-b4f0-61ccff99a296",
+                          "type": "medias"
+                        }
+                      }
+                    }
+                  },
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/clips/32caa472-6a12-4a77-974a-52d1175502ab"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/clip_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "not authorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "required": [
+                      "attributes"
+                    ],
+                    "properties": {
+                      "attributes": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "example": "Example Clip"
+                          },
+                          "start_time": {
+                            "type": "number",
+                            "example": 10.1
+                          },
+                          "end_time": {
+                            "type": "number",
+                            "example": 12.3
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "delete": {
+        "summary": "delete clip",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "deleteClipById",
+        "responses": {
+          "204": {
+            "description": "no content"
+          },
+          "401": {
+            "description": "not authorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "404",
+                      "source": null,
+                      "title": "Not Found",
+                      "detail": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/direct_uploads": {
+      "get": {
+        "summary": "prepare presigned upload url",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "getUploadUrl",
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "71eeab42-c29b-4f14-a05c-c76dd80c39b7",
+                    "type": "direct_upload_blobs",
+                    "attributes": {
+                      "upload_id": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWszTVdWbFlXSTBNaTFqTWpsaUxUUm1NVFF0WVRBMVl5MWpOelprWkRnd1l6TTVZamNHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--0bc2a83b08eb0217bc7f0497302496329cf69ede",
+                      "upload_url": "(example URL for documentation only) https://file-uploads.contentgroove.com/vmf93z4328ioirtd6f5yb2nwbnq4d0ps?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZ44FA4RJICA5SPPQ%2F20220919%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220919T165555Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host-content-type&X-Amz-Signature=df840423555070b29264382599459f1497ba2bd5e10e6a6dd41a29ebe239a8e0ecf"
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/direct_upload_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/medias": {
+      "get": {
+        "summary": "list medias",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "getMedias",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "object"
+            },
+            "style": "deepObject",
+            "explode": true,
+            "description": "Filters to be applied to the query.\n\nQuery params in the url must look like this: \"filter[attributeName_*matcher*]\"\n\n(i.e. filter[name_eq]=chimp%20into%20space)\n\nAvailable matchers can be found here: https://activerecord-hackery.github.io/ransack/getting-started/search-matches/\n\n",
+            "example": "{\n  \"filter[name_eq]\": \"chimp into space\",\n  \"filter[sourceUrl_start]\": \"https://archive.org\"\n}"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "object"
+            },
+            "style": "deepObject",
+            "explode": true,
+            "description": "Specify page number and page size for the query",
+            "example": "{\n  \"page[number]\": 1,\n  \"page[size]\": 5\n}"
+          },
+          {
+            "name": "sort",
+            "required": false,
+            "in": "query",
+            "description": "Sorting to be applied to the query. For more info: https://jsonapi.org/format/#fetching-sorting",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at",
+                "original_created_at",
+                "-original_created_at",
+                "name",
+                "-name"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "id": "f98fae60-8086-41d5-8966-36698bf13de0",
+                      "type": "medias",
+                      "attributes": {
+                        "source_url": "https://archive.org/download/SF143/SF143_512kb.mp4",
+                        "processing_started_at": "2022-08-17T02:13:58.425Z",
+                        "created_at": "2022-08-17T02:13:58.431Z",
+                        "source_created_at": null,
+                        "original_created_at": "2022-08-17T02:13:58.431Z",
+                        "external_id": "468",
+                        "is_processing": true,
+                        "name": "Chimp Into Space",
+                        "description": "Enos was the second chimpanzee launched into space by NASA. He was the first and only chimpanzee, and third hominid after cosmonauts Yuri Gagarin and Gherman Titov, to achieve Earth orbit. Enos's flight occurred on November 29, 1961. https://en.wikipedia.org/wiki/Enos_(chimpanzee)",
+                        "has_fetch_error": false,
+                        "source_file_duration": null,
+                        "source_file_content_type": null,
+                        "source_file_height": null,
+                        "source_file_width": null,
+                        "source_file_preview_image_url": null
+                      },
+                      "relationships": {
+                        "clips": {
+                          "data": []
+                        }
+                      }
+                    }
+                  ],
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/medias",
+                    "current": "http://api.contentgroove.com/api/v1/medias?page[number]=1"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/medias_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create media",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "createMedia",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "654599f2-d989-492b-ba66-19dc722e983c",
+                    "type": "medias",
+                    "attributes": {
+                      "source_url": "https://archive.org/download/SF143/SF143_512kb.mp4",
+                      "processing_started_at": "2022-08-17T21:08:34.662Z",
+                      "created_at": "2022-08-15T18:34:13.256Z",
+                      "source_created_at": null,
+                      "original_created_at": null,
+                      "external_id": null,
+                      "is_processing": null,
+                      "name": "",
+                      "description": null,
+                      "has_fetch_error": false,
+                      "source_file_duration": null,
+                      "source_file_content_type": null,
+                      "source_file_height": null,
+                      "source_file_width": null,
+                      "source_file_preview_image_url": null
+                    },
+                    "relationships": {
+                      "clips": {
+                        "data": []
+                      },
+                      "transcription": {
+                        "data": null
+                      }
+                    }
+                  },
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/medias"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/media_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "payment required",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "422",
+                      "source": {
+                        "pointer": ""
+                      },
+                      "title": "Unprocessable Entity",
+                      "detail": "You have exceeded the monthly quota for number of medias. Please visit the Settings / Quota Usage page to see your usage and manage your account.",
+                      "code": "exceeded_quota_count"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "required": [
+                          "attributes"
+                        ],
+                        "properties": {
+                          "attributes": {
+                            "type": "object",
+                            "required": [
+                              "name",
+                              "description",
+                              "source_url"
+                            ],
+                            "properties": {
+                              "source_url": {
+                                "type": "string",
+                                "description": "The `source_url` parameter is required if adding a video from an existing\n                                    public URL on the internet. If you are trying to create a media from a file that you\n                                    uploaded via the direct_uploads endpoint, please use the `upload_id` parameter instead.",
+                                "example": "https://archive.org/download/SF143/SF143_512kb.mp4"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "Video name"
+                              },
+                              "description": {
+                                "type": "string",
+                                "example": "Video description"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "required": [
+                          "attributes"
+                        ],
+                        "properties": {
+                          "attributes": {
+                            "type": "object",
+                            "required": [
+                              "name",
+                              "description",
+                              "upload_id"
+                            ],
+                            "properties": {
+                              "upload_id": {
+                                "type": "string",
+                                "description": "The `upload_id` parameter is required if creating a media after uploading\n                                    your video to the direct_uploads endpoint. If you are trying to create a media from\n                                    a video at an existing public URL on the internet, please use the `source_url`\n                                    parameter instead.",
+                                "example": "ey399vjdkdjf0jslcjd0wjc0ujffj3432lo23kk2o22"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "Video name"
+                              },
+                              "description": {
+                                "type": "string",
+                                "example": "Video description"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/medias/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "show media",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "getMediaById",
+        "parameters": [
+          {
+            "name": "include",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "object"
+            },
+            "style": "deepObject",
+            "explode": true,
+            "description": "Add additional resources to the response",
+            "example": "{\n  \"includes\": \"transcription\"\n}"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "f98fae60-8086-41d5-8966-36698bf13de0",
+                    "type": "medias",
+                    "attributes": {
+                      "source_url": "https://archive.org/download/SF143/SF143_512kb.mp4",
+                      "processing_started_at": "2022-08-17T02:13:58.425Z",
+                      "created_at": "2022-08-17T02:13:58.431Z",
+                      "source_created_at": null,
+                      "original_created_at": "2022-08-17T02:13:58.431Z",
+                      "external_id": "474",
+                      "is_processing": true,
+                      "name": "Chimp Into Space",
+                      "description": "Enos was the second chimpanzee launched into space by NASA. He was the first and only chimpanzee, and third hominid after cosmonauts Yuri Gagarin and Gherman Titov, to achieve Earth orbit. Enos's flight occurred on November 29, 1961. https://en.wikipedia.org/wiki/Enos_(chimpanzee)",
+                      "has_fetch_error": false,
+                      "source_file_duration": null,
+                      "source_file_content_type": null,
+                      "source_file_height": null,
+                      "source_file_width": null,
+                      "source_file_preview_image_url": null
+                    },
+                    "relationships": {
+                      "clips": {
+                        "data": []
+                      },
+                      "transcription": {
+                        "data": {
+                          "id": "4fede3cd-1d47-4132-9d03-ce62c70f4e15",
+                          "type": "transcriptions"
+                        }
+                      }
+                    }
+                  },
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/medias/f98fae60-8086-41d5-8966-36698bf13de0?include=transcription"
+                  },
+                  "included": [
+                    {
+                      "id": "4fede3cd-1d47-4132-9d03-ce62c70f4e15",
+                      "type": "transcriptions",
+                      "attributes": {
+                        "text": "Hi. Hello there.",
+                        "phrases": [
+                          {
+                            "text": "Hello",
+                            "score": 0.09978566785798618,
+                            "spans": [
+                              {
+                                "end": 9,
+                                "text": "Hello",
+                                "start": 5
+                              }
+                            ]
+                          }
+                        ],
+                        "created_at": "2023-06-08T20:03:08.830Z",
+                        "updated_at": "2023-06-08T20:03:08.830Z",
+                        "srt_captions_data": "1\n00:00:00,040 --> 00:00:00,745\nHi. Hello there.\n",
+                        "webvtt_captions_data": "WEBVTT\n\ncue_id_000000\n00:00:00.040 --> 00:00:00.745\nHi. Hello there.\n"
+                      },
+                      "relationships": {
+                        "media": {
+                          "data": {
+                            "id": "f98fae60-8086-41d5-8966-36698bf13de0",
+                            "type": "medias"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/media_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "not authorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "404",
+                      "source": null,
+                      "title": "Not Found",
+                      "detail": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "update media",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "updateMediaById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "f98fae60-8086-41d5-8966-36698bf13de0",
+                    "type": "medias",
+                    "attributes": {
+                      "source_url": "https://archive.org/download/SF143/SF143_512kb.mp4",
+                      "processing_started_at": "2022-08-17T02:13:58.425Z",
+                      "created_at": "2022-08-17T02:13:58.431Z",
+                      "source_created_at": null,
+                      "original_created_at": "2022-08-17T02:13:58.431Z",
+                      "external_id": "477",
+                      "is_processing": true,
+                      "name": "Chimp Into Space",
+                      "description": "testdescription",
+                      "has_fetch_error": false,
+                      "source_file_duration": null,
+                      "source_file_content_type": null,
+                      "source_file_height": null,
+                      "source_file_width": null,
+                      "source_file_preview_image_url": null
+                    },
+                    "relationships": {
+                      "clips": {
+                        "data": []
+                      },
+                      "transcription": {
+                        "data": {
+                          "id": "4f0c8246-7bc3-4b50-88c2-ad55bca20fde",
+                          "type": "transcriptions"
+                        }
+                      }
+                    }
+                  },
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/medias/f98fae60-8086-41d5-8966-36698bf13de0"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/media_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "not authorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "required": [
+                      "attributes"
+                    ],
+                    "properties": {
+                      "attributes": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "example": "Why Electric Planes are Inevitably Coming"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "Writing by Sam Denby; Research by Sam Denby and Tristan Purdy"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "delete": {
+        "summary": "delete media",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "deleteMediaById",
+        "responses": {
+          "204": {
+            "description": "no content"
+          },
+          "401": {
+            "description": "not authorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "404",
+                      "source": null,
+                      "title": "Not Found",
+                      "detail": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webhook_subscriptions": {
+      "get": {
+        "summary": "list webhook subscriptions",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "getWebhookSubscriptions",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "object"
+            },
+            "style": "deepObject",
+            "explode": true,
+            "description": "Filters to be applied to the query.\n\nQuery params in the url must look like this: \"filter[attributeName_*matcher*]\"\n\n(i.e. filter[name_eq]=chimp%20into%20space)\n\nAvailable matchers can be found here: https://activerecord-hackery.github.io/ransack/getting-started/search-matches/\n\n",
+            "example": "{\n  \"filter[name_eq]\": \"chimp into space\"\n}"
+          },
+          {
+            "name": "sort",
+            "required": false,
+            "in": "query",
+            "description": "Sorting to be applied to the query. For more info: https://jsonapi.org/format/#fetching-sorting",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at",
+                "original_created_at",
+                "-original_created_at",
+                "name",
+                "-name"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "id": "d07aedb6-53fc-4141-b10c-083896e54ce2",
+                      "type": "webhook_subscriptions",
+                      "attributes": {
+                        "url": "https://webhook.site/cd4ca31b-6d7d-414a-a3e5-a3a3ca42b25e",
+                        "subscribed_events": [
+                          "*"
+                        ],
+                        "active": true,
+                        "created_at": "2022-10-13T19:04:05.111Z",
+                        "updated_at": "2022-10-13T19:04:05.111Z"
+                      },
+                      "relationships": {
+                        "user": {
+                          "data": {
+                            "id": "aea66137-8ee1-4bab-bf5a-5d8a5bb4a7f9",
+                            "type": "users"
+                          }
+                        },
+                        "webhook_events": {
+                          "data": []
+                        }
+                      }
+                    }
+                  ],
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/webhook_subscriptions",
+                    "current": "http://api.contentgroove.com/api/v1/webhook_subscriptions?page[number]=1"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/webhook_subscriptions_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create webhook subscription",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "createWebhookSubscription",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "d812aaec-55e8-47b8-a9b6-3905082a53fb",
+                    "type": "webhook_subscriptions",
+                    "attributes": {
+                      "url": "https://example.com/contentgroove_webhooks/12345",
+                      "subscribed_events": [
+                        "*"
+                      ],
+                      "active": true,
+                      "created_at": "2022-10-13T19:04:07.154Z",
+                      "updated_at": "2022-10-13T19:04:07.154Z"
+                    },
+                    "relationships": {
+                      "user": {
+                        "data": {
+                          "id": "e9adb7a5-6169-4041-8d23-d1fdb6294198",
+                          "type": "users"
+                        }
+                      },
+                      "webhook_events": {
+                        "data": []
+                      }
+                    }
+                  },
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/webhook_subscriptions"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/webhook_subscription_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "required": [
+                      "attributes"
+                    ],
+                    "properties": {
+                      "attributes": {
+                        "type": "object",
+                        "required": [
+                          "url"
+                        ],
+                        "properties": {
+                          "url": {
+                            "type": "string",
+                            "example": "https://example.com/contentgroove_webhooks/12345"
+                          },
+                          "subscribed_events": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "example": "media.processing_finished"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "callbacks": {
+          "media.processing_finished": {
+            "Provided URL in /webhook_subscriptions": {
+              "post": {
+                "summary": "The webhook that is sent when a media is finished processing",
+                "security": [],
+                "requestBody": {
+                  "required": true,
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "event": {
+                            "type": "string",
+                            "example": "media.processing_finished"
+                          },
+                          "payload": {
+                            "type": "object",
+                            "properties": {
+                              "data": {
+                                "$ref": "#/components/schemas/media_response_object_data"
+                              },
+                              "included": {
+                                "type": "array",
+                                "items": {
+                                  "allOf": [
+                                    {
+                                      "$ref": "#/components/schemas/clip_response_object_data"
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "id": {
+                                          "type": "string",
+                                          "example": "9b9a2e82-5b47-4f59-831d-4c239824b983"
+                                        },
+                                        "type": {
+                                          "type": "string",
+                                          "example": "transcriptions"
+                                        },
+                                        "attributes": {
+                                          "type": "object",
+                                          "properties": {
+                                            "text": {
+                                              "type": "string",
+                                              "example": "He landed in the sea south of Bermuda and has brought to the islands for quick medical checks before he is taken back to Cape Canaveral for a thorough examination. Scientists are related at the condition of both chimp and capsule. They came through the test in a manner that brings a man flight closer to reality for the U. S. Space team at Kindly Air Force Base Hospital, Enos appears sound, if not happy to examining doctors. He performed his task well, not missing a trick in the complex series of work assignments next in orbit, Lieutenant Colonel John H. Glenn."
+                                            }
+                                          }
+                                        },
+                                        "relationships": {
+                                          "type": "object",
+                                          "properties": {}
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "responses": {
+                  "200": {
+                    "description": "Your server returns this code if it accepts the callback"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webhook_subscriptions/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "The id of the webhook subscription to be retrieved",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "show webhook subscription",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "getWebhookSubscriptionById",
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "481f57a0-ecdf-42ec-9837-bc551eb6909b",
+                    "type": "webhook_subscriptions",
+                    "attributes": {
+                      "url": "https://webhook.site/cd4ca31b-6d7d-414a-a3e5-a3a3ca42b25e",
+                      "subscribed_events": [
+                        "*"
+                      ],
+                      "active": true,
+                      "created_at": "2022-10-13T19:04:07.663Z",
+                      "updated_at": "2022-10-13T19:04:07.663Z"
+                    },
+                    "relationships": {
+                      "user": {
+                        "data": {
+                          "id": "639597af-9230-4205-a539-b5c7177b514c",
+                          "type": "users"
+                        }
+                      },
+                      "webhook_events": {
+                        "data": []
+                      }
+                    }
+                  },
+                  "links": {
+                    "self": "http://api.contentgroove.com/api/v1/webhook_subscriptions/481f57a0-ecdf-42ec-9837-bc551eb6909b"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/webhook_subscription_response_object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "not authorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "404",
+                      "source": null,
+                      "title": "Not Found",
+                      "detail": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/too_many_requests_error_response_object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "delete webhook subscription",
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "operationId": "deleteWebhookSubscriptionById",
+        "responses": {
+          "204": {
+            "description": "no content"
+          },
+          "401": {
+            "description": "not authorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "You need to sign in or sign up before continuing."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "404",
+                      "source": null,
+                      "title": "Not Found",
+                      "detail": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "too many requests",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "status": "429",
+                      "title": "Too Many Requests",
+                      "detail": "You have exceeded the maximum number of requests in the current window. Please try again later."
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://contentgroovecom.dataman.ai"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "BearerHeader": {
+        "description": "Generate an API key in settings -> api keys",
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    },
+    "schemas": {
+      "unauthorized_error_response_object": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "payment_required_error_response_object": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "object",
+                  "properties": {
+                    "pointer": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "title": {
+                  "type": "string"
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "too_many_requests_error_response_object": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "detail": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "clips_response_object": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/clip_response_object_data"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/links_object_data"
+          }
+        }
+      },
+      "clip_response_object": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/clip_response_object_data"
+          },
+          "links": {
+            "$ref": "#/components/schemas/links_object_data"
+          }
+        }
+      },
+      "clip_response_object_data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "rank": {
+                "type": "integer",
+                "nullable": true
+              },
+              "text": {
+                "type": "string",
+                "nullable": true
+              },
+              "processing_started_at": {
+                "type": "string",
+                "nullable": true
+              },
+              "start_char": {
+                "type": "integer"
+              },
+              "end_char": {
+                "type": "integer"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "external_id": {
+                "type": "string",
+                "nullable": true
+              },
+              "is_processing": {
+                "type": "boolean",
+                "nullable": true
+              },
+              "start_time": {
+                "type": "number"
+              },
+              "end_time": {
+                "type": "number"
+              },
+              "media_file_url": {
+                "type": "string",
+                "nullable": true
+              },
+              "media_file_content_duration": {
+                "type": "string",
+                "nullable": true
+              },
+              "media_file_content_type": {
+                "type": "string",
+                "nullable": true
+              },
+              "media_file_height": {
+                "type": "string",
+                "nullable": true
+              },
+              "media_file_width": {
+                "type": "string",
+                "nullable": true
+              },
+              "media_file_preview_image_url": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "media": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "medias_response_object": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/media_response_object_data"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/links_object_data"
+          }
+        }
+      },
+      "media_response_object": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/media_response_object_data"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transcription_response_object_data"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/links_object_data"
+          }
+        }
+      },
+      "media_response_object_data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "source_url": {
+                "type": "string",
+                "nullable": true
+              },
+              "processing_started_at": {
+                "type": "string",
+                "nullable": true
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "source_created_at": {
+                "type": "string",
+                "nullable": true
+              },
+              "original_created_at": {
+                "type": "string",
+                "nullable": true
+              },
+              "external_id": {
+                "type": "string",
+                "nullable": true
+              },
+              "is_processing": {
+                "type": "boolean",
+                "nullable": true
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string",
+                "nullable": true
+              },
+              "has_fetch_error": {
+                "type": "boolean"
+              },
+              "source_file_duration": {
+                "type": "number",
+                "nullable": true
+              },
+              "source_file_content_type": {
+                "type": "string",
+                "nullable": true
+              },
+              "source_file_height": {
+                "type": "number",
+                "nullable": true
+              },
+              "source_file_width": {
+                "type": "number",
+                "nullable": true
+              },
+              "source_file_preview_image_url": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "clips": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "transcription_response_object_data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "created_at": {
+                "type": "string",
+                "nullable": true
+              },
+              "updated_at": {
+                "type": "string",
+                "nullable": true
+              },
+              "phrases": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "score": {
+                      "type": "number"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "spans": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "end": {
+                            "type": "number"
+                          },
+                          "start": {
+                            "type": "number"
+                          },
+                          "text": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "srt_captions_data": {
+                "type": "string",
+                "nullable": true
+              },
+              "webvtt_captions_data": {
+                "type": "string",
+                "nullable": true
+              },
+              "text_segments": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "confidence": {
+                        "type": "number"
+                      },
+                      "end_time": {
+                        "type": "number"
+                      },
+                      "is_sentence_start": {
+                        "type": "boolean"
+                      },
+                      "start_time": {
+                        "type": "number"
+                      },
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "media": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "webhook_subscriptions_response_object": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/webhook_subscription_response_object_data"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/links_object_data"
+          }
+        }
+      },
+      "webhook_subscription_response_object": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/webhook_subscription_response_object_data"
+          },
+          "links": {
+            "$ref": "#/components/schemas/links_object_data"
+          }
+        }
+      },
+      "webhook_subscription_response_object_data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "subscribed_events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "active": {
+                "type": "boolean"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
+            }
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "user": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "webhook_events": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "direct_upload_response_object": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "98c934fa-79f5-4144-88fe-71fd92a9f919"
+              },
+              "type": {
+                "type": "string",
+                "example": "direct_upload_blobs"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "upload_id": {
+                    "type": "string",
+                    "example": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWs1T0dNNU16Um1ZUzAzT1dZMUxUUXhORFF0T0RobVpTMDNNV1prT1RKaE9XWTVNVGtHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--f52b7cf73db1f05b8e74dcf057b7f8348128c600"
+                  },
+                  "upload_url": {
+                    "type": "string",
+                    "example": "(example URL for documentation only) https://file-uploads.contentgroove.com/vmf93z4328ioirtd6f5yb2nwbnq4d0ps?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZ44FA4RJICA5SPPQ%2F20220919%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220919T165555Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host-content-type&X-Amz-Signature=df840423555070b29264382599459f1497ba2bd5e10e6a6dd41a29ebe239a8e0ecf"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "links_object_data": {
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string"
+          },
+          "current": {
+            "type": "string",
+            "nullable": true
+          },
+          "first": {
+            "type": "string",
+            "nullable": true
+          },
+          "prev": {
+            "type": "string",
+            "nullable": true
+          },
+          "next": {
+            "type": "string",
+            "nullable": true
+          },
+          "last": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      }
+    }
+  },
+  "x-origin-servers": [
+    {
+      "url": "https://api.contentgroove.com/api/v1",
+      "description": "V1 API server"
+    }
+  ]
+}

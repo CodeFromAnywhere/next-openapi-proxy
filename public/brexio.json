@@ -1,0 +1,262 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "KYC API Documentation",
+    "version": "2022.11",
+    "description": "API Interface to retrieve company data and products from business registers",
+    "contact": {
+      "name": "KYC API Support",
+      "email": "support@kompany.com",
+      "url": "https://kycapi.kompany.com/"
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "user_key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "user_key"
+      }
+    }
+  },
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://brexio.dataman.ai"
+    }
+  ],
+  "tags": [
+    {
+      "name": "v1-system",
+      "description": "system overview",
+      "x-displayName": "system overview"
+    },
+    {
+      "name": "v1-company",
+      "description": "legal entity search and data retrieval",
+      "x-displayName": "legal entity search and data retrieval"
+    },
+    {
+      "name": "v1-product",
+      "description": "product search, order and retrieval",
+      "x-displayName": "product search, order and retrieval"
+    },
+    {
+      "name": "v1-proof",
+      "description": "blockchain and timestamp proof related methods",
+      "x-displayName": "blockchain and timestamp proof related methods"
+    },
+    {
+      "name": "v1-pepsanction",
+      "description": "PEP/sanctions/adverse media",
+      "x-displayName": "PEP/sanctions/adverse media"
+    },
+    {
+      "name": "v1-vat-verification",
+      "description": "VAT verification",
+      "x-displayName": "VAT verification"
+    },
+    {
+      "name": "v1-ein-verification",
+      "description": "EIN tax number verification",
+      "x-displayName": "EIN tax number verification"
+    },
+    {
+      "name": "v1-nif-verification",
+      "description": "NIF verification",
+      "x-displayName": "NIF verification"
+    },
+    {
+      "name": "v1-iban-verification",
+      "description": "IBAN verification",
+      "x-displayName": "IBAN verification"
+    },
+    {
+      "name": "v1-tin-verification",
+      "description": "TIN verification",
+      "x-displayName": "TIN verification"
+    }
+  ],
+  "paths": {
+    "/api/v1/system/countries": {
+      "$ref": "/docs/v1-system/system_countries.json"
+    },
+    "/api/v1/system/pricelist": {
+      "$ref": "/docs/v1-system/system_pricelist.json"
+    },
+    "/api/v1/system/health": {
+      "$ref": "/docs/v1-system/system_health.json"
+    },
+    "/api/v1/company/search/name/{country}/{name}": {
+      "$ref": "/docs/v1-company/company_search_name_(country)_(name).json"
+    },
+    "/api/v1/company/search/number/{country}/{number}": {
+      "$ref": "/docs/v1-company/company_search_number_(country)_(number).json"
+    },
+    "/api/v1/company/deepsearch/name/{country}/{name}": {
+      "$ref": "/docs/v1-company/company_deepsearch_name_(country)_(name).json"
+    },
+    "/api/v1/company/deepsearch/number/{country}/{number}": {
+      "$ref": "/docs/v1-company/company_deepsearch_number_(country)_(number).json"
+    },
+    "/api/v1/company/deepsearch/lei/{number}": {
+      "$ref": "/docs/v1-company/company_deepsearch_lei_(number).json"
+    },
+    "/api/v1/company/deepsearch/isin": {
+      "$ref": "/docs/v1-company/company_deepsearch_isin.json"
+    },
+    "/api/v1/company/{id}/{dataset}": {
+      "$ref": "/docs/v1-company/company_(id)_(dataset).json"
+    },
+    "/api/v1/company/{id}/super/{country}": {
+      "$ref": "/docs/v1-company/company_(id)_super_(country).json"
+    },
+    "/api/v1/company/announcement/{id}": {
+      "$ref": "/docs/v1-company/company_announcement_(id).json"
+    },
+    "/api/v1/company/{id}/announcements": {
+      "$ref": "/docs/v1-company/company_(id)_announcements.json"
+    },
+    "/api/v1/company/notification/register/{id}": {
+      "$ref": "/docs/v1-company/company_notification_register_(id).json"
+    },
+    "/api/v1/company/notification/unregister/{id}": {
+      "$ref": "/docs/v1-company/company_notification_unregister_(id).json"
+    },
+    "/api/v1/company/notification/list/{id}": {
+      "$ref": "/docs/v1-company/company_notification_list_(id).json"
+    },
+    "/api/v1/company/notification/list": {
+      "$ref": "/docs/v1-company/company_notification_list.json"
+    },
+    "/api/v1/company/monitoring/register/{id}": {
+      "$ref": "/docs/v1-company/company_monitoring_register_(id).json"
+    },
+    "/api/v1/company/monitoring/unregister/{id}": {
+      "$ref": "/docs/v1-company/company_monitoring_unregister_(id).json"
+    },
+    "/api/v1/company/monitoring/list/{id}": {
+      "$ref": "/docs/v1-company/company_monitoring_list_(id).json"
+    },
+    "/api/v1/company/monitoring/list": {
+      "$ref": "/docs/v1-company/company_monitoring_list.json"
+    },
+    "/api/v1/company/monitoring/changeTypes": {
+      "$ref": "/docs/v1-company/company_monitoring_changeTypes.json"
+    },
+    "/api/v1/company/monitoring/update/{id}": {
+      "$ref": "/docs/v1-company/company_monitoring_update_(id).json"
+    },
+    "/api/v1/product/catalog/{country}": {
+      "$ref": "/docs/v1-product/product_catalog_(country).json"
+    },
+    "/api/v1/product/search/{subjectId}": {
+      "$ref": "/docs/v1-product/product_search_(subjectId).json"
+    },
+    "/api/v1/product/availability/{sku}/{subjectId}": {
+      "$ref": "/docs/v1-product/product_availability_(sku)_(subjectId).json"
+    },
+    "/api/v1/product/order/{sku}/{subjectId}": {
+      "$ref": "/docs/v1-product/product_order_(sku)_(subjectId).json"
+    },
+    "/api/v1/product/order/{sku}/{option}/{subjectId}": {
+      "$ref": "/docs/v1-product/product_order_(sku)_(option)_(subjectId).json"
+    },
+    "/api/v1/product/order/concierge": {
+      "$ref": "/docs/v1-product/product_order_concierge.json"
+    },
+    "/api/v1/product/order/ubo": {
+      "$ref": "/docs/v1-product/product_order_ubo.json"
+    },
+    "/api/v1/product/ubo/legalforms": {
+      "$ref": "/docs/v1-product/product_ubo_legalforms_(country).json"
+    },
+    "/api/v1/product/order/landregister": {
+      "$ref": "/docs/v1-product/product_order_landregister.json"
+    },
+    "/api/v1/product/order/BORegister": {
+      "$ref": "/docs/v1-product/product_order_boregister.json"
+    },
+    "/api/v1/product/extraction/{orderId}": {
+      "$ref": "/docs/v1-product/product_extraction_{orderId}.json"
+    },
+    "/api/v1/product/extraction/catalog": {
+      "$ref": "/docs/v1-product/product_extraction_catalog.json"
+    },
+    "/api/v1/product/status/{orderId}": {
+      "$ref": "/docs/v1-product/product_status_(orderId).json"
+    },
+    "/api/v1/product/update/{action}/{orderId}": {
+      "$ref": "/docs/v1-product/product_update_{action}_{orderId}.json"
+    },
+    "/api/v1/product/notifier/{orderId}/{type}/{uri}": {
+      "$ref": "/docs/v1-product/product_notifier_(orderId)_(type)_(uri).json"
+    },
+    "/api/v1/product/notifier/{notifierId}": {
+      "$ref": "/docs/v1-product/product_notifier_(notifierId).json"
+    },
+    "/api/v1/product/{orderId}": {
+      "$ref": "/docs/v1-product/product_(orderId).json"
+    },
+    "/api/v1/proof/{proofId}": {
+      "$ref": "/docs/v1-proof/proof_{proofId}.json"
+    },
+    "/api/v1/proof": {
+      "$ref": "/docs/v1-proof/proof.json"
+    },
+    "/api/v1/pepsanction/order/{type}/{search}": {
+      "$ref": "/docs/v1-pepsanction/pepsanction_order_(type)_(search).json"
+    },
+    "/api/v1/pepsanction/retrieve/{id}": {
+      "$ref": "/docs/v1-pepsanction/pepsanction_retrieve_(id).json"
+    },
+    "/api/v1/vat-verification/lookup/{country}": {
+      "$ref": "/docs/v1-vat-verification/vat-verification_lookup_{country}.json"
+    },
+    "/api/v1/vat-verification/basic-check/{country}": {
+      "$ref": "/docs/v1-vat-verification/vat-verification_basic-check_(country).json"
+    },
+    "/api/v1/vat-verification/leveltwo-check/{country}": {
+      "$ref": "/docs/v1-vat-verification/vat-verification_leveltwo_check_{country}.json"
+    },
+    "/api/v1/vat-verification/comprehensive-check/{country}": {
+      "$ref": "/docs/v1-vat-verification/vat-verification_comprehensive-check_(country).json"
+    },
+    "/api/v1/ein-verification/lookup": {
+      "$ref": "/docs/v1-ein-verification/ein-verification_lookup.json"
+    },
+    "/api/v1/ein-verification/basic-check": {
+      "$ref": "/docs/v1-ein-verification/ein-verification_basic-check.json"
+    },
+    "/api/v1/ein-verification/comprehensive-check": {
+      "$ref": "/docs/v1-ein-verification/ein-verification_comprehensive-check.json"
+    },
+    "/api/v1/tin-verification/name-lookup": {
+      "$ref": "/docs/v1-tin-verification/tin-verification_name-lookup.json"
+    },
+    "/api/v1/tin-verification/basic-check": {
+      "$ref": "/docs/v1-tin-verification/tin-verification_basic-check.json"
+    },
+    "/api/v1/tin-verification/comprehensive-check": {
+      "$ref": "/docs/v1-tin-verification/tin-verification_comprehensive-check.json"
+    },
+    "/api/v1/nif-verification/basic-check/{country}": {
+      "$ref": "/docs/v1-nif-verification/nif-verification_basic-check_(country).json"
+    },
+    "/api/v1/nif-verification/comprehensive-check/{country}": {
+      "$ref": "/docs/v1-nif-verification/nif-verification_comprehensive-check_(country).json"
+    },
+    "/api/v1/iban-verification/check-iban": {
+      "$ref": "/docs/v1-iban-verification/iban-verification_iban-check.json"
+    },
+    "/api/v1/iban-verification/comprehensive-check-iban": {
+      "$ref": "/docs/v1-iban-verification/iban-verification_comprehensive-iban-check.json"
+    }
+  },
+  "x-origin-servers": [
+    {
+      "url": "https://api.kompany.com/",
+      "description": "Main endpoint"
+    }
+  ]
+}

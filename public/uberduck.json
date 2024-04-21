@@ -1,0 +1,2987 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Uberduck Text To Speech API",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "description": "Proxy server",
+      "url": "https://uberduck.dataman.ai"
+    }
+  ],
+  "paths": {
+    "/reference-audio": {
+      "get": {
+        "summary": "List Reference Audios",
+        "description": "List a user's reference audios.",
+        "operationId": "list_reference_audios_reference_audio_get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Uuid"
+            },
+            "name": "uuid",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ReferenceAudioResponse"
+                  },
+                  "type": "array",
+                  "title": "Response List Reference Audios Reference Audio Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Add Reference Audio",
+        "description": "Submit reference audio.",
+        "operationId": "add_reference_audio_reference_audio_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_add_reference_audio_reference_audio_post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddReferenceAudioResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/reference-audio/backing-tracks": {
+      "get": {
+        "summary": "List Backing Tracks",
+        "description": "List backing tracks.",
+        "operationId": "list_backing_tracks_reference_audio_backing_tracks_get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "title": "Detailed",
+              "default": false
+            },
+            "name": "detailed",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/reference-audio/backing-tracks/{uuid}": {
+      "get": {
+        "summary": "Get Backing Track",
+        "description": "Get backing track.",
+        "operationId": "get_backing_track_reference_audio_backing_tracks__uuid__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Uuid"
+            },
+            "name": "uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete Backing Track",
+        "operationId": "delete_backing_track_reference_audio_backing_tracks__uuid__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Uuid"
+            },
+            "name": "uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/reference-audio/backing-tracks/{uuid}/convert": {
+      "post": {
+        "summary": "Convert",
+        "operationId": "convert_reference_audio_backing_tracks__uuid__convert_post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Uuid"
+            },
+            "name": "uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/voices": {
+      "get": {
+        "summary": "List Voices",
+        "description": "Get information on available voices.",
+        "operationId": "list_voices_voices_get",
+        "parameters": [
+          {
+            "description": "The type of voice to list.\n\ntts-basic: Basic text-to-speech voices.\n\ntts-reference: Voices which can be conditioned on pitch and duration.\n\ntts-all: All voices which can produce audio from text input.\n\ntts-rap: Voices that can be used to create raps.\n\nv2v: Voices which can be used for voice conversion. These accept an audio input.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "tts-basic",
+                "tts-reference",
+                "tts-all",
+                "v2v",
+                "all",
+                "tts-rap"
+              ],
+              "title": "Mode",
+              "description": "The type of voice to list.\n\ntts-basic: Basic text-to-speech voices.\n\ntts-reference: Voices which can be conditioned on pitch and duration.\n\ntts-all: All voices which can produce audio from text input.\n\ntts-rap: Voices that can be used to create raps.\n\nv2v: Voices which can be used for voice conversion. These accept an audio input.",
+              "default": "tts-basic"
+            },
+            "name": "mode",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "english",
+                "dutch",
+                "spanish",
+                "portuguese",
+                "polish"
+              ],
+              "title": "Language"
+            },
+            "name": "language",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "title": "Is Private"
+            },
+            "name": "is_private",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "title": "Owner"
+            },
+            "name": "owner",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Name"
+            },
+            "name": "name",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/VoiceReturn"
+                  },
+                  "type": "array",
+                  "title": "Response List Voices Voices Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/voices/{voicemodel_uuid}/detail": {
+      "get": {
+        "summary": "Voice Detail",
+        "operationId": "voice_detail_voices__voicemodel_uuid__detail_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Voicemodel Uuid"
+            },
+            "name": "voicemodel_uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceReturn"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/voices/{voicemodel_uuid}/samples": {
+      "get": {
+        "summary": "List Voice Samples",
+        "description": "Return sample outputs from the specified VoiceModel.",
+        "operationId": "voice_samples_voices__voicemodel_uuid__samples_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Voicemodel Uuid"
+            },
+            "name": "voicemodel_uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Sample"
+                  },
+                  "type": "array",
+                  "title": "Response Voice Samples Voices  Voicemodel Uuid  Samples Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/tts/lyrics": {
+      "post": {
+        "summary": "Generate Lyrics",
+        "operationId": "generate_lyrics_tts_lyrics_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LyricsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LyricsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/tts/freestyle": {
+      "post": {
+        "summary": "Generate Freestyle",
+        "operationId": "generate_freestyle_tts_freestyle_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FreestyleRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/tts/convert": {
+      "post": {
+        "summary": "Voice To Voice Conversion",
+        "operationId": "voice_to_voice_conversion_tts_convert_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VoiceConversionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/templates/prompts": {
+      "get": {
+        "summary": "Get Prompts",
+        "operationId": "get_prompts_templates_prompts_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTemplatesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create Template",
+        "operationId": "create_template_templates_prompts_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemplateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/templates/prompts/{uuid}": {
+      "get": {
+        "summary": "Get Prompt",
+        "operationId": "get_prompt_templates_prompts__uuid__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Uuid"
+            },
+            "name": "uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTemplatesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete Prompt",
+        "operationId": "delete_prompt_templates_prompts__uuid__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Uuid"
+            },
+            "name": "uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Edit Prompt",
+        "operationId": "edit_prompt_templates_prompts__uuid__patch",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Uuid"
+            },
+            "name": "uuid",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/templates/deployments": {
+      "get": {
+        "summary": "Get Deployments",
+        "operationId": "get_deployments_templates_deployments_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTemplatesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/templates/deployments/{url_name}": {
+      "get": {
+        "summary": "Get Deployment",
+        "operationId": "get_deployment_templates_deployments__url_name__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Url Name"
+            },
+            "name": "url_name",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTemplatesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete Deployment",
+        "operationId": "delete_deployment_templates_deployments__url_name__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Url Name"
+            },
+            "name": "url_name",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/templates/prompts/{uuid}/generate": {
+      "post": {
+        "summary": "Prompt Generate",
+        "operationId": "prompt_generate_templates_prompts__uuid__generate_post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Uuid"
+            },
+            "name": "uuid",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/templates/deployments/{url_name}/generate": {
+      "post": {
+        "summary": "Deployment Generate",
+        "operationId": "deployment_generate_templates_deployments__url_name__generate_post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Url Name"
+            },
+            "name": "url_name",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/templates/prompts/{prompt_uuid}/deploy": {
+      "post": {
+        "summary": "Deploy Prompt",
+        "operationId": "deploy_prompt_templates_prompts__prompt_uuid__deploy_post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Prompt Uuid"
+            },
+            "name": "prompt_uuid",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeployRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/moderate": {
+      "post": {
+        "summary": "Moderate Text",
+        "operationId": "moderate_text_moderate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModerationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModerationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/voice-bot": {
+      "get": {
+        "summary": "Get Public Voice Bots",
+        "operationId": "get_public_voice_bots_voice_bot_get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Limit",
+              "default": 100
+            },
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Offset",
+              "default": 0
+            },
+            "name": "offset",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/VoiceBotResponse"
+                  },
+                  "type": "array",
+                  "title": "Response Get Public Voice Bots Voice Bot Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create Voice Bot",
+        "operationId": "create_voice_bot_voice_bot_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VoiceBotCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceBotResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/voice-bot/highlights": {
+      "get": {
+        "summary": "Get Highlights",
+        "operationId": "get_highlights_voice_bot_highlights_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/voice-bot/highlights/{video_uuid}": {
+      "get": {
+        "summary": "Get Video",
+        "operationId": "get_video_voice_bot_highlights__video_uuid__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Video Uuid"
+            },
+            "name": "video_uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/voice-bot/{uuid}": {
+      "get": {
+        "summary": "Get Voice Bot Details",
+        "operationId": "get_voice_bot_details_voice_bot__uuid__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Uuid"
+            },
+            "name": "uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceBotResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/voice-bot/{voicebot_uuid}": {
+      "delete": {
+        "summary": "Delete Voice Bot",
+        "operationId": "delete_voice_bot_voice_bot__voicebot_uuid__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Voicebot Uuid"
+            },
+            "name": "voicebot_uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Edit Voice Bot",
+        "operationId": "edit_voice_bot_voice_bot__voicebot_uuid__patch",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Voicebot Uuid"
+            },
+            "name": "voicebot_uuid",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VoiceBotEdit"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceBotResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/speak-status": {
+      "get": {
+        "summary": "Get text-to-speech request status.",
+        "description": "Get the status of a speech request.",
+        "operationId": "get_speak_status_speak_status_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Uuid"
+            },
+            "name": "uuid",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpeakStatusResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/speak": {
+      "post": {
+        "summary": "Generate Speech",
+        "description": "Synthesize speech asynchronously.\n\nVoice can be specified by providing either `voice` + `model_type`, or\n`voicemodel_uuid`.",
+        "operationId": "generate_speech_speak_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TTSRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UUID"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/speak-synchronous": {
+      "post": {
+        "summary": "Generate Speech Synchronously",
+        "description": "Synthesize speech synchronously.\n\nThis endpoint returns binary 16-bit wav data with a sample rate of 22050 Hz.\n\nVoice can be specified by providing either `voice` + `model_type`, or\n`voicemodel_uuid`.\n\n`Pace`, `duration`, and `pitch` are only supported for voices\nthat support these controls (a very small subset of voices).\n\nYou can check if a given voice supports controls by querying /voice-data or\n/voices/<voicemodel-uuid>/detail and looking at the `controls` boolean in\nthe reponse.",
+        "operationId": "generate_speech_synchronously_speak_synchronous_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TTSRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2PasswordBearerWithCookie": []
+          },
+          {
+            "OAuth2PasswordImplicit": []
+          },
+          {
+            "HTTPBasic": []
+          },
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/g2p": {
+      "get": {
+        "summary": "Convert English to IPA or ARPAbet phonemes",
+        "description": "Convert English to IPA or ARPAbet phonemes.",
+        "operationId": "g2p_g2p_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Text"
+            },
+            "name": "text",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ipa",
+                "arpabet"
+              ],
+              "title": "Phones",
+              "default": "arpabet"
+            },
+            "name": "phones",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/G2PResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddReferenceAudioResponse": {
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "title": "Uuid"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "transcription": {
+            "type": "string",
+            "title": "Transcription"
+          }
+        },
+        "type": "object",
+        "required": [
+          "uuid"
+        ],
+        "title": "AddReferenceAudioResponse"
+      },
+      "BackingTrackOptions": {
+        "properties": {
+          "genre": {
+            "type": "string",
+            "enum": [
+              "bhangra",
+              "desi",
+              "hip-hop",
+              "tropical",
+              "pop",
+              "r&b",
+              "trap",
+              "all"
+            ],
+            "title": "Genre",
+            "default": "all"
+          }
+        },
+        "type": "object",
+        "title": "BackingTrackOptions"
+      },
+      "Body_add_reference_audio_reference_audio_post": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "reference_audio": {
+            "type": "string",
+            "format": "binary",
+            "title": "Reference Audio"
+          },
+          "transcription": {
+            "type": "string",
+            "title": "Transcription"
+          },
+          "is_private": {
+            "type": "boolean",
+            "title": "Is Private",
+            "default": false
+          },
+          "save": {
+            "type": "boolean",
+            "title": "Save",
+            "default": false
+          },
+          "transcribe": {
+            "type": "boolean",
+            "title": "Transcribe",
+            "default": false
+          }
+        },
+        "type": "object",
+        "title": "Body_add_reference_audio_reference_audio_post"
+      },
+      "DeployRequest": {
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "display_name"
+        ],
+        "title": "DeployRequest"
+      },
+      "EditRequest": {
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "prompt": {
+            "type": "string",
+            "title": "Prompt"
+          },
+          "variables": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Variables"
+          },
+          "values": {
+            "items": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Values"
+          },
+          "model": {
+            "type": "string",
+            "enum": [
+              "gpt-35-turbo-deployment",
+              "gpt-4-deployment"
+            ],
+            "title": "Model"
+          }
+        },
+        "type": "object",
+        "title": "EditRequest",
+        "description": "For the PATCH request, each payload field is optional because the user might only update a\nsubset of fields."
+      },
+      "FreestyleRequest": {
+        "properties": {
+          "subject": {
+            "type": "string",
+            "title": "Subject"
+          },
+          "lines": {
+            "type": "integer",
+            "title": "Lines"
+          },
+          "lyrics": {
+            "items": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Lyrics",
+            "description": "Lyrics of the generated song.\n        This is provided as list of lists of strings, where each inner list is a\n        verse and each inner string is one line of a verse."
+          },
+          "bpm": {
+            "type": "number",
+            "title": "Bpm"
+          },
+          "backing_track": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/components/schemas/BackingTrackOptions"
+              }
+            ],
+            "title": "Backing Track"
+          },
+          "voice": {
+            "type": "string",
+            "title": "Voice"
+          },
+          "voicemodel_uuid": {
+            "type": "string",
+            "title": "Voicemodel Uuid"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "json"
+            ],
+            "title": "Format",
+            "default": "json"
+          },
+          "generate_title": {
+            "type": "boolean",
+            "title": "Generate Title",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "FreestyleRequest"
+      },
+      "G2PResponse": {
+        "properties": {
+          "arpabet": {
+            "type": "string",
+            "title": "Arpabet"
+          },
+          "lookups": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Lookups"
+          }
+        },
+        "type": "object",
+        "required": [
+          "arpabet",
+          "lookups"
+        ],
+        "title": "G2PResponse"
+      },
+      "GenerationRequest": {
+        "properties": {
+          "variables": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Variables"
+          }
+        },
+        "type": "object",
+        "required": [
+          "variables"
+        ],
+        "title": "GenerationRequest"
+      },
+      "GenerationResponse": {
+        "properties": {
+          "choices": {
+            "items": {},
+            "type": "array",
+            "title": "Choices"
+          },
+          "created": {
+            "type": "integer",
+            "title": "Created"
+          },
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "object": {
+            "type": "string",
+            "title": "Object"
+          },
+          "usage": {
+            "title": "Usage"
+          }
+        },
+        "type": "object",
+        "required": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object"
+        ],
+        "title": "GenerationResponse",
+        "description": "OpenAI Chat Completions response format:\nhttps://platform.openai.com/docs/guides/text-generation/chat-completions-api"
+      },
+      "GetTemplatesResponse": {
+        "properties": {
+          "templates": {
+            "items": {
+              "$ref": "#/components/schemas/TemplateResponse"
+            },
+            "type": "array",
+            "title": "Templates"
+          }
+        },
+        "type": "object",
+        "required": [
+          "templates"
+        ],
+        "title": "GetTemplatesResponse"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "LyricsRequest": {
+        "properties": {
+          "subject": {
+            "type": "string",
+            "title": "Subject"
+          },
+          "lines": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "items": {
+                  "type": "integer"
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Lines",
+            "description": "Number of lines of lyrics to generate.\n\nIf a list is provided, generate one verse for each element of the list."
+          },
+          "backing_track": {
+            "type": "string",
+            "title": "Backing Track"
+          },
+          "generate_title": {
+            "type": "boolean",
+            "title": "Generate Title",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "LyricsRequest"
+      },
+      "LyricsResponse": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "lyrics": {
+            "items": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Lyrics"
+          }
+        },
+        "type": "object",
+        "required": [
+          "lyrics"
+        ],
+        "title": "LyricsResponse"
+      },
+      "Memberships": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "id"
+        ],
+        "title": "Memberships"
+      },
+      "MixItem": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "audio",
+              "video"
+            ],
+            "title": "Type"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "url"
+        ],
+        "title": "MixItem"
+      },
+      "ModerationProviderResponse": {
+        "properties": {
+          "method": {
+            "type": "string",
+            "enum": [
+              "google",
+              "openai",
+              "profanity"
+            ],
+            "title": "Method"
+          },
+          "flagged": {
+            "type": "boolean",
+            "title": "Flagged"
+          },
+          "categories": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "type": "object",
+            "title": "Categories"
+          },
+          "category_scores": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Category Scores"
+          }
+        },
+        "type": "object",
+        "required": [
+          "method",
+          "flagged",
+          "categories",
+          "category_scores"
+        ],
+        "title": "ModerationProviderResponse"
+      },
+      "ModerationRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 5000,
+            "title": "Text"
+          },
+          "openai": {
+            "type": "boolean",
+            "title": "Openai",
+            "default": false
+          },
+          "google": {
+            "type": "boolean",
+            "title": "Google",
+            "default": false
+          },
+          "profanity": {
+            "type": "boolean",
+            "title": "Profanity",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "ModerationRequest"
+      },
+      "ModerationResponse": {
+        "properties": {
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/ModerationProviderResponse"
+            },
+            "type": "array",
+            "title": "Results"
+          }
+        },
+        "type": "object",
+        "required": [
+          "results"
+        ],
+        "title": "ModerationResponse"
+      },
+      "ReferenceAudioResponse": {
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "title": "Uuid"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "transcription": {
+            "type": "string",
+            "title": "Transcription"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "uuid",
+          "name",
+          "url"
+        ],
+        "title": "ReferenceAudioResponse"
+      },
+      "Sample": {
+        "properties": {
+          "url": {
+            "type": "string",
+            "title": "Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "title": "Sample"
+      },
+      "SpeakStatusResponse": {
+        "properties": {
+          "failed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Failed At"
+          },
+          "finished_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Finished At"
+          },
+          "meta": {
+            "type": "object",
+            "title": "Meta"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Started At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "started_at"
+        ],
+        "title": "SpeakStatusResponse"
+      },
+      "StatusResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "StatusResponse"
+      },
+      "TTSRequest": {
+        "properties": {
+          "speech": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Speech"
+          },
+          "voice": {
+            "type": "string",
+            "title": "Voice",
+            "default": "lj"
+          },
+          "model_type": {
+            "type": "string",
+            "title": "Model Type"
+          },
+          "voicemodel_uuid": {
+            "type": "string",
+            "title": "Voicemodel Uuid"
+          },
+          "pitch": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Pitch"
+          }
+        },
+        "type": "object",
+        "required": [
+          "speech"
+        ],
+        "title": "TTSRequest"
+      },
+      "TemplateRequest": {
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "prompt": {
+            "type": "string",
+            "title": "Prompt",
+            "default": ""
+          },
+          "variables": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Variables",
+            "default": []
+          },
+          "values": {
+            "items": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Values",
+            "default": [
+              {}
+            ]
+          },
+          "model": {
+            "type": "string",
+            "enum": [
+              "gpt-35-turbo-deployment",
+              "gpt-4-deployment"
+            ],
+            "title": "Model"
+          }
+        },
+        "type": "object",
+        "required": [
+          "display_name"
+        ],
+        "title": "TemplateRequest"
+      },
+      "TemplateResponse": {
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "title": "Uuid"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "url_name": {
+            "type": "string",
+            "title": "Url Name"
+          },
+          "created_at": {
+            "type": "integer",
+            "title": "Created At"
+          },
+          "variables": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Variables"
+          },
+          "values": {
+            "items": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Values"
+          },
+          "prompt": {
+            "type": "object",
+            "title": "Prompt"
+          },
+          "completion": {
+            "type": "string",
+            "title": "Completion"
+          },
+          "model": {
+            "type": "string",
+            "enum": [
+              "gpt-35-turbo-deployment",
+              "gpt-4-deployment"
+            ],
+            "title": "Model"
+          }
+        },
+        "type": "object",
+        "required": [
+          "uuid",
+          "display_name",
+          "url_name",
+          "created_at",
+          "variables",
+          "values",
+          "prompt"
+        ],
+        "title": "TemplateResponse"
+      },
+      "UUID": {
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "title": "Uuid"
+          }
+        },
+        "type": "object",
+        "required": [
+          "uuid"
+        ],
+        "title": "UUID"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VoiceBotCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "prompt": {
+            "type": "string",
+            "title": "Prompt"
+          },
+          "voice_id": {
+            "type": "string",
+            "title": "Voice Id"
+          },
+          "image_path": {
+            "type": "string",
+            "title": "Image Path"
+          },
+          "blurb": {
+            "type": "string",
+            "title": "Blurb"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "first_message": {
+            "type": "string",
+            "title": "First Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "prompt",
+          "voice_id",
+          "image_path",
+          "blurb",
+          "title",
+          "first_message"
+        ],
+        "title": "VoiceBotCreate"
+      },
+      "VoiceBotEdit": {
+        "properties": {
+          "voice_id": {
+            "type": "string",
+            "enum": [
+              "alloy",
+              "echo",
+              "finn",
+              "clyde",
+              "bria",
+              "vikram"
+            ],
+            "title": "Voice Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "prompt": {
+            "type": "string",
+            "title": "Prompt"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "blurb": {
+            "type": "string",
+            "title": "Blurb"
+          },
+          "image_path": {
+            "type": "string",
+            "title": "Image Path"
+          },
+          "first_message": {
+            "type": "string",
+            "title": "First Message"
+          }
+        },
+        "type": "object",
+        "title": "VoiceBotEdit"
+      },
+      "VoiceBotResponse": {
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "title": "Uuid"
+          },
+          "prompt": {
+            "type": "string",
+            "title": "Prompt"
+          },
+          "voice_id": {
+            "type": "string",
+            "title": "Voice Id"
+          },
+          "voice_provider": {
+            "type": "string",
+            "enum": [
+              "openai",
+              "11labs"
+            ],
+            "title": "Voice Provider"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "image_path": {
+            "type": "string",
+            "title": "Image Path"
+          },
+          "blurb": {
+            "type": "string",
+            "title": "Blurb"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "first_message": {
+            "type": "string",
+            "title": "First Message"
+          },
+          "creator": {
+            "type": "string",
+            "title": "Creator"
+          },
+          "is_owner": {
+            "type": "boolean",
+            "title": "Is Owner"
+          }
+        },
+        "type": "object",
+        "required": [
+          "uuid",
+          "prompt",
+          "voice_id",
+          "voice_provider",
+          "name",
+          "image_path",
+          "blurb",
+          "title",
+          "first_message",
+          "creator",
+          "is_owner"
+        ],
+        "title": "VoiceBotResponse"
+      },
+      "VoiceConversionRequest": {
+        "properties": {
+          "voicemodel_uuid": {
+            "type": "string",
+            "title": "Voicemodel Uuid"
+          },
+          "input": {
+            "type": "string",
+            "title": "Input"
+          },
+          "reference_audio_uuid": {
+            "type": "string",
+            "title": "Reference Audio Uuid"
+          },
+          "pitch_shift": {
+            "type": "integer",
+            "title": "Pitch Shift",
+            "default": 0
+          },
+          "mix": {
+            "items": {
+              "$ref": "#/components/schemas/MixItem"
+            },
+            "type": "array",
+            "title": "Mix"
+          }
+        },
+        "type": "object",
+        "required": [
+          "voicemodel_uuid"
+        ],
+        "title": "VoiceConversionRequest"
+      },
+      "VoiceReturn": {
+        "properties": {
+          "added_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Added At"
+          },
+          "architecture": {
+            "type": "string",
+            "title": "Architecture"
+          },
+          "category": {
+            "type": "string",
+            "title": "Category"
+          },
+          "contributors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Contributors"
+          },
+          "controls": {
+            "type": "boolean",
+            "title": "Controls"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "is_active": {
+            "type": "boolean",
+            "title": "Is Active"
+          },
+          "memberships": {
+            "items": {
+              "$ref": "#/components/schemas/Memberships"
+            },
+            "type": "array",
+            "title": "Memberships"
+          },
+          "is_private": {
+            "type": "boolean",
+            "title": "Is Private"
+          },
+          "is_primary": {
+            "type": "boolean",
+            "title": "Is Primary"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "voice_actor": {
+            "type": "string",
+            "title": "Voice Actor"
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Tags"
+          },
+          "images": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Images"
+          },
+          "samples": {
+            "items": {
+              "$ref": "#/components/schemas/Sample"
+            },
+            "type": "array",
+            "title": "Samples"
+          },
+          "symbol_set": {
+            "type": "string",
+            "title": "Symbol Set"
+          },
+          "voicemodel_uuid": {
+            "type": "string",
+            "title": "Voicemodel Uuid"
+          },
+          "hifi_gan_vocoder": {
+            "type": "string",
+            "title": "Hifi Gan Vocoder"
+          },
+          "ml_model_id": {
+            "type": "integer",
+            "title": "Ml Model Id"
+          },
+          "speaker_id": {
+            "type": "integer",
+            "title": "Speaker Id"
+          },
+          "language": {
+            "type": "string",
+            "title": "Language"
+          },
+          "gender": {
+            "type": "string",
+            "title": "Gender"
+          },
+          "mood": {
+            "type": "string",
+            "title": "Mood"
+          },
+          "style": {
+            "type": "string",
+            "title": "Style"
+          },
+          "accent": {
+            "type": "string",
+            "title": "Accent"
+          },
+          "age": {
+            "type": "string",
+            "title": "Age"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "image_url": {
+            "type": "string",
+            "title": "Image Url"
+          },
+          "features": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Features"
+          }
+        },
+        "type": "object",
+        "required": [
+          "display_name",
+          "is_private",
+          "name"
+        ],
+        "title": "VoiceReturn"
+      }
+    },
+    "securitySchemes": {
+      "OAuth2PasswordBearerWithCookie": {
+        "type": "oauth2",
+        "flows": {
+          "password": {
+            "scopes": {},
+            "tokenUrl": "/token"
+          }
+        }
+      },
+      "OAuth2PasswordImplicit": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "scopes": {},
+            "authorizationUrl": "http://localhost:3000/login"
+          },
+          "password": {
+            "scopes": {},
+            "tokenUrl": "/token"
+          }
+        }
+      },
+      "HTTPBasic": {
+        "type": "http",
+        "scheme": "basic"
+      },
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "x-origin-servers": [
+    {
+      "url": "https://api.uberduck.ai"
+    }
+  ]
+}
