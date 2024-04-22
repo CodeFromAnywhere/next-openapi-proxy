@@ -14,7 +14,8 @@ import { writeJsonToFile } from "from-anywhere/node";
 const hardcodedItemObject = {
   flyio: "https://docs.machines.dev/spec/openapi3.json",
   heygen: "https://openai-plugin.heygen.com/openapi.yaml",
-  serperdev: "https://serper-dev.actionschema.com/openapi.json",
+  // NB: as I made it, here it should be exactly how they should've made it.
+  serper: "https://serper.dataman.ai/handmade/serper.json",
   replicate: "https://api.replicate.com/openapi.json",
   vapi: "https://api.vapi.ai/api-json",
   klippa: "https://dochorizon.klippa.com/api/open-api.yaml",

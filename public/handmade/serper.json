@@ -15,15 +15,10 @@
   },
   "servers": [
     {
-      "url": "https://serper.dataman.ai",
-      "description": "Proxy Server"
-    }
-  ],
-  "x-origin-servers": [
-    {
       "url": "https://google.serper.dev"
     }
   ],
+
   "components": {
     "schemas": {
       "SearchInputOrBatch": {
