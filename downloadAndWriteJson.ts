@@ -71,9 +71,10 @@ export const downloadAndWriteJson = async (
     return { isSuccessful: false, message: "Coudnt parse" };
   }
 
-  // if (JSON.stringify(realDownloaded).length > 1024 * 1024 * 10) {
-  //   return { isSuccessful: false, message: "Too big" };
-  // }
+  if (JSON.stringify(realDownloaded, undefined, 2).length > 1024 * 1024 * 8) {
+    return { isSuccessful: false, message: "Too big" };
+  }
+
   // if (JSON.stringify(realDownloaded).length < 400) {
   //   return { isSuccessful: false, message: "Too small" };
   // }

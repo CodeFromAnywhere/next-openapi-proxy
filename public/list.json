@@ -735,26 +735,6 @@
     "originalUrl": "https://www.getthedata.com/bng2latlong/openapi"
   },
   {
-    "key": "githubcom-apigithubcom",
-    "title": "GitHub v3 REST API",
-    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json"
-  },
-  {
-    "key": "githubcom-apigithubcom2022-11-28",
-    "title": "GitHub v3 REST API",
-    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.2022-11-28.json"
-  },
-  {
-    "key": "githubcom-ghec",
-    "title": "GitHub v3 REST API",
-    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghec/ghec.json"
-  },
-  {
-    "key": "githubcom-ghec2022-11-28",
-    "title": "GitHub v3 REST API",
-    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghec/ghec.2022-11-28.json"
-  },
-  {
     "key": "githubcom-ghes-218",
     "title": "GitHub v3 REST API",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-2.18/ghes-2.18.json"
@@ -813,21 +793,6 @@
     "key": "githubcom-ghes-36",
     "title": "GitHub v3 REST API",
     "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.6/ghes-3.6.json"
-  },
-  {
-    "key": "githubcom-ghes-37",
-    "title": "GitHub v3 REST API",
-    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.7/ghes-3.7.json"
-  },
-  {
-    "key": "githubcom-ghes-38",
-    "title": "GitHub v3 REST API",
-    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghes-3.8/ghes-3.8.json"
-  },
-  {
-    "key": "githubcom-githubae",
-    "title": "GitHub v3 REST API",
-    "originalUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/github.ae/github.ae.json"
   },
   {
     "key": "go-upccom",
@@ -1070,11 +1035,6 @@
     "originalUrl": "https://dflight-api.ljaero.com/openapi.json"
   },
   {
-    "key": "loketnl",
-    "title": "Loket.nl API",
-    "originalUrl": "https://developer.loket.nl/swagger.json"
-  },
-  {
     "key": "maiflocal-otoroshi",
     "title": "Otoroshi Admin API",
     "originalUrl": "https://raw.githubusercontent.com/MAIF/otoroshi/master/docs/manual/code/swagger.json"
@@ -1118,16 +1078,6 @@
     "key": "microckslocal",
     "title": "Microcks API v1.7",
     "originalUrl": "https://raw.githubusercontent.com/microcks/microcks/master/api/microcks-openapi-v1.7.yaml"
-  },
-  {
-    "key": "microsoftcom-graph",
-    "title": "OData Service for namespace microsoft.graph",
-    "originalUrl": "https://raw.githubusercontent.com/microsoftgraph/msgraph-metadata/master/openapi/v1.0/openapi.yaml"
-  },
-  {
-    "key": "microsoftcom-graph-beta",
-    "title": "OData Service for namespace microsoft.graph",
-    "originalUrl": "https://raw.githubusercontent.com/microsoftgraph/msgraph-metadata/master/openapi/beta/openapi.yaml"
   },
   {
     "key": "mineskinorg",

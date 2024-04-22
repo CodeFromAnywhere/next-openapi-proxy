@@ -4944,6 +4944,13 @@
                               "status": {
                                 "type": "number"
                               },
+                              "handle": {
+                                "type": "string",
+                                "enum": [
+                                  "init",
+                                  "finalize"
+                                ]
+                              },
                               "mitigate": {
                                 "properties": {
                                   "action": {
