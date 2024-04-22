@@ -6976,7 +6976,7 @@
   },
   "x-origin-servers": [
     {
-      "url": "/api/v1",
+      "url": "https://airflow.apache.org/api/v1",
       "description": "Apache Airflow Stable API."
     }
   ]

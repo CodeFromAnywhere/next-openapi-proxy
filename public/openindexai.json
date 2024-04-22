@@ -345,7 +345,7 @@
   },
   "x-origin-servers": [
     {
-      "url": "/sub"
+      "url": "https://retriever.openindex.ai/sub"
     },
     {
       "url": "https://retriever.openindex.ai"

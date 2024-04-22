@@ -139,7 +139,23 @@ const scrapeApis = async () => {
         const switchedServers = {
           ...downloaded,
           //@ts-ignore
-          "x-origin-servers": downloaded.servers,
+          "x-origin-servers": downloaded.servers.map((x) => {
+            const absoluteUrl = x.url.startsWith("/")
+              ? new URL(item.originalUrl).origin + x.url
+              : x.url;
+
+            if (x.url.startsWith("/")) {
+              console.log(
+                `[${item.key}.json]: apispec from ${item.originalUrl} server stars with slash: ${x.url}... should become ${absoluteUrl}... `,
+              );
+            }
+            // NB: support for relative urls by making them absolute if we put the openapi on another server.
+
+            return {
+              ...x,
+              url: absoluteUrl,
+            };
+          }),
           servers: [
             {
               description: "Proxy server",

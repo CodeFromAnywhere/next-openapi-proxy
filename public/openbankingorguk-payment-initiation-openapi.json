@@ -13077,7 +13077,7 @@
   },
   "x-origin-servers": [
     {
-      "url": "/open-banking/v3.1/pisp"
+      "url": "https://raw.githubusercontent.com/open-banking/v3.1/pisp"
     }
   ]
 }

@@ -3442,7 +3442,7 @@
   },
   "x-origin-servers": [
     {
-      "url": "/api/v1/premium"
+      "url": "https://www.meteosource.com/api/v1/premium"
     }
   ]
 }

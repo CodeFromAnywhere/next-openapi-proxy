@@ -1101,7 +1101,7 @@
   },
   "x-origin-servers": [
     {
-      "url": "/open-banking/v3.1/cbpii"
+      "url": "https://raw.githubusercontent.com/open-banking/v3.1/cbpii"
     }
   ]
 }

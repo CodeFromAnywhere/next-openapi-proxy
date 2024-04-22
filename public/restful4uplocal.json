@@ -438,7 +438,7 @@
   },
   "x-origin-servers": [
     {
-      "url": "/v1"
+      "url": "https://raw.githubusercontent.com/v1"
     }
   ]
 }

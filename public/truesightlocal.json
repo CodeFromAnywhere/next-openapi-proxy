@@ -2643,7 +2643,7 @@
   },
   "x-origin-servers": [
     {
-      "url": "/tsws/10.0/api/",
+      "url": "https://www.sentrysoftware.com/tsws/10.0/api/",
       "description": "On this TrueSight Server"
     },
     {

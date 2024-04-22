@@ -919,7 +919,7 @@
   },
   "x-origin-servers": [
     {
-      "url": "/api/v1"
+      "url": "https://iotvas-api.firmalyzer.com/api/v1"
     }
   ]
 }

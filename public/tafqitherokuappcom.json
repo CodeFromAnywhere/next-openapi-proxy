@@ -76,7 +76,7 @@
   },
   "x-origin-servers": [
     {
-      "url": "/",
+      "url": "https://tafqit.herokuapp.com/",
       "description": "Base URL"
     }
   ]

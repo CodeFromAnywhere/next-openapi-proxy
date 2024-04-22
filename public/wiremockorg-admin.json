@@ -6371,7 +6371,7 @@
   },
   "x-origin-servers": [
     {
-      "url": "/"
+      "url": "http://wiremock.org/"
     }
   ]
 }

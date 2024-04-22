@@ -6,7 +6,6 @@ import path from "path";
 export const handleRequest = async (request: Request, method: string) => {
   const url = request.url;
   const urlObject = new URL(url);
-  const pathname = urlObject.pathname;
 
   const [tld, domain, subdomain] = urlObject.hostname.split(".").reverse();
 
@@ -49,39 +48,39 @@ export const handleRequest = async (request: Request, method: string) => {
     );
   }
 
-  const operation = (openapi as any).paths?.[pathname]?.[method] as
-    | undefined
-    | {};
+  // const operation = (openapi as any).paths?.[pathname]?.[method] as
+  //   | undefined
+  //   | {};
 
-  if (!operation) {
-    const allowedMethods = [
-      "get",
-      "post",
-      "put",
-      "patch",
-      "delete",
-      "head",
-      "options",
-    ];
-    const methods = mergeObjectsArray(
-      Object.keys(openapi.paths).map((path) => {
-        return {
-          [path]: Object.keys((openapi as any).paths[path]).filter((method) =>
-            allowedMethods.includes(method),
-          ),
-        };
-      }),
-    );
+  // if (!operation) {
+  //   const allowedMethods = [
+  //     "get",
+  //     "post",
+  //     "put",
+  //     "patch",
+  //     "delete",
+  //     "head",
+  //     "options",
+  //   ];
+  //   const methods = mergeObjectsArray(
+  //     Object.keys(openapi.paths).map((path) => {
+  //       return {
+  //         [path]: Object.keys((openapi as any).paths[path]).filter((method) =>
+  //           allowedMethods.includes(method),
+  //         ),
+  //       };
+  //     }),
+  //   );
 
-    return Response.json(
-      {
-        message: `Invalid method. More info at ${urlObject.origin}/${key}.json`,
-        methods,
-        openapiPath,
-      },
-      defaultResponseInit,
-    );
-  }
+  //   return Response.json(
+  //     {
+  //       message: `Invalid method. More info at ${urlObject.origin}/${key}.json`,
+  //       methods,
+  //       openapiPath,
+  //     },
+  //     defaultResponseInit,
+  //   );
+  // }
 
   const originalServerUrl = (openapi as any)?.["x-origin-servers"]?.[0]?.url as
     | string
@@ -97,7 +96,7 @@ export const handleRequest = async (request: Request, method: string) => {
   }
 
   const fullOriginalUrl =
-    originalServerUrl + pathname + urlObject.search + urlObject.hash;
+    originalServerUrl + urlObject.pathname + urlObject.search + urlObject.hash;
 
   console.log(`FOUND ORIGINAL URL`, fullOriginalUrl);
 
