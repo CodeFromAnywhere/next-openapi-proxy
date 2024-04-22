@@ -16071,6 +16071,14 @@
                         "northstarMigratedAt": {
                           "type": "number",
                           "description": "A timestamp that tells you when the configuration was migrated as part of the Northstar migration. In the future, if we allow integration configurations to be transferred between teams, this field should be cleared upon transfer."
+                        },
+                        "installationType": {
+                          "type": "string",
+                          "enum": [
+                            "marketplace",
+                            "external"
+                          ],
+                          "description": "Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'"
                         }
                       },
                       "required": [
@@ -16320,6 +16328,14 @@
                           "northstarMigratedAt": {
                             "type": "number",
                             "description": "A timestamp that tells you when the configuration was migrated as part of the Northstar migration. In the future, if we allow integration configurations to be transferred between teams, this field should be cleared upon transfer."
+                          },
+                          "installationType": {
+                            "type": "string",
+                            "enum": [
+                              "marketplace",
+                              "external"
+                            ],
+                            "description": "Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'"
                           }
                         },
                         "required": [
@@ -16606,6 +16622,14 @@
                         "northstarMigratedAt": {
                           "type": "number",
                           "description": "A timestamp that tells you when the configuration was migrated as part of the Northstar migration. In the future, if we allow integration configurations to be transferred between teams, this field should be cleared upon transfer."
+                        },
+                        "installationType": {
+                          "type": "string",
+                          "enum": [
+                            "marketplace",
+                            "external"
+                          ],
+                          "description": "Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'"
                         }
                       },
                       "required": [
@@ -16832,6 +16856,14 @@
                         "northstarMigratedAt": {
                           "type": "number",
                           "description": "A timestamp that tells you when the configuration was migrated as part of the Northstar migration. In the future, if we allow integration configurations to be transferred between teams, this field should be cleared upon transfer."
+                        },
+                        "installationType": {
+                          "type": "string",
+                          "enum": [
+                            "marketplace",
+                            "external"
+                          ],
+                          "description": "Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'"
                         },
                         "canConfigureOpenTelemetry": {
                           "type": "boolean"
@@ -18569,6 +18601,16 @@
                                 "description": "Role of this user in the project.",
                                 "example": "ADMIN"
                               },
+                              "computedProjectRole": {
+                                "type": "string",
+                                "enum": [
+                                  "ADMIN",
+                                  "PROJECT_DEVELOPER",
+                                  "PROJECT_VIEWER"
+                                ],
+                                "description": "Role of this user in the project.",
+                                "example": "ADMIN"
+                              },
                               "uid": {
                                 "type": "string",
                                 "description": "The ID of this user.",
@@ -18606,6 +18648,7 @@
                             "required": [
                               "email",
                               "role",
+                              "computedProjectRole",
                               "uid",
                               "username",
                               "createdAt",

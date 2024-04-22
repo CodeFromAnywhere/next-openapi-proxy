@@ -9,13 +9,13 @@ import {
   oneByOne,
   slugify,
 } from "from-anywhere";
-import { writeJsonToFile } from "from-anywhere/node";
+import { readJsonFile, writeJsonToFile } from "from-anywhere/node";
 
 const hardcodedItemObject = {
   flyio: "https://docs.machines.dev/spec/openapi3.json",
   heygen: "https://openai-plugin.heygen.com/openapi.yaml",
   // NB: as I made it, here it should be exactly how they should've made it.
-  serper: "https://serper.dataman.ai/handmade/serper.json",
+  serper: "./public/handmade/serper.json",
   replicate: "https://api.replicate.com/openapi.json",
   vapi: "https://api.vapi.ai/api-json",
   klippa: "https://dochorizon.klippa.com/api/open-api.yaml",
@@ -36,17 +36,26 @@ const hardcodedItemObject = {
     "https://raw.githubusercontent.com/cielo24/playht-openapi/main/playht.yml",
 };
 
-const hardcodedList = Object.keys(hardcodedItemObject).map(
-  (key) =>
-    ({
-      key,
-      originalUrl: hardcodedItemObject[key as keyof typeof hardcodedItemObject],
-      title: humanCase(key),
-    } satisfies OpenapiListItem),
-);
+const hardcodedList = Object.keys(hardcodedItemObject).map((key) => {
+  const uri = hardcodedItemObject[key as keyof typeof hardcodedItemObject];
+  const absolutePath =
+    uri.startsWith(".") && fs.existsSync(path.join(uri))
+      ? path.resolve(uri)
+      : undefined;
+  const originalUrl = absolutePath ? undefined : uri;
+
+  return {
+    key,
+    originalUrl,
+    absolutePath,
+    title: humanCase(key),
+  } satisfies OpenapiListItem;
+});
 export type OpenapiListItem = {
   key: string;
-  originalUrl: string;
+  originalUrl?: string;
+  /** Useful for if its here already */
+  absolutePath?: string;
   title: string | undefined;
 };
 /*
@@ -99,8 +108,9 @@ const scrapeApis = async () => {
 
       return {
         key: realKey,
-        originalUrl,
         title: version.info.title,
+        originalUrl,
+        absolutePath: undefined,
         // description: version.info.description,
       } satisfies OpenapiListItem;
     })
@@ -120,7 +130,9 @@ const scrapeApis = async () => {
       fullList,
       async (item, index) => {
         console.log(`${index + 1}/${fullList.length}`);
-        const downloaded = await fetchOpenapi(item.originalUrl);
+        const downloaded = item.absolutePath
+          ? await readJsonFile<OpenapiDocument>(item.absolutePath)
+          : await fetchOpenapi(item.originalUrl);
 
         if (!downloaded || typeof downloaded === "string") {
           return;
@@ -140,9 +152,10 @@ const scrapeApis = async () => {
           ...downloaded,
           //@ts-ignore
           "x-origin-servers": downloaded.servers.map((x) => {
-            const absoluteUrl = x.url.startsWith("/")
-              ? new URL(item.originalUrl).origin + x.url
-              : x.url;
+            const absoluteUrl =
+              x.url.startsWith("/") && item.originalUrl
+                ? new URL(item.originalUrl).origin + x.url
+                : x.url;
 
             if (x.url.startsWith("/")) {
               console.log(
