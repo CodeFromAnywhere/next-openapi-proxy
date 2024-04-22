@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/CodeFromAnywhere/ActionSchema/main/schemas/openapi.schema.json",
-  "actionschema": "0.0.1",
+  "x-actionschema": "0.0.1",
   "openapi": "3.0.0",
   "security": [
     {
