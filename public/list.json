@@ -10,11 +10,6 @@
     "title": "Heygen"
   },
   {
-    "key": "serper",
-    "absolutePath": "/Users/king/Desktop/github/next-openapi-proxy/public/handmade/serper.json",
-    "title": "Serper"
-  },
-  {
     "key": "replicate",
     "originalUrl": "https://api.replicate.com/openapi.json",
     "title": "Replicate"
@@ -58,6 +53,16 @@
     "key": "playht",
     "originalUrl": "https://raw.githubusercontent.com/cielo24/playht-openapi/main/playht.yml",
     "title": "Playht"
+  },
+  {
+    "key": "serper",
+    "absolutePath": "/Users/king/Desktop/github/next-openapi-proxy/public/handmade/serper.json",
+    "title": "Serper"
+  },
+  {
+    "key": "doppio",
+    "absolutePath": "/Users/king/Desktop/github/next-openapi-proxy/public/handmade/doppio.json",
+    "title": "Doppio"
   },
   {
     "key": "1passwordcom-events",

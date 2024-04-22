@@ -1,3 +1,4 @@
+import { handleOpenapiRequest } from "@/handleOpenapiRequest";
 import { handleProxyRequest } from "@/handleProxyRequest";
 
 export const dynamic = "force-dynamic"; // defaults to auto
@@ -22,6 +23,7 @@ export async function HEAD(request: Request) {
   return handleProxyRequest(request, "head");
 }
 
+// NB: according to convention stated in https://www.rfc-editor.org/rfc/rfc7231#section-4.3.7
 export async function OPTIONS(request: Request) {
-  return handleProxyRequest(request, "options");
+  return handleOpenapiRequest(request);
 }

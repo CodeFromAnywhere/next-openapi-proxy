@@ -14,8 +14,6 @@ import { readJsonFile, writeJsonToFile } from "from-anywhere/node";
 const hardcodedItemObject = {
   flyio: "https://docs.machines.dev/spec/openapi3.json",
   heygen: "https://openai-plugin.heygen.com/openapi.yaml",
-  // NB: as I made it, here it should be exactly how they should've made it.
-  serper: "./public/handmade/serper.json",
   replicate: "https://api.replicate.com/openapi.json",
   vapi: "https://api.vapi.ai/api-json",
   klippa: "https://dochorizon.klippa.com/api/open-api.yaml",
@@ -34,6 +32,9 @@ const hardcodedItemObject = {
   //(unofficial)
   playht:
     "https://raw.githubusercontent.com/cielo24/playht-openapi/main/playht.yml",
+  // NB: as I made it, here it should be exactly how they should've made it.
+  serper: "./public/handmade/serper.json",
+  doppio: "./public/handmade/doppio.json",
 };
 
 const hardcodedList = Object.keys(hardcodedItemObject).map((key) => {
