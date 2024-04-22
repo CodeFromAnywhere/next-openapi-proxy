@@ -1,16 +1,73 @@
 {
   "$schema": "https://raw.githubusercontent.com/CodeFromAnywhere/ActionSchema/main/schemas/openapi.schema.json",
   "actionschema": "0.0.1",
-
   "openapi": "3.0.0",
+  "security": [
+    {
+      "apiKey": []
+    }
+  ],
   "info": {
     "title": "serper.dev openapi",
     "version": "1.0",
-    "description": "Google SERP API",
-    "branding": {
-      "logoImageUrl": "https://databar.ai/media/external_source_logo/Serper.dev.png",
-      "primaryColorHex": "#000000",
-      "secondaryColorHex": "#90CDF4"
+
+    "description": "Google SERP API. Missing endpoints: /maps and /autocomplete",
+    "x-links": {
+      "docsUrl": "https://serper.dev/playground",
+      "apiAuthorizationSettingsUrl": "https://serper.dev/api-key",
+      "billingUrl": "https://serper.dev/billing",
+      "forgotPasswordUrl": "https://serper.dev/password-forget",
+      "loginUrl": "https://serper.dev/login",
+      "pricingUrl": "https://serper.dev",
+      "signupUrl": "https://serper.dev/signup",
+      "usageUrl": "https://serper.dev/dashboard"
+    },
+    "x-pricing": {
+      "description": "Pay-as-you-Go with steps starting at $50 for 50.000 credits.",
+      "plans": [
+        {
+          "title": "Starter",
+          "credit": 50000,
+          "price": 50,
+          "currency": "USD",
+          "persistence": "capped",
+          "persistenceCappedDays": 180,
+          "rateLimit": { "interval": "second", "limit": 50 }
+        },
+        {
+          "title": "Standard",
+          "credit": 500000,
+          "price": 375,
+          "currency": "USD",
+          "persistence": "capped",
+          "persistenceCappedDays": 180,
+          "rateLimit": { "interval": "second", "limit": 100 }
+        },
+        {
+          "title": "Scale",
+          "credit": 2500000,
+          "price": 1250,
+          "currency": "USD",
+          "persistence": "capped",
+          "persistenceCappedDays": 180,
+          "rateLimit": { "interval": "second", "limit": 200 }
+        },
+        {
+          "title": "Ultimate",
+          "credit": 12500000,
+          "price": 3750,
+          "currency": "USD",
+          "persistence": "capped",
+          "persistenceCappedDays": 180,
+          "rateLimit": { "interval": "second", "limit": 300 }
+        }
+      ]
+    },
+
+    "x-logo": {
+      "url": "https://databar.ai/media/external_source_logo/Serper.dev.png",
+      "backgroundColor": "#000000",
+      "secondaryColor": "#90CDF4"
     }
   },
   "servers": [
@@ -20,6 +77,9 @@
   ],
 
   "components": {
+    "securitySchemes": {
+      "apiKey": { "type": "apiKey", "name": "X-API-KEY", "in": "header" }
+    },
     "schemas": {
       "SearchInputOrBatch": {
         "oneOf": [
@@ -66,6 +126,8 @@
   "paths": {
     "/search": {
       "post": {
+        "x-priceCredit": 1,
+
         "summary": "Get Google Search Results.",
         "operationId": "search",
         "requestBody": {
@@ -225,6 +287,8 @@
     },
     "/images": {
       "post": {
+        "x-priceCredit": 1,
+
         "summary": "Get Google Image Results.",
         "operationId": "images",
         "requestBody": {
@@ -329,6 +393,8 @@
     },
     "/videos": {
       "post": {
+        "x-priceCredit": 1,
+
         "summary": "Get Google Video Results.",
         "operationId": "videos",
         "requestBody": {
@@ -419,6 +485,8 @@
     },
     "/places": {
       "post": {
+        "x-priceCredit": 1,
+
         "summary": "Get Google Places Results.",
         "operationId": "places",
         "requestBody": {
@@ -516,6 +584,8 @@
     },
     "/news": {
       "post": {
+        "x-priceCredit": 1,
+
         "summary": "Get Google News Results.",
         "operationId": "news",
         "requestBody": {
@@ -598,6 +668,8 @@
     },
     "/shopping": {
       "post": {
+        "x-priceCredit": 2,
+
         "summary": "Get Google Shopping Results.",
         "operationId": "shopping",
         "requestBody": {
@@ -697,6 +769,8 @@
     },
     "/scholar": {
       "post": {
+        "x-priceCredit": 2,
+
         "summary": "Get Google Scholar Results.",
         "operationId": "scholar",
         "requestBody": {

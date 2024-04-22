@@ -130,6 +130,7 @@ export const handleProxyRequest = async (request: Request, method: string) => {
     method,
     body: request.body,
     //@ts-ignore
+    // SEE: https://github.com/nodejs/node/issues/46221
     duplex: "half",
     headers: request.headers,
   });
