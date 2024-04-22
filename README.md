@@ -25,3 +25,7 @@ This is my "algorithm" to find the OpenAPI for any given SaaS Service:
   - Google BigQuery
   - SwaggerHub API
   - APIS.Guru api: https://api.apis.guru/v2/list.json
+
+# Challenges along the way
+
+- `Error: A Serverless Function has exceeded the unzipped maximum size of 250 MB`. Big limitation of Vercel. Would be nice to understand why it gets so big.
