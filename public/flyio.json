@@ -1991,6 +1991,14 @@
           },
           "updated_at": {
             "type": "string"
+          },
+          "worker_status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "unknown",
+              "unreachable"
+            ]
           }
         }
       },
@@ -2222,6 +2230,14 @@
           "state": {
             "type": "string"
           },
+          "worker_status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "unknown",
+              "unreachable"
+            ]
+          },
           "zone": {
             "type": "string"
           }
@@ -2293,14 +2309,11 @@
               "Second",
               "Minute",
               "Hour",
-              "minDuration",
-              "maxDuration",
               "Nanosecond",
               "Microsecond",
               "Millisecond",
               "Second",
-              "Minute",
-              "Hour"
+              "Minute"
             ]
           }
         }

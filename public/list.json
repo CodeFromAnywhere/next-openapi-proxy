@@ -50,6 +50,11 @@
     "title": "Vercel"
   },
   {
+    "key": "firecrawl",
+    "originalUrl": "https://raw.githubusercontent.com/mendableai/firecrawl/main/apps/api/openapi.json",
+    "title": "Firecrawl"
+  },
+  {
     "key": "playht",
     "originalUrl": "https://raw.githubusercontent.com/cielo24/playht-openapi/main/playht.yml",
     "title": "Playht"
