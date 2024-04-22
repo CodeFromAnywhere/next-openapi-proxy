@@ -2405,7 +2405,6 @@
                   "inbound_check_deposit_return_intention",
                   "inbound_international_ach_transfer",
                   "inbound_real_time_payments_transfer_confirmation",
-                  "inbound_wire_drawdown_payment_reversal",
                   "inbound_wire_drawdown_payment",
                   "inbound_wire_reversal",
                   "inbound_wire_transfer",
@@ -2438,7 +2437,6 @@
                   "Inbound Check Deposit Return Intention: details will be under the `inbound_check_deposit_return_intention` object.",
                   "Inbound International ACH Transfer: details will be under the `inbound_international_ach_transfer` object.",
                   "Inbound Real-Time Payments Transfer Confirmation: details will be under the `inbound_real_time_payments_transfer_confirmation` object.",
-                  "Inbound Wire Drawdown Payment Reversal: details will be under the `inbound_wire_drawdown_payment_reversal` object.",
                   "Inbound Wire Drawdown Payment: details will be under the `inbound_wire_drawdown_payment` object.",
                   "Inbound Wire Reversal: details will be under the `inbound_wire_reversal` object.",
                   "Inbound Wire Transfer Intention: details will be under the `inbound_wire_transfer` object.",
@@ -23077,7 +23075,6 @@
                   "inbound_check_deposit_return_intention",
                   "inbound_international_ach_transfer",
                   "inbound_real_time_payments_transfer_confirmation",
-                  "inbound_wire_drawdown_payment_reversal",
                   "inbound_wire_drawdown_payment",
                   "inbound_wire_reversal",
                   "inbound_wire_transfer",
@@ -23111,7 +23108,6 @@
                   "Inbound Check Deposit Return Intention: details will be under the `inbound_check_deposit_return_intention` object.",
                   "Inbound International ACH Transfer: details will be under the `inbound_international_ach_transfer` object.",
                   "Inbound Real-Time Payments Transfer Confirmation: details will be under the `inbound_real_time_payments_transfer_confirmation` object.",
-                  "Inbound Wire Drawdown Payment Reversal: details will be under the `inbound_wire_drawdown_payment_reversal` object.",
                   "Inbound Wire Drawdown Payment: details will be under the `inbound_wire_drawdown_payment` object.",
                   "Inbound Wire Reversal: details will be under the `inbound_wire_reversal` object.",
                   "Inbound Wire Transfer Intention: details will be under the `inbound_wire_transfer` object.",
@@ -26180,88 +26176,6 @@
                 "nullable": true,
                 "x-title-plural": "Inbound Real-Time Payments Transfer Confirmations"
               },
-              "inbound_wire_drawdown_payment_reversal": {
-                "type": "object",
-                "title": "Inbound Wire Drawdown Payment Reversal",
-                "description": "An Inbound Wire Drawdown Payment Reversal object. This field will be present in the JSON response if and only if `category` is equal to `inbound_wire_drawdown_payment_reversal`.",
-                "example": {
-                  "amount": 12345,
-                  "description": "Inbound wire reversal 2022021100335128",
-                  "input_cycle_date": "2022-02-11",
-                  "input_sequence_number": "11023",
-                  "input_source": "B6B7HU2R",
-                  "input_message_accountability_data": "20220211B6B7HU2R011023",
-                  "previous_message_input_message_accountability_data": "20220210MMQFMP0P000007",
-                  "previous_message_input_cycle_date": "2022-02-10",
-                  "previous_message_input_sequence_number": "3",
-                  "previous_message_input_source": "MMQFMP0P",
-                  "originator_routing_number": null
-                },
-                "properties": {
-                  "amount": {
-                    "type": "integer",
-                    "description": "The amount that was reversed."
-                  },
-                  "description": {
-                    "type": "string",
-                    "description": "The description on the reversal message from Fedwire."
-                  },
-                  "input_cycle_date": {
-                    "type": "string",
-                    "format": "date",
-                    "description": "The Fedwire cycle date for the wire reversal."
-                  },
-                  "input_sequence_number": {
-                    "type": "string",
-                    "description": "The Fedwire sequence number."
-                  },
-                  "input_source": {
-                    "type": "string",
-                    "description": "The Fedwire input source identifier."
-                  },
-                  "input_message_accountability_data": {
-                    "type": "string",
-                    "description": "The Fedwire transaction identifier."
-                  },
-                  "previous_message_input_message_accountability_data": {
-                    "type": "string",
-                    "description": "The Fedwire transaction identifier for the wire transfer that was reversed."
-                  },
-                  "previous_message_input_cycle_date": {
-                    "type": "string",
-                    "format": "date",
-                    "description": "The Fedwire cycle date for the wire transfer that was reversed."
-                  },
-                  "previous_message_input_sequence_number": {
-                    "type": "string",
-                    "description": "The Fedwire sequence number for the wire transfer that was reversed."
-                  },
-                  "previous_message_input_source": {
-                    "type": "string",
-                    "description": "The Fedwire input source identifier for the wire transfer that was reversed."
-                  },
-                  "originator_routing_number": {
-                    "type": "string",
-                    "description": "The American Banking Association (ABA) routing number of the bank originating the transfer.",
-                    "nullable": true
-                  }
-                },
-                "required": [
-                  "amount",
-                  "description",
-                  "input_cycle_date",
-                  "input_sequence_number",
-                  "input_source",
-                  "input_message_accountability_data",
-                  "previous_message_input_message_accountability_data",
-                  "previous_message_input_cycle_date",
-                  "previous_message_input_sequence_number",
-                  "previous_message_input_source",
-                  "originator_routing_number"
-                ],
-                "nullable": true,
-                "x-title-plural": "Inbound Wire Drawdown Payment Reversals"
-              },
               "inbound_wire_drawdown_payment": {
                 "type": "object",
                 "title": "Inbound Wire Drawdown Payment",
@@ -26940,7 +26854,6 @@
               "inbound_ach_transfer",
               "inbound_international_ach_transfer",
               "inbound_real_time_payments_transfer_confirmation",
-              "inbound_wire_drawdown_payment_reversal",
               "inbound_wire_drawdown_payment",
               "inbound_wire_reversal",
               "inbound_wire_transfer",
@@ -38533,7 +38446,6 @@
                       "inbound_check_deposit_return_intention",
                       "inbound_international_ach_transfer",
                       "inbound_real_time_payments_transfer_confirmation",
-                      "inbound_wire_drawdown_payment_reversal",
                       "inbound_wire_drawdown_payment",
                       "inbound_wire_reversal",
                       "inbound_wire_transfer",
@@ -38567,7 +38479,6 @@
                       "Inbound Check Deposit Return Intention: details will be under the `inbound_check_deposit_return_intention` object.",
                       "Inbound International ACH Transfer: details will be under the `inbound_international_ach_transfer` object.",
                       "Inbound Real-Time Payments Transfer Confirmation: details will be under the `inbound_real_time_payments_transfer_confirmation` object.",
-                      "Inbound Wire Drawdown Payment Reversal: details will be under the `inbound_wire_drawdown_payment_reversal` object.",
                       "Inbound Wire Drawdown Payment: details will be under the `inbound_wire_drawdown_payment` object.",
                       "Inbound Wire Reversal: details will be under the `inbound_wire_reversal` object.",
                       "Inbound Wire Transfer Intention: details will be under the `inbound_wire_transfer` object.",
@@ -41636,88 +41547,6 @@
                     "nullable": true,
                     "x-title-plural": "Inbound Real-Time Payments Transfer Confirmations"
                   },
-                  "inbound_wire_drawdown_payment_reversal": {
-                    "type": "object",
-                    "title": "Inbound Wire Drawdown Payment Reversal",
-                    "description": "An Inbound Wire Drawdown Payment Reversal object. This field will be present in the JSON response if and only if `category` is equal to `inbound_wire_drawdown_payment_reversal`.",
-                    "example": {
-                      "amount": 12345,
-                      "description": "Inbound wire reversal 2022021100335128",
-                      "input_cycle_date": "2022-02-11",
-                      "input_sequence_number": "11023",
-                      "input_source": "B6B7HU2R",
-                      "input_message_accountability_data": "20220211B6B7HU2R011023",
-                      "previous_message_input_message_accountability_data": "20220210MMQFMP0P000007",
-                      "previous_message_input_cycle_date": "2022-02-10",
-                      "previous_message_input_sequence_number": "3",
-                      "previous_message_input_source": "MMQFMP0P",
-                      "originator_routing_number": null
-                    },
-                    "properties": {
-                      "amount": {
-                        "type": "integer",
-                        "description": "The amount that was reversed."
-                      },
-                      "description": {
-                        "type": "string",
-                        "description": "The description on the reversal message from Fedwire."
-                      },
-                      "input_cycle_date": {
-                        "type": "string",
-                        "format": "date",
-                        "description": "The Fedwire cycle date for the wire reversal."
-                      },
-                      "input_sequence_number": {
-                        "type": "string",
-                        "description": "The Fedwire sequence number."
-                      },
-                      "input_source": {
-                        "type": "string",
-                        "description": "The Fedwire input source identifier."
-                      },
-                      "input_message_accountability_data": {
-                        "type": "string",
-                        "description": "The Fedwire transaction identifier."
-                      },
-                      "previous_message_input_message_accountability_data": {
-                        "type": "string",
-                        "description": "The Fedwire transaction identifier for the wire transfer that was reversed."
-                      },
-                      "previous_message_input_cycle_date": {
-                        "type": "string",
-                        "format": "date",
-                        "description": "The Fedwire cycle date for the wire transfer that was reversed."
-                      },
-                      "previous_message_input_sequence_number": {
-                        "type": "string",
-                        "description": "The Fedwire sequence number for the wire transfer that was reversed."
-                      },
-                      "previous_message_input_source": {
-                        "type": "string",
-                        "description": "The Fedwire input source identifier for the wire transfer that was reversed."
-                      },
-                      "originator_routing_number": {
-                        "type": "string",
-                        "description": "The American Banking Association (ABA) routing number of the bank originating the transfer.",
-                        "nullable": true
-                      }
-                    },
-                    "required": [
-                      "amount",
-                      "description",
-                      "input_cycle_date",
-                      "input_sequence_number",
-                      "input_source",
-                      "input_message_accountability_data",
-                      "previous_message_input_message_accountability_data",
-                      "previous_message_input_cycle_date",
-                      "previous_message_input_sequence_number",
-                      "previous_message_input_source",
-                      "originator_routing_number"
-                    ],
-                    "nullable": true,
-                    "x-title-plural": "Inbound Wire Drawdown Payment Reversals"
-                  },
                   "inbound_wire_drawdown_payment": {
                     "type": "object",
                     "title": "Inbound Wire Drawdown Payment",
@@ -42396,7 +42225,6 @@
                   "inbound_ach_transfer",
                   "inbound_international_ach_transfer",
                   "inbound_real_time_payments_transfer_confirmation",
-                  "inbound_wire_drawdown_payment_reversal",
                   "inbound_wire_drawdown_payment",
                   "inbound_wire_reversal",
                   "inbound_wire_transfer",

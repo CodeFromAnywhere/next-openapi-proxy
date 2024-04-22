@@ -29,7 +29,6 @@ const hardcodedItemObject = {
     "https://raw.githubusercontent.com/sendgrid/sendgrid-oai/main/oai.json",
   linode: "https://www.linode.com/docs/api/openapi.yaml",
   vercel: "https://openapi.vercel.sh/",
-  multion: "https://api.multion.ai/openapi.json",
   firecrawl:
     "https://raw.githubusercontent.com/mendableai/firecrawl/main/apps/api/openapi.json",
   //(unofficial)
@@ -39,6 +38,7 @@ const hardcodedItemObject = {
   // NB: as I made it, here it should be exactly how they should've made it.
   serper: "./public/handmade/serper.json",
   doppio: "./public/handmade/doppio.json",
+  multion: "./public/handmade/multion.json",
 };
 
 const hardcodedList = Object.keys(hardcodedItemObject).map((key) => {

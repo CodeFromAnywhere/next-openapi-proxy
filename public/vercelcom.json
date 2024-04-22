@@ -21593,6 +21593,13 @@
                                     "status": {
                                       "type": "number"
                                     },
+                                    "handle": {
+                                      "type": "string",
+                                      "enum": [
+                                        "init",
+                                        "finalize"
+                                      ]
+                                    },
                                     "mitigate": {
                                       "properties": {
                                         "action": {
@@ -24383,6 +24390,13 @@
                               "status": {
                                 "type": "number"
                               },
+                              "handle": {
+                                "type": "string",
+                                "enum": [
+                                  "init",
+                                  "finalize"
+                                ]
+                              },
                               "mitigate": {
                                 "properties": {
                                   "action": {
@@ -24642,7 +24656,7 @@
                     "example": "a-project-name",
                     "type": "string",
                     "maxLength": 100,
-                    "pattern": "^[a-z0-9]([a-z0-9]|-[a-z0-9])*$"
+                    "pattern": "^[a-z0-9-_.]+$"
                   },
                   "skipGitConnectDuringLink": {
                     "description": "Opts-out of the message prompting a CLI user to connect a Git repository in `vercel link`.",
@@ -27273,6 +27287,13 @@
                               },
                               "status": {
                                 "type": "number"
+                              },
+                              "handle": {
+                                "type": "string",
+                                "enum": [
+                                  "init",
+                                  "finalize"
+                                ]
                               },
                               "mitigate": {
                                 "properties": {
@@ -29963,6 +29984,13 @@
                               "status": {
                                 "type": "number"
                               },
+                              "handle": {
+                                "type": "string",
+                                "enum": [
+                                  "init",
+                                  "finalize"
+                                ]
+                              },
                               "mitigate": {
                                 "properties": {
                                   "action": {
@@ -30180,7 +30208,7 @@
                     "example": "a-project-name",
                     "type": "string",
                     "maxLength": 100,
-                    "pattern": "^[a-z0-9]([a-z0-9]|-[a-z0-9])*$"
+                    "pattern": "^[a-z0-9-_.]+$"
                   },
                   "nodeVersion": {
                     "enum": [
