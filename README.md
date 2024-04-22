@@ -31,3 +31,4 @@ I'll probably make this into a script later.
 # Challenges along the way
 
 - `Error: A Serverless Function has exceeded the unzipped maximum size of 250 MB`. Big limitation of Vercel. Would be nice to understand why it gets so big.
+- `Vercel Runtime 413 Error: the response body is too large (> 4.5MB).`. This is terrible because some apis might give us something larger than this. Although it's uncommon, we should be able to accomodate this, and now we can't. We'll solve it when we get there.
