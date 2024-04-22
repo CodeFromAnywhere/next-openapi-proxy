@@ -1,7 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/CodeFromAnywhere/ActionSchema/main/schemas/openapi.schema.json",
   "actionschema": "0.0.1",
-
   "openapi": "3.0.0",
   "info": {
     "title": "serper.dev openapi",
@@ -15,13 +14,8 @@
   },
   "servers": [
     {
-      "url": "https://serper.dataman.ai",
-      "description": "Proxy Server"
-    }
-  ],
-  "x-origin-servers": [
-    {
-      "url": "https://google.serper.dev"
+      "description": "Proxy server",
+      "url": "https://serper.dataman.ai"
     }
   ],
   "components": {
@@ -30,16 +24,23 @@
         "oneOf": [
           {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/SearchInput" }
+            "items": {
+              "$ref": "#/components/schemas/SearchInput"
+            }
           },
-          { "$ref": "#/components/schemas/SearchInput" }
+          {
+            "$ref": "#/components/schemas/SearchInput"
+          }
         ],
         "type": "object"
       },
       "SearchInput": {
         "type": "object",
         "properties": {
-          "q": { "type": "string", "description": "Search Query" },
+          "q": {
+            "type": "string",
+            "description": "Search Query"
+          },
           "gl": {
             "type": "string",
             "description": "A country for search results"
@@ -52,10 +53,15 @@
             "type": "string",
             "description": "2-letter country-code for locale"
           },
-          "autocorrect": { "type": "boolean" },
+          "autocorrect": {
+            "type": "boolean"
+          },
           "num": {
             "type": "number",
-            "enum": [10, 100],
+            "enum": [
+              10,
+              100
+            ],
             "description": "Amount of results 10-100 (default 10)"
           },
           "page": {
@@ -64,7 +70,9 @@
           }
         },
         "additionalProperties": false,
-        "required": ["q"]
+        "required": [
+          "q"
+        ]
       }
     }
   },
@@ -77,7 +85,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/SearchInput" }
+              "schema": {
+                "$ref": "#/components/schemas/SearchInput"
+              }
             }
           }
         },
@@ -777,5 +787,10 @@
         }
       }
     }
-  }
+  },
+  "x-origin-servers": [
+    {
+      "url": "https://google.serper.dev"
+    }
+  ]
 }

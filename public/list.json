@@ -10,6 +10,11 @@
     "title": "Heygen"
   },
   {
+    "key": "serper",
+    "originalUrl": "https://serper.dataman.ai/handmade/serper.json",
+    "title": "Serper"
+  },
+  {
     "key": "replicate",
     "originalUrl": "https://api.replicate.com/openapi.json",
     "title": "Replicate"

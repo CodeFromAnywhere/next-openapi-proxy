@@ -7129,7 +7129,7 @@
               "format": "int32",
               "type": "integer"
             },
-            "description": "A list of fields and their respective approaching limit threshold. Required for querying issues approaching limits. Optional for querying issues breaching limits. For example: \"issuesApproachingLimitParams\": \\{\"comment\": 4500\\}",
+            "description": "A list of fields and their respective approaching limit threshold. Required for querying issues approaching limits. Optional for querying issues breaching limits. Accepted fields are: `comment`, `worklog`, `attachment`, `remoteIssueLinks`, and `issuelinks`. Example: `{\"issuesApproachingLimitParams\": {\"comment\": 4500, \"attachment\": 1800}}`",
             "type": "object"
           }
         },
@@ -7146,7 +7146,7 @@
               },
               "type": "object"
             },
-            "description": "A list of ids of issues approaching the limit and their field count",
+            "description": "A list of ids of issues approaching the limit, and their field count",
             "type": "object"
           },
           "issuesBreachingLimit": {
@@ -7157,7 +7157,7 @@
               },
               "type": "object"
             },
-            "description": "A list of ids of issues breaching the limit and their field count",
+            "description": "A list of ids of issues breaching the limit, and their field count",
             "type": "object"
           },
           "limits": {
@@ -21343,7 +21343,7 @@
     },
     "termsOfService": "http://atlassian.com/terms/",
     "title": "The Jira Cloud platform REST API",
-    "version": "1001.0.0-SNAPSHOT-2b88e55752dc82be8616a67bc2b73a87c8e22b48"
+    "version": "1001.0.0-SNAPSHOT-54097c057d0bda11b22396420f3b76c8fd28eb13"
   },
   "openapi": "3.0.1",
   "paths": {
@@ -36914,7 +36914,7 @@
     "/rest/api/3/issue/limit/report": {
       "get": {
         "deprecated": false,
-        "description": "Returns all issues breaching and approaching per-issue limits.\n\n**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).",
+        "description": "Returns all issues breaching and approaching per-issue limits.\n\n**[Permissions](#permissions) required:**\n\n *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) is required for the project the issues are in. Results may be incomplete otherwise\n *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).",
         "operationId": "getIssueLimitReport",
         "parameters": [],
         "requestBody": {
