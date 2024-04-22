@@ -35,6 +35,7 @@ const hardcodedItemObject = {
   playht:
     "https://raw.githubusercontent.com/cielo24/playht-openapi/main/playht.yml",
   browserless: "https://docs.browserless.io/redocusaurus/plugin-redoc-0.yaml",
+  convertapi: "https://v2.convertapi.com/info/openapi",
   // NB: as I made it, here it should be exactly how they should've made it.
   serper: "./public/handmade/serper.json",
   doppio: "./public/handmade/doppio.json",
