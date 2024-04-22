@@ -3,7 +3,31 @@ import { readJsonFile } from "from-anywhere/node";
 import { existsSync } from "fs";
 import path from "path";
 
-export const handleRequest = async (request: Request, method: string) => {
+/**
+TODO: Improved proxy openapi3.0
+
+# Full support for server spec 
+
+- Read: https://swagger.io/docs/specification/api-host-and-base-path/
+- ✅ Allow for server urls that are relative (from `/`) by prepending it with the place the openapi was hosted.
+- Allow for server urls with variables (prefil default unless the variable can be filled from the query)
+- Allow for overriding servers in `[path].servers` or `[path].post.servers`
+
+# Support for non-json responses: 
+
+- Read: https://swagger.io/docs/specification/media-types/
+- ✅ Don't auto-convert to JSON
+- ✅ Pass on status code as well (pass on entire Response)
+
+# Support for path parameters
+
+- ✅ For now, disable path validation
+- Read: https://swagger.io/docs/specification/describing-parameters/#path-parameters
+- Try matching the path as exact match first.
+- If it doesn't match, also match it against paths with `{}` and query parameters
+
+ */
+export const handleProxyRequest = async (request: Request, method: string) => {
   const url = request.url;
   const urlObject = new URL(url);
 
@@ -47,6 +71,8 @@ export const handleRequest = async (request: Request, method: string) => {
       defaultResponseInit,
     );
   }
+
+  // DISABLED Path validation for now, until we implement it
 
   // const operation = (openapi as any).paths?.[pathname]?.[method] as
   //   | undefined
@@ -104,7 +130,8 @@ export const handleRequest = async (request: Request, method: string) => {
     method,
     body: request.body,
     headers: request.headers,
-  }).then((res) => res.json());
+  });
 
-  return Response.json(result, defaultResponseInit);
+  //  new Response()
+  return result; //Response.json(result, defaultResponseInit);
 };

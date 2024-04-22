@@ -1,27 +1,27 @@
-import { handleRequest } from "@/util";
+import { handleProxyRequest } from "@/handleProxyRequest";
 
 export const dynamic = "force-dynamic"; // defaults to auto
 
 export async function GET(request: Request) {
-  return handleRequest(request, "get");
+  return handleProxyRequest(request, "get");
 }
 export async function POST(request: Request) {
-  return handleRequest(request, "post");
+  return handleProxyRequest(request, "post");
 }
 export async function PUT(request: Request) {
-  return handleRequest(request, "put");
+  return handleProxyRequest(request, "put");
 }
 export async function PATCH(request: Request) {
-  return handleRequest(request, "patch");
+  return handleProxyRequest(request, "patch");
 }
 export async function DELETE(request: Request) {
-  return handleRequest(request, "delete");
+  return handleProxyRequest(request, "delete");
 }
 
 export async function HEAD(request: Request) {
-  return handleRequest(request, "head");
+  return handleProxyRequest(request, "head");
 }
 
 export async function OPTIONS(request: Request) {
-  return handleRequest(request, "options");
+  return handleProxyRequest(request, "options");
 }
