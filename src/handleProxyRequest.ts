@@ -129,6 +129,8 @@ export const handleProxyRequest = async (request: Request, method: string) => {
   const result = await fetch(fullOriginalUrl, {
     method,
     body: request.body,
+    //@ts-ignore
+    duplex: "half",
     headers: request.headers,
   });
 
