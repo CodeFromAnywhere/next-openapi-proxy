@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "bun run scrape-apis.ts"
+    "predeploy": "bun run scrape-apis.cli.ts"
   },
   "dependencies": {
     "from-anywhere": "^0.0.21",

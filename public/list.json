@@ -60,6 +60,11 @@
     "title": "Playht"
   },
   {
+    "key": "convertapi",
+    "originalUrl": "https://v2.convertapi.com/info/openapi",
+    "title": "Convertapi"
+  },
+  {
     "key": "serper",
     "absolutePath": "/Users/king/Desktop/github/next-openapi-proxy/public/handmade/serper.json",
     "title": "Serper"
@@ -640,11 +645,6 @@
     "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/9b1349082ac4eca3660eaf6ad31e70d2/raw/88dacf4280e9aca949b5f4692904229fdf2457ff/swagger(1).json"
   },
   {
-    "key": "esgenterprisecom",
-    "title": "ESG Rating Data",
-    "originalUrl": "https://www.esgenterprise.com/wp-content/api/ESGRatingAPI-Definition.json"
-  },
-  {
     "key": "etsilocal-mec010-2-apppkgmgmt",
     "title": "ETSI GS MEC 010-2 - Part 2: Application lifecycle, rules and requirements management",
     "originalUrl": "https://forge.etsi.org/rep/mec/gs010-2-app-pkg-lcm-api/raw/v2.1.1/MEC010-2_AppPkgMgmt.yaml"
@@ -1118,6 +1118,16 @@
     "key": "microckslocal",
     "title": "Microcks API v1.7",
     "originalUrl": "https://raw.githubusercontent.com/microcks/microcks/master/api/microcks-openapi-v1.7.yaml"
+  },
+  {
+    "key": "microsoftcom-graph",
+    "title": "OData Service for namespace microsoft.graph",
+    "originalUrl": "https://raw.githubusercontent.com/microsoftgraph/msgraph-metadata/master/openapi/v1.0/openapi.yaml"
+  },
+  {
+    "key": "microsoftcom-graph-beta",
+    "title": "OData Service for namespace microsoft.graph",
+    "originalUrl": "https://raw.githubusercontent.com/microsoftgraph/msgraph-metadata/master/openapi/beta/openapi.yaml"
   },
   {
     "key": "mineskinorg",
