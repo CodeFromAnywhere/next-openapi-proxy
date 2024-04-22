@@ -105,7 +105,7 @@ const scrapeApis = async () => {
     })
     .filter(notEmpty);
 
-  const fullList = parsedList.concat(hardcodedList);
+  const fullList = hardcodedList.concat(parsedList);
 
   console.log(
     "Writing list",
