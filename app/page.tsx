@@ -8,6 +8,11 @@ const HomePage = () => {
           GitHub Repo
         </a>
       </p>
+
+      <p>
+        Explore all our proxies in our{" "}
+        <a href="https://explorer.actionschema.com">OpenAPI Explorer</a>
+      </p>
     </div>
   );
 };
