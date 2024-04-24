@@ -19,7 +19,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://asuarezdev-searchly.dataman.ai"
+      "url": "https://openapi.actionschema.com/asuarezdev-searchly"
     }
   ],
   "tags": [

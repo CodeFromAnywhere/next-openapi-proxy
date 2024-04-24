@@ -19,7 +19,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://pocketsmithcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/pocketsmithcom"
     }
   ],
   "components": {

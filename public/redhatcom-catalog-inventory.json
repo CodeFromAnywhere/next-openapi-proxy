@@ -1524,7 +1524,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://redhatcom-catalog-inventory.dataman.ai"
+      "url": "https://openapi.actionschema.com/redhatcom-catalog-inventory"
     }
   ],
   "components": {

@@ -21,7 +21,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://hubapicom-automation.dataman.ai"
+      "url": "https://openapi.actionschema.com/hubapicom-automation"
     }
   ],
   "tags": [

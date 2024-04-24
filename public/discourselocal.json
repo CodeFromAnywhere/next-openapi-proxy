@@ -16657,7 +16657,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://discourselocal.dataman.ai"
+      "url": "https://openapi.actionschema.com/discourselocal"
     }
   ],
   "components": {

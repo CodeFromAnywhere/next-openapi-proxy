@@ -352,7 +352,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-lookups-v2.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-lookups-v2"
     }
   ],
   "tags": [

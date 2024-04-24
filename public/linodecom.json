@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://linodecom.dataman.ai"
+      "url": "https://openapi.actionschema.com/linodecom"
     }
   ],
   "paths": {

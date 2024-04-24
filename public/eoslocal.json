@@ -14,7 +14,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://eoslocal.dataman.ai"
+      "url": "https://openapi.actionschema.com/eoslocal"
     }
   ],
   "components": {

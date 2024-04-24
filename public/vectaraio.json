@@ -4587,7 +4587,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vectaraio.dataman.ai"
+      "url": "https://openapi.actionschema.com/vectaraio"
     }
   ],
   "x-origin-servers": [

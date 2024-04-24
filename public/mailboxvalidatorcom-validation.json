@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://mailboxvalidatorcom-validation.dataman.ai"
+      "url": "https://openapi.actionschema.com/mailboxvalidatorcom-validation"
     }
   ],
   "paths": {

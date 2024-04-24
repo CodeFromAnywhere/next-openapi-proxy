@@ -12,7 +12,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://digitalnzorg.dataman.ai"
+      "url": "https://openapi.actionschema.com/digitalnzorg"
     }
   ],
   "security": [

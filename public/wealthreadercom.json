@@ -1169,7 +1169,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://wealthreadercom.dataman.ai"
+      "url": "https://openapi.actionschema.com/wealthreadercom"
     }
   ],
   "externalDocs": {

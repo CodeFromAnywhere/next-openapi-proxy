@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://iqualifycom.dataman.ai"
+      "url": "https://openapi.actionschema.com/iqualifycom"
     }
   ],
   "paths": {

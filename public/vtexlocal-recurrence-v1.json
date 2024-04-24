@@ -9,7 +9,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vtexlocal-recurrence-v1.dataman.ai"
+      "url": "https://openapi.actionschema.com/vtexlocal-recurrence-v1"
     }
   ],
   "paths": {

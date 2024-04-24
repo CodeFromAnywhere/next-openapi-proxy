@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://apizebaycom-commerce-identity.dataman.ai"
+      "url": "https://openapi.actionschema.com/apizebaycom-commerce-identity"
     }
   ],
   "paths": {

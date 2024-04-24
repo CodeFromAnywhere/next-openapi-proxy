@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://c19qrserverlocal.dataman.ai"
+      "url": "https://openapi.actionschema.com/c19qrserverlocal"
     }
   ],
   "security": [

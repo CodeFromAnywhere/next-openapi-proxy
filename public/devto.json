@@ -4015,7 +4015,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://devto.dataman.ai"
+      "url": "https://openapi.actionschema.com/devto"
     }
   ],
   "security": [

@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://shotstackio.dataman.ai"
+      "url": "https://openapi.actionschema.com/shotstackio"
     }
   ],
   "tags": [

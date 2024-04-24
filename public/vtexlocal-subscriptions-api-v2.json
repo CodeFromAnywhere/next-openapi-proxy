@@ -9,7 +9,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vtexlocal-subscriptions-api-v2.dataman.ai"
+      "url": "https://openapi.actionschema.com/vtexlocal-subscriptions-api-v2"
     }
   ],
   "paths": {

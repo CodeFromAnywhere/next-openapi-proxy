@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://adyencom-binlookupservice.dataman.ai"
+      "url": "https://openapi.actionschema.com/adyencom-binlookupservice"
     }
   ],
   "info": {

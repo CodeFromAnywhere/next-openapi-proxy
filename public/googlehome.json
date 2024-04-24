@@ -106,7 +106,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://googlehome.dataman.ai"
+      "url": "https://openapi.actionschema.com/googlehome"
     }
   ],
   "paths": {

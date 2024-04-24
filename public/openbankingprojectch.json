@@ -26,7 +26,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://openbankingprojectch.dataman.ai"
+      "url": "https://openapi.actionschema.com/openbankingprojectch"
     }
   ],
   "paths": {

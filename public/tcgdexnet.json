@@ -21,7 +21,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://tcgdexnet.dataman.ai"
+      "url": "https://openapi.actionschema.com/tcgdexnet"
     }
   ],
   "tags": [

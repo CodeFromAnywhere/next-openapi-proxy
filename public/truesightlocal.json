@@ -16,7 +16,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://truesightlocal.dataman.ai"
+      "url": "https://openapi.actionschema.com/truesightlocal"
     }
   ],
   "tags": [

@@ -11,7 +11,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vtexlocal-intelligent-search-api.dataman.ai"
+      "url": "https://openapi.actionschema.com/vtexlocal-intelligent-search-api"
     }
   ],
   "paths": {

@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vtexlocal-promotions.dataman.ai"
+      "url": "https://openapi.actionschema.com/vtexlocal-promotions"
     }
   ],
   "paths": {

@@ -23,7 +23,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://hubapicom-events.dataman.ai"
+      "url": "https://openapi.actionschema.com/hubapicom-events"
     }
   ],
   "tags": [

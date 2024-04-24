@@ -5005,7 +5005,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://orbitlove.dataman.ai"
+      "url": "https://openapi.actionschema.com/orbitlove"
     }
   ],
   "x-origin-servers": [

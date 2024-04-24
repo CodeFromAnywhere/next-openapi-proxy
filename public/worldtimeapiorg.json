@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://worldtimeapiorg.dataman.ai"
+      "url": "https://openapi.actionschema.com/worldtimeapiorg"
     }
   ],
   "paths": {

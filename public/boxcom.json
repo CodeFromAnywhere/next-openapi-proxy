@@ -19,7 +19,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://boxcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/boxcom"
     }
   ],
   "paths": {

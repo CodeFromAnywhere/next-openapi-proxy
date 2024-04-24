@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://mathtools.dataman.ai"
+      "url": "https://openapi.actionschema.com/mathtools"
     }
   ],
   "components": {

@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://canada-holidaysca.dataman.ai"
+      "url": "https://openapi.actionschema.com/canada-holidaysca"
     }
   ],
   "paths": {

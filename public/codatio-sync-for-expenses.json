@@ -64,7 +64,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://codatio-sync-for-expenses.dataman.ai"
+      "url": "https://openapi.actionschema.com/codatio-sync-for-expenses"
     }
   ],
   "paths": {

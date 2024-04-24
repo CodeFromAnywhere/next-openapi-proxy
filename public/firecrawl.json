@@ -13,7 +13,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://firecrawl.dataman.ai"
+      "url": "https://openapi.actionschema.com/firecrawl"
     }
   ],
   "paths": {

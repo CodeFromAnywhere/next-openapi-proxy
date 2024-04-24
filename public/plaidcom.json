@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://plaidcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/plaidcom"
     }
   ],
   "info": {

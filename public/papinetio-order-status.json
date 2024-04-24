@@ -16,7 +16,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://papinetio-order-status.dataman.ai"
+      "url": "https://openapi.actionschema.com/papinetio-order-status"
     }
   ],
   "paths": {

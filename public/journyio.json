@@ -22,7 +22,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://journyio.dataman.ai"
+      "url": "https://openapi.actionschema.com/journyio"
     }
   ],
   "x-tagGroups": [

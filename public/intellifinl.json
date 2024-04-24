@@ -123,7 +123,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://intellifinl.dataman.ai"
+      "url": "https://openapi.actionschema.com/intellifinl"
     }
   ],
   "paths": {

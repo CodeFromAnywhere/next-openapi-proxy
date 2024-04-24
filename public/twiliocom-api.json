@@ -34472,7 +34472,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-api.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-api"
     }
   ],
   "tags": [

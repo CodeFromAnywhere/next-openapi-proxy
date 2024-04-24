@@ -3405,7 +3405,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://adobecom-aem.dataman.ai"
+      "url": "https://openapi.actionschema.com/adobecom-aem"
     }
   ],
   "components": {

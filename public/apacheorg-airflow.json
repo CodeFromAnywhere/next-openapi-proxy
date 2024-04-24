@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://apacheorg-airflow.dataman.ai"
+      "url": "https://openapi.actionschema.com/apacheorg-airflow"
     }
   ],
   "paths": {

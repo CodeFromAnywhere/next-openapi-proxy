@@ -1881,7 +1881,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://contentgroovecom.dataman.ai"
+      "url": "https://openapi.actionschema.com/contentgroovecom"
     }
   ],
   "components": {

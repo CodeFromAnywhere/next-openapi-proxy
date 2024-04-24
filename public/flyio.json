@@ -16,7 +16,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://flyio.dataman.ai"
+      "url": "https://openapi.actionschema.com/flyio"
     }
   ],
   "tags": [
@@ -2313,7 +2313,8 @@
               "Microsecond",
               "Millisecond",
               "Second",
-              "Minute"
+              "Minute",
+              "Hour"
             ]
           }
         }

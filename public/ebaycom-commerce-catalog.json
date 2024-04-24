@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://ebaycom-commerce-catalog.dataman.ai"
+      "url": "https://openapi.actionschema.com/ebaycom-commerce-catalog"
     }
   ],
   "paths": {

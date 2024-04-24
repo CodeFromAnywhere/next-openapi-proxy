@@ -20,7 +20,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://rudderexamplelocal.dataman.ai"
+      "url": "https://openapi.actionschema.com/rudderexamplelocal"
     }
   ],
   "security": [

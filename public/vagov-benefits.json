@@ -19,7 +19,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vagov-benefits.dataman.ai"
+      "url": "https://openapi.actionschema.com/vagov-benefits"
     }
   ],
   "basePath": "/services/vba_documents/v1",

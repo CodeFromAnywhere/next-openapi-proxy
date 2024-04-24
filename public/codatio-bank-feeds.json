@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://codatio-bank-feeds.dataman.ai"
+      "url": "https://openapi.actionschema.com/codatio-bank-feeds"
     }
   ],
   "info": {

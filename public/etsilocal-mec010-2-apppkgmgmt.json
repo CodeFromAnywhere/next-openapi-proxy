@@ -20,7 +20,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://etsilocal-mec010-2-apppkgmgmt.dataman.ai"
+      "url": "https://openapi.actionschema.com/etsilocal-mec010-2-apppkgmgmt"
     }
   ],
   "openapi": "3.0.0",

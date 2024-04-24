@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://amadeuscom-amadeus-flight-price-analysis.dataman.ai"
+      "url": "https://openapi.actionschema.com/amadeuscom-amadeus-flight-price-analysis"
     }
   ],
   "paths": {

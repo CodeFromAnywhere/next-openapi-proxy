@@ -25,7 +25,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://apideckcom-file-storage.dataman.ai"
+      "url": "https://openapi.actionschema.com/apideckcom-file-storage"
     }
   ],
   "components": {

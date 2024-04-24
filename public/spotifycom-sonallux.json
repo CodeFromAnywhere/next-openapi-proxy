@@ -13,7 +13,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://spotifycom-sonallux.dataman.ai"
+      "url": "https://openapi.actionschema.com/spotifycom-sonallux"
     }
   ],
   "tags": [

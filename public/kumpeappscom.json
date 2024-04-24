@@ -16,7 +16,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://kumpeappscom.dataman.ai"
+      "url": "https://openapi.actionschema.com/kumpeappscom"
     }
   ],
   "security": [

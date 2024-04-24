@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://amadeuscom-amadeus-location-score.dataman.ai"
+      "url": "https://openapi.actionschema.com/amadeuscom-amadeus-location-score"
     }
   ],
   "paths": {

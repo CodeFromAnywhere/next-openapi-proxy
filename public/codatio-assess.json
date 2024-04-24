@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://codatio-assess.dataman.ai"
+      "url": "https://openapi.actionschema.com/codatio-assess"
     }
   ],
   "info": {

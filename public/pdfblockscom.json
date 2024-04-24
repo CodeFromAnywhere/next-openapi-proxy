@@ -14,7 +14,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://pdfblockscom.dataman.ai"
+      "url": "https://openapi.actionschema.com/pdfblockscom"
     }
   ],
   "paths": {

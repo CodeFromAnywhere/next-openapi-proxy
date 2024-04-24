@@ -7,7 +7,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://uberduck.dataman.ai"
+      "url": "https://openapi.actionschema.com/uberduck"
     }
   ],
   "paths": {
@@ -1445,12 +1445,46 @@
       "get": {
         "summary": "Get Highlights",
         "operationId": "get_highlights_voice_bot_highlights_get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "title": "Limit",
+              "default": 20
+            },
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "title": "Offset",
+              "default": 0
+            },
+            "name": "offset",
+            "in": "query"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful Response",
             "content": {
               "application/json": {
                 "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
               }
             }
           }

@@ -18,7 +18,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://xerocom-xero-payroll-au.dataman.ai"
+      "url": "https://openapi.actionschema.com/xerocom-xero-payroll-au"
     }
   ],
   "tags": [

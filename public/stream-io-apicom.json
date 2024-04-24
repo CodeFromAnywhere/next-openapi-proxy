@@ -13787,7 +13787,7 @@
   },
   "info": {
     "title": "Stream API",
-    "version": "v108.3.0"
+    "version": "v108.5.0"
   },
   "openapi": "3.0.3",
   "paths": {
@@ -21185,7 +21185,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://stream-io-apicom.dataman.ai"
+      "url": "https://openapi.actionschema.com/stream-io-apicom"
     }
   ],
   "x-origin-servers": [

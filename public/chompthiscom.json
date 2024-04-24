@@ -344,7 +344,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://chompthiscom.dataman.ai"
+      "url": "https://openapi.actionschema.com/chompthiscom"
     }
   ],
   "components": {

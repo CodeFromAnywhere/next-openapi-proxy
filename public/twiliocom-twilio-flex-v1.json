@@ -7767,7 +7767,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-flex-v1.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-flex-v1"
     }
   ],
   "tags": [

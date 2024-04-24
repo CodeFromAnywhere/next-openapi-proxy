@@ -6,7 +6,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://doppio.dataman.ai"
+      "url": "https://openapi.actionschema.com/doppio"
     }
   ],
   "info": {

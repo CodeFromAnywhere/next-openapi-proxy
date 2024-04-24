@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://ebaycom-buy-deal.dataman.ai"
+      "url": "https://openapi.actionschema.com/ebaycom-buy-deal"
     }
   ],
   "paths": {

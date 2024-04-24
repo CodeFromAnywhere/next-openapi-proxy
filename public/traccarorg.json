@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://traccarorg.dataman.ai"
+      "url": "https://openapi.actionschema.com/traccarorg"
     }
   ],
   "security": [

@@ -15435,7 +15435,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://stackexchangecom.dataman.ai"
+      "url": "https://openapi.actionschema.com/stackexchangecom"
     }
   ],
   "components": {

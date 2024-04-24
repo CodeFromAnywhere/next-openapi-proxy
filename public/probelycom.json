@@ -51702,7 +51702,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://probelycom.dataman.ai"
+      "url": "https://openapi.actionschema.com/probelycom"
     }
   ],
   "tags": [

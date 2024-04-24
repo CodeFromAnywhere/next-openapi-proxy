@@ -1448,7 +1448,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://climatecom.dataman.ai"
+      "url": "https://openapi.actionschema.com/climatecom"
     }
   ],
   "components": {

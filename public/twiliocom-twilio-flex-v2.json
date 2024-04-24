@@ -312,7 +312,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-flex-v2.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-flex-v2"
     }
   ],
   "tags": [

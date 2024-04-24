@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://velopaymentscom.dataman.ai"
+      "url": "https://openapi.actionschema.com/velopaymentscom"
     }
   ],
   "security": [

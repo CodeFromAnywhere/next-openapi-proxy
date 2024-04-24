@@ -5487,7 +5487,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-messaging-v1.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-messaging-v1"
     }
   ],
   "tags": [

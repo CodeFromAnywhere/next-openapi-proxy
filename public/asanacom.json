@@ -86,7 +86,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://asanacom.dataman.ai"
+      "url": "https://openapi.actionschema.com/asanacom"
     }
   ],
   "security": [

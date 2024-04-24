@@ -24,7 +24,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://tafqitherokuappcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/tafqitherokuappcom"
     }
   ],
   "tags": [],

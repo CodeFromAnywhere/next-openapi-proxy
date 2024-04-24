@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://govbcca-router.dataman.ai"
+      "url": "https://openapi.actionschema.com/govbcca-router"
     }
   ],
   "info": {

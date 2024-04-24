@@ -22,7 +22,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://brexio.dataman.ai"
+      "url": "https://openapi.actionschema.com/brexio"
     }
   ],
   "tags": [

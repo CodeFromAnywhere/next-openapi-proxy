@@ -16,7 +16,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://extposecom.dataman.ai"
+      "url": "https://openapi.actionschema.com/extposecom"
     }
   ],
   "tags": [

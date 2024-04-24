@@ -25,7 +25,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://apideckcom-pos.dataman.ai"
+      "url": "https://openapi.actionschema.com/apideckcom-pos"
     }
   ],
   "components": {

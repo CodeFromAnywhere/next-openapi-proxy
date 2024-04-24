@@ -378,7 +378,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://fungeneratorscom-riddle.dataman.ai"
+      "url": "https://openapi.actionschema.com/fungeneratorscom-riddle"
     }
   ],
   "components": {

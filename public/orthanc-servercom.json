@@ -16877,7 +16877,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://orthanc-servercom.dataman.ai"
+      "url": "https://openapi.actionschema.com/orthanc-servercom"
     }
   ],
   "x-origin-servers": [

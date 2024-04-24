@@ -7,7 +7,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://wolframalphacom.dataman.ai"
+      "url": "https://openapi.actionschema.com/wolframalphacom"
     }
   ],
   "paths": {

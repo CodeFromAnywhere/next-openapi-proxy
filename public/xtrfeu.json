@@ -13,10 +13,46 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://xtrfeu.dataman.ai"
+      "url": "https://openapi.actionschema.com/xtrfeu"
     }
   ],
   "security": [
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
+    {
+      "X-AUTH-ACCESS-TOKEN": []
+    },
     {
       "X-AUTH-ACCESS-TOKEN": []
     },

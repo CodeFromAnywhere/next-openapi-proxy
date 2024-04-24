@@ -549,7 +549,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://webscrapingai.dataman.ai"
+      "url": "https://openapi.actionschema.com/webscrapingai"
     }
   ],
   "components": {

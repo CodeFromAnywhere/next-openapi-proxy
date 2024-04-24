@@ -10,7 +10,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vtexlocal-message-center-api.dataman.ai"
+      "url": "https://openapi.actionschema.com/vtexlocal-message-center-api"
     }
   ],
   "paths": {

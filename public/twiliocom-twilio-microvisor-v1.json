@@ -2105,7 +2105,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-microvisor-v1.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-microvisor-v1"
     }
   ],
   "tags": [

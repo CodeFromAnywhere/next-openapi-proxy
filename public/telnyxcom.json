@@ -16173,6 +16173,11 @@
             "title": "Helpmessage",
             "type": "string"
           },
+          "isTMobileNumberPoolingEnabled": {
+            "description": "Indicates whether the campaign has a T-Mobile number pool ID associated with it.",
+            "title": "isTMobileNumberPoolingEnabled",
+            "type": "boolean"
+          },
           "isTMobileRegistered": {
             "description": "Indicates whether the campaign is registered with T-Mobile.",
             "title": "IsTMobileRegistered",
@@ -79060,7 +79065,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://telnyxcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/telnyxcom"
     }
   ],
   "tags": [

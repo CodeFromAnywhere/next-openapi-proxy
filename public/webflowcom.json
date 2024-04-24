@@ -24231,7 +24231,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://webflowcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/webflowcom"
     }
   ],
   "x-origin-servers": [

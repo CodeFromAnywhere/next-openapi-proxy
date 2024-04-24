@@ -10843,7 +10843,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://increasecom.dataman.ai"
+      "url": "https://openapi.actionschema.com/increasecom"
     }
   ],
   "tags": [

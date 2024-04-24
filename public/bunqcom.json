@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://bunqcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/bunqcom"
     }
   ],
   "components": {

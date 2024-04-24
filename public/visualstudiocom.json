@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://visualstudiocom.dataman.ai"
+      "url": "https://openapi.actionschema.com/visualstudiocom"
     }
   ],
   "paths": {
@@ -7164,6 +7164,9 @@
           "prebuildConfigurationId": {
             "type": "string",
             "nullable": true
+          },
+          "storageImageVersion": {
+            "$ref": "#/components/schemas/StorageImageVersion"
           }
         },
         "additionalProperties": false
@@ -7603,6 +7606,14 @@
           }
         },
         "additionalProperties": false
+      },
+      "StorageImageVersion": {
+        "enum": [
+          "0 (None)",
+          "1 (Minimal)"
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "StorageType": {
         "enum": [

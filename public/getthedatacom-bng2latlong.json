@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://getthedatacom-bng2latlong.dataman.ai"
+      "url": "https://openapi.actionschema.com/getthedatacom-bng2latlong"
     }
   ],
   "paths": {

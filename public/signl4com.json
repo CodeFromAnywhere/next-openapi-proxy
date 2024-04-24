@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://signl4com.dataman.ai"
+      "url": "https://openapi.actionschema.com/signl4com"
     }
   ],
   "paths": {

@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://mineskinorg.dataman.ai"
+      "url": "https://openapi.actionschema.com/mineskinorg"
     }
   ],
   "tags": [

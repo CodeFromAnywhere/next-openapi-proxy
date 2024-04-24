@@ -16,7 +16,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://dnd5eapico.dataman.ai"
+      "url": "https://openapi.actionschema.com/dnd5eapico"
     }
   ],
   "tags": [

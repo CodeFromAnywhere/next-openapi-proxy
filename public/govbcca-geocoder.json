@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://govbcca-geocoder.dataman.ai"
+      "url": "https://openapi.actionschema.com/govbcca-geocoder"
     }
   ],
   "info": {

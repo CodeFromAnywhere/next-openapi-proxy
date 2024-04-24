@@ -23,7 +23,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://hubapicom-webhooks.dataman.ai"
+      "url": "https://openapi.actionschema.com/hubapicom-webhooks"
     }
   ],
   "tags": [

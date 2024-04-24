@@ -11,7 +11,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vagov-forms.dataman.ai"
+      "url": "https://openapi.actionschema.com/vagov-forms"
     }
   ],
   "basePath": "/services/va_forms/v0",

@@ -804,7 +804,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-numbers-v1.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-numbers-v1"
     }
   ],
   "tags": [

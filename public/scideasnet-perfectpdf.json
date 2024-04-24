@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://scideasnet-perfectpdf.dataman.ai"
+      "url": "https://openapi.actionschema.com/scideasnet-perfectpdf"
     }
   ],
   "paths": {

@@ -7,7 +7,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://doqsdev.dataman.ai"
+      "url": "https://openapi.actionschema.com/doqsdev"
     }
   ],
   "paths": {

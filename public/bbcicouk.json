@@ -1185,7 +1185,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://bbcicouk.dataman.ai"
+      "url": "https://openapi.actionschema.com/bbcicouk"
     }
   ],
   "components": {

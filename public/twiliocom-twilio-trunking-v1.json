@@ -2485,7 +2485,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-trunking-v1.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-trunking-v1"
     }
   ],
   "tags": [

@@ -9,7 +9,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://exchangerate-apicom.dataman.ai"
+      "url": "https://openapi.actionschema.com/exchangerate-apicom"
     }
   ],
   "paths": {

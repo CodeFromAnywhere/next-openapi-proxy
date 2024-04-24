@@ -57,7 +57,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://xkcdcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/xkcdcom"
     }
   ],
   "components": {

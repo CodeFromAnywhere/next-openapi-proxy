@@ -4277,7 +4277,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-serverless-v1.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-serverless-v1"
     }
   ],
   "tags": [

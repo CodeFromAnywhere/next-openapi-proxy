@@ -14,7 +14,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://listennotescom.dataman.ai"
+      "url": "https://openapi.actionschema.com/listennotescom"
     }
   ],
   "tags": [

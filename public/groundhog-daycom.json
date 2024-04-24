@@ -16,7 +16,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://groundhog-daycom.dataman.ai"
+      "url": "https://openapi.actionschema.com/groundhog-daycom"
     }
   ],
   "components": {

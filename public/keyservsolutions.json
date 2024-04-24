@@ -9,7 +9,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://keyservsolutions.dataman.ai"
+      "url": "https://openapi.actionschema.com/keyservsolutions"
     }
   ],
   "paths": {

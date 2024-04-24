@@ -13268,7 +13268,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://exavaultcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/exavaultcom"
     }
   ],
   "x-origin-servers": [

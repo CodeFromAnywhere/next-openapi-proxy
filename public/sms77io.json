@@ -1621,7 +1621,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://sms77io.dataman.ai"
+      "url": "https://openapi.actionschema.com/sms77io"
     }
   ],
   "components": {

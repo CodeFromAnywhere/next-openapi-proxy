@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vtexlocal-headless-cms-api.dataman.ai"
+      "url": "https://openapi.actionschema.com/vtexlocal-headless-cms-api"
     }
   ],
   "paths": {

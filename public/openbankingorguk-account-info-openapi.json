@@ -1902,7 +1902,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://openbankingorguk-account-info-openapi.dataman.ai"
+      "url": "https://openapi.actionschema.com/openbankingorguk-account-info-openapi"
     }
   ],
   "components": {

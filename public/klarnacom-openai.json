@@ -7,7 +7,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://klarnacom-openai.dataman.ai"
+      "url": "https://openapi.actionschema.com/klarnacom-openai"
     }
   ],
   "tags": [

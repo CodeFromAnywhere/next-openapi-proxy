@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://patrowllocal.dataman.ai"
+      "url": "https://openapi.actionschema.com/patrowllocal"
     }
   ],
   "tags": [

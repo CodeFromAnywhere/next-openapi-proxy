@@ -9,7 +9,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://exude-apiherokuappcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/exude-apiherokuappcom"
     }
   ],
   "paths": {

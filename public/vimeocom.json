@@ -201,7 +201,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vimeocom.dataman.ai"
+      "url": "https://openapi.actionschema.com/vimeocom"
     }
   ],
   "paths": {

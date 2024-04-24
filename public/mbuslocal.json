@@ -7,7 +7,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://mbuslocal.dataman.ai"
+      "url": "https://openapi.actionschema.com/mbuslocal"
     }
   ],
   "paths": {

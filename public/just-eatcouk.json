@@ -73,7 +73,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://just-eatcouk.dataman.ai"
+      "url": "https://openapi.actionschema.com/just-eatcouk"
     }
   ],
   "paths": {

@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://pay1de-link.dataman.ai"
+      "url": "https://openapi.actionschema.com/pay1de-link"
     }
   ],
   "tags": [

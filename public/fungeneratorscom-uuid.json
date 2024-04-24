@@ -214,7 +214,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://fungeneratorscom-uuid.dataman.ai"
+      "url": "https://openapi.actionschema.com/fungeneratorscom-uuid"
     }
   ],
   "components": {

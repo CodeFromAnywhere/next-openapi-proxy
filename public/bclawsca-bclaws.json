@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://bclawsca-bclaws.dataman.ai"
+      "url": "https://openapi.actionschema.com/bclawsca-bclaws"
     }
   ],
   "info": {

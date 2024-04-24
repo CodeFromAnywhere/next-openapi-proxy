@@ -165,7 +165,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://githubcom-ghes-34.dataman.ai"
+      "url": "https://openapi.actionschema.com/githubcom-ghes-34"
     }
   ],
   "externalDocs": {

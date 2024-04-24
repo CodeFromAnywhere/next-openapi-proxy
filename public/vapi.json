@@ -1923,7 +1923,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://vapi.dataman.ai"
+      "url": "https://openapi.actionschema.com/vapi"
     }
   ],
   "components": {
@@ -3757,6 +3757,11 @@
           "serverUrlSecret": {
             "type": "string",
             "description": "This is the secret you can set that Vapi will send with every request to your server. Will be sent as a header called x-vapi-secret.\n\nSame precendence logic as serverUrl."
+          },
+          "summaryPrompt": {
+            "type": "string",
+            "description": "This is the prompt that's used to summarize the call at the end.\n\nDefault is 'You are an expert note-taker. You will be given a transcript of a conversation. Please summarize the conversation in 4-5 sentences if applicable.'\n\nSet to '' or 'off' to disable post-call summarization.",
+            "maxLength": 2000
           }
         }
       },
@@ -4072,6 +4077,11 @@
           "serverUrlSecret": {
             "type": "string",
             "description": "This is the secret you can set that Vapi will send with every request to your server. Will be sent as a header called x-vapi-secret.\n\nSame precendence logic as serverUrl."
+          },
+          "summaryPrompt": {
+            "type": "string",
+            "description": "This is the prompt that's used to summarize the call at the end.\n\nDefault is 'You are an expert note-taker. You will be given a transcript of a conversation. Please summarize the conversation in 4-5 sentences if applicable.'\n\nSet to '' or 'off' to disable post-call summarization.",
+            "maxLength": 2000
           },
           "id": {
             "type": "string",
@@ -4411,6 +4421,11 @@
           "serverUrlSecret": {
             "type": "string",
             "description": "This is the secret you can set that Vapi will send with every request to your server. Will be sent as a header called x-vapi-secret.\n\nSame precendence logic as serverUrl."
+          },
+          "summaryPrompt": {
+            "type": "string",
+            "description": "This is the prompt that's used to summarize the call at the end.\n\nDefault is 'You are an expert note-taker. You will be given a transcript of a conversation. Please summarize the conversation in 4-5 sentences if applicable.'\n\nSet to '' or 'off' to disable post-call summarization.",
+            "maxLength": 2000
           }
         }
       },

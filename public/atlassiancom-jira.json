@@ -21343,7 +21343,7 @@
     },
     "termsOfService": "http://atlassian.com/terms/",
     "title": "The Jira Cloud platform REST API",
-    "version": "1001.0.0-SNAPSHOT-54097c057d0bda11b22396420f3b76c8fd28eb13"
+    "version": "1001.0.0-SNAPSHOT-1799943389865e673b0a2c8607653e705b66f09c"
   },
   "openapi": "3.0.1",
   "paths": {
@@ -74690,7 +74690,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://atlassiancom-jira.dataman.ai"
+      "url": "https://openapi.actionschema.com/atlassiancom-jira"
     }
   ],
   "tags": [

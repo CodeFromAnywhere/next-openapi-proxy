@@ -3784,7 +3784,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-supersim-v1.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-supersim-v1"
     }
   ],
   "tags": [

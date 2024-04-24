@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://mtaa-apiherokuappcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/mtaa-apiherokuappcom"
     }
   ],
   "paths": {

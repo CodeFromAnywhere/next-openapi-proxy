@@ -10,7 +10,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://thebluealliancecom.dataman.ai"
+      "url": "https://openapi.actionschema.com/thebluealliancecom"
     }
   ],
   "tags": [

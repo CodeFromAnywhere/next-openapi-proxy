@@ -19,7 +19,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://zeitco.dataman.ai"
+      "url": "https://openapi.actionschema.com/zeitco"
     }
   ],
   "tags": [

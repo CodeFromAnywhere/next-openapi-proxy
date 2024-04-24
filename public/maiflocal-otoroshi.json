@@ -86,7 +86,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://maiflocal-otoroshi.dataman.ai"
+      "url": "https://openapi.actionschema.com/maiflocal-otoroshi"
     }
   ],
   "paths": {

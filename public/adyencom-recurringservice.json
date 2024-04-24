@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://adyencom-recurringservice.dataman.ai"
+      "url": "https://openapi.actionschema.com/adyencom-recurringservice"
     }
   ],
   "info": {

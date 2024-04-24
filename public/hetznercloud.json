@@ -42618,7 +42618,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://hetznercloud.dataman.ai"
+      "url": "https://openapi.actionschema.com/hetznercloud"
     }
   ],
   "tags": [

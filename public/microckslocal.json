@@ -21,7 +21,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://microckslocal.dataman.ai"
+      "url": "https://openapi.actionschema.com/microckslocal"
     }
   ],
   "paths": {

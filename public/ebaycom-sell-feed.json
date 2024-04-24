@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://ebaycom-sell-feed.dataman.ai"
+      "url": "https://openapi.actionschema.com/ebaycom-sell-feed"
     }
   ],
   "paths": {

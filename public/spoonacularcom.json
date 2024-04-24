@@ -98,7 +98,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://spoonacularcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/spoonacularcom"
     }
   ],
   "paths": {

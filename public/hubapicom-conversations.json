@@ -23,7 +23,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://hubapicom-conversations.dataman.ai"
+      "url": "https://openapi.actionschema.com/hubapicom-conversations"
     }
   ],
   "tags": [

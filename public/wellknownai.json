@@ -16,7 +16,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://wellknownai.dataman.ai"
+      "url": "https://openapi.actionschema.com/wellknownai"
     }
   ],
   "paths": {

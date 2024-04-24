@@ -12239,7 +12239,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://motawordcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/motawordcom"
     }
   ],
   "components": {

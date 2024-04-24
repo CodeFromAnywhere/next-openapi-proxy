@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://clubhouseapicom.dataman.ai"
+      "url": "https://openapi.actionschema.com/clubhouseapicom"
     }
   ],
   "paths": {

@@ -163,7 +163,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://githubcom-ghes-31.dataman.ai"
+      "url": "https://openapi.actionschema.com/githubcom-ghes-31"
     }
   ],
   "externalDocs": {

@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://json2videocom.dataman.ai"
+      "url": "https://openapi.actionschema.com/json2videocom"
     }
   ],
   "paths": {

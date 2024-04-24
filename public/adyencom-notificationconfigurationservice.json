@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://adyencom-notificationconfigurationservice.dataman.ai"
+      "url": "https://openapi.actionschema.com/adyencom-notificationconfigurationservice"
     }
   ],
   "info": {

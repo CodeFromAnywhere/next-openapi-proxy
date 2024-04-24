@@ -606,7 +606,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://ablyio-platform.dataman.ai"
+      "url": "https://openapi.actionschema.com/ablyio-platform"
     }
   ],
   "paths": {

@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://openlinkswcom-osdb.dataman.ai"
+      "url": "https://openapi.actionschema.com/openlinkswcom-osdb"
     }
   ],
   "paths": {

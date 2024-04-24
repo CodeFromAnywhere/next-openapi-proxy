@@ -45564,7 +45564,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://drchronocom.dataman.ai"
+      "url": "https://openapi.actionschema.com/drchronocom"
     }
   ],
   "tags": [

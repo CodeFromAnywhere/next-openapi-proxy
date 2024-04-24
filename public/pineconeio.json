@@ -12,7 +12,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://pineconeio.dataman.ai"
+      "url": "https://openapi.actionschema.com/pineconeio"
     }
   ],
   "externalDocs": {

@@ -8415,7 +8415,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twittercom-current.dataman.ai"
+      "url": "https://openapi.actionschema.com/twittercom-current"
     }
   ],
   "tags": [

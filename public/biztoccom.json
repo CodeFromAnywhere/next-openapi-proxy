@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://biztoccom.dataman.ai"
+      "url": "https://openapi.actionschema.com/biztoccom"
     }
   ],
   "paths": {

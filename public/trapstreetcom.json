@@ -11,7 +11,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://trapstreetcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/trapstreetcom"
     }
   ],
   "paths": {

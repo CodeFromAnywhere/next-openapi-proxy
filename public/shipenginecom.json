@@ -5491,7 +5491,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://shipenginecom.dataman.ai"
+      "url": "https://openapi.actionschema.com/shipenginecom"
     }
   ],
   "components": {

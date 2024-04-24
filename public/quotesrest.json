@@ -13,7 +13,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://quotesrest.dataman.ai"
+      "url": "https://openapi.actionschema.com/quotesrest"
     }
   ],
   "tags": [

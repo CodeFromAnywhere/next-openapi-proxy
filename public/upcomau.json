@@ -12,7 +12,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://upcomau.dataman.ai"
+      "url": "https://openapi.actionschema.com/upcomau"
     }
   ],
   "components": {

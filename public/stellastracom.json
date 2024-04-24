@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://stellastracom.dataman.ai"
+      "url": "https://openapi.actionschema.com/stellastracom"
     }
   ],
   "paths": {

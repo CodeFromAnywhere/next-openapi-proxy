@@ -555,7 +555,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://changelocal.dataman.ai"
+      "url": "https://openapi.actionschema.com/changelocal"
     }
   ],
   "components": {

@@ -12739,7 +12739,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://shutterstockcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/shutterstockcom"
     }
   ],
   "components": {

@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://paypidev.dataman.ai"
+      "url": "https://openapi.actionschema.com/paypidev"
     }
   ],
   "components": {

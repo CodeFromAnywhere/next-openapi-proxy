@@ -53,7 +53,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://openbankingorguk-event-notifications-openapi.dataman.ai"
+      "url": "https://openapi.actionschema.com/openbankingorguk-event-notifications-openapi"
     }
   ],
   "components": {

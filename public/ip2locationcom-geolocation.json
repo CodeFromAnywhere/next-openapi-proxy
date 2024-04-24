@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://ip2locationcom-geolocation.dataman.ai"
+      "url": "https://openapi.actionschema.com/ip2locationcom-geolocation"
     }
   ],
   "paths": {

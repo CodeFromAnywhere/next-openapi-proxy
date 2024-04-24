@@ -1191,7 +1191,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://govbcca-gwells.dataman.ai"
+      "url": "https://openapi.actionschema.com/govbcca-gwells"
     }
   ],
   "components": {

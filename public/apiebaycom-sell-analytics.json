@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://apiebaycom-sell-analytics.dataman.ai"
+      "url": "https://openapi.actionschema.com/apiebaycom-sell-analytics"
     }
   ],
   "paths": {

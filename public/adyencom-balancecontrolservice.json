@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://adyencom-balancecontrolservice.dataman.ai"
+      "url": "https://openapi.actionschema.com/adyencom-balancecontrolservice"
     }
   ],
   "info": {

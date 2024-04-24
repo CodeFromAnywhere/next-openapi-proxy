@@ -19,7 +19,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://codesearchdebiannet.dataman.ai"
+      "url": "https://openapi.actionschema.com/codesearchdebiannet"
     }
   ],
   "tags": [

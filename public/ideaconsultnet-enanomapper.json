@@ -22,7 +22,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://ideaconsultnet-enanomapper.dataman.ai"
+      "url": "https://openapi.actionschema.com/ideaconsultnet-enanomapper"
     }
   ],
   "tags": [

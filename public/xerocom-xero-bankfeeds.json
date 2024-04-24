@@ -18,7 +18,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://xerocom-xero-bankfeeds.dataman.ai"
+      "url": "https://openapi.actionschema.com/xerocom-xero-bankfeeds"
     }
   ],
   "paths": {

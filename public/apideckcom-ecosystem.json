@@ -23,7 +23,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://apideckcom-ecosystem.dataman.ai"
+      "url": "https://openapi.actionschema.com/apideckcom-ecosystem"
     }
   ],
   "security": [],

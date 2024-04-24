@@ -4655,7 +4655,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-numbers-v2.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-numbers-v2"
     }
   ],
   "tags": [

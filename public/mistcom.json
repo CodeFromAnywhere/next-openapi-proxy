@@ -21,7 +21,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://mistcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/mistcom"
     }
   ],
   "security": [

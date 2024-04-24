@@ -10404,7 +10404,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://cpyre-peertube.dataman.ai"
+      "url": "https://openapi.actionschema.com/cpyre-peertube"
     }
   ],
   "components": {

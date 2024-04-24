@@ -83,7 +83,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://serper.dataman.ai"
+      "url": "https://openapi.actionschema.com/serper"
     }
   ],
   "components": {

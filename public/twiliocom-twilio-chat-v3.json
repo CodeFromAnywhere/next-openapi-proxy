@@ -277,7 +277,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-chat-v3.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-chat-v3"
     }
   ],
   "tags": [

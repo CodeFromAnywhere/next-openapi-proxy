@@ -3075,7 +3075,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://openbankingorguk-payment-initiation-openapi.dataman.ai"
+      "url": "https://openapi.actionschema.com/openbankingorguk-payment-initiation-openapi"
     }
   ],
   "components": {

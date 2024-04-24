@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://configcatcom.dataman.ai"
+      "url": "https://openapi.actionschema.com/configcatcom"
     }
   ],
   "paths": {

@@ -3505,7 +3505,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://twiliocom-twilio-insights-v1.dataman.ai"
+      "url": "https://openapi.actionschema.com/twiliocom-twilio-insights-v1"
     }
   ],
   "tags": [

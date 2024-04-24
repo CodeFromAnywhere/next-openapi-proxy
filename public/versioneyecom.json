@@ -266,7 +266,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://versioneyecom.dataman.ai"
+      "url": "https://openapi.actionschema.com/versioneyecom"
     }
   ],
   "components": {

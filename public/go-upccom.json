@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://go-upccom.dataman.ai"
+      "url": "https://openapi.actionschema.com/go-upccom"
     }
   ],
   "info": {

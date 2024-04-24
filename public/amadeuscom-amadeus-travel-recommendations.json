@@ -8,7 +8,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://amadeuscom-amadeus-travel-recommendations.dataman.ai"
+      "url": "https://openapi.actionschema.com/amadeuscom-amadeus-travel-recommendations"
     }
   ],
   "paths": {

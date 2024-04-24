@@ -18,7 +18,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://personiode-authentication.dataman.ai"
+      "url": "https://openapi.actionschema.com/personiode-authentication"
     }
   ],
   "paths": {

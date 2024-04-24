@@ -12,7 +12,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://playht.dataman.ai"
+      "url": "https://openapi.actionschema.com/playht"
     }
   ],
   "paths": {

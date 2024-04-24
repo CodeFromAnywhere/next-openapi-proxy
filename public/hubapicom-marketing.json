@@ -20,7 +20,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://hubapicom-marketing.dataman.ai"
+      "url": "https://openapi.actionschema.com/hubapicom-marketing"
     }
   ],
   "tags": [

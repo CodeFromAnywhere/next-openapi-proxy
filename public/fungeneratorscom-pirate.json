@@ -257,7 +257,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://fungeneratorscom-pirate.dataman.ai"
+      "url": "https://openapi.actionschema.com/fungeneratorscom-pirate"
     }
   ],
   "components": {

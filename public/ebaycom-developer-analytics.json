@@ -15,7 +15,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://ebaycom-developer-analytics.dataman.ai"
+      "url": "https://openapi.actionschema.com/ebaycom-developer-analytics"
     }
   ],
   "paths": {
