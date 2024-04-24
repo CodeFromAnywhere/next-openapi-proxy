@@ -7,17 +7,15 @@ export const handleOpenapiRequest = async (request: Request) => {
   const url = request.url;
   const urlObject = new URL(url);
 
-  const openapiId = urlObject.pathname.split("/")[0];
+  const openapiId = urlObject.pathname.split("/")[1];
 
-  const key =
-    urlObject.hostname === "localhost"
-      ? process.env.LOCALHOST_TEST_KEY
-      : openapiId;
+  console.log({ url, openapiId });
 
-  const openapiPath = path.resolve(".", "public", key + ".json");
+  const openapiPath = path.resolve(".", "public", openapiId + ".json");
 
   const hasOpenapi = existsSync(openapiPath);
 
+  console.log({ openapiPath, hasOpenapi });
   if (!hasOpenapi) {
     return Response.json("Not found", { status: 404 });
   }

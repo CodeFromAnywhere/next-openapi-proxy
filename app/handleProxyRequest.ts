@@ -32,7 +32,8 @@ export const handleProxyRequest = async (request: Request, method: string) => {
   const urlObject = new URL(url);
 
   const chunks = urlObject.pathname.split("/");
-
+  //second one is id (coming after /)
+  chunks.shift();
   const openapiId = chunks.shift();
 
   const key =
