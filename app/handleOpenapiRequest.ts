@@ -1,4 +1,3 @@
-import { handleProxyRequest } from "@/handleProxyRequest";
 import { OpenapiDocument } from "from-anywhere";
 import { readJsonFile } from "from-anywhere/node";
 import { existsSync } from "fs";
@@ -8,16 +7,20 @@ export const handleOpenapiRequest = async (request: Request) => {
   const url = request.url;
   const urlObject = new URL(url);
 
-  const [tld, domain, subdomain] = urlObject.hostname.split(".").reverse();
+  const openapiId = urlObject.pathname.split("/")[0];
 
   const key =
     urlObject.hostname === "localhost"
       ? process.env.LOCALHOST_TEST_KEY
-      : subdomain || domain;
+      : openapiId;
 
   const openapiPath = path.resolve(".", "public", key + ".json");
 
   const hasOpenapi = existsSync(openapiPath);
+
+  if (!hasOpenapi) {
+    return Response.json("Not found", { status: 404 });
+  }
 
   const defaultResponseInit = {
     status: 200,
@@ -30,5 +33,5 @@ export const handleOpenapiRequest = async (request: Request) => {
 
   const openapi = await readJsonFile<OpenapiDocument>(openapiPath);
 
-  return Response.json(openapi);
+  return Response.json(openapi, defaultResponseInit);
 };

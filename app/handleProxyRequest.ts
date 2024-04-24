@@ -31,12 +31,14 @@ export const handleProxyRequest = async (request: Request, method: string) => {
   const url = request.url;
   const urlObject = new URL(url);
 
-  const [tld, domain, subdomain] = urlObject.hostname.split(".").reverse();
+  const chunks = urlObject.pathname.split("/");
+
+  const openapiId = chunks.shift();
 
   const key =
     urlObject.hostname === "localhost"
       ? process.env.LOCALHOST_TEST_KEY
-      : subdomain || domain;
+      : openapiId;
 
   const openapiPath = path.resolve(".", "public", key + ".json");
 
@@ -55,7 +57,7 @@ export const handleProxyRequest = async (request: Request, method: string) => {
     return Response.json(
       {
         message: `Invalid domain.`,
-        openapiPath,
+        //openapiPath,
       },
       defaultResponseInit,
     );
@@ -66,7 +68,7 @@ export const handleProxyRequest = async (request: Request, method: string) => {
     return Response.json(
       {
         message: `Failed to read.`,
-        openapiPath,
+        // openapiPath,
       },
       defaultResponseInit,
     );
@@ -122,7 +124,7 @@ export const handleProxyRequest = async (request: Request, method: string) => {
   }
 
   const fullOriginalUrl =
-    originalServerUrl + urlObject.pathname + urlObject.search + urlObject.hash;
+    originalServerUrl + chunks.join("/") + urlObject.search + urlObject.hash;
 
   console.log(`FOUND ORIGINAL URL`, fullOriginalUrl);
 

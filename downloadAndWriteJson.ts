@@ -111,7 +111,7 @@ export const downloadAndWriteJson = async (
     servers: [
       {
         description: "Proxy server",
-        url: `https://${item.key}.dataman.ai`,
+        url: `https://openapi.actionschema.com/${item.key}`,
       },
     ],
   } satisfies OpenapiDocument;

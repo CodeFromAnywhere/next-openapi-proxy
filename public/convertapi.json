@@ -17,7 +17,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://convertapi.dataman.ai"
+      "url": "https://openapi.actionschema.com/convertapi"
     }
   ],
   "paths": {
@@ -22139,6 +22139,164 @@
     "/convert/email/to/extract": {
       "summary": "EMAIL to EXTRACT File Conversion API",
       "description": "Extract email attachments from EML & MSG files \n Read more about the converter here: https://www.convertapi.com/email-to-extract",
+      "post": {
+        "tags": [
+          "Conversion"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "File"
+                ],
+                "type": "object",
+                "properties": {
+                  "Timeout": {
+                    "maximum": 1200,
+                    "minimum": 10,
+                    "type": "integer",
+                    "description": "Conversion timeout in seconds.",
+                    "default": 900
+                  },
+                  "StoreFile": {
+                    "type": "boolean",
+                    "description": "Store converted file on our secure server and provides download URL.",
+                    "default": false
+                  },
+                  "File": {
+                    "type": "string",
+                    "description": "File to be converted. Value can be URL or file content.",
+                    "format": "binary"
+                  },
+                  "FileName": {
+                    "type": "string",
+                    "description": "Converted output file name without extension. The extension will be added automatically."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ConversionCost": {
+                      "type": "integer",
+                      "description": "This amount will be deducted from your balance after the conversion.",
+                      "format": "int32",
+                      "example": 1
+                    },
+                    "Files": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "FileName": {
+                            "type": "string",
+                            "description": "Name of the converted file.",
+                            "example": "myfile.pdf"
+                          },
+                          "FileExt": {
+                            "type": "string",
+                            "description": "File type (file name extension)",
+                            "example": "pdf"
+                          },
+                          "FileSize": {
+                            "type": "integer",
+                            "description": "File size",
+                            "format": "int32",
+                            "example": 111955
+                          },
+                          "FileId": {
+                            "type": "string",
+                            "description": "File ID",
+                            "example": "25811safe8e61dd3f51ef00ee5f58b92"
+                          },
+                          "Url": {
+                            "type": "string",
+                            "description": "File URL",
+                            "example": "https://v2.convertapi.com/d/v01plsb72o0cmdooq90w4d1lnqsf6oy4/myfile.pdf"
+                          },
+                          "FileData": {
+                            "type": "string",
+                            "description": "Base64 encoded file data",
+                            "format": "base64",
+                            "example": "JVBERi0xLjcKJb662+4KMSAwIG9iago8PC9UeXBlIC9DYXRhbG9n..."
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "externalDocs": {
+                    "url": "https://www.convertapi.com/doc/content-types#applicationjson-1"
+                  }
+                }
+              },
+              "multipart/mixed": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary",
+                  "externalDocs": {
+                    "url": "https://www.convertapi.com/doc/content-types#multipartmixed"
+                  }
+                },
+                "example": "--43cf1475-ab15-4c6b-b5ee-e2cbcedfe92f\nConversionCost: 1\nContent-Type: application/octet-stream\nContent-Disposition: attachment; filename=\"my_file.pdf\"; size=8475\n\n--FILE CONTENT--\n--43cf1475-ab15-4c6b-b5ee-e2cbcedfe92f--\n"
+              },
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary",
+                  "externalDocs": {
+                    "url": "https://www.convertapi.com/doc/content-types#applicationoctet-stream-1"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "415": {
+            "$ref": "#/components/responses/415"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          },
+          "503": {
+            "$ref": "#/components/responses/503"
+          }
+        },
+        "security": [
+          {
+            "secret": []
+          },
+          {
+            "apiKey": []
+          },
+          {
+            "token": []
+          },
+          {
+            "basicAuth": []
+          },
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/convert/email/to/metadata": {
+      "summary": "EMAIL to METADATA File Conversion API",
+      "description": "Extract email metadata from EML & MSG files \n Read more about the converter here: https://www.convertapi.com/email-to-metadata",
       "post": {
         "tags": [
           "Conversion"

@@ -49,7 +49,7 @@ export type ApiObject = {
   - pulls https://api.apis.guru/v2/list.json and reformats it into flat-object array
   - add my own OpenAPI list too besides this.
   - add a unique key for each api
-  - change server to `https://[key].dataman.ai`
+  - change server to `https://openapi.actionschema.com/[key]`
   - change `x-origin-servers` to `[{url:"original url"}]`
   - puts all `x-origin` openapi urls into `next-openapi-proxy/public` with name `[key].json`
   - add things such as logo and other things they do: https://github.com/APIs-guru/openapi-directory
