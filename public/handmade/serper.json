@@ -88,8 +88,7 @@
             "items": { "$ref": "#/components/schemas/SearchInput" }
           },
           { "$ref": "#/components/schemas/SearchInput" }
-        ],
-        "type": "object"
+        ]
       },
       "SearchInput": {
         "type": "object",
