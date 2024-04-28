@@ -950,6 +950,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "signal",
+            "in": "query",
+            "description": "Unix signal name",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1962,6 +1970,14 @@
               "$ref": "#/components/schemas/MachineEvent"
             }
           },
+          "host_status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "unknown",
+              "unreachable"
+            ]
+          },
           "id": {
             "type": "string"
           },
@@ -1991,14 +2007,6 @@
           },
           "updated_at": {
             "type": "string"
-          },
-          "worker_status": {
-            "type": "string",
-            "enum": [
-              "ok",
-              "unknown",
-              "unreachable"
-            ]
           }
         }
       },
@@ -2212,6 +2220,14 @@
           "fstype": {
             "type": "string"
           },
+          "host_status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "unknown",
+              "unreachable"
+            ]
+          },
           "id": {
             "type": "string"
           },
@@ -2229,14 +2245,6 @@
           },
           "state": {
             "type": "string"
-          },
-          "worker_status": {
-            "type": "string",
-            "enum": [
-              "ok",
-              "unknown",
-              "unreachable"
-            ]
           },
           "zone": {
             "type": "string"
@@ -2309,6 +2317,8 @@
               "Second",
               "Minute",
               "Hour",
+              "minDuration",
+              "maxDuration",
               "Nanosecond",
               "Microsecond",
               "Millisecond",

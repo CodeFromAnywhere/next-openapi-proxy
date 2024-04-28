@@ -13178,6 +13178,83 @@
           }
         }
       },
+      "EndpointOauthConfigIn": {
+        "type": "object",
+        "required": [
+          "authMethod",
+          "clientId",
+          "grantType",
+          "tokenUrl"
+        ],
+        "properties": {
+          "grantType": {
+            "$ref": "#/components/schemas/Oauth2GrantType"
+          },
+          "authMethod": {
+            "$ref": "#/components/schemas/Oauth2AuthMethodIn"
+          },
+          "jwtParams": {
+            "$ref": "#/components/schemas/ClientSecretJwtParamsIn",
+            "nullable": true
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientSecret": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "Oauth2GrantType": {
+        "type": "string",
+        "enum": [
+          "clientCredentials"
+        ]
+      },
+      "Oauth2AuthMethodIn": {
+        "type": "string",
+        "enum": [
+          "clientSecretJwt",
+          "clientSecretBasic",
+          "clientSecretPost"
+        ]
+      },
+      "ClientSecretJwtParamsIn": {
+        "type": "object",
+        "required": [
+          "secretBase64",
+          "signingAlgorithm"
+        ],
+        "properties": {
+          "secretBase64": {
+            "type": "string"
+          },
+          "signingAlgorithm": {
+            "$ref": "#/components/schemas/OauthJwsSigningAlgorithm"
+          },
+          "secretId": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenExpirySecs": {
+            "type": "integer",
+            "format": "uint64",
+            "minimum": 0,
+            "nullable": true
+          }
+        }
+      },
+      "OauthJwsSigningAlgorithm": {
+        "type": "string",
+        "enum": [
+          "RS256"
+        ]
+      },
       "ReplayIn": {
         "type": "object",
         "required": [

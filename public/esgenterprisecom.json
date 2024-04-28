@@ -10,7 +10,7 @@
   "servers": [
     {
       "description": "Proxy server",
-      "url": "https://esgenterprisecom.dataman.ai"
+      "url": "https://openapi.actionschema.com/esgenterprisecom"
     }
   ],
   "components": {

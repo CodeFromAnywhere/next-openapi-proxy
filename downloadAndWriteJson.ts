@@ -45,6 +45,7 @@ export const hardcodedItemObject = {
   serper: "./public/handmade/serper.json",
   doppio: "./public/handmade/doppio.json",
   multion: "./public/handmade/multion.json",
+  hackernews: "./public/handmade/hackernews.json",
 };
 
 export const downloadAndWriteJson = async (

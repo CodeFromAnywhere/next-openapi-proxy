@@ -1,6 +1,25 @@
 {
   "components": {
     "schemas": {
+      "AsyncResourceError": {
+        "properties": {
+          "uuid": {
+            "description": "The UUID used to get the data for the asynchronous request",
+            "title": "UUID",
+            "type": "string"
+          },
+          "status": {
+            "description": "Either \"Error\" or \"Failed\"",
+            "title": "Status",
+            "type": "string"
+          },
+          "detail": {
+            "description": "Instructions on what to do next",
+            "title": "Detail",
+            "type": "string"
+          }
+        }
+      },
       "Appointment": {
         "properties": {
           "allow_overlapping": {
@@ -16125,7 +16144,13 @@
             "description": "Method Not Allowed"
           },
           "500": {
-            "content": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncResourceError"
+                }
+              }
+            },
             "description": "Internal Server Error"
           }
         },
@@ -28272,7 +28297,13 @@
             "description": "Method Not Allowed"
           },
           "500": {
-            "content": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncResourceError"
+                }
+              }
+            },
             "description": "Internal Server Error"
           }
         },
@@ -35568,7 +35599,7 @@
                       "type": "array"
                     },
                     "status": {
-                      "description": "Status of the request.  Possible values are \"Pending\", \"Complete\", \"In progress\", \"Error\".\n",
+                      "description": "Status of the request.  Possible values are \"Complete\" or \"In progress\".\n",
                       "title": "status",
                       "type": "string"
                     },
@@ -35624,7 +35655,13 @@
             "description": "Not Found"
           },
           "500": {
-            "content": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncResourceError"
+                }
+              }
+            },
             "description": "Internal Server Error"
           }
         },
@@ -35806,7 +35843,7 @@
                       "type": "array"
                     },
                     "status": {
-                      "description": "Status of the request.  Possible values are \"Pending\", \"Complete\", \"In progress\", \"Error\".\n",
+                      "description": "Status of the request.  Possible values are \"Complete\" or \"In progress\".\n",
                       "title": "status",
                       "type": "string"
                     },
@@ -35862,7 +35899,13 @@
             "description": "Not Found"
           },
           "500": {
-            "content": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncResourceError"
+                }
+              }
+            },
             "description": "Internal Server Error"
           }
         },
@@ -36094,7 +36137,7 @@
                       "type": "array"
                     },
                     "status": {
-                      "description": "Status of the request.  Possible values are \"Pending\", \"Complete\", \"In progress\", \"Error\".\n",
+                      "description": "Status of the request.  Possible values are \"Complete\" or \"In progress\".\n",
                       "title": "status",
                       "type": "string"
                     },
@@ -36150,7 +36193,13 @@
             "description": "Not Found"
           },
           "500": {
-            "content": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncResourceError"
+                }
+              }
+            },
             "description": "Internal Server Error"
           }
         },
@@ -36346,7 +36395,6 @@
       }
     },
     "/api/patients_list": {
-      "description": "",
       "get": {
         "description": "Retrieve or search patients in batches. This resource returns identical data to `GET /api/patients` but uses an asynchronous batch-based approach to data delivery. This is an efficient choice for large historical record loading use cases. Retrieve the results/status of a previously created patient_list request using the UUID returned in the response. Results are ordered by patient ID number.\n",
         "operationId": "patients_list_list",
@@ -36381,7 +36429,7 @@
                       "type": "array"
                     },
                     "status": {
-                      "description": "Status of the request.  Possible values are \"In progress\", \"Complete\", \"Error\".",
+                      "description": "Status of the request.  Possible values are \"In progress\" or \"Complete\".",
                       "title": "status",
                       "type": "string"
                     },
@@ -36413,7 +36461,13 @@
             "description": "Not Found. The UUID is not found, or, it has expired. UUIDs have a 1 hour lifetime."
           },
           "500": {
-            "content": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncResourceError"
+                }
+              }
+            },
             "description": "Internal Server Error"
           }
         },
@@ -36603,7 +36657,7 @@
                       "type": "string"
                     },
                     "status": {
-                      "description": "Status of the request.  Possible values are \"In progress\", \"Complete\", \"Error\".\n",
+                      "description": "Status of the request.  Possible values are \"In progress\" or \"Complete\".\n",
                       "title": "status",
                       "type": "string"
                     },
@@ -44936,7 +44990,7 @@
                       "type": "array"
                     },
                     "status": {
-                      "description": "Status of the request.  Possible values are \"Pending\", \"Complete\", \"In progress\", \"Error\".\n",
+                      "description": "Status of the request.  Possible values are \"In progress\" or \"Complete\".\n",
                       "title": "status",
                       "type": "string"
                     },
@@ -44992,7 +45046,13 @@
             "description": "Not Found"
           },
           "500": {
-            "content": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncResourceError"
+                }
+              }
+            },
             "description": "Internal Server Error"
           }
         },

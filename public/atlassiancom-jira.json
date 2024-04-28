@@ -21343,7 +21343,7 @@
     },
     "termsOfService": "http://atlassian.com/terms/",
     "title": "The Jira Cloud platform REST API",
-    "version": "1001.0.0-SNAPSHOT-1799943389865e673b0a2c8607653e705b66f09c"
+    "version": "1001.0.0-SNAPSHOT-2d0d695520e7095763476433152508933e579798"
   },
   "openapi": "3.0.1",
   "paths": {
@@ -26764,7 +26764,6 @@
             "app-access-rule-exempt": true
           }
         ],
-        "x-experimental": true,
         "x-atlassian-connect-scope": "READ"
       }
     },
@@ -26849,7 +26848,6 @@
             "app-access-rule-exempt": true
           }
         ],
-        "x-experimental": true,
         "x-atlassian-connect-scope": "READ"
       }
     },
@@ -38263,7 +38261,7 @@
             "description": "Returned if any of the following is true:\n\n *  the issue is not found.\n *  the user does not have permission to view the issue."
           },
           "413": {
-            "description": "The attachments exceed the maximum attachment size for issues, or more than 60 files are requested to be uploaded. See [Configuring file attachments](https://confluence.atlassian.com/x/wIXKM) for details."
+            "description": "Returned if any of the following is true:\n\n *  the attachments exceed the maximum attachment size for issues.\n *  more than 60 files are requested to be uploaded.\n *  the per-issue limit for attachments has been breached.\n\nSee [Configuring file attachments](https://confluence.atlassian.com/x/wIXKM) for details."
           }
         },
         "security": [
@@ -38691,6 +38689,9 @@
           },
           "404": {
             "description": "Returned if the issue is not found or the user does not have permission to view it."
+          },
+          "413": {
+            "description": "Returned if the per-issue limit has been breached for one of the following fields:\n\n *  comments\n *  attachments"
           }
         },
         "security": [
@@ -39743,6 +39744,9 @@
           },
           "404": {
             "description": "Returned if the issue or remote issue link is not found or the user does not have permission to view the issue."
+          },
+          "413": {
+            "description": "Returned if the per-issue limit for remote links has been breached."
           }
         },
         "security": [
@@ -40442,6 +40446,9 @@
           },
           "409": {
             "description": "Returned if the issue could not be updated due to a conflicting update. (refer to the [changelog](https://developer.atlassian.com/changelog/#CHANGE-1364) *for more details.*"
+          },
+          "413": {
+            "description": "Returned if a per-issue limit has been breached for one of the following fields:\n\n *  comments\n *  worklogs\n *  attachments\n *  issue links\n *  remote issue links"
           },
           "422": {
             "description": "Returned if a configuration problem prevents the creation of the issue. (refer to the [changelog](https://developer.atlassian.com/changelog/#CHANGE-1364) *for more details.*"
@@ -41202,6 +41209,9 @@
           },
           "404": {
             "description": "Returned if the issue is not found or the user does not have permission to view it."
+          },
+          "413": {
+            "description": "Returned if the per-issue limit has been breached for one of the following fields:\n\n *  worklogs\n *  attachments"
           }
         },
         "security": [
@@ -42097,6 +42107,9 @@
           },
           "404": {
             "description": "Returned if:\n\n *  issue linking is disabled.\n *  the user cannot view one or both of the issues. For example, the user doesn't have *Browse project* project permission for a project containing one of the issues.\n *  the user does not have *link issues* project permission.\n *  either of the link issues are not found.\n *  the issue link type is not found."
+          },
+          "413": {
+            "description": "Returned if the per-issue limit for issue links has been breached."
           }
         },
         "security": [

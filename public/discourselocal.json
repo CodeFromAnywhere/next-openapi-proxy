@@ -886,6 +886,12 @@
                             "null"
                           ]
                         },
+                        "subcategory_count": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
                         "sort_order": {
                           "type": [
                             "string",
@@ -1084,6 +1090,7 @@
                         "can_edit",
                         "topic_template",
                         "has_children",
+                        "subcategory_count",
                         "sort_order",
                         "sort_ascending",
                         "show_subcategory_list",
@@ -1295,6 +1302,12 @@
                               "has_children": {
                                 "type": "boolean"
                               },
+                              "subcategory_count": {
+                                "type": [
+                                  "integer",
+                                  "null"
+                                ]
+                              },
                               "sort_order": {
                                 "type": [
                                   "string",
@@ -1407,6 +1420,7 @@
                               "can_edit",
                               "topic_template",
                               "has_children",
+                              "subcategory_count",
                               "sort_order",
                               "sort_ascending",
                               "show_subcategory_list",
@@ -1556,6 +1570,12 @@
                         "has_children": {
                           "type": [
                             "boolean",
+                            "null"
+                          ]
+                        },
+                        "subcategory_count": {
+                          "type": [
+                            "integer",
                             "null"
                           ]
                         },
@@ -1758,6 +1778,7 @@
                         "topic_template",
                         "form_template_ids",
                         "has_children",
+                        "subcategory_count",
                         "sort_order",
                         "sort_ascending",
                         "show_subcategory_list",
@@ -2237,6 +2258,12 @@
                             "null"
                           ]
                         },
+                        "subcategory_count": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
                         "sort_order": {
                           "type": [
                             "string",
@@ -2435,6 +2462,7 @@
                         "can_edit",
                         "topic_template",
                         "has_children",
+                        "subcategory_count",
                         "sort_order",
                         "sort_ascending",
                         "show_subcategory_list",
@@ -7051,9 +7079,6 @@
                         },
                         "suggested_topics": {
                           "type": "integer"
-                        },
-                        "admin_guide": {
-                          "type": "integer"
                         }
                       },
                       "required": [
@@ -7061,8 +7086,7 @@
                         "topic_timeline",
                         "post_menu",
                         "topic_notification_levels",
-                        "suggested_topics",
-                        "admin_guide"
+                        "suggested_topics"
                       ]
                     },
                     "groups": {
@@ -7406,6 +7430,12 @@
                           "has_children": {
                             "type": "boolean"
                           },
+                          "subcategory_count": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ]
+                          },
                           "sort_order": {
                             "type": [
                               "string",
@@ -7538,6 +7568,7 @@
                           "notification_level",
                           "topic_template",
                           "has_children",
+                          "subcategory_count",
                           "sort_order",
                           "sort_ascending",
                           "show_subcategory_list",
@@ -7685,6 +7716,12 @@
                     "login_required": {
                       "type": "boolean"
                     },
+                    "locale": {
+                      "type": "string"
+                    },
+                    "include_in_discourse_discover": {
+                      "type": "boolean"
+                    },
                     "mobile_logo_url": {
                       "type": "string"
                     }
@@ -7699,6 +7736,8 @@
                     "header_primary_color",
                     "header_background_color",
                     "login_required",
+                    "locale",
+                    "include_in_discourse_discover",
                     "mobile_logo_url"
                   ]
                 }

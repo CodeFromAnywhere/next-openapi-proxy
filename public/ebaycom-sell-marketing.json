@@ -10,7 +10,7 @@
       "name": "eBay API License Agreement",
       "url": "https://go.developer.ebay.com/api-license-agreement"
     },
-    "version": "v1.21.0"
+    "version": "v1.21.1"
   },
   "servers": [
     {
@@ -437,7 +437,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -744,7 +744,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35061": {
@@ -781,7 +781,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -1170,7 +1170,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -1337,7 +1337,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -1554,7 +1554,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -1722,7 +1722,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -1953,7 +1953,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -2225,7 +2225,7 @@
             "description": "Business error"
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -2312,7 +2312,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35061": {
@@ -2349,7 +2349,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -2461,7 +2461,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35061": {
@@ -2629,7 +2629,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -2811,7 +2811,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -2919,7 +2919,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35129": {
@@ -2931,7 +2931,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -3117,7 +3117,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -3219,7 +3219,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -3404,7 +3404,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -3557,7 +3557,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -3710,7 +3710,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -3855,7 +3855,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35062": {
@@ -3932,7 +3932,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -3985,9 +3985,18 @@
             }
           },
           {
+            "name": "campaign_targeting_types",
+            "in": "query",
+            "description": "This query parameter specifies the targeting type of the campaign(s) to be retrieved.<br><br>The results will be filtered to only include campaigns with the specified targeting type. If not specified, all campaigns matching other filter parameters will be returned. The results might not include these campaigns if other search conditions exclude them.<br><br><b>Valid values:</b> See <a href=\"/api-docs/sell/marketing/types/pls:CampaignTargetingTypeEnum\">CampaignTargetingTypeEnum</a>",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "channels",
             "in": "query",
-            "description": "This query parameter specifies the channel for the the campaign(s) being retrieved.<br><br>The results will be filtered to only include campaigns with the specified channel. If not specified, all campaigns matching other filter parameters will be returned. The results might not include these campaigns if other search conditions exclude them.<br /><br /><b>Valid Values:</b> See <a href=\"/api-docs/sell/marketing/types/pls:ChannelEnum\">ChannelEnum</a>",
+            "description": "This query parameter specifies the channel for the campaign(s) being retrieved.<br><br>The results will be filtered to only include campaigns with the specified channel. If not specified, all campaigns matching other filter parameters will be returned. The results might not include these campaigns if other search conditions exclude them.<br /><br /><b>Valid Values:</b> See <a href=\"/api-docs/sell/marketing/types/pls:ChannelEnum\">ChannelEnum</a>",
             "required": false,
             "schema": {
               "type": "string"
@@ -4093,6 +4102,11 @@
                   "domain": "API_MARKETING",
                   "category": "REQUEST",
                   "description": "Funding strategy needs to be one of {fundingStrategy} types."
+                },
+                "35123": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'campaignTargetingType' is not valid. Valid values for 'campaignTargetingType' are: {campaignTargetingTypeValues}."
                 }
               }
             }
@@ -4110,7 +4124,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -4317,10 +4331,50 @@
                   "category": "REQUEST",
                   "description": "The 'maxCpc' {maxCpc} is not valid. Minimum value: {minMaxCpc} , Maximum value:{maxMaxCpc}."
                 },
+                "35125": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'bidPreferences' list currently supports only one element. Please remove additional elements and try again."
+                },
+                "35134": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "A 'biddingStrategy' cannot be supplied for smart targeting campaigns. Please either remove 'biddingStrategy' from the request to create a smart targeting campaign or supply another value for 'campaignTargetingType'."
+                },
                 "36101": {
                   "domain": "API_MARKETING",
                   "category": "REQUEST",
                   "description": "The daily budget value format is a maximum of two decimal points."
+                },
+                "36161": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "Smart targeting campaigns require a `bidPreferences.maxCpc` value."
+                },
+                "36162": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'maxCpc' currency should be the same as the daily budget."
+                },
+                "36163": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'maxCpc' value {maxCpcValue} is below minimum value {maxCpcMinimumValue}."
+                },
+                "36164": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'maxCpc' value {maxCpcValue} is above maximum value {maxCpcMaximumValue}."
+                },
+                "36165": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'maxCpc' value {maxCpcValue} is more than maximum daily budget {maxDailyBudget}."
+                },
+                "36166": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'maxCpc' value {maxCpcValue} is invalid. Refer to the API call documentation for more information."
                 },
                 "36406": {
                   "domain": "API_MARKETING",
@@ -4336,7 +4390,7 @@
             }
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35051": {
@@ -4508,7 +4562,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -4582,7 +4636,7 @@
             "description": "Business error"
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -4645,7 +4699,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35056": {
@@ -4672,7 +4726,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -4741,7 +4795,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35056": {
@@ -4778,7 +4832,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -4885,7 +4939,7 @@
             "description": "Business error"
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -4975,7 +5029,7 @@
             "description": "Business error"
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -5059,7 +5113,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -5165,7 +5219,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -5271,7 +5325,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -5458,7 +5512,7 @@
             }
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35051": {
@@ -5530,7 +5584,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -5601,7 +5655,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35095": {
@@ -5613,7 +5667,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -5736,7 +5790,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "35051": {
@@ -5748,7 +5802,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -5905,7 +5959,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -5936,7 +5990,7 @@
         "tags": [
           "campaign"
         ],
-        "description": "This method allows sellers to change the bidding strategy for a specified Cost Per Click (CPC) campaign that uses manual targeting. Available bidding strategies are:<ul><li><code>FIXED</code><br><br>When using a fixed bidding strategy, sellers manually assign and adjust keyword bids for the CPC campaign.</li><li><code>DYNAMIC</code><br><br>When using a dynamic bidding strategy, eBay will manage a campaign's keyword bids and automatically update them daily to the suggested bid.<br><br><span class=\"tablenote\"><b>Note:</b> For a CPC campaign using dynamic bidding, sellers can continue to manually add keywords for the campaign, but they are no longer able to manually adjust their associated bid values. In order to manually adjust bid values, sellers must use the <code>FIXED</code> bidding strategy.</span></li></ul>In addition, this method allows sellers to modify the <b>maxCPC</b> value of a smart targeting campaign.<span class=\"tablenote\"><b>Note:</b> This method only applies to the Cost Per Click (CPC) funding model; it does not apply to the Cost Per Sale (CPS) funding model. Refer to <a href=\"/api-docs/sell/static/marketing/pl-overview.html#funding-model\">Funding Models</a> in the <i>Promoted Listings Playbook</i> for more information.</span>",
+        "description": "This method allows sellers to change the bidding strategy for a specified Cost Per Click (CPC) campaign that uses manual targeting. Available bidding strategies are:<ul><li><code>FIXED</code><br><br>When using a fixed bidding strategy, sellers manually assign and adjust keyword bids for the CPC campaign.</li><li><code>DYNAMIC</code><br><br>When using a dynamic bidding strategy, eBay will manage a campaign's keyword bids and automatically update them daily to the suggested bid.<br><br><span class=\"tablenote\"><b>Note:</b> For a CPC campaign using dynamic bidding, sellers can continue to manually add keywords for the campaign, but they are no longer able to manually adjust their associated bid values. In order to manually adjust bid values, sellers must use the <code>FIXED</code> bidding strategy.</span></li></ul>In addition, this method allows sellers to modify the <b>maxCPC</b> value of a smart targeting campaign.<br><span class=\"tablenote\"><b>Note:</b> This method only applies to the Cost Per Click (CPC) funding model; it does not apply to the Cost Per Sale (CPS) funding model. Refer to <a href=\"/api-docs/sell/static/marketing/pl-overview.html#funding-model\">Funding Models</a> in the <i>Promoted Listings Playbook</i> for more information.</span>",
         "operationId": "updateBiddingStrategy",
         "parameters": [
           {
@@ -5993,6 +6047,11 @@
                   "category": "REQUEST",
                   "description": "The 'maxCpc' {maxCpc} is not valid. Minimum value: {minMaxCpc} , Maximum value:{maxMaxCpc}."
                 },
+                "35125": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'bidPreferences' list currently supports only one element. Please remove additional elements and try again."
+                },
                 "35130": {
                   "domain": "API_MARKETING",
                   "category": "REQUEST",
@@ -6002,6 +6061,36 @@
                   "domain": "API_MARKETING",
                   "category": "REQUEST",
                   "description": "This functionality is not supported for CPS funding model."
+                },
+                "36161": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "Smart targeting campaigns require a `bidPreferences.maxCpc` value."
+                },
+                "36162": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'maxCpc' currency should be the same as the daily budget."
+                },
+                "36163": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'maxCpc' value {maxCpcValue} is below minimum value {maxCpcMinimumValue}."
+                },
+                "36164": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'maxCpc' value {maxCpcValue} is above maximum value {maxCpcMaximumValue}."
+                },
+                "36165": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'maxCpc' value {maxCpcValue} is more than maximum daily budget {maxDailyBudget}."
+                },
+                "36166": {
+                  "domain": "API_MARKETING",
+                  "category": "REQUEST",
+                  "description": "The 'maxCpc' value {maxCpcValue} is invalid. Refer to the API call documentation for more information."
                 }
               }
             }
@@ -6032,12 +6121,17 @@
                   "domain": "API_MARKETING",
                   "category": "BUSINESS",
                   "description": "'maxCPC' is only supported for CPC funding model campaigns with on-site channels and smart targeting type."
+                },
+                "35134": {
+                  "domain": "API_MARKETING",
+                  "category": "BUSINESS",
+                  "description": "A 'biddingStrategy' cannot be supplied for smart targeting campaigns. Please either remove 'biddingStrategy' from the request to create a smart targeting campaign or supply another value for 'campaignTargetingType'."
                 }
               }
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -6189,7 +6283,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -6356,7 +6450,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -6577,7 +6671,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -6748,7 +6842,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -6882,7 +6976,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -7087,7 +7181,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -7363,7 +7457,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -7551,7 +7645,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -7816,7 +7910,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -7983,7 +8077,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -8064,7 +8158,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -8168,7 +8262,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -8234,7 +8328,7 @@
             "description": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -8316,7 +8410,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -8437,7 +8531,7 @@
             "description": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -8528,7 +8622,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -8793,7 +8887,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -8859,7 +8953,7 @@
             "description": "Not found"
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -8928,7 +9022,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal Server error",
             "x-response-codes": {
               "errors": {
                 "35001": {
@@ -9665,7 +9759,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business Error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "38248": {
@@ -10226,7 +10320,7 @@
             }
           },
           "409": {
-            "description": "Business Error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "38243": {
@@ -10902,7 +10996,7 @@
             "description": "Not Found"
           },
           "409": {
-            "description": "Business Error",
+            "description": "Conflict",
             "x-response-codes": {
               "errors": {
                 "38243": {

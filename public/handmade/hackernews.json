@@ -1,0 +1,333 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Hacker News API",
+    "version": "1.0.0",
+    "description": "Access to real-time Hacker News data including stories, comments, and user profiles."
+  },
+  "servers": [
+    {
+      "url": "https://hacker-news.firebaseio.com/v0/",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/item/{id}": {
+      "get": {
+        "summary": "Retrieve an item by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Unique identifier of the item"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An item returned successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Item"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Item not found"
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "summary": "Retrieve a user by username",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Username of the user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User profile returned successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/maxitem": {
+      "get": {
+        "summary": "Get the current maximum item ID",
+        "responses": {
+          "200": {
+            "description": "Maximum item ID returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/topstories": {
+      "get": {
+        "summary": "Get the list of top stories",
+        "responses": {
+          "200": {
+            "description": "An array of top story IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/newstories": {
+      "get": {
+        "summary": "Get the list of new stories",
+        "responses": {
+          "200": {
+            "description": "An array of new story IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/beststories": {
+      "get": {
+        "summary": "Get the list of best stories",
+        "responses": {
+          "200": {
+            "description": "An array of best story IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/askstories": {
+      "get": {
+        "summary": "Get the list of latest Ask HN stories",
+        "responses": {
+          "200": {
+            "description": "An array of Ask HN story IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/showstories": {
+      "get": {
+        "summary": "Get the list of latest Show HN stories",
+        "responses": {
+          "200": {
+            "description": "An array of Show HN story IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/jobstories": {
+      "get": {
+        "summary": "Get the list of latest job stories",
+        "responses": {
+          "200": {
+            "description": "An array of job story IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/updates": {
+      "get": {
+        "summary": "Get the list of recently changed items and profiles",
+        "responses": {
+          "200": {
+            "description": "Recently changed items and profiles",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Updates"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Item": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "deleted": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["job", "story", "comment", "poll", "pollopt"]
+          },
+          "by": {
+            "type": "string"
+          },
+          "time": {
+            "type": "integer"
+          },
+          "text": {
+            "type": "string"
+          },
+          "dead": {
+            "type": "boolean"
+          },
+          "parent": {
+            "type": "integer"
+          },
+          "poll": {
+            "type": "integer"
+          },
+          "kids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "url": {
+            "type": "string"
+          },
+          "score": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "parts": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "descendants": {
+            "type": "integer"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created": {
+            "type": "integer"
+          },
+          "karma": {
+            "type": "integer"
+          },
+          "about": {
+            "type": "string"
+          },
+          "submitted": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "Updates": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "profiles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

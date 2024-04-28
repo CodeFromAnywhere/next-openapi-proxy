@@ -2677,6 +2677,10 @@
           "first_message": {
             "type": "string",
             "title": "First Message"
+          },
+          "short_description": {
+            "type": "string",
+            "title": "Short Description"
           }
         },
         "type": "object",
@@ -2684,7 +2688,6 @@
           "name",
           "prompt",
           "voice_id",
-          "image_path",
           "blurb",
           "title",
           "first_message"
@@ -2728,6 +2731,10 @@
           "first_message": {
             "type": "string",
             "title": "First Message"
+          },
+          "short_description": {
+            "type": "string",
+            "title": "Short Description"
           }
         },
         "type": "object",
@@ -2782,6 +2789,10 @@
           "is_owner": {
             "type": "boolean",
             "title": "Is Owner"
+          },
+          "short_description": {
+            "type": "string",
+            "title": "Short Description"
           }
         },
         "type": "object",
@@ -2791,7 +2802,6 @@
           "voice_id",
           "voice_provider",
           "name",
-          "image_path",
           "blurb",
           "title",
           "first_message",

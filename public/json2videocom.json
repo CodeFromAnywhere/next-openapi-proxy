@@ -1109,6 +1109,59 @@
                   "subtitles"
                 ]
               },
+              "comment": {
+                "type": "string",
+                "description": "Use it for your comments"
+              },
+              "language": {
+                "type": "string",
+                "description": "Language of the audio",
+                "default": "en",
+                "enum": [
+                  "en",
+                  "bg",
+                  "ca",
+                  "cs",
+                  "da",
+                  "nl",
+                  "en-AU",
+                  "en-GB",
+                  "en-NZ",
+                  "en-IN",
+                  "en-US",
+                  "et",
+                  "fr",
+                  "fi",
+                  "nl-BE",
+                  "de",
+                  "de-CH",
+                  "el",
+                  "hi",
+                  "hi-Latn",
+                  "hu",
+                  "id",
+                  "it",
+                  "ja",
+                  "ko",
+                  "lv",
+                  "lt",
+                  "ms",
+                  "no",
+                  "pl",
+                  "pt",
+                  "pt-BR",
+                  "ro",
+                  "ru",
+                  "sk",
+                  "es",
+                  "es-419",
+                  "sv",
+                  "th",
+                  "tr",
+                  "uk",
+                  "vi"
+                ]
+              },
               "settings": {
                 "type": "object",
                 "description": "Settings to customize the subtitles.",
@@ -1121,7 +1174,6 @@
                     "enum": [
                       "classic",
                       "classic-progressive",
-                      "classic-bigger-word",
                       "classic-one-word",
                       "boxed-line",
                       "boxed-word"
@@ -1130,11 +1182,10 @@
                   },
                   "font-family": {
                     "type": "string",
-                    "description": "Font family of the subtitles.",
+                    "description": "Font family of the subtitles",
                     "default": "Arial",
                     "enum": [
                       "Arial",
-                      "Comic Sans",
                       "Libre Baskerville",
                       "Lobster",
                       "Luckiest Guy",
@@ -1142,50 +1193,55 @@
                       "Nunito",
                       "Pacifico",
                       "Roboto",
-                      "Times New Roman"
+                      "Comic Neue",
+                      "Oswald",
+                      "Oswald Bold",
+                      "Shrikhand",
+                      "Fredericka the Great"
                     ]
                   },
                   "font-size": {
                     "type": "integer",
-                    "description": "Font size of the subtitles. Usual sizes are between 100 and 150. Defaults to 15% of the movie width."
+                    "description": "Font size of the subtitles. Usual sizes are between 90 and 150. Defaults to 5% of the movie width."
                   },
-                  "primary-color": {
+                  "word-color": {
                     "type": "string",
-                    "description": "Color of the subtitles for the regular text. It supports alpha channel like '#00FF0008'.",
-                    "default": "#FFFF08"
+                    "description": "Color of the spoken word",
+                    "default": "#FFFF00"
                   },
-                  "secondary-color": {
+                  "line-color": {
                     "type": "string",
-                    "description": "Color of the subtitles for the spoken word. It supports alpha channel like '#00FF0008'.",
-                    "default": "#00FF00"
-                  },
-                  "box-color": {
-                    "type": "string",
-                    "description": "Color of the box framing the subtitles. It supports alpha channel like '#00FF0008'.",
-                    "default": "#000000"
+                    "description": "Color of the rest of words in the line",
+                    "default": "#FFFFFF"
                   },
                   "outline-color": {
                     "type": "string",
-                    "description": "Outline color of the subtitles. It supports alpha channel like '#00FF0008'.",
+                    "description": "Outline color of the subtitles",
                     "default": "#000000"
                   },
                   "outline-width": {
                     "type": "integer",
-                    "description": "Width of the outline. Defaults to 1/10 of the font size."
+                    "description": "Width of the outline",
+                    "default": 0
                   },
                   "shadow-color": {
                     "type": "string",
-                    "description": "Shadow color of the subtitles. It supports alpha channel like '#00FF0008'.",
+                    "description": "Shadow color of the subtitles",
                     "default": "#000000"
                   },
                   "shadow-offset": {
                     "type": "integer",
-                    "description": "Offset of the shadow.",
+                    "description": "Offset of the shadow",
                     "default": 0
+                  },
+                  "box-color": {
+                    "type": "string",
+                    "description": "Color of the box behind the subtitles. Depending on the style, it can be the background color of the spoken word or the full line",
+                    "default": "#000000"
                   },
                   "position": {
                     "type": "string",
-                    "description": "Position of the subtitles on the screen.",
+                    "description": "Position of the subtitles",
                     "default": "bottom-center",
                     "enum": [
                       "top-left",
@@ -1196,15 +1252,31 @@
                       "center-right",
                       "bottom-left",
                       "bottom-center",
-                      "bottom-right"
+                      "bottom-right",
+                      "mid-bottom-center",
+                      "mid-top-center",
+                      "custom"
                     ]
+                  },
+                  "x": {
+                    "type": "integer",
+                    "description": "X coordinate of the subtitles",
+                    "default": 0
+                  },
+                  "y": {
+                    "type": "integer",
+                    "description": "Y coordinate of the subtitles",
+                    "default": 0
                   },
                   "max-words-per-line": {
                     "type": "integer",
-                    "description": "Maximum number of words per line.",
-                    "default": 4,
-                    "minimum": 1,
-                    "maximum": 8
+                    "description": "Maximum number of words per line",
+                    "default": 4
+                  },
+                  "all-caps": {
+                    "type": "boolean",
+                    "description": "Makes the subtitles all caps",
+                    "default": false
                   }
                 }
               }

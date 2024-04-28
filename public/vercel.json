@@ -2950,6 +2950,7 @@
                         "docusaurus-2",
                         "docusaurus",
                         "preact",
+                        "solidstart-1",
                         "solidstart",
                         "dojo",
                         "ember",
@@ -3124,8 +3125,7 @@
                             "enum": [
                               "pro",
                               "enterprise",
-                              "hobby",
-                              "oss"
+                              "hobby"
                             ]
                           },
                           "private": {
@@ -3821,6 +3821,12 @@
                           },
                           "type": "array"
                         },
+                        "integrationResourceSecrets": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "jobGlobal": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -4487,6 +4493,12 @@
                           },
                           "type": "array"
                         },
+                        "projectDeploymentExpiration": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "skewProtection": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -4958,11 +4970,43 @@
                                     "enum": [
                                       "deny",
                                       "challenge",
-                                      "log"
+                                      "log",
+                                      "bypass",
+                                      "rate_limit"
                                     ]
                                   },
                                   "rule_id": {
                                     "type": "string"
+                                  },
+                                  "erl": {
+                                    "properties": {
+                                      "algo": {
+                                        "type": "string",
+                                        "enum": [
+                                          "fixed_window",
+                                          "token_bucket"
+                                        ]
+                                      },
+                                      "window": {
+                                        "type": "number"
+                                      },
+                                      "limit": {
+                                        "type": "number"
+                                      },
+                                      "keys": {
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "type": "array"
+                                      }
+                                    },
+                                    "required": [
+                                      "algo",
+                                      "window",
+                                      "limit",
+                                      "keys"
+                                    ],
+                                    "type": "object"
                                   }
                                 },
                                 "required": [
@@ -6414,8 +6458,7 @@
                           "enum": [
                             "pro",
                             "enterprise",
-                            "hobby",
-                            "oss"
+                            "hobby"
                           ],
                           "description": "The pricing plan the deployment was made under",
                           "example": "pro"
@@ -8444,8 +8487,7 @@
                       "enum": [
                         "pro",
                         "enterprise",
-                        "hobby",
-                        "oss"
+                        "hobby"
                       ],
                       "description": "The pricing plan the deployment was made under",
                       "example": "pro"
@@ -9965,6 +10007,7 @@
                           "docusaurus-2",
                           "docusaurus",
                           "preact",
+                          "solidstart-1",
                           "solidstart",
                           "dojo",
                           "ember",
@@ -10253,8 +10296,7 @@
                       "enum": [
                         "pro",
                         "enterprise",
-                        "hobby",
-                        "oss"
+                        "hobby"
                       ],
                       "description": "The pricing plan the deployment was made under",
                       "example": "pro"
@@ -15999,7 +16041,8 @@
                                         "read-write:domain",
                                         "read-write:edge-config",
                                         "read-write:otel-endpoint",
-                                        "read:monitoring"
+                                        "read:monitoring",
+                                        "read-write:integration-resource"
                                       ]
                                     },
                                     "type": "array"
@@ -16024,7 +16067,8 @@
                                         "read-write:domain",
                                         "read-write:edge-config",
                                         "read-write:otel-endpoint",
-                                        "read:monitoring"
+                                        "read:monitoring",
+                                        "read-write:integration-resource"
                                       ]
                                     },
                                     "type": "array"
@@ -16256,7 +16300,8 @@
                                           "read-write:domain",
                                           "read-write:edge-config",
                                           "read-write:otel-endpoint",
-                                          "read:monitoring"
+                                          "read:monitoring",
+                                          "read-write:integration-resource"
                                         ]
                                       },
                                       "type": "array"
@@ -16281,7 +16326,8 @@
                                           "read-write:domain",
                                           "read-write:edge-config",
                                           "read-write:otel-endpoint",
-                                          "read:monitoring"
+                                          "read:monitoring",
+                                          "read-write:integration-resource"
                                         ]
                                       },
                                       "type": "array"
@@ -16550,7 +16596,8 @@
                                         "read-write:domain",
                                         "read-write:edge-config",
                                         "read-write:otel-endpoint",
-                                        "read:monitoring"
+                                        "read:monitoring",
+                                        "read-write:integration-resource"
                                       ]
                                     },
                                     "type": "array"
@@ -16575,7 +16622,8 @@
                                         "read-write:domain",
                                         "read-write:edge-config",
                                         "read-write:otel-endpoint",
-                                        "read:monitoring"
+                                        "read:monitoring",
+                                        "read-write:integration-resource"
                                       ]
                                     },
                                     "type": "array"
@@ -16784,7 +16832,8 @@
                                         "read-write:domain",
                                         "read-write:edge-config",
                                         "read-write:otel-endpoint",
-                                        "read:monitoring"
+                                        "read:monitoring",
+                                        "read-write:integration-resource"
                                       ]
                                     },
                                     "type": "array"
@@ -16809,7 +16858,8 @@
                                         "read-write:domain",
                                         "read-write:edge-config",
                                         "read-write:otel-endpoint",
-                                        "read:monitoring"
+                                        "read:monitoring",
+                                        "read-write:integration-resource"
                                       ]
                                     },
                                     "type": "array"
@@ -19606,6 +19656,7 @@
                               "docusaurus-2",
                               "docusaurus",
                               "preact",
+                              "solidstart-1",
                               "solidstart",
                               "dojo",
                               "ember",
@@ -19780,8 +19831,7 @@
                                   "enum": [
                                     "pro",
                                     "enterprise",
-                                    "hobby",
-                                    "oss"
+                                    "hobby"
                                   ]
                                 },
                                 "private": {
@@ -20477,6 +20527,12 @@
                                 },
                                 "type": "array"
                               },
+                              "integrationResourceSecrets": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
                               "jobGlobal": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -21143,6 +21199,12 @@
                                 },
                                 "type": "array"
                               },
+                              "projectDeploymentExpiration": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
                               "skewProtection": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -21614,11 +21676,43 @@
                                           "enum": [
                                             "deny",
                                             "challenge",
-                                            "log"
+                                            "log",
+                                            "bypass",
+                                            "rate_limit"
                                           ]
                                         },
                                         "rule_id": {
                                           "type": "string"
+                                        },
+                                        "erl": {
+                                          "properties": {
+                                            "algo": {
+                                              "type": "string",
+                                              "enum": [
+                                                "fixed_window",
+                                                "token_bucket"
+                                              ]
+                                            },
+                                            "window": {
+                                              "type": "number"
+                                            },
+                                            "limit": {
+                                              "type": "number"
+                                            },
+                                            "keys": {
+                                              "items": {
+                                                "type": "string"
+                                              },
+                                              "type": "array"
+                                            }
+                                          },
+                                          "required": [
+                                            "algo",
+                                            "window",
+                                            "limit",
+                                            "keys"
+                                          ],
+                                          "type": "object"
                                         }
                                       },
                                       "required": [
@@ -22403,6 +22497,7 @@
                         "docusaurus-2",
                         "docusaurus",
                         "preact",
+                        "solidstart-1",
                         "solidstart",
                         "dojo",
                         "ember",
@@ -22577,8 +22672,7 @@
                             "enum": [
                               "pro",
                               "enterprise",
-                              "hobby",
-                              "oss"
+                              "hobby"
                             ]
                           },
                           "private": {
@@ -23274,6 +23368,12 @@
                           },
                           "type": "array"
                         },
+                        "integrationResourceSecrets": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "jobGlobal": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -23940,6 +24040,12 @@
                           },
                           "type": "array"
                         },
+                        "projectDeploymentExpiration": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "skewProtection": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -24411,11 +24517,43 @@
                                     "enum": [
                                       "deny",
                                       "challenge",
-                                      "log"
+                                      "log",
+                                      "bypass",
+                                      "rate_limit"
                                     ]
                                   },
                                   "rule_id": {
                                     "type": "string"
+                                  },
+                                  "erl": {
+                                    "properties": {
+                                      "algo": {
+                                        "type": "string",
+                                        "enum": [
+                                          "fixed_window",
+                                          "token_bucket"
+                                        ]
+                                      },
+                                      "window": {
+                                        "type": "number"
+                                      },
+                                      "limit": {
+                                        "type": "number"
+                                      },
+                                      "keys": {
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "type": "array"
+                                      }
+                                    },
+                                    "required": [
+                                      "algo",
+                                      "window",
+                                      "limit",
+                                      "keys"
+                                    ],
+                                    "type": "object"
                                   }
                                 },
                                 "required": [
@@ -24596,6 +24734,7 @@
                       "docusaurus-2",
                       "docusaurus",
                       "preact",
+                      "solidstart-1",
                       "solidstart",
                       "dojo",
                       "ember",
@@ -25301,6 +25440,7 @@
                         "docusaurus-2",
                         "docusaurus",
                         "preact",
+                        "solidstart-1",
                         "solidstart",
                         "dojo",
                         "ember",
@@ -25475,8 +25615,7 @@
                             "enum": [
                               "pro",
                               "enterprise",
-                              "hobby",
-                              "oss"
+                              "hobby"
                             ]
                           },
                           "private": {
@@ -26172,6 +26311,12 @@
                           },
                           "type": "array"
                         },
+                        "integrationResourceSecrets": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "jobGlobal": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -26838,6 +26983,12 @@
                           },
                           "type": "array"
                         },
+                        "projectDeploymentExpiration": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "skewProtection": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -27309,11 +27460,43 @@
                                     "enum": [
                                       "deny",
                                       "challenge",
-                                      "log"
+                                      "log",
+                                      "bypass",
+                                      "rate_limit"
                                     ]
                                   },
                                   "rule_id": {
                                     "type": "string"
+                                  },
+                                  "erl": {
+                                    "properties": {
+                                      "algo": {
+                                        "type": "string",
+                                        "enum": [
+                                          "fixed_window",
+                                          "token_bucket"
+                                        ]
+                                      },
+                                      "window": {
+                                        "type": "number"
+                                      },
+                                      "limit": {
+                                        "type": "number"
+                                      },
+                                      "keys": {
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "type": "array"
+                                      }
+                                    },
+                                    "required": [
+                                      "algo",
+                                      "window",
+                                      "limit",
+                                      "keys"
+                                    ],
+                                    "type": "object"
                                   }
                                 },
                                 "required": [
@@ -27997,6 +28180,7 @@
                         "docusaurus-2",
                         "docusaurus",
                         "preact",
+                        "solidstart-1",
                         "solidstart",
                         "dojo",
                         "ember",
@@ -28171,8 +28355,7 @@
                             "enum": [
                               "pro",
                               "enterprise",
-                              "hobby",
-                              "oss"
+                              "hobby"
                             ]
                           },
                           "private": {
@@ -28868,6 +29051,12 @@
                           },
                           "type": "array"
                         },
+                        "integrationResourceSecrets": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "jobGlobal": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -29534,6 +29723,12 @@
                           },
                           "type": "array"
                         },
+                        "projectDeploymentExpiration": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "skewProtection": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -30005,11 +30200,43 @@
                                     "enum": [
                                       "deny",
                                       "challenge",
-                                      "log"
+                                      "log",
+                                      "bypass",
+                                      "rate_limit"
                                     ]
                                   },
                                   "rule_id": {
                                     "type": "string"
+                                  },
+                                  "erl": {
+                                    "properties": {
+                                      "algo": {
+                                        "type": "string",
+                                        "enum": [
+                                          "fixed_window",
+                                          "token_bucket"
+                                        ]
+                                      },
+                                      "window": {
+                                        "type": "number"
+                                      },
+                                      "limit": {
+                                        "type": "number"
+                                      },
+                                      "keys": {
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "type": "array"
+                                      }
+                                    },
+                                    "required": [
+                                      "algo",
+                                      "window",
+                                      "limit",
+                                      "keys"
+                                    ],
+                                    "type": "object"
                                   }
                                 },
                                 "required": [
@@ -30160,6 +30387,7 @@
                       "docusaurus-2",
                       "docusaurus",
                       "preact",
+                      "solidstart-1",
                       "solidstart",
                       "dojo",
                       "ember",
@@ -42353,6 +42581,7 @@
                                     "docusaurus-2",
                                     "docusaurus",
                                     "preact",
+                                    "solidstart-1",
                                     "solidstart",
                                     "dojo",
                                     "ember",
@@ -44769,6 +44998,7 @@
                                   "docusaurus-2",
                                   "docusaurus",
                                   "preact",
+                                  "solidstart-1",
                                   "solidstart",
                                   "dojo",
                                   "ember",

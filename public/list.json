@@ -80,6 +80,11 @@
     "title": "Multion"
   },
   {
+    "key": "hackernews",
+    "absolutePath": "/Users/king/Desktop/github/openapi-enhancement-proxy-next/public/handmade/hackernews.json",
+    "title": "Hackernews"
+  },
+  {
     "key": "1passwordcom-events",
     "title": "Events API",
     "originalUrl": "https://i.1password.com/media/1password-events-reporting/1password-events-api.yaml"
@@ -643,6 +648,11 @@
     "key": "eoslocal",
     "title": "Net API",
     "originalUrl": "https://gist.githubusercontent.com/MikeRalphson/9b1349082ac4eca3660eaf6ad31e70d2/raw/88dacf4280e9aca949b5f4692904229fdf2457ff/swagger(1).json"
+  },
+  {
+    "key": "esgenterprisecom",
+    "title": "ESG Rating Data",
+    "originalUrl": "https://www.esgenterprise.com/wp-content/api/ESGRatingAPI-Definition.json"
   },
   {
     "key": "etsilocal-mec010-2-apppkgmgmt",

@@ -106,8 +106,7 @@
           {
             "$ref": "#/components/schemas/SearchInput"
           }
-        ],
-        "type": "object"
+        ]
       },
       "SearchInput": {
         "type": "object",
