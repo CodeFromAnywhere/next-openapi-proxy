@@ -10,7 +10,7 @@
     "predeploy": "bun run scrape-apis.cli.ts"
   },
   "dependencies": {
-    "from-anywhere": "^0.0.21",
+    "from-anywhere": "^0.0.29",
     "next": "14.2.1",
     "react": "^18",
     "react-dom": "^18"
